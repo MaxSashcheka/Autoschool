@@ -1,13 +1,13 @@
 //
-//  HeaderViewButton.swift
-//  Contacts
+//  SaveButton.swift
+//  Autoschool
 //
-//  Created by Max Sashcheka on 9/17/21.
+//  Created by Max Sashcheka on 10/1/21.
 //
 
 import UIKit
 
-class DatabaseMainButton: UIButton {
+class SaveButton: UIButton {
     
     init() {
         super.init(frame: .zero)
@@ -20,10 +20,10 @@ class DatabaseMainButton: UIButton {
     }
     
     func setup() {
-        setTitleColor(.lightGreenSea, for: .normal)
+        setTitleColor(.systemTeal, for: .normal)
         backgroundColor = .white
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
-        layer.shadowRadius = 4
+        layer.shadowRadius = 2.5
         layer.shadowOpacity = 1.0
         layer.shadowOffset = .zero
         layer.cornerRadius = layer.frame.height / 2
@@ -34,10 +34,10 @@ class DatabaseMainButton: UIButton {
         didSet {
             UIView.transition(with: self, duration: 0.2, options: [.transitionCrossDissolve]) { [self] in
                 if isHighlighted {
-                    layer.shadowRadius = 6.0
-                    layer.shadowColor = UIColor.lightGreenSea.cgColor
+                    layer.shadowRadius = 4
+                    layer.shadowColor = UIColor.systemTeal.cgColor
                 } else {
-                    layer.shadowRadius = 4.0
+                    layer.shadowRadius = 2.5
                     layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
                 }
             }

@@ -17,6 +17,10 @@
 		DD9A0C7227070C330040C839 /* Database.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9A0C7127070C330040C839 /* Database.storyboard */; };
 		DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C75270712A10040C839 /* DatabaseMainButton.swift */; };
 		DD9A0C7B270713E30040C839 /* DatabaseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C7A270713E30040C839 /* DatabaseMainViewController.swift */; };
+		DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C7F270715BD0040C839 /* CreateStudentViewController.swift */; };
+		DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C82270715D60040C839 /* CreateGroupViewController.swift */; };
+		DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C85270718D40040C839 /* SaveButton.swift */; };
+		DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		DD9A0C7127070C330040C839 /* Database.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Database.storyboard; sourceTree = "<group>"; };
 		DD9A0C75270712A10040C839 /* DatabaseMainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseMainButton.swift; sourceTree = "<group>"; };
 		DD9A0C7A270713E30040C839 /* DatabaseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMainViewController.swift; sourceTree = "<group>"; };
+		DD9A0C7F270715BD0040C839 /* CreateStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
+		DD9A0C82270715D60040C839 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		DD9A0C85270718D40040C839 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
+		DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateInstruсtorViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +95,9 @@
 		DD9A0C6727070AB30040C839 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				DD9A0C7127070C330040C839 /* Database.storyboard */,
 				DD9A0C5427070A950040C839 /* Main.storyboard */,
 				DD9A0C5C27070A960040C839 /* LaunchScreen.storyboard */,
-				DD9A0C6F27070BCC0040C839 /* Tab bar storyboards */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -99,6 +107,7 @@
 			children = (
 				DD9A0C75270712A10040C839 /* DatabaseMainButton.swift */,
 				DD9A0C6C27070B340040C839 /* Extensions.swift */,
+				DD9A0C85270718D40040C839 /* SaveButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -119,18 +128,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DD9A0C6F27070BCC0040C839 /* Tab bar storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				DD9A0C7127070C330040C839 /* Database.storyboard */,
-			);
-			path = "Tab bar storyboards";
-			sourceTree = "<group>";
-		};
 		DD9A0C7D270713E60040C839 /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				DD9A0C7A270713E30040C839 /* DatabaseMainViewController.swift */,
+				DD9A0C7F270715BD0040C839 /* CreateStudentViewController.swift */,
+				DD9A0C82270715D60040C839 /* CreateGroupViewController.swift */,
+				DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -208,10 +212,14 @@
 			files = (
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
 				DD9A0C5927070A950040C839 /* Autoschool.xcdatamodeld in Sources */,
+				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
 				DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */,
 				DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */,
+				DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */,
 				DD9A0C7B270713E30040C839 /* DatabaseMainViewController.swift in Sources */,
+				DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */,
 				DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */,
+				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Vw-TN-acq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Database Main View Controller-->
+        <scene sceneID="EJL-Y0-qBu">
+            <objects>
+                <viewController storyboardIdentifier="DatabaseMainViewController" id="TXx-rR-8FF" customClass="DatabaseMainViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ha7-T8-ipR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="9rc-Wf-Z7i">
+                                <rect key="frame" x="77" y="311.5" width="260" height="278"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-xE-2RC" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="38"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="5TG-0D-eQp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <state key="normal" title="Добавить группу"/>
+                                        <connections>
+                                            <action selector="pushCreateGroupController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="waF-ov-yVp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41w-mo-KHZ" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="260" height="38"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="CIo-ls-2FX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <state key="normal" title="Добавить ученика"/>
+                                        <connections>
+                                            <action selector="pushCreateStudentController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="Fhc-bR-PsE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qna-G4-e09" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="260" height="38"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="S0m-83-QeN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <state key="normal" title="Добавить инструктора"/>
+                                        <connections>
+                                            <action selector="pushCreateInstructorController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="LtO-vn-b4P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjs-QP-Eg7" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="260" height="38"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="xPf-oD-R4P"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <state key="normal" title="Добавить машину"/>
+                                        <connections>
+                                            <action selector="pushCreateCarController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="x4c-ZA-zeS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-qe-aNW" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="260" height="38"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="fDN-MV-YtG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <state key="normal" title="Добавить экзамен"/>
+                                        <connections>
+                                            <action selector="pushCreateExamController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="TAc-91-kDh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ttc-Br-BfD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9rc-Wf-Z7i" firstAttribute="centerY" secondItem="Ttc-Br-BfD" secondAttribute="centerY" id="OrT-7N-Xdb"/>
+                            <constraint firstItem="9rc-Wf-Z7i" firstAttribute="centerX" secondItem="Ttc-Br-BfD" secondAttribute="centerX" id="iRc-BY-VGk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zKY-iE-kqw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="184-fe-TNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155.072463768116" y="160.71428571428569"/>
+        </scene>
+        <!--Create Group View Controller-->
+        <scene sceneID="iOp-EP-V3n">
+            <objects>
+                <viewController storyboardIdentifier="CreateGroupViewController" id="KWP-Aj-QHB" customClass="CreateGroupViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PDF-pj-Jb2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-7c-s18">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="faM-Sk-ZDc">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="460"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-9B-mNA">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-Br-Idi">
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название группы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-9Q-vCj">
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите категорию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-QO-Lgd">
+                                                        <rect key="frame" x="20" y="89.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-fB-bZ1">
+                                                        <rect key="frame" x="20" y="115" width="374" height="32"/>
+                                                        <segments>
+                                                            <segment title="A"/>
+                                                            <segment title="B (МКПП)"/>
+                                                            <segment title="B (АКПП)"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите время проведения занятий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-Bx-19j">
+                                                        <rect key="frame" x="20" y="161" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jay-HZ-Jod">
+                                                        <rect key="frame" x="20" y="186.5" width="374" height="32"/>
+                                                        <segments>
+                                                            <segment title="Утро"/>
+                                                            <segment title="Вечер"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата начала обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-0x-ouE">
+                                                        <rect key="frame" x="20" y="232.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-rm-KCG">
+                                                        <rect key="frame" x="20" y="258" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата окончания обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-RX-hgk">
+                                                        <rect key="frame" x="20" y="307" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r33-eq-PNg">
+                                                        <rect key="frame" x="20" y="332.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="CTr-QO-Lgd" secondAttribute="trailing" constant="20" id="2mP-sm-qxc"/>
+                                                    <constraint firstItem="Pdk-0x-ouE" firstAttribute="top" secondItem="Jay-HZ-Jod" secondAttribute="bottom" constant="15" id="3fa-m1-aJT"/>
+                                                    <constraint firstItem="Jay-HZ-Jod" firstAttribute="top" secondItem="CRB-Bx-19j" secondAttribute="bottom" constant="5" id="6UK-6y-NeT"/>
+                                                    <constraint firstItem="jQ5-rm-KCG" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="7Ob-pJ-PsQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LDC-fB-bZ1" secondAttribute="trailing" constant="20" id="7rN-C5-72n"/>
+                                                    <constraint firstItem="I0e-RX-hgk" firstAttribute="top" secondItem="jQ5-rm-KCG" secondAttribute="bottom" constant="15" id="93x-Rk-ILE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jQ5-rm-KCG" secondAttribute="trailing" constant="20" id="F4P-Xt-5Xx"/>
+                                                    <constraint firstItem="CTr-QO-Lgd" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="GLg-tO-kJb"/>
+                                                    <constraint firstItem="Jay-HZ-Jod" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="HHJ-kn-T8v"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Jay-HZ-Jod" secondAttribute="trailing" constant="20" id="KuC-ms-oJN"/>
+                                                    <constraint firstAttribute="height" constant="380" id="MS7-zG-DfK"/>
+                                                    <constraint firstItem="CRB-Bx-19j" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="MZ7-9v-yRi"/>
+                                                    <constraint firstItem="CHb-9Q-vCj" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="NPb-N0-MHz"/>
+                                                    <constraint firstItem="CRB-Bx-19j" firstAttribute="top" secondItem="LDC-fB-bZ1" secondAttribute="bottom" constant="15" id="OPS-tt-zvQ"/>
+                                                    <constraint firstItem="LDC-fB-bZ1" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="Oal-FE-AAy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CHb-9Q-vCj" secondAttribute="trailing" constant="20" id="QRQ-fL-3f3"/>
+                                                    <constraint firstItem="jQ5-rm-KCG" firstAttribute="top" secondItem="Pdk-0x-ouE" secondAttribute="bottom" constant="5" id="U2u-K9-rIC"/>
+                                                    <constraint firstItem="r33-eq-PNg" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="ZI8-mu-rSg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="I0e-RX-hgk" secondAttribute="trailing" constant="20" id="bfl-so-GEd"/>
+                                                    <constraint firstItem="MQO-Br-Idi" firstAttribute="top" secondItem="FAo-9B-mNA" secondAttribute="top" constant="15" id="dck-rQ-UaM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="r33-eq-PNg" secondAttribute="trailing" constant="20" id="eDc-QV-uKp"/>
+                                                    <constraint firstItem="r33-eq-PNg" firstAttribute="top" secondItem="I0e-RX-hgk" secondAttribute="bottom" constant="5" id="f1r-x0-DOD"/>
+                                                    <constraint firstItem="MQO-Br-Idi" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="hM1-1S-6m7"/>
+                                                    <constraint firstItem="CHb-9Q-vCj" firstAttribute="top" secondItem="MQO-Br-Idi" secondAttribute="bottom" constant="5" id="hZ3-ZA-gAK"/>
+                                                    <constraint firstItem="I0e-RX-hgk" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="iYm-hS-veW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MQO-Br-Idi" secondAttribute="trailing" constant="20" id="lAf-Cs-GQG"/>
+                                                    <constraint firstItem="CTr-QO-Lgd" firstAttribute="top" secondItem="CHb-9Q-vCj" secondAttribute="bottom" constant="15" id="ptJ-ak-aPm"/>
+                                                    <constraint firstItem="Pdk-0x-ouE" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="qCa-Gt-f3p"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CRB-Bx-19j" secondAttribute="trailing" constant="20" id="qUO-rp-4o4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Pdk-0x-ouE" secondAttribute="trailing" constant="20" id="uaW-lZ-cli"/>
+                                                    <constraint firstItem="LDC-fB-bZ1" firstAttribute="top" secondItem="CTr-QO-Lgd" secondAttribute="bottom" constant="5" id="yj0-8h-1E9"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0v-Z2-xn2">
+                                                <rect key="frame" x="0.0" y="380" width="414" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtN-gN-DGy" customClass="SaveButton" customModule="Autoschool" customModuleProvider="target">
+                                                        <rect key="frame" x="102" y="20" width="210" height="40"/>
+                                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="210" id="5Ne-u1-PBL"/>
+                                                            <constraint firstAttribute="height" constant="40" id="k6h-54-g3u"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                        <state key="normal" title="Сохранить"/>
+                                                        <connections>
+                                                            <action selector="saveHandler:" destination="KWP-Aj-QHB" eventType="touchUpInside" id="3sJ-ln-BmS"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="MtN-gN-DGy" firstAttribute="centerX" secondItem="p0v-Z2-xn2" secondAttribute="centerX" id="Blc-tt-5Ek"/>
+                                                    <constraint firstItem="MtN-gN-DGy" firstAttribute="centerY" secondItem="p0v-Z2-xn2" secondAttribute="centerY" id="qNQ-oD-wR5"/>
+                                                    <constraint firstAttribute="height" constant="80" id="rNZ-Yh-V1S"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="faM-Sk-ZDc" firstAttribute="width" secondItem="Oyo-es-d3Q" secondAttribute="width" id="Rwm-Gg-Zvp"/>
+                                    <constraint firstItem="faM-Sk-ZDc" firstAttribute="trailing" secondItem="lJ0-di-JrI" secondAttribute="trailing" id="eYb-Ro-3no"/>
+                                    <constraint firstItem="faM-Sk-ZDc" firstAttribute="leading" secondItem="lJ0-di-JrI" secondAttribute="leading" id="pa2-Wt-Fe7"/>
+                                    <constraint firstItem="faM-Sk-ZDc" firstAttribute="bottom" secondItem="lJ0-di-JrI" secondAttribute="bottom" id="q1t-lR-mbF"/>
+                                    <constraint firstItem="faM-Sk-ZDc" firstAttribute="top" secondItem="lJ0-di-JrI" secondAttribute="top" id="vXp-mM-Cgw"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="lJ0-di-JrI"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Oyo-es-d3Q"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r4Y-a1-CJh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Us4-7c-s18" firstAttribute="top" secondItem="PDF-pj-Jb2" secondAttribute="top" id="3ci-wu-aAf"/>
+                            <constraint firstItem="Us4-7c-s18" firstAttribute="trailing" secondItem="r4Y-a1-CJh" secondAttribute="trailing" id="9wm-XF-kt5"/>
+                            <constraint firstAttribute="bottom" secondItem="Us4-7c-s18" secondAttribute="bottom" id="RdM-fh-Q9c"/>
+                            <constraint firstItem="Us4-7c-s18" firstAttribute="leading" secondItem="PDF-pj-Jb2" secondAttribute="leading" id="dpu-u0-EyB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="classesTimeSegmentedControl" destination="Jay-HZ-Jod" id="qhc-gv-iE3"/>
+                        <outlet property="drivingCategorySegmentedControl" destination="LDC-fB-bZ1" id="3dK-G7-VnG"/>
+                        <outlet property="endDateTextField" destination="r33-eq-PNg" id="70V-lJ-WMH"/>
+                        <outlet property="groupNameLabel" destination="CHb-9Q-vCj" id="wK7-6o-fkW"/>
+                        <outlet property="startDateTextField" destination="jQ5-rm-KCG" id="lRj-De-VuH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbQ-8T-Bz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-474" y="872"/>
+        </scene>
+        <!--Create Instruсtor View Controller-->
+        <scene sceneID="Aa7-Eo-bHe">
+            <objects>
+                <viewController storyboardIdentifier="CreateInstruсtorViewController" id="g7K-38-bJg" customClass="CreateInstruсtorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mT7-TJ-Lde">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71p-My-mld">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fq0-pW-uad">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="410"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKq-ea-t8a">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-Yv-fgh">
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3HZ-nN-cz1">
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="118"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bK9-ZE-zbB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CdX-zD-Azz">
+                                                                <rect key="frame" x="0.0" y="42" width="374" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jWF-fo-cG9">
+                                                                <rect key="frame" x="0.0" y="84" width="374" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите стаж вождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrT-MF-oRc">
+                                                        <rect key="frame" x="20" y="173.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Стаж вождения" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-65-mWO">
+                                                        <rect key="frame" x="20" y="199" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите мобильный телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAM-Pp-xaK">
+                                                        <rect key="frame" x="20" y="248" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мобильный телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJc-ox-bvQ">
+                                                        <rect key="frame" x="20" y="273.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="hJQ-65-mWO" firstAttribute="top" secondItem="SrT-MF-oRc" secondAttribute="bottom" constant="5" id="88j-TX-yZJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SrT-MF-oRc" secondAttribute="trailing" constant="20" id="9Oa-YD-3Yr"/>
+                                                    <constraint firstAttribute="height" constant="330" id="BiV-wa-Pm8"/>
+                                                    <constraint firstItem="iJc-ox-bvQ" firstAttribute="top" secondItem="bAM-Pp-xaK" secondAttribute="bottom" constant="5" id="DJv-OZ-F9G"/>
+                                                    <constraint firstItem="iJc-ox-bvQ" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="JAY-jA-bfL"/>
+                                                    <constraint firstItem="b1f-Yv-fgh" firstAttribute="top" secondItem="LKq-ea-t8a" secondAttribute="top" constant="15" id="NTS-1x-vvs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3HZ-nN-cz1" secondAttribute="trailing" constant="20" id="PI0-lI-X03"/>
+                                                    <constraint firstItem="hJQ-65-mWO" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="Um5-GF-irZ"/>
+                                                    <constraint firstItem="SrT-MF-oRc" firstAttribute="top" secondItem="3HZ-nN-cz1" secondAttribute="bottom" constant="15" id="X7e-Bo-qq8"/>
+                                                    <constraint firstItem="bAM-Pp-xaK" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="ebP-NP-JPd"/>
+                                                    <constraint firstItem="SrT-MF-oRc" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="gY6-kb-O7A"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bAM-Pp-xaK" secondAttribute="trailing" constant="20" id="iJo-N7-EeH"/>
+                                                    <constraint firstItem="3HZ-nN-cz1" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="iZf-MW-A95"/>
+                                                    <constraint firstAttribute="trailing" secondItem="b1f-Yv-fgh" secondAttribute="trailing" constant="20" id="rwR-uF-3Wb"/>
+                                                    <constraint firstItem="3HZ-nN-cz1" firstAttribute="top" secondItem="b1f-Yv-fgh" secondAttribute="bottom" constant="5" id="uuv-cZ-fLS"/>
+                                                    <constraint firstItem="b1f-Yv-fgh" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="yHy-ud-G0q"/>
+                                                    <constraint firstItem="bAM-Pp-xaK" firstAttribute="top" secondItem="hJQ-65-mWO" secondAttribute="bottom" constant="15" id="yWI-31-5IH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iJc-ox-bvQ" secondAttribute="trailing" constant="20" id="z2Q-zU-pCC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hJQ-65-mWO" secondAttribute="trailing" constant="20" id="zFp-aW-MYd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3Q-Mr-uw0">
+                                                <rect key="frame" x="0.0" y="330" width="414" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u15-eW-59d" customClass="SaveButton" customModule="Autoschool" customModuleProvider="target">
+                                                        <rect key="frame" x="102" y="20" width="210" height="40"/>
+                                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="210" id="mCj-HF-b2Z"/>
+                                                            <constraint firstAttribute="height" constant="40" id="yLt-Fu-rgA"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                        <state key="normal" title="Сохранить"/>
+                                                        <connections>
+                                                            <action selector="saveHandler:" destination="KWP-Aj-QHB" eventType="touchUpInside" id="j3v-xE-GEX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="u15-eW-59d" firstAttribute="centerX" secondItem="G3Q-Mr-uw0" secondAttribute="centerX" id="bgM-9N-w6I"/>
+                                                    <constraint firstItem="u15-eW-59d" firstAttribute="centerY" secondItem="G3Q-Mr-uw0" secondAttribute="centerY" id="gXA-sc-zjv"/>
+                                                    <constraint firstAttribute="height" constant="80" id="kdz-T5-rOI"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fq0-pW-uad" firstAttribute="top" secondItem="Mv9-MC-iuS" secondAttribute="top" id="355-UM-S38"/>
+                                    <constraint firstItem="fq0-pW-uad" firstAttribute="width" secondItem="149-R4-3ek" secondAttribute="width" id="HJZ-PL-P57"/>
+                                    <constraint firstItem="fq0-pW-uad" firstAttribute="bottom" secondItem="Mv9-MC-iuS" secondAttribute="bottom" id="PB4-hU-GER"/>
+                                    <constraint firstItem="fq0-pW-uad" firstAttribute="leading" secondItem="Mv9-MC-iuS" secondAttribute="leading" id="bcX-mc-94g"/>
+                                    <constraint firstItem="fq0-pW-uad" firstAttribute="trailing" secondItem="Mv9-MC-iuS" secondAttribute="trailing" id="dbe-eQ-xKF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Mv9-MC-iuS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="149-R4-3ek"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lrn-vf-Yhg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="71p-My-mld" secondAttribute="bottom" id="AnW-fH-I3N"/>
+                            <constraint firstItem="71p-My-mld" firstAttribute="trailing" secondItem="Lrn-vf-Yhg" secondAttribute="trailing" id="LYV-hi-hKc"/>
+                            <constraint firstItem="71p-My-mld" firstAttribute="top" secondItem="mT7-TJ-Lde" secondAttribute="top" id="MMw-tB-n1M"/>
+                            <constraint firstItem="71p-My-mld" firstAttribute="leading" secondItem="Lrn-vf-Yhg" secondAttribute="leading" id="bQz-Um-WLp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uce-Dj-nQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="872"/>
+        </scene>
+        <!--Create Student View Controller-->
+        <scene sceneID="e2N-4J-UIq">
+            <objects>
+                <viewController storyboardIdentifier="CreateStudentViewController" id="n59-9A-gjf" customClass="CreateStudentViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bMc-mW-RnI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2r-vF-c72">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U6Z-Ak-dCV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="610"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27q-SL-mQd">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО учащегося" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBs-tM-2WE">
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Ld-fc-z3q">
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="118"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIp-fX-Sc0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3v-go-8lb">
+                                                                <rect key="frame" x="0.0" y="42" width="374" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKu-Wb-hh8">
+                                                                <rect key="frame" x="0.0" y="84" width="374" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер паспорта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1To-Qx-1Jz">
+                                                        <rect key="frame" x="20" y="173.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер паспорта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AqI-qX-iPJ">
+                                                        <rect key="frame" x="20" y="199" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите мобильный телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57a-j2-1vi">
+                                                        <rect key="frame" x="20" y="248" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мобильный телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tuh-of-7Ox">
+                                                        <rect key="frame" x="20" y="273.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="cBs-tM-2WE" firstAttribute="top" secondItem="27q-SL-mQd" secondAttribute="top" constant="15" id="6fF-D9-fHw"/>
+                                                    <constraint firstItem="AqI-qX-iPJ" firstAttribute="leading" secondItem="27q-SL-mQd" secondAttribute="leading" constant="20" id="C92-53-dXH"/>
+                                                    <constraint firstItem="1To-Qx-1Jz" firstAttribute="leading" secondItem="27q-SL-mQd" secondAttribute="leading" constant="20" id="ER7-bk-EZZ"/>
+                                                    <constraint firstItem="57a-j2-1vi" firstAttribute="leading" secondItem="27q-SL-mQd" secondAttribute="leading" constant="20" id="Jcx-kJ-emE"/>
+                                                    <constraint firstItem="2Ld-fc-z3q" firstAttribute="top" secondItem="cBs-tM-2WE" secondAttribute="bottom" constant="5" id="LMD-qc-M80"/>
+                                                    <constraint firstItem="AqI-qX-iPJ" firstAttribute="top" secondItem="1To-Qx-1Jz" secondAttribute="bottom" constant="5" id="Ndo-70-QAx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2Ld-fc-z3q" secondAttribute="trailing" constant="20" id="NzT-0Y-hst"/>
+                                                    <constraint firstItem="2Ld-fc-z3q" firstAttribute="leading" secondItem="27q-SL-mQd" secondAttribute="leading" constant="20" id="O0N-xY-pUz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cBs-tM-2WE" secondAttribute="trailing" constant="20" id="OGd-Es-i39"/>
+                                                    <constraint firstItem="Tuh-of-7Ox" firstAttribute="top" secondItem="57a-j2-1vi" secondAttribute="bottom" constant="5" id="Ogg-8C-4NA"/>
+                                                    <constraint firstAttribute="height" constant="330" id="QEd-fU-FdW"/>
+                                                    <constraint firstItem="1To-Qx-1Jz" firstAttribute="top" secondItem="2Ld-fc-z3q" secondAttribute="bottom" constant="15" id="RFi-Xq-bw9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="57a-j2-1vi" secondAttribute="trailing" constant="20" id="Zhx-7o-4TI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="AqI-qX-iPJ" secondAttribute="trailing" constant="20" id="bYT-p4-RWp"/>
+                                                    <constraint firstItem="57a-j2-1vi" firstAttribute="top" secondItem="AqI-qX-iPJ" secondAttribute="bottom" constant="15" id="cr6-gh-JgI"/>
+                                                    <constraint firstItem="Tuh-of-7Ox" firstAttribute="leading" secondItem="27q-SL-mQd" secondAttribute="leading" constant="20" id="hLW-3Z-Ey5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1To-Qx-1Jz" secondAttribute="trailing" constant="20" id="lnj-CN-74Z"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Tuh-of-7Ox" secondAttribute="trailing" constant="20" id="pbw-VK-0qo"/>
+                                                    <constraint firstItem="cBs-tM-2WE" firstAttribute="leading" secondItem="27q-SL-mQd" secondAttribute="leading" constant="20" id="z1q-68-BiJ"/>
+                                                </constraints>
+                                            </view>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G6o-BU-thI">
+                                                <rect key="frame" x="0.0" y="330" width="414" height="200"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="xAh-ww-UVu"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nc5-jL-mRq">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iub-Qn-C5v">
+                                                <rect key="frame" x="0.0" y="530" width="414" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYu-Bq-XEf" customClass="SaveButton" customModule="Autoschool" customModuleProvider="target">
+                                                        <rect key="frame" x="102" y="20" width="210" height="40"/>
+                                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="210" id="OBb-UE-rA9"/>
+                                                            <constraint firstAttribute="height" constant="40" id="i1L-dC-ncb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                        <state key="normal" title="Сохранить"/>
+                                                        <connections>
+                                                            <action selector="saveHandler:" destination="KWP-Aj-QHB" eventType="touchUpInside" id="luc-sp-Qdi"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="RYu-Bq-XEf" firstAttribute="centerY" secondItem="iub-Qn-C5v" secondAttribute="centerY" id="NvR-GC-yak"/>
+                                                    <constraint firstItem="RYu-Bq-XEf" firstAttribute="centerX" secondItem="iub-Qn-C5v" secondAttribute="centerX" id="T0B-dZ-0C5"/>
+                                                    <constraint firstAttribute="height" constant="80" id="stZ-I2-k5A"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="U6Z-Ak-dCV" firstAttribute="leading" secondItem="zgi-Bh-wZo" secondAttribute="leading" id="5Uj-Pe-xFl"/>
+                                    <constraint firstItem="U6Z-Ak-dCV" firstAttribute="bottom" secondItem="zgi-Bh-wZo" secondAttribute="bottom" id="7Wr-X9-BfG"/>
+                                    <constraint firstItem="U6Z-Ak-dCV" firstAttribute="top" secondItem="zgi-Bh-wZo" secondAttribute="top" id="dRm-pJ-yRU"/>
+                                    <constraint firstItem="U6Z-Ak-dCV" firstAttribute="trailing" secondItem="zgi-Bh-wZo" secondAttribute="trailing" id="h3d-15-0Y5"/>
+                                    <constraint firstItem="U6Z-Ak-dCV" firstAttribute="width" secondItem="hfC-9p-BGg" secondAttribute="width" id="jDM-JW-74a"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="zgi-Bh-wZo"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="hfC-9p-BGg"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Eya-Eo-pXH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="K2r-vF-c72" secondAttribute="bottom" id="301-DR-SKR"/>
+                            <constraint firstItem="K2r-vF-c72" firstAttribute="leading" secondItem="Eya-Eo-pXH" secondAttribute="leading" id="heN-Of-3ps"/>
+                            <constraint firstItem="K2r-vF-c72" firstAttribute="top" secondItem="bMc-mW-RnI" secondAttribute="top" id="i4Z-7g-59m"/>
+                            <constraint firstItem="K2r-vF-c72" firstAttribute="trailing" secondItem="Eya-Eo-pXH" secondAttribute="trailing" id="lMs-jC-e8Q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groupsCollectionVIew" destination="G6o-BU-thI" id="sta-Y7-di7"/>
+                        <outlet property="lastNameTextField" destination="nIp-fX-Sc0" id="ahj-Nx-TcD"/>
+                        <outlet property="nameTextField" destination="I3v-go-8lb" id="KbV-h4-oaC"/>
+                        <outlet property="passportNumberTextField" destination="AqI-qX-iPJ" id="Rr2-76-q0E"/>
+                        <outlet property="patronymicTextField" destination="dKu-Wb-hh8" id="rgF-VI-p2Z"/>
+                        <outlet property="phoneNumberTextField" destination="Tuh-of-7Ox" id="oMv-zY-tXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8z7-0P-0F8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="872"/>
+        </scene>
+        <!--База данных-->
+        <scene sceneID="D0x-z1-Z4U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Vw-TN-acq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="База данных" image="table" catalog="system" id="uAi-uG-71h"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gsL-Rq-Svv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TXx-rR-8FF" kind="relationship" relationship="rootViewController" id="Z1e-cG-lv2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQ0-2P-Dsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.92753623188409" y="160.71428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="table" catalog="system" width="128" height="93"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
