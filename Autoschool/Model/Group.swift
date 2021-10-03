@@ -15,6 +15,8 @@ struct Group {
     var startLessonsDate: String
     var endLesonnsDate: String
     
+    var students = [Student]()
+    
 }
 
 enum DrivingCategory {

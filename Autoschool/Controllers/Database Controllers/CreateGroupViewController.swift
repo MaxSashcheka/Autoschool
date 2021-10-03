@@ -18,6 +18,7 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
     
+    
     lazy var startLessonsDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
@@ -84,15 +85,10 @@ class CreateGroupViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
-    
-    
-    
-    
     @IBAction func saveHandler(_ sender: Any) {
-        
         navigationController?.popToRootViewController(animated: true)
     }
     
 
 }
+

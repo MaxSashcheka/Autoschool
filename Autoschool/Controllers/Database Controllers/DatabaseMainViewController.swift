@@ -50,7 +50,6 @@ class DatabaseMainViewController: UIViewController {
     
     
     @IBAction func pushCreateInstructorController(_ sender: Any) {
-        
         let createInstructorViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateInstruсtorViewController") as! CreateInstruсtorViewController
         
             

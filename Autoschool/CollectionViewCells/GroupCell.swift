@@ -58,8 +58,7 @@ class GroupCell: UICollectionViewCell {
         
         dateLabel.text = "\(group.startLessonsDate) - \(group.endLesonnsDate)"
         
-        studentsCountLabel.text = "Количество учеников: 21"
-        
+        studentsCountLabel.text = "Количество учеников: \(group.students.count)"
     }
     
     static func nib() -> UINib {

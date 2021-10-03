@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD5B16CC270A2410007E5C38 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentCell.swift */; };
+		DD5B16CD270A2410007E5C38 /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentCell.xib */; };
+		DD5B16D1270A2465007E5C38 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D0270A2465007E5C38 /* Student.swift */; };
+		DD5B16D4270A252D007E5C38 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */; };
 		DD62C83B270A083500910092 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD62C83A270A083500910092 /* Groups.storyboard */; };
 		DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C83E270A08A500910092 /* GroupsViewController.swift */; };
 		DD62C844270A0D9800910092 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C843270A0D9800910092 /* Group.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD5B16CA270A2410007E5C38 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
+		DD5B16CB270A2410007E5C38 /* StudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
+		DD5B16D0270A2465007E5C38 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		DD62C83A270A083500910092 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		DD62C83E270A08A500910092 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		DD62C843270A0D9800910092 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -63,10 +71,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD5B16C9270A23F0007E5C38 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DD5B16CA270A2410007E5C38 /* StudentCell.swift */,
+				DD5B16CB270A2410007E5C38 /* StudentCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		DD62C83D270A089300910092 /* Groups Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DD62C83E270A08A500910092 /* GroupsViewController.swift */,
+				DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */,
 			);
 			path = "Groups Controllers";
 			sourceTree = "<group>";
@@ -99,6 +117,7 @@
 		DD9A0C4D27070A950040C839 /* Autoschool */ = {
 			isa = PBXGroup;
 			children = (
+				DD5B16C9270A23F0007E5C38 /* TableViewCells */,
 				DD62C846270A0E4F00910092 /* CollectionViewCells */,
 				DD9A0C6927070AC50040C839 /* Controllers */,
 				DD9A0C6727070AB30040C839 /* Storyboards */,
@@ -155,6 +174,7 @@
 			children = (
 				DD9A0C5727070A950040C839 /* Autoschool.xcdatamodeld */,
 				DD62C843270A0D9800910092 /* Group.swift */,
+				DD5B16D0270A2465007E5C38 /* Student.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +253,7 @@
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
 				DD9A0C5627070A950040C839 /* Main.storyboard in Resources */,
 				DD9A0C7227070C330040C839 /* Database.storyboard in Resources */,
+				DD5B16CD270A2410007E5C38 /* StudentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5B16D4270A252D007E5C38 /* StudentsViewController.swift in Sources */,
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
 				DD9A0C5927070A950040C839 /* Autoschool.xcdatamodeld in Sources */,
 				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
@@ -256,6 +278,8 @@
 				DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */,
 				DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */,
 				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
+				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,
+				DD5B16CC270A2410007E5C38 /* StudentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

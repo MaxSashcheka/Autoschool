@@ -44,7 +44,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIh-In-T4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714.49275362318849" y="79.6875"/>
+            <point key="canvasLocation" x="625" y="80"/>
+        </scene>
+        <!--Students View Controller-->
+        <scene sceneID="KEP-cx-ZSy">
+            <objects>
+                <viewController storyboardIdentifier="StudentsViewController" id="B7W-vs-5LX" customClass="StudentsViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fKl-ww-6iJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Uug-U2-621">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YIg-va-mcg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YIg-va-mcg" firstAttribute="trailing" secondItem="Uug-U2-621" secondAttribute="trailing" id="Xnq-2b-E3F"/>
+                            <constraint firstItem="Uug-U2-621" firstAttribute="leading" secondItem="YIg-va-mcg" secondAttribute="leading" id="Z2p-Em-6w8"/>
+                            <constraint firstItem="Uug-U2-621" firstAttribute="top" secondItem="fKl-ww-6iJ" secondAttribute="top" id="bd0-QL-nUC"/>
+                            <constraint firstAttribute="bottom" secondItem="Uug-U2-621" secondAttribute="bottom" id="cBb-3h-tcG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Uug-U2-621" id="GSA-AG-4Mt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwU-mf-s9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437.68115942029" y="79.6875"/>
         </scene>
         <!--Группы-->
         <scene sceneID="79D-7a-tv6">
