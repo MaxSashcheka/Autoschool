@@ -21,6 +21,8 @@
                     <connections>
                         <segue destination="p2m-ED-zIe" kind="relationship" relationship="viewControllers" id="waD-co-KMT"/>
                         <segue destination="hc0-bC-YZH" kind="relationship" relationship="viewControllers" id="sii-4Q-2DD"/>
+                        <segue destination="AOk-IL-YJ3" kind="relationship" relationship="viewControllers" id="pyd-Kc-5lo"/>
+                        <segue destination="Bgl-tx-Ef4" kind="relationship" relationship="viewControllers" id="Uyt-aV-gLc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01l-v4-pQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqw-Xy-slZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="507"/>
+            <point key="canvasLocation" x="-75" y="485"/>
         </scene>
         <!--Groups-->
         <scene sceneID="Hxw-7F-Ct7">
@@ -45,10 +47,32 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pZ-ck-QdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="507"/>
+            <point key="canvasLocation" x="223" y="550"/>
+        </scene>
+        <!--Instructors-->
+        <scene sceneID="pQl-cb-3gz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Instructors" id="AOk-IL-YJ3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Инструкторы" image="car" catalog="system" id="RBD-6N-g4w"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4v-j2-zvK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="550"/>
+        </scene>
+        <!--Exams-->
+        <scene sceneID="uIg-ox-X88">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Exams" id="Bgl-tx-Ef4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Экзамены" image="graduationcap" catalog="system" id="rhb-3m-eOc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9m-na-sRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="485"/>
         </scene>
     </scenes>
     <resources>
+        <image name="car" catalog="system" width="128" height="93"/>
+        <image name="graduationcap" catalog="system" width="128" height="106"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="table" catalog="system" width="128" height="93"/>
         <systemColor name="systemRedColor">

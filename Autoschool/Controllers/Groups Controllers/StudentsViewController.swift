@@ -39,7 +39,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: StudentCell.reuseIdentifier, for: indexPath) as! StudentCell
         
         let student = group.students[indexPath.row]
-        cell.setup(withStudent: student)
+        cell.setup(withStudent: student,row: indexPath.row)
         
         return cell
     }

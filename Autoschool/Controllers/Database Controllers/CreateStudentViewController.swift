@@ -32,6 +32,7 @@ class CreateStudentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Добавить ученика"
 
         configureCollectionViews()

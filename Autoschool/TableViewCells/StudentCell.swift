@@ -16,17 +16,21 @@ class StudentCell: UITableViewCell {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var instructorNameLabel: UILabel!
     
+    @IBOutlet weak var cellNumber: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-    func setup(withStudent student: Student) {
+    func setup(withStudent student: Student, row: Int) {
         nameLabel.text = "\(student.lastName) \(student.firstName) \(student.patronymic)"
         passportNumberLabel.text = "Номер паспорта: \(student.passportNumber)"
         
         phoneNumberLabel.text = "Моб. телефон: \(student.phoneNumber)"
         instructorNameLabel.text = "Инструктор: \(student.instructorName)"
+        
+        cellNumber.text = "\(row + 1)"
     }
     
     static func nib() -> UINib {

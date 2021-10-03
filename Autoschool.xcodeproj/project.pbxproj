@@ -11,6 +11,10 @@
 		DD5B16CD270A2410007E5C38 /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentCell.xib */; };
 		DD5B16D1270A2465007E5C38 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D0270A2465007E5C38 /* Student.swift */; };
 		DD5B16D4270A252D007E5C38 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */; };
+		DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */; };
+		DD5B16DA270A3F32007E5C38 /* Exams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16D9270A3F32007E5C38 /* Exams.storyboard */; };
+		DD5B16E1270A4053007E5C38 /* InstructorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */; };
+		DD5B16E4270A405B007E5C38 /* ExamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16E3270A405B007E5C38 /* ExamsViewController.swift */; };
 		DD62C83B270A083500910092 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD62C83A270A083500910092 /* Groups.storyboard */; };
 		DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C83E270A08A500910092 /* GroupsViewController.swift */; };
 		DD62C844270A0D9800910092 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C843270A0D9800910092 /* Group.swift */; };
@@ -37,6 +41,10 @@
 		DD5B16CB270A2410007E5C38 /* StudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 		DD5B16D0270A2465007E5C38 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instructors.storyboard; sourceTree = "<group>"; };
+		DD5B16D9270A3F32007E5C38 /* Exams.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exams.storyboard; sourceTree = "<group>"; };
+		DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorsViewController.swift; sourceTree = "<group>"; };
+		DD5B16E3270A405B007E5C38 /* ExamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsViewController.swift; sourceTree = "<group>"; };
 		DD62C83A270A083500910092 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		DD62C83E270A08A500910092 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		DD62C843270A0D9800910092 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -78,6 +86,22 @@
 				DD5B16CB270A2410007E5C38 /* StudentCell.xib */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		DD5B16DD270A3FFF007E5C38 /* Instructors Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */,
+			);
+			path = "Instructors Controllers";
+			sourceTree = "<group>";
+		};
+		DD5B16DE270A4014007E5C38 /* Exams Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD5B16E3270A405B007E5C38 /* ExamsViewController.swift */,
+			);
+			path = "Exams Controllers";
 			sourceTree = "<group>";
 		};
 		DD62C83D270A089300910092 /* Groups Controllers */ = {
@@ -142,10 +166,12 @@
 		DD9A0C6727070AB30040C839 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				DD62C83A270A083500910092 /* Groups.storyboard */,
-				DD9A0C7127070C330040C839 /* Database.storyboard */,
 				DD9A0C5427070A950040C839 /* Main.storyboard */,
 				DD9A0C5C27070A960040C839 /* LaunchScreen.storyboard */,
+				DD9A0C7127070C330040C839 /* Database.storyboard */,
+				DD62C83A270A083500910092 /* Groups.storyboard */,
+				DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */,
+				DD5B16D9270A3F32007E5C38 /* Exams.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -163,8 +189,10 @@
 		DD9A0C6927070AC50040C839 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD62C83D270A089300910092 /* Groups Controllers */,
 				DD9A0C7D270713E60040C839 /* Database Controllers */,
+				DD62C83D270A089300910092 /* Groups Controllers */,
+				DD5B16DD270A3FFF007E5C38 /* Instructors Controllers */,
+				DD5B16DE270A4014007E5C38 /* Exams Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +280,8 @@
 				DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */,
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
 				DD9A0C5627070A950040C839 /* Main.storyboard in Resources */,
+				DD5B16DA270A3F32007E5C38 /* Exams.storyboard in Resources */,
+				DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */,
 				DD9A0C7227070C330040C839 /* Database.storyboard in Resources */,
 				DD5B16CD270A2410007E5C38 /* StudentCell.xib in Resources */,
 			);
@@ -273,10 +303,12 @@
 				DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */,
 				DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */,
 				DD62C849270A0E6D00910092 /* GroupCell.swift in Sources */,
+				DD5B16E4270A405B007E5C38 /* ExamsViewController.swift in Sources */,
 				DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */,
 				DD9A0C7B270713E30040C839 /* DatabaseMainViewController.swift in Sources */,
 				DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */,
 				DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */,
+				DD5B16E1270A4053007E5C38 /* InstructorsViewController.swift in Sources */,
 				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
 				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,
 				DD5B16CC270A2410007E5C38 /* StudentCell.swift in Sources */,
