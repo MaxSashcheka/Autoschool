@@ -14,6 +14,7 @@ class GroupsViewController: UIViewController {
         Group(name: "Группа-19", category: .ManuallyB, dayPart: .morning, startLessonsDate: "24.07.2021", endLesonnsDate: "18.11.2022"),
         Group(name: "Группа-24", category: .a, dayPart: .evening, startLessonsDate: "24.01.2021", endLesonnsDate: "18.02.2022"),
         Group(name: "Группа-9", category: .AutomaticB, dayPart: .morning, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022"),
+        Group(name: "Группа-24", category: .a, dayPart: .morning, startLessonsDate: "24.01.2021", endLesonnsDate: "18.02.2022"),
     ]
 
     @IBOutlet weak var groupsCollectionView: UICollectionView!
@@ -22,8 +23,6 @@ class GroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .lightGreenSea
-        groupsCollectionView.backgroundColor = .lightGreenSea
         configureCollectionView()
         setupNavigation()
     }
