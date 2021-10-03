@@ -55,7 +55,7 @@ class CreateStudentViewController: UIViewController {
 extension CreateStudentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,7 +68,7 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             // Check for selection
             if indexPath.item == selectedGroupIndex {
-                cell.layer.borderWidth = 3.5
+                cell.layer.borderWidth = 3
                 cell.layer.borderColor = UIColor.red.cgColor
             } else {
                 cell.layer.borderWidth = 2
@@ -85,7 +85,7 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             // Check for selection
             if indexPath.item == selectedInstructorIndex {
-                cell.layer.borderWidth = 3.5
+                cell.layer.borderWidth = 3
                 cell.layer.borderColor = UIColor.red.cgColor
             } else {
                 cell.layer.borderWidth = 2

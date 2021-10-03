@@ -20,6 +20,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="p2m-ED-zIe" kind="relationship" relationship="viewControllers" id="waD-co-KMT"/>
+                        <segue destination="hc0-bC-YZH" kind="relationship" relationship="viewControllers" id="sii-4Q-2DD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01l-v4-pQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -36,8 +37,19 @@
             </objects>
             <point key="canvasLocation" x="22" y="507"/>
         </scene>
+        <!--Groups-->
+        <scene sceneID="Hxw-7F-Ct7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Groups" id="hc0-bC-YZH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Группы" image="person.3" catalog="system" id="QFZ-xE-Kxm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pZ-ck-QdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="507"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="table" catalog="system" width="128" height="93"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
