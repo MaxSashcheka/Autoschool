@@ -16,30 +16,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wIc-cX-TVQ">
-                        <rect key="frame" x="10" y="5" width="360" height="140"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iCE-6Z-qJI">
+                        <rect key="frame" x="105" y="14" width="290" height="72"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сащеко Максим Андреевич" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDa-IH-Ue1">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Малашкевич Максим " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDa-IH-Ue1">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер паспорта: МР3178032" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-Ks-gtr">
-                                <rect key="frame" x="0.0" y="35" width="360" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Моб. телефон: +375 (29) 358-17-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-WA-ZWd">
-                                <rect key="frame" x="0.0" y="70" width="360" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Андреевич" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-yy-W4n">
+                                <rect key="frame" x="0.0" y="24" width="290" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Инструктор: Скурат Денис " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-oP-0XD">
-                                <rect key="frame" x="0.0" y="105" width="360" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="48" width="290" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,25 +45,59 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructor0" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-Ug-GQf">
+                        <rect key="frame" x="15" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="D76-9H-waV"/>
+                            <constraint firstAttribute="height" constant="80" id="zHJ-Qd-rzd"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tiQ-hO-SDg">
+                        <rect key="frame" x="10" y="95" width="350" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Моб. телефон: +375 (29) 358-17-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-WA-ZWd">
+                                <rect key="frame" x="0.0" y="0.0" width="283" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер паспорта: МР3178032" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-Ks-gtr">
+                                <rect key="frame" x="0.0" y="25" width="234.5" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="iCE-6Z-qJI" firstAttribute="centerY" secondItem="DYa-Ug-GQf" secondAttribute="centerY" id="2Tg-oL-ewN"/>
                     <constraint firstAttribute="trailing" secondItem="Roe-T4-mtH" secondAttribute="trailing" constant="10" id="53N-4D-wlF"/>
                     <constraint firstAttribute="bottom" secondItem="Roe-T4-mtH" secondAttribute="bottom" constant="10" id="9kV-yh-Ht2"/>
-                    <constraint firstItem="wIc-cX-TVQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="EjB-P1-pdE"/>
-                    <constraint firstAttribute="trailing" secondItem="wIc-cX-TVQ" secondAttribute="trailing" constant="30" id="HMV-MK-lwc"/>
-                    <constraint firstAttribute="bottom" secondItem="wIc-cX-TVQ" secondAttribute="bottom" constant="5" id="klQ-Yx-NnR"/>
-                    <constraint firstItem="wIc-cX-TVQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="yHl-gH-VRq"/>
+                    <constraint firstItem="iCE-6Z-qJI" firstAttribute="leading" secondItem="DYa-Ug-GQf" secondAttribute="trailing" constant="10" id="DFi-z5-bco"/>
+                    <constraint firstItem="Roe-T4-mtH" firstAttribute="leading" secondItem="tiQ-hO-SDg" secondAttribute="trailing" constant="10" id="DTr-qY-UJh"/>
+                    <constraint firstItem="DYa-Ug-GQf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ljp-B2-OwA"/>
+                    <constraint firstItem="tiQ-hO-SDg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Tly-MG-hCv"/>
+                    <constraint firstItem="DYa-Ug-GQf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dAq-62-7wp"/>
+                    <constraint firstAttribute="trailing" secondItem="iCE-6Z-qJI" secondAttribute="trailing" constant="5" id="nVs-om-1VS"/>
+                    <constraint firstItem="tiQ-hO-SDg" firstAttribute="top" secondItem="DYa-Ug-GQf" secondAttribute="bottom" constant="5" id="w1t-QE-qr3"/>
+                    <constraint firstAttribute="bottom" secondItem="tiQ-hO-SDg" secondAttribute="bottom" constant="5" id="x5b-V7-Ep4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellNumber" destination="Roe-T4-mtH" id="fXS-7K-mGa"/>
+                <outlet property="firstLastNameLabel" destination="VDa-IH-Ue1" id="0Cd-81-UhW"/>
                 <outlet property="instructorNameLabel" destination="Mrz-oP-0XD" id="3fX-wL-36I"/>
-                <outlet property="nameLabel" destination="VDa-IH-Ue1" id="0Cd-81-UhW"/>
                 <outlet property="passportNumberLabel" destination="mYl-Ks-gtr" id="kRF-Xq-1Kb"/>
+                <outlet property="patronymicLabel" destination="1u9-yy-W4n" id="inr-ah-CgW"/>
                 <outlet property="phoneNumberLabel" destination="BfX-WA-ZWd" id="1fd-Bc-cQZ"/>
+                <outlet property="studentImageView" destination="DYa-Ug-GQf" id="Iz8-a6-ONy"/>
             </connections>
             <point key="canvasLocation" x="169.56521739130437" y="119.86607142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="instructor0" width="1125" height="1500"/>
+    </resources>
 </document>

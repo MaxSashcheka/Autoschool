@@ -20,12 +20,12 @@ class CreateStudentViewController: UIViewController {
     
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
     var selectedGroupIndex = 0
 
 
     @IBOutlet weak var instructorsCollectionView: UICollectionView!
-    let instructorsCollectionViewInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+    let instructorsCollectionViewInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
     var selectedInstructorIndex = 0
     
     
