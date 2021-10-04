@@ -39,7 +39,7 @@ class StudentCell: UITableViewCell {
         instructorNameLabel.text = "Инструктор: \(student.instructorName)"
         
         cellNumber.text = "\(row + 1)"
-        studentImageView.image = UIImage(named: "student1")
+        studentImageView.image = UIImage(named: "student6")
     }
     
     static func nib() -> UINib {

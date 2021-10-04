@@ -20,7 +20,7 @@ class CreateStudentViewController: UIViewController {
     
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     var selectedGroupIndex = 0
 
 
@@ -28,28 +28,31 @@ class CreateStudentViewController: UIViewController {
     let instructorsCollectionViewInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
     var selectedInstructorIndex = 0
     
+    var student0 = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
+    var student1 = Student(firstName: "Артем", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
+    var student2 = Student(firstName: "Максим", lastName: "Малашкевич", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
+
+    lazy var group = Group(name: "Группа-14", category: .AutomaticB, dayPart: .evening, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0, student1, student2, student0, student1, student2,])
     
+    let instructor0 = Instructor(firstName: "Артем", lastName: "Малашкевич", patronymic: "Викторович", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 15)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Добавить ученика"
-
+        
         configureCollectionViews()
     }
     
     private func configureCollectionViews() {
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
-        groupsCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        groupsCollectionView.register(GroupCell.nib(), forCellWithReuseIdentifier: GroupCell.reuseIdentifier)
         
         instructorsCollectionView.delegate = self
         instructorsCollectionView.dataSource = self
-        instructorsCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        
+        instructorsCollectionView.register(InstructorCell.nib(), forCellWithReuseIdentifier: InstructorCell.reuseIdentifier)
     }
     
-
 }
 
 
@@ -63,17 +66,12 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
         
         if collectionView == groupsCollectionView {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-            cell.backgroundColor = .white
-            cell.layer.shadowRadius = 4
-            cell.layer.shadowOpacity = 1.0
-            cell.layer.masksToBounds = false
-            cell.layer.cornerRadius = cell.layer.frame.height / 10
-            cell.layer.shadowOffset = .zero
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
+            cell.setup(withGroup: group)
             
             // Check for selection
             if indexPath.item == selectedGroupIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.9).cgColor
+                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75).cgColor
             } else {
                 cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
             }
@@ -82,19 +80,14 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
         } else {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-            cell.backgroundColor = .white
-            cell.layer.shadowRadius = 4
-            cell.layer.shadowOpacity = 1.0
-            cell.layer.masksToBounds = false
-            cell.layer.cornerRadius = cell.layer.frame.height / 10
-            cell.layer.shadowOffset = .zero
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InstructorCell.reuseIdentifier, for: indexPath) as! InstructorCell
+            cell.setup(withInstructor: instructor0)
 
             // Check for selection
             if indexPath.item == selectedInstructorIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.9).cgColor
+                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75).cgColor
             } else {
-                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
             }
             
             return cell
@@ -122,14 +115,14 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
         
         if collectionView == groupsCollectionView {
             
-            let itemWidth = groupsCollectionView.frame.width * 0.7
+            let itemWidth = groupsCollectionView.frame.width * 0.8
             let itemHeight = groupsCollectionView.frame.height - groupsCollectionViewInsets.top * 2
             
             return CGSize(width: itemWidth, height: itemHeight)
         } else {
             
-            let itemHeight = instructorsCollectionView.frame.height - instructorsCollectionViewInsets.top * 2
-            let itemWidth = itemHeight * 0.85
+            let itemWidth = instructorsCollectionView.frame.width - instructorsCollectionViewInsets.left * 6
+            let itemHeight = itemWidth * 1.2
             
             return CGSize(width: itemWidth, height: itemHeight)
         }
@@ -144,6 +137,14 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == groupsCollectionView {
+            return groupsCollectionViewInsets.left
+        } else {
+            return instructorsCollectionViewInsets.left
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == groupsCollectionView {
             return groupsCollectionViewInsets.left
         } else {

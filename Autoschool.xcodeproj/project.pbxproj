@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D2270B97FD000ACD8F /* InstructorCell.swift */; };
+		DD1490D5270B97FD000ACD8F /* InstructorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1490D3270B97FD000ACD8F /* InstructorCell.xib */; };
+		DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D7270B983D000ACD8F /* Instructor.swift */; };
 		DD5B16CC270A2410007E5C38 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentCell.swift */; };
 		DD5B16CD270A2410007E5C38 /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentCell.xib */; };
 		DD5B16D1270A2465007E5C38 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D0270A2465007E5C38 /* Student.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD1490D2270B97FD000ACD8F /* InstructorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorCell.swift; sourceTree = "<group>"; };
+		DD1490D3270B97FD000ACD8F /* InstructorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorCell.xib; sourceTree = "<group>"; };
+		DD1490D7270B983D000ACD8F /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
 		DD5B16CA270A2410007E5C38 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
 		DD5B16CB270A2410007E5C38 /* StudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 		DD5B16D0270A2465007E5C38 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 			children = (
 				DD62C847270A0E6D00910092 /* GroupCell.swift */,
 				DD62C848270A0E6D00910092 /* GroupCell.xib */,
+				DD1490D2270B97FD000ACD8F /* InstructorCell.swift */,
+				DD1490D3270B97FD000ACD8F /* InstructorCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 				DD9A0C5727070A950040C839 /* Autoschool.xcdatamodeld */,
 				DD62C843270A0D9800910092 /* Group.swift */,
 				DD5B16D0270A2465007E5C38 /* Student.swift */,
+				DD1490D7270B983D000ACD8F /* Instructor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD1490D5270B97FD000ACD8F /* InstructorCell.xib in Resources */,
 				DD9A0C5E27070A960040C839 /* LaunchScreen.storyboard in Resources */,
 				DD62C84A270A0E6D00910092 /* GroupCell.xib in Resources */,
 				DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */,
@@ -295,12 +305,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5B16D4270A252D007E5C38 /* StudentsViewController.swift in Sources */,
+				DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */,
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
 				DD9A0C5927070A950040C839 /* Autoschool.xcdatamodeld in Sources */,
 				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
 				DD62C844270A0D9800910092 /* Group.swift in Sources */,
 				DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */,
 				DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */,
+				DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */,
 				DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */,
 				DD62C849270A0E6D00910092 /* GroupCell.swift in Sources */,
 				DD5B16E4270A405B007E5C38 /* ExamsViewController.swift in Sources */,
