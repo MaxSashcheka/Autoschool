@@ -23,16 +23,23 @@ class GroupCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = .white
         dayPartIndicatorView.layer.cornerRadius = dayPartIndicatorView.frame.width / 2
         categoryImageView.tintColor = .black
         
+//        layer.borderColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.45).cgColor
+//        layer.borderWidth = 1
+        layer.masksToBounds = false
         layer.cornerRadius = 30
-        layer.borderColor = UIColor.darkGray.cgColor
-        layer.borderWidth = 2
+        backgroundColor = .white
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 1.0
+        layer.shadowOffset = .zero
     }
     
     func setup(withGroup group: Group) {
+        
+        
         nameLabel.text = group.name
         
         switch group.category {

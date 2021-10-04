@@ -20,12 +20,12 @@ class CreateStudentViewController: UIViewController {
     
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     var selectedGroupIndex = 0
 
 
     @IBOutlet weak var instructorsCollectionView: UICollectionView!
-    let instructorsCollectionViewInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    let instructorsCollectionViewInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     var selectedInstructorIndex = 0
     
     
@@ -65,15 +65,17 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
             cell.backgroundColor = .white
+            cell.layer.shadowRadius = 4
+            cell.layer.shadowOpacity = 1.0
+            cell.layer.masksToBounds = false
             cell.layer.cornerRadius = cell.layer.frame.height / 10
+            cell.layer.shadowOffset = .zero
             
             // Check for selection
             if indexPath.item == selectedGroupIndex {
-                cell.layer.borderWidth = 3
-                cell.layer.borderColor = UIColor.red.cgColor
+                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.9).cgColor
             } else {
-                cell.layer.borderWidth = 2
-                cell.layer.borderColor = UIColor.darkGray.cgColor
+                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
             }
             
             return cell
@@ -82,15 +84,17 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
             cell.backgroundColor = .white
+            cell.layer.shadowRadius = 4
+            cell.layer.shadowOpacity = 1.0
+            cell.layer.masksToBounds = false
             cell.layer.cornerRadius = cell.layer.frame.height / 10
-            
+            cell.layer.shadowOffset = .zero
+
             // Check for selection
             if indexPath.item == selectedInstructorIndex {
-                cell.layer.borderWidth = 3
-                cell.layer.borderColor = UIColor.red.cgColor
+                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.9).cgColor
             } else {
-                cell.layer.borderWidth = 2
-                cell.layer.borderColor = UIColor.darkGray.cgColor
+                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
             }
             
             return cell
@@ -139,4 +143,11 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == groupsCollectionView {
+            return groupsCollectionViewInsets.left
+        } else {
+            return instructorsCollectionViewInsets.left
+        }
+    }
 }
