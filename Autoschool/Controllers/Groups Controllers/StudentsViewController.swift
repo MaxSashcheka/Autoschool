@@ -24,7 +24,7 @@ class StudentsViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(StudentCell.nib(), forCellReuseIdentifier: StudentCell.reuseIdentifier)
+        tableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
     }
 
 }
@@ -36,7 +36,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StudentCell.reuseIdentifier, for: indexPath) as! StudentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
         
         let student = group.students[indexPath.row]
         cell.setup(withStudent: student,row: indexPath.row)

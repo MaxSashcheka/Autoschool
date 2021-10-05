@@ -7,9 +7,9 @@
 
 import UIKit
 
-class StudentCell: UITableViewCell {
+class StudentTableViewCell: UITableViewCell {
 
-    static let reuseIdentifier = "StudentCell"
+    static let reuseIdentifier = "StudentTableViewCell"
     
     @IBOutlet weak var firstLastNameLabel: UILabel!
     @IBOutlet weak var patronymicLabel: UILabel!
@@ -43,7 +43,7 @@ class StudentCell: UITableViewCell {
     }
     
     static func nib() -> UINib {
-        return UINib(nibName: "StudentCell", bundle: nil)
+        return UINib(nibName: "StudentTableViewCell", bundle: nil)
     }
 
 }

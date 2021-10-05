@@ -10,8 +10,8 @@
 		DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D2270B97FD000ACD8F /* InstructorCell.swift */; };
 		DD1490D5270B97FD000ACD8F /* InstructorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1490D3270B97FD000ACD8F /* InstructorCell.xib */; };
 		DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D7270B983D000ACD8F /* Instructor.swift */; };
-		DD5B16CC270A2410007E5C38 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentCell.swift */; };
-		DD5B16CD270A2410007E5C38 /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentCell.xib */; };
+		DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */; };
+		DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */; };
 		DD5B16D1270A2465007E5C38 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D0270A2465007E5C38 /* Student.swift */; };
 		DD5B16D4270A252D007E5C38 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */; };
 		DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */; };
@@ -23,6 +23,8 @@
 		DD62C844270A0D9800910092 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C843270A0D9800910092 /* Group.swift */; };
 		DD62C849270A0E6D00910092 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C847270A0E6D00910092 /* GroupCell.swift */; };
 		DD62C84A270A0E6D00910092 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62C848270A0E6D00910092 /* GroupCell.xib */; };
+		DD80107E270C4F170062955B /* ImagePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD80107C270C4F170062955B /* ImagePickerCollectionViewCell.swift */; };
+		DD80107F270C4F170062955B /* ImagePickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD80107D270C4F170062955B /* ImagePickerCollectionViewCell.xib */; };
 		DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C4E27070A950040C839 /* AppDelegate.swift */; };
 		DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C5027070A950040C839 /* SceneDelegate.swift */; };
 		DD9A0C5627070A950040C839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9A0C5427070A950040C839 /* Main.storyboard */; };
@@ -43,8 +45,8 @@
 		DD1490D2270B97FD000ACD8F /* InstructorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorCell.swift; sourceTree = "<group>"; };
 		DD1490D3270B97FD000ACD8F /* InstructorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorCell.xib; sourceTree = "<group>"; };
 		DD1490D7270B983D000ACD8F /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
-		DD5B16CA270A2410007E5C38 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
-		DD5B16CB270A2410007E5C38 /* StudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
+		DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
 		DD5B16D0270A2465007E5C38 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instructors.storyboard; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		DD62C843270A0D9800910092 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DD62C847270A0E6D00910092 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		DD62C848270A0E6D00910092 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
+		DD80107C270C4F170062955B /* ImagePickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD80107D270C4F170062955B /* ImagePickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD9A0C4B27070A950040C839 /* Autoschool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autoschool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9A0C4E27070A950040C839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD9A0C5027070A950040C839 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,8 +92,8 @@
 		DD5B16C9270A23F0007E5C38 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DD5B16CA270A2410007E5C38 /* StudentCell.swift */,
-				DD5B16CB270A2410007E5C38 /* StudentCell.xib */,
+				DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */,
+				DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -126,6 +130,8 @@
 				DD62C848270A0E6D00910092 /* GroupCell.xib */,
 				DD1490D2270B97FD000ACD8F /* InstructorCell.swift */,
 				DD1490D3270B97FD000ACD8F /* InstructorCell.xib */,
+				DD80107C270C4F170062955B /* ImagePickerCollectionViewCell.swift */,
+				DD80107D270C4F170062955B /* ImagePickerCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -292,8 +298,9 @@
 				DD9A0C5627070A950040C839 /* Main.storyboard in Resources */,
 				DD5B16DA270A3F32007E5C38 /* Exams.storyboard in Resources */,
 				DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */,
+				DD80107F270C4F170062955B /* ImagePickerCollectionViewCell.xib in Resources */,
 				DD9A0C7227070C330040C839 /* Database.storyboard in Resources */,
-				DD5B16CD270A2410007E5C38 /* StudentCell.xib in Resources */,
+				DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +318,7 @@
 				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
 				DD62C844270A0D9800910092 /* Group.swift in Sources */,
 				DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */,
+				DD80107E270C4F170062955B /* ImagePickerCollectionViewCell.swift in Sources */,
 				DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */,
 				DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */,
 				DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */,
@@ -323,7 +331,7 @@
 				DD5B16E1270A4053007E5C38 /* InstructorsViewController.swift in Sources */,
 				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
 				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,
-				DD5B16CC270A2410007E5C38 /* StudentCell.swift in Sources */,
+				DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

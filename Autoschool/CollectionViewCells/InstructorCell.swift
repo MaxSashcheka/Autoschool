@@ -28,7 +28,7 @@ class InstructorCell: UICollectionViewCell {
         layer.cornerRadius = cornerRadius
         backgroundColor = .white
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        layer.shadowRadius = 4
+        layer.shadowRadius = 5
         layer.shadowOpacity = 1.0
         layer.shadowOffset = .zero
         
@@ -38,7 +38,7 @@ class InstructorCell: UICollectionViewCell {
     func setup(withInstructor instructor: Instructor) {
         nameLabel.text = "\(instructor.lastName) \(instructor.firstName) \(instructor.patronymic)"
         phoneNumberLabel.text = "Моб. телефон:\(instructor.phoneNumber)"
-        drivingExperienceLabel.text = "Стаж вождения: \(instructor.drivingExperience)"
+        drivingExperienceLabel.text = "Стаж вождения: \(instructor.drivingExperience) \(instructor.drivingExperience < 4 ? "года" : "лет")"
         instructorsImageView.image = #imageLiteral(resourceName: "instructor3")
     }
     

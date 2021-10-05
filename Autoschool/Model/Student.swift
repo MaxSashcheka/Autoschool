@@ -16,5 +16,6 @@ struct Student {
     var passportNumber: String
     var phoneNumber: String
     var instructorName: String
+    
 
 }
