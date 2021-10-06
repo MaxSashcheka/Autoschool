@@ -80,9 +80,9 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             // Check for selection
             if indexPath.item == selectedGroupIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75).cgColor
+                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
             } else {
-                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
             }
             
             return cell
@@ -93,7 +93,7 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
 
             // Check for selection
             if indexPath.item == selectedInstructorIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75).cgColor
+                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
             } else {
                 cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
             }
@@ -106,7 +106,7 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             // Check for selection
             if indexPath.item == selectedStudentImageIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75).cgColor
+                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
             } else {
                 cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
             }

@@ -19,12 +19,40 @@ class StudentsViewController: UIViewController {
         title = group.name
         
         configureTableView()
+        animateTableViewAppereance()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animateTableViewAppereance()
     }
     
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
+    }
+    
+    private func animateTableViewAppereance() {
+        tableView.reloadData()
+        
+        let cells = tableView.visibleCells
+        let tableViewHeight = tableView.bounds.height
+        var delay: Double = 0
+        
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
+            
+            UIView.animate(withDuration: 1.5,
+                           delay: delay * 0.05,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                            cell.transform = .identity
+                           }, completion: nil)
+            delay += 1
+        }
     }
 
 }
