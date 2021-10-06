@@ -85,7 +85,7 @@ extension InstructorsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return instructorsCollectionViewInsets.top
+        return instructorsCollectionViewInsets.top * 1.5
 
     }
 }

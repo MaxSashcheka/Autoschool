@@ -58,12 +58,18 @@ class DatabaseMainViewController: UIViewController {
     
     
     @IBAction func pushCreateCarController(_ sender: Any) {
+        let createCarViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateCarViewController") as! CreateCarViewController
         
+            
+        self.navigationController?.pushViewController(createCarViewController, animated: true)
     }
     
     
     @IBAction func pushCreateExamController(_ sender: Any) {
+        let createExamViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateExamViewController") as! CreateExamViewController
         
+            
+        self.navigationController?.pushViewController(createExamViewController, animated: true)
     }
     
 
