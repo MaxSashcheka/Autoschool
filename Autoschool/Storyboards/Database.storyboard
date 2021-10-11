@@ -15,79 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ha7-T8-ipR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="9rc-Wf-Z7i">
-                                <rect key="frame" x="77" y="311.5" width="260" height="278"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-xE-2RC" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="38"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="5TG-0D-eQp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                        <state key="normal" title="Добавить группу"/>
-                                        <connections>
-                                            <action selector="pushCreateGroupController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="waF-ov-yVp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41w-mo-KHZ" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="260" height="38"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="CIo-ls-2FX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                        <state key="normal" title="Добавить ученика"/>
-                                        <connections>
-                                            <action selector="pushCreateStudentController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="Fhc-bR-PsE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qna-G4-e09" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="120" width="260" height="38"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="S0m-83-QeN"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                        <state key="normal" title="Добавить инструктора"/>
-                                        <connections>
-                                            <action selector="pushCreateInstructorController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="LtO-vn-b4P"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjs-QP-Eg7" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="260" height="38"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="xPf-oD-R4P"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                        <state key="normal" title="Добавить машину"/>
-                                        <connections>
-                                            <action selector="pushCreateCarController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="x4c-ZA-zeS"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-qe-aNW" customClass="DatabaseMainButton" customModule="Autoschool" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="260" height="38"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="fDN-MV-YtG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                        <state key="normal" title="Добавить экзамен"/>
-                                        <connections>
-                                            <action selector="pushCreateExamController:" destination="TXx-rR-8FF" eventType="touchUpInside" id="TAc-91-kDh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ttc-Br-BfD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="9rc-Wf-Z7i" firstAttribute="centerY" secondItem="Ttc-Br-BfD" secondAttribute="centerY" id="OrT-7N-Xdb"/>
-                            <constraint firstItem="9rc-Wf-Z7i" firstAttribute="centerX" secondItem="Ttc-Br-BfD" secondAttribute="centerX" id="iRc-BY-VGk"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zKY-iE-kqw"/>
                 </viewController>

@@ -43,7 +43,7 @@ extension CreateInstruсtorViewController: UICollectionViewDelegate, UICollectio
         cell.setup(withStudent: studentExample)
         
         if indexPath.item == selectedInstructorImageIndex {
-            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75).cgColor
+            cell.layer.shadowColor = UIColor.lightGreenSea.cgColor
         } else {
             cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         }

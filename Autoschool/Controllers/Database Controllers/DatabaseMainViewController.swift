@@ -7,16 +7,43 @@
 
 import UIKit
 
-class DatabaseMainViewController: UIViewController {
+struct ViewControllerRepresentation {
+    let tableViewName: String
+    let identifier: String
+}
 
+class DatabaseMainViewController: UIViewController {
+    
+    let dataSource = [
+        0: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController"),
+        1: ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController"),
+        2: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController"),
+        3: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController"),
+        4: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController")
+    ]
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+        
+        tableView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
+        tableView.backgroundColor = .secondarySystemBackground
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.isScrollEnabled = false
+        
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(tableView)
 
+        
         setupNavigation()
     }
-    
+
     private func setupNavigation() {
-        
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "База данных"
         let largeTitleAttributes = [
@@ -31,46 +58,28 @@ class DatabaseMainViewController: UIViewController {
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
         navigationController?.navigationBar.tintColor = .black
     }
-    
-    
-    @IBAction func pushCreateGroupController(_ sender: Any) {
-        let createGroupViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateGroupViewController") as! CreateGroupViewController
-        
-            
-        self.navigationController?.pushViewController(createGroupViewController, animated: true)
-    }
-    
-    
-    @IBAction func pushCreateStudentController(_ sender: Any) {
-        let createStudentViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateStudentViewController") as! CreateStudentViewController
-        
-            
-        self.navigationController?.pushViewController(createStudentViewController, animated: true)
-    }
-    
-    
-    @IBAction func pushCreateInstructorController(_ sender: Any) {
-        let createInstructorViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateInstruсtorViewController") as! CreateInstruсtorViewController
-        
-            
-        self.navigationController?.pushViewController(createInstructorViewController, animated: true)
-    }
-    
-    
-    @IBAction func pushCreateCarController(_ sender: Any) {
-        let createCarViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateCarViewController") as! CreateCarViewController
-        
-            
-        self.navigationController?.pushViewController(createCarViewController, animated: true)
-    }
-    
-    
-    @IBAction func pushCreateExamController(_ sender: Any) {
-        let createExamViewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateExamViewController") as! CreateExamViewController
-        
-            
-        self.navigationController?.pushViewController(createExamViewController, animated: true)
-    }
-    
 
+}
+
+extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let controllerIdentifier = dataSource[indexPath.row]?.identifier ?? ""
+        let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: controllerIdentifier)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        cell.textLabel?.text = dataSource[indexPath.row]?.tableViewName
+        return cell
+    }
+    
+    
 }

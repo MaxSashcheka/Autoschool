@@ -17,13 +17,18 @@ class ImagePickerCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         let cornerRadius: CGFloat = 30
-        layer.masksToBounds = false
-        layer.cornerRadius = cornerRadius
-        backgroundColor = .white
-        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        layer.shadowRadius = 5
-        layer.shadowOpacity = 1.0
-        layer.shadowOffset = .zero
+//        layer.masksToBounds = false
+//        backgroundColor = .white
+
+        layer.cornerRadius = 30
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.darkGray.cgColor
+        //        backgroundColor = .white
+
+//        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+//        layer.shadowRadius = 5
+//        layer.shadowOpacity = 1.0
+//        layer.shadowOffset = .zero
         
         pickerImageView.layer.cornerRadius = cornerRadius
     }

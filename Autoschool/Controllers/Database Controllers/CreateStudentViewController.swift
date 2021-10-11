@@ -80,9 +80,13 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             // Check for selection
             if indexPath.item == selectedGroupIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
+//                cell.layer.shadowColor = UIColor.lightGreenSea.cgColor
+                cell.layer.borderWidth = 3
+                cell.layer.borderColor = UIColor.lightGreenSea.cgColor
             } else {
-                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+//                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+                cell.layer.borderWidth = 2
+                cell.layer.borderColor = UIColor.darkGray.cgColor
             }
             
             return cell
@@ -93,9 +97,11 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
 
             // Check for selection
             if indexPath.item == selectedInstructorIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
+                cell.layer.borderWidth = 3
+                cell.layer.borderColor = UIColor.lightGreenSea.cgColor
             } else {
-                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+                cell.layer.borderWidth = 2
+                cell.layer.borderColor = UIColor.darkGray.cgColor
             }
             
             return cell
@@ -106,9 +112,14 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
             
             // Check for selection
             if indexPath.item == selectedStudentImageIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
+//                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
+                cell.layer.borderWidth = 3
+                cell.layer.borderColor = UIColor.lightGreenSea.cgColor
+
             } else {
-                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+                cell.layer.borderWidth = 2
+                cell.layer.borderColor = UIColor.darkGray.cgColor
+
             }
             
             return cell
