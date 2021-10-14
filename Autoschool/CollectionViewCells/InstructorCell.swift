@@ -39,7 +39,7 @@ class InstructorCell: UICollectionViewCell {
         nameLabel.text = "\(instructor.lastName) \(instructor.firstName) \(instructor.patronymic)"
         phoneNumberLabel.text = "Моб. телефон:\(instructor.phoneNumber)"
         drivingExperienceLabel.text = "Стаж вождения: \(instructor.drivingExperience) \(instructor.drivingExperience < 4 ? "года" : "лет")"
-        instructorsImageView.image = #imageLiteral(resourceName: "instructor3")
+        instructorsImageView.image = #imageLiteral(resourceName: "instructor6")
     }
     
     static func nib() -> UINib {

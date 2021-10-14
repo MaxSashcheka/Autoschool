@@ -16,10 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-Dx-eR9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LIi-vh-kJR">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-Dx-eR9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="195"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="41X-ZB-Y7h"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LIi-vh-kJR">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -27,53 +30,40 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UNA-YL-A2a">
+                                <rect key="frame" x="0.0" y="311" width="414" height="502"/>
+                            </tableView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="o3o-jC-rOl">
+                                <rect key="frame" x="0.0" y="283" width="414" height="28"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dzS-h7-cfV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dzS-h7-cfV" firstAttribute="trailing" secondItem="o3o-jC-rOl" secondAttribute="trailing" id="2yF-qu-ESz"/>
+                            <constraint firstItem="o3o-jC-rOl" firstAttribute="top" secondItem="ygW-Dx-eR9" secondAttribute="bottom" id="5ke-aJ-SnX"/>
                             <constraint firstItem="ygW-Dx-eR9" firstAttribute="top" secondItem="dzS-h7-cfV" secondAttribute="top" id="GQF-SK-fBF"/>
                             <constraint firstItem="dzS-h7-cfV" firstAttribute="trailing" secondItem="ygW-Dx-eR9" secondAttribute="trailing" id="J4T-TC-IU2"/>
-                            <constraint firstItem="dzS-h7-cfV" firstAttribute="bottom" secondItem="ygW-Dx-eR9" secondAttribute="bottom" id="PGC-D8-hHK"/>
+                            <constraint firstItem="UNA-YL-A2a" firstAttribute="top" secondItem="o3o-jC-rOl" secondAttribute="bottom" id="WfW-BN-9vE"/>
+                            <constraint firstItem="dzS-h7-cfV" firstAttribute="trailing" secondItem="UNA-YL-A2a" secondAttribute="trailing" id="dXn-qj-mWc"/>
                             <constraint firstItem="ygW-Dx-eR9" firstAttribute="leading" secondItem="dzS-h7-cfV" secondAttribute="leading" id="l4X-dy-sk3"/>
+                            <constraint firstItem="UNA-YL-A2a" firstAttribute="leading" secondItem="dzS-h7-cfV" secondAttribute="leading" id="mGZ-JY-Fcz"/>
+                            <constraint firstItem="o3o-jC-rOl" firstAttribute="leading" secondItem="dzS-h7-cfV" secondAttribute="leading" id="u8r-dH-MCm"/>
+                            <constraint firstItem="dzS-h7-cfV" firstAttribute="bottom" secondItem="UNA-YL-A2a" secondAttribute="bottom" id="y0K-jH-zLk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A1o-gh-faQ"/>
                     <connections>
                         <outlet property="groupsCollectionView" destination="ygW-Dx-eR9" id="yWX-UY-xRC"/>
+                        <outlet property="groupsCollectionViewPageControl" destination="o3o-jC-rOl" id="hHb-0y-yLW"/>
+                        <outlet property="studentsTableView" destination="UNA-YL-A2a" id="gde-HT-UpS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIh-In-T4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="625" y="80"/>
-        </scene>
-        <!--Students View Controller-->
-        <scene sceneID="KEP-cx-ZSy">
-            <objects>
-                <viewController storyboardIdentifier="StudentsViewController" id="B7W-vs-5LX" customClass="StudentsViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fKl-ww-6iJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Uug-U2-621">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="YIg-va-mcg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="YIg-va-mcg" firstAttribute="trailing" secondItem="Uug-U2-621" secondAttribute="trailing" id="Xnq-2b-E3F"/>
-                            <constraint firstItem="Uug-U2-621" firstAttribute="leading" secondItem="YIg-va-mcg" secondAttribute="leading" id="Z2p-Em-6w8"/>
-                            <constraint firstItem="Uug-U2-621" firstAttribute="top" secondItem="fKl-ww-6iJ" secondAttribute="top" id="bd0-QL-nUC"/>
-                            <constraint firstAttribute="bottom" secondItem="Uug-U2-621" secondAttribute="bottom" id="cBb-3h-tcG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="Uug-U2-621" id="GSA-AG-4Mt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bwU-mf-s9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1437.68115942029" y="79.6875"/>
+            <point key="canvasLocation" x="624.63768115942037" y="79.6875"/>
         </scene>
         <!--Группы-->
         <scene sceneID="79D-7a-tv6">

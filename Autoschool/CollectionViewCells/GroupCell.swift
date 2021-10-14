@@ -26,36 +26,35 @@ class GroupCell: UICollectionViewCell {
         dayPartIndicatorView.layer.cornerRadius = dayPartIndicatorView.frame.width / 2
         categoryImageView.tintColor = .black
         
-//        layer.masksToBounds = false
+//        layer.cornerRadius = 30
+//        layer.borderWidth = 2
+//        layer.borderColor = UIColor.darkGray.cgColor
+        
+        layer.masksToBounds = false
+        backgroundColor = .white
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+        layer.shadowRadius = 3
+        layer.shadowOpacity = 1.0
+        layer.shadowOffset = .zero
         layer.cornerRadius = 30
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.darkGray.cgColor
-//        backgroundColor = .white
-//        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-//        layer.shadowRadius = 5
-//        layer.shadowOpacity = 1.0
-//        layer.shadowOffset = .zero
     }
     
     func setup(withGroup group: Group) {
-        
-        
+    
         nameLabel.text = group.name
         
         switch group.category {
         case .a:
             categoryImageView.image = UIImage(systemName: "bicycle")
             categoryNameLabel.text = "Категория А"
-            
         case .AutomaticB:
             categoryImageView.image = UIImage(systemName: "car")
             categoryNameLabel.text = "Категория B (АКПП)"
-            
         case .ManuallyB:
             categoryImageView.image = UIImage(systemName: "car")
             categoryNameLabel.text = "Категория В (МКПП)"
         }
-        
+
         switch group.dayPart {
         case .morning:
             dayPartIndicatorView.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
@@ -64,7 +63,6 @@ class GroupCell: UICollectionViewCell {
         }
         
         dateLabel.text = "\(group.startLessonsDate) - \(group.endLesonnsDate)"
-        
         studentsCountLabel.text = "Количество учеников: \(group.students.count)"
     }
     

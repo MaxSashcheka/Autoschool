@@ -13,7 +13,6 @@
 		DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */; };
 		DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */; };
 		DD5B16D1270A2465007E5C38 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D0270A2465007E5C38 /* Student.swift */; };
-		DD5B16D4270A252D007E5C38 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */; };
 		DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */; };
 		DD5B16DA270A3F32007E5C38 /* Exams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16D9270A3F32007E5C38 /* Exams.storyboard */; };
 		DD5B16E1270A4053007E5C38 /* InstructorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */; };
@@ -50,7 +49,6 @@
 		DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
 		DD5B16D0270A2465007E5C38 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instructors.storyboard; sourceTree = "<group>"; };
 		DD5B16D9270A3F32007E5C38 /* Exams.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exams.storyboard; sourceTree = "<group>"; };
 		DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorsViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				DD62C83E270A08A500910092 /* GroupsViewController.swift */,
-				DD5B16D3270A252D007E5C38 /* StudentsViewController.swift */,
 			);
 			path = "Groups Controllers";
 			sourceTree = "<group>";
@@ -317,7 +314,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD5B16D4270A252D007E5C38 /* StudentsViewController.swift in Sources */,
 				DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */,
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
 				DD9A0C5927070A950040C839 /* Autoschool.xcdatamodeld in Sources */,
