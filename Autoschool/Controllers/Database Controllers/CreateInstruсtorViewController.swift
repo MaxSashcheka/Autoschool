@@ -32,6 +32,8 @@ class CreateInstruсtorViewController: UIViewController {
     
 }
 
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+
 extension CreateInstruсtorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +60,8 @@ extension CreateInstruсtorViewController: UICollectionViewDelegate, UICollectio
     }
     
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension CreateInstruсtorViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

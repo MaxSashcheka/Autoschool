@@ -21,15 +21,12 @@ class GroupsViewController: UIViewController {
         Group(name: "Группа-24", category: .a, dayPart: .morning, startLessonsDate: "24.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1]),
     ]
 
-    
     @IBOutlet weak var groupsCollectionViewPageControl: UIPageControl!
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     var selectedGroupIndex = 0
     
-    
     @IBOutlet weak var studentsTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,18 +84,12 @@ extension GroupsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let studentsViewController = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "StudentsViewController") as! StudentsViewController
-//        studentsViewController.group = dataSource[indexPath.row]
-//            
-//        self.navigationController?.pushViewController(studentsViewController, animated: true)
-//    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         groupsCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
         if selectedGroupIndex == indexPath.row {
             return // Если мы не просвайпали, а остались на том же элементе
         }
@@ -115,6 +106,7 @@ extension GroupsViewController: UICollectionViewDelegate, UICollectionViewDataSo
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension GroupsViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let itemWidth = collectionView.frame.width - groupsCollectionViewInsets.left * 2
@@ -130,9 +122,9 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return groupsCollectionViewInsets.left * 2
     }
-    
-    
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
     

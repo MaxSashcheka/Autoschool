@@ -53,6 +53,8 @@ class InstructorsViewController: UIViewController {
 
 }
 
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+
 extension InstructorsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,6 +72,9 @@ extension InstructorsViewController: UICollectionViewDelegate, UICollectionViewD
     
     
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
 
 extension InstructorsViewController: UICollectionViewDelegateFlowLayout {
     

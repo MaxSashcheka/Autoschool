@@ -61,6 +61,8 @@ class DatabaseMainViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

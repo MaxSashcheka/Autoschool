@@ -64,6 +64,7 @@ class CreateStudentViewController: UIViewController {
     
 }
 
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 
 extension CreateStudentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -143,6 +144,8 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
     }
     
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
     
