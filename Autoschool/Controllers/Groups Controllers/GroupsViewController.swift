@@ -21,18 +21,16 @@ class GroupsViewController: UIViewController {
         Group(name: "Группа-24", category: .a, dayPart: .morning, startLessonsDate: "24.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1]),
     ]
 
-    @IBOutlet weak var groupsCollectionViewPageControl: UIPageControl!
+    
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     var selectedGroupIndex = 0
-    
-    @IBOutlet weak var studentsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureCollectionView()
-        configureTableView()
+        
         setupNavigation()
     }
     
@@ -41,13 +39,7 @@ class GroupsViewController: UIViewController {
         groupsCollectionView.dataSource = self
         groupsCollectionView.register(GroupCell.nib(), forCellWithReuseIdentifier: GroupCell.reuseIdentifier)
     }
-    
-    private func configureTableView() {
-        studentsTableView.delegate = self
-        studentsTableView.dataSource = self
-        studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
-    }
- 
+
     private func setupNavigation() {
         
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -71,7 +63,6 @@ class GroupsViewController: UIViewController {
 
 extension GroupsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        groupsCollectionViewPageControl.numberOfPages = dataSource.count
         return dataSource.count
     }
     
@@ -84,23 +75,6 @@ extension GroupsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        groupsCollectionView.reloadData()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        if selectedGroupIndex == indexPath.row {
-            return // Если мы не просвайпали, а остались на том же элементе
-        }
-        selectedGroupIndex = indexPath.row
-        groupsCollectionViewPageControl.currentPage = indexPath.item
-        
-        studentsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
-        studentsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-
-    }
-    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -110,7 +84,7 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let itemWidth = collectionView.frame.width - groupsCollectionViewInsets.left * 2
-        let itemHeight = itemWidth / 2.0
+        let itemHeight = itemWidth / 1.85
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
@@ -120,26 +94,14 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return groupsCollectionViewInsets.left * 2
-    }
-}
-
-// MARK: - UITableViewDelegate & UITableViewDataSource
-
-extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource[selectedGroupIndex].students.count
+        return groupsCollectionViewInsets.left * 1.23
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "StudentsViewController") as! StudentsViewController
+        let selectedGroup = dataSource[indexPath.item]
+        viewController.group = selectedGroup
         
-        let selectedGroup = dataSource[selectedGroupIndex]
-        let student = selectedGroup.students[indexPath.row]
-        cell.setup(withStudent: student,row: indexPath.row)
-        
-        return cell
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
 }

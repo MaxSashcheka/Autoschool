@@ -10,6 +10,7 @@
 		DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D2270B97FD000ACD8F /* InstructorCell.swift */; };
 		DD1490D5270B97FD000ACD8F /* InstructorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1490D3270B97FD000ACD8F /* InstructorCell.xib */; };
 		DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D7270B983D000ACD8F /* Instructor.swift */; };
+		DD43124D2719B2390009B35E /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43124C2719B2390009B35E /* StudentsViewController.swift */; };
 		DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */; };
 		DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */; };
 		DD5B16D1270A2465007E5C38 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16D0270A2465007E5C38 /* Student.swift */; };
@@ -46,6 +47,7 @@
 		DD1490D2270B97FD000ACD8F /* InstructorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorCell.swift; sourceTree = "<group>"; };
 		DD1490D3270B97FD000ACD8F /* InstructorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorCell.xib; sourceTree = "<group>"; };
 		DD1490D7270B983D000ACD8F /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
+		DD43124C2719B2390009B35E /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
 		DD5B16D0270A2465007E5C38 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				DD62C83E270A08A500910092 /* GroupsViewController.swift */,
+				DD43124C2719B2390009B35E /* StudentsViewController.swift */,
 			);
 			path = "Groups Controllers";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				DD62C844270A0D9800910092 /* Group.swift in Sources */,
 				DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */,
 				DD801089270C68AF0062955B /* CreateExamViewController.swift in Sources */,
+				DD43124D2719B2390009B35E /* StudentsViewController.swift in Sources */,
 				DD80107E270C4F170062955B /* ImagePickerCollectionViewCell.swift in Sources */,
 				DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */,
 				DD801086270C68A30062955B /* CreateCarViewController.swift in Sources */,
