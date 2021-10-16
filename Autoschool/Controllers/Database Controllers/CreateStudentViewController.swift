@@ -23,15 +23,7 @@ class CreateStudentViewController: UIViewController {
     let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     var selectedGroupIndex = 0
 
-
-    @IBOutlet weak var instructorsCollectionView: UICollectionView!
-    let instructorsCollectionViewInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
-    var selectedInstructorIndex = 0
-    
-    
-    @IBOutlet weak var studentImageCollectionView: UICollectionView!
-    let studentsImageCollectionViewInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
-    var selectedStudentImageIndex = 0
+    @IBOutlet weak var instructorsTableView: UITableView!
     
     var student0 = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
     var student1 = Student(firstName: "Артем", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
@@ -46,22 +38,20 @@ class CreateStudentViewController: UIViewController {
         title = "Добавить ученика"
         
         configureCollectionViews()
+        configureTableView()
     }
     
     private func configureCollectionViews() {
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
         groupsCollectionView.register(GroupCell.nib(), forCellWithReuseIdentifier: GroupCell.reuseIdentifier)
-        
-        instructorsCollectionView.delegate = self
-        instructorsCollectionView.dataSource = self
-        instructorsCollectionView.register(InstructorCell.nib(), forCellWithReuseIdentifier: InstructorCell.reuseIdentifier)
-        
-        studentImageCollectionView.delegate = self
-        studentImageCollectionView.dataSource = self
-        studentImageCollectionView.register(ImagePickerCollectionViewCell.nib(), forCellWithReuseIdentifier: ImagePickerCollectionViewCell.reuseIdentifier)
     }
     
+    private func configureTableView() {
+        instructorsTableView.delegate = self
+        instructorsTableView.dataSource = self
+        instructorsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructorsTableView")
+    }
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
@@ -73,74 +63,25 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
+        cell.setup(withGroup: group)
         
-        if collectionView == groupsCollectionView {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
-            cell.setup(withGroup: group)
-            
-            // Check for selection
-            if indexPath.item == selectedGroupIndex {
-//                cell.layer.shadowColor = UIColor.lightGreenSea.cgColor
-                cell.layer.borderWidth = 3
-                cell.layer.borderColor = UIColor.lightGreenSea.cgColor
-            } else {
-//                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-                cell.layer.borderWidth = 2
-                cell.layer.borderColor = UIColor.darkGray.cgColor
-            }
-            
-            return cell
-        } else if collectionView == instructorsCollectionView {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InstructorCell.reuseIdentifier, for: indexPath) as! InstructorCell
-            cell.setup(withInstructor: instructor0)
-
-            // Check for selection
-            if indexPath.item == selectedInstructorIndex {
-                cell.layer.borderWidth = 3
-                cell.layer.borderColor = UIColor.lightGreenSea.cgColor
-            } else {
-                cell.layer.borderWidth = 2
-                cell.layer.borderColor = UIColor.darkGray.cgColor
-            }
-            
-            return cell
+        // Check for selection
+        if indexPath.item == selectedGroupIndex {
+            cell.layer.borderWidth = 3
+            cell.layer.borderColor = UIColor.lightGreenSea.cgColor
         } else {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagePickerCollectionViewCell.reuseIdentifier, for: indexPath) as! ImagePickerCollectionViewCell
-            cell.setup(withStudent: student0)
-            
-            // Check for selection
-            if indexPath.item == selectedStudentImageIndex {
-//                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.65).cgColor
-                cell.layer.borderWidth = 3
-                cell.layer.borderColor = UIColor.lightGreenSea.cgColor
-
-            } else {
-                cell.layer.borderWidth = 2
-                cell.layer.borderColor = UIColor.darkGray.cgColor
-
-            }
-            
-            return cell
+            cell.layer.borderWidth = 2
+            cell.layer.borderColor = UIColor.darkGray.cgColor
         }
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == groupsCollectionView {
-            selectedGroupIndex = indexPath.item
-            groupsCollectionView.reloadData()
-            groupsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        } else if collectionView == instructorsCollectionView {
-            selectedInstructorIndex = indexPath.item
-            instructorsCollectionView.reloadData()
-            instructorsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        } else {
-            selectedStudentImageIndex = indexPath.item
-            studentImageCollectionView.reloadData()
-            studentImageCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
+        selectedGroupIndex = indexPath.item
+        groupsCollectionView.reloadData()
+        groupsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
 }
@@ -150,54 +91,42 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
 extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth = groupsCollectionView.frame.width * 0.8
+        let itemHeight = groupsCollectionView.frame.height - groupsCollectionViewInsets.top * 2
         
-        if collectionView == groupsCollectionView {
-            let itemWidth = groupsCollectionView.frame.width * 0.8
-            let itemHeight = groupsCollectionView.frame.height - groupsCollectionViewInsets.top * 2
-            
-            return CGSize(width: itemWidth, height: itemHeight)
-        } else if collectionView == instructorsCollectionView {
-            let itemWidth = instructorsCollectionView.frame.width - instructorsCollectionViewInsets.left * 6
-            let itemHeight = itemWidth * 1.2
-    
-            return CGSize(width: itemWidth, height: itemHeight)
-        } else {
-            let itemWidth = studentImageCollectionView.frame.width - instructorsCollectionViewInsets.left * 6
-            let itemHeight = itemWidth * 1.2
-            
-            return CGSize(width: itemWidth, height: itemHeight)
-        }
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        if collectionView == groupsCollectionView {
-            return groupsCollectionViewInsets
-        } else if collectionView == instructorsCollectionView {
-            return instructorsCollectionViewInsets
-        } else {
-            return studentsImageCollectionViewInsets
-        }
+        return groupsCollectionViewInsets
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        if collectionView == groupsCollectionView {
-            return groupsCollectionViewInsets.left
-        } else if collectionView == instructorsCollectionView {
-            return instructorsCollectionViewInsets.left
-        } else {
-            return studentsImageCollectionViewInsets.left
-        }
+        return groupsCollectionViewInsets.left
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == groupsCollectionView {
-            return groupsCollectionViewInsets.left
-        } else if collectionView == instructorsCollectionView{
-            return instructorsCollectionViewInsets.left
-        } else {
-            return studentsImageCollectionViewInsets.left
-        }
+        return groupsCollectionViewInsets.left
     }
+}
+
+extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Выберите инструктора"
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "instructorsTableView", for: indexPath)
+        cell.textLabel?.text = "Сащеко Максим Андреевич"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }

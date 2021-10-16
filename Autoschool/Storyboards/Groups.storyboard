@@ -54,16 +54,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uBQ-5P-ptu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uBQ-5P-ptu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bgo-fI-JOX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uBQ-5P-ptu" firstAttribute="top" secondItem="Bgo-fI-JOX" secondAttribute="top" id="23M-va-Nou"/>
-                            <constraint firstItem="Bgo-fI-JOX" firstAttribute="bottom" secondItem="uBQ-5P-ptu" secondAttribute="bottom" id="NOO-NB-TgO"/>
+                            <constraint firstItem="uBQ-5P-ptu" firstAttribute="top" secondItem="Bgo-fI-JOX" secondAttribute="top" id="GAL-e0-WVE"/>
+                            <constraint firstAttribute="bottom" secondItem="uBQ-5P-ptu" secondAttribute="bottom" id="k7Y-rS-v5f"/>
                             <constraint firstItem="uBQ-5P-ptu" firstAttribute="leading" secondItem="Bgo-fI-JOX" secondAttribute="leading" id="oC9-Ns-8Oh"/>
                             <constraint firstItem="Bgo-fI-JOX" firstAttribute="trailing" secondItem="uBQ-5P-ptu" secondAttribute="trailing" id="yHq-Bx-TTb"/>
                         </constraints>
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x72-jS-cyE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1441" y="80"/>
+            <point key="canvasLocation" x="1440.5797101449277" y="79.6875"/>
         </scene>
         <!--Группы-->
         <scene sceneID="79D-7a-tv6">
@@ -99,6 +99,9 @@
     </scenes>
     <resources>
         <image name="person.3" catalog="system" width="128" height="62"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

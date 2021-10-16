@@ -16,6 +16,7 @@ class StudentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = group.name
+        
         configureTableView()
     }
     
@@ -24,6 +25,7 @@ class StudentsViewController: UIViewController {
         studentsTableView.delegate = self
         studentsTableView.dataSource = self
         studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
+        studentsTableView.setContentOffset(.zero, animated: true)
     }
 }
 
@@ -39,7 +41,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
         
         let student = group.students[indexPath.row]
-        cell.setup(withStudent: student,row: indexPath.row)
+        cell.setup(withStudent: student)
         
         return cell
     }

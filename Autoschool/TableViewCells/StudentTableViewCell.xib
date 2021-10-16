@@ -9,95 +9,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="StudentTableViewCell" customModule="Autoschool" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="162" id="KGk-i7-Jjw" customClass="StudentTableViewCell" customModule="Autoschool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="162"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="462" height="162"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iCE-6Z-qJI">
-                        <rect key="frame" x="105" y="14" width="290" height="72"/>
+                        <rect key="frame" x="10" y="40" width="442" height="112"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Малашкевич Максим " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDa-IH-Ue1">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Андреевич" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-yy-W4n">
-                                <rect key="frame" x="0.0" y="24" width="290" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Инструктор: Скурат Денис " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-oP-0XD">
-                                <rect key="frame" x="0.0" y="48" width="290" height="24"/>
+                                <rect key="frame" x="0.0" y="0.0" width="442" height="37.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                        </subviews>
-                    </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Roe-T4-mtH">
-                        <rect key="frame" x="370" y="118.5" width="20" height="21.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructor0" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-Ug-GQf">
-                        <rect key="frame" x="15" y="10" width="80" height="80"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="D76-9H-waV"/>
-                            <constraint firstAttribute="height" constant="80" id="zHJ-Qd-rzd"/>
-                        </constraints>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tiQ-hO-SDg">
-                        <rect key="frame" x="10" y="95" width="350" height="50"/>
-                        <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Моб. телефон: +375 (29) 358-17-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-WA-ZWd">
-                                <rect key="frame" x="0.0" y="0.0" width="283" height="25"/>
+                                <rect key="frame" x="0.0" y="37.5" width="442" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер паспорта: МР3178032" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-Ks-gtr">
-                                <rect key="frame" x="0.0" y="25" width="234.5" height="25"/>
+                                <rect key="frame" x="0.0" y="74.5" width="442" height="37.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Малашкевич Максим Андреевич" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDa-IH-Ue1">
+                        <rect key="frame" x="10" y="5" width="442" height="30"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iCE-6Z-qJI" firstAttribute="centerY" secondItem="DYa-Ug-GQf" secondAttribute="centerY" id="2Tg-oL-ewN"/>
-                    <constraint firstAttribute="trailing" secondItem="Roe-T4-mtH" secondAttribute="trailing" constant="10" id="53N-4D-wlF"/>
-                    <constraint firstAttribute="bottom" secondItem="Roe-T4-mtH" secondAttribute="bottom" constant="10" id="9kV-yh-Ht2"/>
-                    <constraint firstItem="iCE-6Z-qJI" firstAttribute="leading" secondItem="DYa-Ug-GQf" secondAttribute="trailing" constant="10" id="DFi-z5-bco"/>
-                    <constraint firstItem="Roe-T4-mtH" firstAttribute="leading" secondItem="tiQ-hO-SDg" secondAttribute="trailing" constant="10" id="DTr-qY-UJh"/>
-                    <constraint firstItem="DYa-Ug-GQf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ljp-B2-OwA"/>
-                    <constraint firstItem="tiQ-hO-SDg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Tly-MG-hCv"/>
-                    <constraint firstItem="DYa-Ug-GQf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dAq-62-7wp"/>
-                    <constraint firstAttribute="trailing" secondItem="iCE-6Z-qJI" secondAttribute="trailing" constant="5" id="nVs-om-1VS"/>
-                    <constraint firstItem="tiQ-hO-SDg" firstAttribute="top" secondItem="DYa-Ug-GQf" secondAttribute="bottom" constant="5" id="w1t-QE-qr3"/>
-                    <constraint firstAttribute="bottom" secondItem="tiQ-hO-SDg" secondAttribute="bottom" constant="5" id="x5b-V7-Ep4"/>
+                    <constraint firstItem="VDa-IH-Ue1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="12l-bf-upn"/>
+                    <constraint firstAttribute="bottom" secondItem="iCE-6Z-qJI" secondAttribute="bottom" constant="10" id="E7m-Dd-Hh4"/>
+                    <constraint firstItem="VDa-IH-Ue1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TiD-y0-47b"/>
+                    <constraint firstItem="iCE-6Z-qJI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="WiD-Fd-yk4"/>
+                    <constraint firstItem="iCE-6Z-qJI" firstAttribute="top" secondItem="VDa-IH-Ue1" secondAttribute="bottom" constant="5" id="X4O-fi-yn2"/>
+                    <constraint firstAttribute="trailing" secondItem="iCE-6Z-qJI" secondAttribute="trailing" constant="10" id="bkU-Ok-5Xm"/>
+                    <constraint firstAttribute="trailing" secondItem="VDa-IH-Ue1" secondAttribute="trailing" constant="10" id="oSf-fS-hR9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="cellNumber" destination="Roe-T4-mtH" id="fXS-7K-mGa"/>
-                <outlet property="firstLastNameLabel" destination="VDa-IH-Ue1" id="0Cd-81-UhW"/>
+                <outlet property="fullNameLabel" destination="VDa-IH-Ue1" id="0Cd-81-UhW"/>
                 <outlet property="instructorNameLabel" destination="Mrz-oP-0XD" id="3fX-wL-36I"/>
                 <outlet property="passportNumberLabel" destination="mYl-Ks-gtr" id="kRF-Xq-1Kb"/>
-                <outlet property="patronymicLabel" destination="1u9-yy-W4n" id="inr-ah-CgW"/>
                 <outlet property="phoneNumberLabel" destination="BfX-WA-ZWd" id="1fd-Bc-cQZ"/>
-                <outlet property="studentImageView" destination="DYa-Ug-GQf" id="Iz8-a6-ONy"/>
             </connections>
-            <point key="canvasLocation" x="169.56521739130437" y="119.86607142857142"/>
+            <point key="canvasLocation" x="153.62318840579712" y="102.45535714285714"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="instructor0" width="563" height="787"/>
-    </resources>
 </document>

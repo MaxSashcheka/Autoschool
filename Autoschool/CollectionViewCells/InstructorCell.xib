@@ -10,57 +10,51 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="InstructorCell" customModule="Autoschool" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="297" height="350"/>
+            <rect key="frame" x="0.0" y="0.0" width="394" height="132"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="297" height="350"/>
+                <rect key="frame" x="0.0" y="0.0" width="394" height="132"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="246" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="I3q-To-AXR">
-                        <rect key="frame" x="10" y="10" width="277" height="233"/>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f7n-sM-1Sa">
-                        <rect key="frame" x="15" y="253" width="267" height="87"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Малашкевич Артем Викторович" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="NZx-yJ-mVE">
-                                <rect key="frame" x="0.0" y="0.0" width="267" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Моб. телефон: +375 (29) 358-17-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="yFV-9V-ies">
-                                <rect key="frame" x="0.0" y="29" width="267" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стаж вождения: 10 лет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="sfj-5I-nrR">
-                                <rect key="frame" x="0.0" y="58" width="267" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Малашкевич Артем Викторович" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="NZx-yJ-mVE">
+                        <rect key="frame" x="10" y="10" width="374" height="27.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Моб. телефон: +375 (29) 358-17-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="yFV-9V-ies">
+                        <rect key="frame" x="5" y="47.5" width="384" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стаж вождения: 10 лет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="sfj-5I-nrR">
+                        <rect key="frame" x="10" y="74" width="374" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="I3q-To-AXR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="7qN-87-wJx"/>
-                <constraint firstAttribute="bottom" secondItem="f7n-sM-1Sa" secondAttribute="bottom" constant="10" id="8VW-bg-3n5"/>
-                <constraint firstItem="f7n-sM-1Sa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="JNc-Hq-ys2"/>
-                <constraint firstItem="f7n-sM-1Sa" firstAttribute="top" secondItem="I3q-To-AXR" secondAttribute="bottom" constant="10" id="NS8-83-jMA"/>
-                <constraint firstAttribute="trailing" secondItem="f7n-sM-1Sa" secondAttribute="trailing" constant="15" id="UM5-bW-amK"/>
-                <constraint firstItem="I3q-To-AXR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="eRZ-pY-axn"/>
-                <constraint firstAttribute="trailing" secondItem="I3q-To-AXR" secondAttribute="trailing" constant="10" id="psi-Pc-kEp"/>
+                <constraint firstAttribute="trailing" secondItem="yFV-9V-ies" secondAttribute="trailing" constant="5" id="0Ri-bh-Gsv"/>
+                <constraint firstItem="NZx-yJ-mVE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="1sp-ou-zeA"/>
+                <constraint firstItem="yFV-9V-ies" firstAttribute="top" secondItem="NZx-yJ-mVE" secondAttribute="bottom" constant="10" id="DZ9-yF-ELT"/>
+                <constraint firstItem="sfj-5I-nrR" firstAttribute="top" secondItem="yFV-9V-ies" secondAttribute="bottom" constant="5" id="Oiv-cu-uBr"/>
+                <constraint firstItem="yFV-9V-ies" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Sp5-ne-5YL"/>
+                <constraint firstItem="NZx-yJ-mVE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="c77-1G-Xbs"/>
+                <constraint firstAttribute="trailing" secondItem="sfj-5I-nrR" secondAttribute="trailing" constant="10" id="hsi-ZA-Ozv"/>
+                <constraint firstAttribute="trailing" secondItem="NZx-yJ-mVE" secondAttribute="trailing" constant="10" id="q1a-F1-QiG"/>
+                <constraint firstItem="sfj-5I-nrR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ziL-3J-2xI"/>
             </constraints>
+            <size key="customSize" width="394" height="132"/>
             <connections>
                 <outlet property="drivingExperienceLabel" destination="sfj-5I-nrR" id="ubl-rG-3aa"/>
-                <outlet property="instructorsImageView" destination="I3q-To-AXR" id="6uf-mL-k9A"/>
                 <outlet property="nameLabel" destination="NZx-yJ-mVE" id="fhQ-62-rkE"/>
                 <outlet property="phoneNumberLabel" destination="yFV-9V-ies" id="VCR-GF-J9u"/>
             </connections>
-            <point key="canvasLocation" x="121.0144927536232" y="84.375"/>
+            <point key="canvasLocation" x="207.24637681159422" y="-10.044642857142856"/>
         </collectionViewCell>
     </objects>
 </document>
