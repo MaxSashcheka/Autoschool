@@ -26,17 +26,10 @@ class GroupCell: UICollectionViewCell {
         dayPartIndicatorView.layer.cornerRadius = dayPartIndicatorView.frame.width / 2
         categoryImageView.tintColor = .black
         
-//        layer.cornerRadius = 30
-//        layer.borderWidth = 2
-//        layer.borderColor = UIColor.darkGray.cgColor
-        
-        layer.masksToBounds = false
         backgroundColor = .white
-        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
-        layer.shadowRadius = 3
-        layer.shadowOpacity = 1.0
-        layer.shadowOffset = .zero
         layer.cornerRadius = 30
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.darkGray.cgColor
     }
     
     func setup(withGroup group: Group) {

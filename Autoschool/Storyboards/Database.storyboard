@@ -102,7 +102,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="CTr-QO-Lgd" secondAttribute="trailing" constant="20" id="2mP-sm-qxc"/>
                                                     <constraint firstItem="Pdk-0x-ouE" firstAttribute="top" secondItem="Jay-HZ-Jod" secondAttribute="bottom" constant="15" id="3fa-m1-aJT"/>
@@ -154,7 +154,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="MtN-gN-DGy" firstAttribute="centerX" secondItem="p0v-Z2-xn2" secondAttribute="centerX" id="Blc-tt-5Ek"/>
                                                     <constraint firstItem="MtN-gN-DGy" firstAttribute="centerY" secondItem="p0v-Z2-xn2" secondAttribute="centerY" id="qNQ-oD-wR5"/>
@@ -262,7 +262,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="hJQ-65-mWO" firstAttribute="top" secondItem="SrT-MF-oRc" secondAttribute="bottom" constant="5" id="88j-TX-yZJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="SrT-MF-oRc" secondAttribute="trailing" constant="20" id="9Oa-YD-3Yr"/>
@@ -302,7 +302,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="u15-eW-59d" firstAttribute="centerX" secondItem="G3Q-Mr-uw0" secondAttribute="centerX" id="bgM-9N-w6I"/>
                                                     <constraint firstItem="u15-eW-59d" firstAttribute="centerY" secondItem="G3Q-Mr-uw0" secondAttribute="centerY" id="gXA-sc-zjv"/>
@@ -340,7 +340,7 @@
         <!--Create Student View Controller-->
         <scene sceneID="e2N-4J-UIq">
             <objects>
-                <viewController storyboardIdentifier="CreateStudentViewController" id="n59-9A-gjf" customClass="CreateStudentViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateStudentViewController" automaticallyAdjustsScrollViewInsets="NO" id="n59-9A-gjf" customClass="CreateStudentViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bMc-mW-RnI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -403,7 +403,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="cBs-tM-2WE" firstAttribute="top" secondItem="27q-SL-mQd" secondAttribute="top" constant="15" id="6fF-D9-fHw"/>
                                                     <constraint firstItem="AqI-qX-iPJ" firstAttribute="leading" secondItem="27q-SL-mQd" secondAttribute="leading" constant="20" id="C92-53-dXH"/>
@@ -431,7 +431,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G6o-BU-thI">
                                                         <rect key="frame" x="0.0" y="25.5" width="414" height="240"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="240" id="02q-XO-k1G"/>
                                                         </constraints>
@@ -456,7 +456,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="Tk1-m4-6fh" firstAttribute="top" secondItem="G6o-BU-thI" secondAttribute="bottom" constant="5" id="59B-oI-ZUK"/>
                                                     <constraint firstAttribute="height" constant="300" id="7n5-TR-niF"/>
@@ -477,14 +477,15 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fx8-2T-HbD">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fx8-2T-HbD">
                                                         <rect key="frame" x="0.0" y="25.5" width="414" height="384.5"/>
-                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="384.5" id="q72-aE-OeG"/>
+                                                        </constraints>
                                                     </tableView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="fx8-2T-HbD" secondAttribute="bottom" id="EKv-71-cfp"/>
                                                     <constraint firstItem="fx8-2T-HbD" firstAttribute="top" secondItem="HvR-cJ-l2r" secondAttribute="bottom" constant="5" id="I0A-Em-DqM"/>
                                                     <constraint firstAttribute="height" constant="410" id="WK7-oq-iHG"/>
                                                     <constraint firstItem="fx8-2T-HbD" firstAttribute="leading" secondItem="YxS-NG-HEc" secondAttribute="leading" id="X2p-Oz-C6z"/>
@@ -511,7 +512,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="RYu-Bq-XEf" firstAttribute="centerY" secondItem="iub-Qn-C5v" secondAttribute="centerY" id="NvR-GC-yak"/>
                                                     <constraint firstItem="RYu-Bq-XEf" firstAttribute="centerX" secondItem="iub-Qn-C5v" secondAttribute="centerX" id="T0B-dZ-0C5"/>
@@ -521,6 +522,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="U6Z-Ak-dCV" firstAttribute="leading" secondItem="zgi-Bh-wZo" secondAttribute="leading" id="5Uj-Pe-xFl"/>
                                     <constraint firstItem="U6Z-Ak-dCV" firstAttribute="bottom" secondItem="zgi-Bh-wZo" secondAttribute="bottom" id="7Wr-X9-BfG"/>
@@ -533,7 +535,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Eya-Eo-pXH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="K2r-vF-c72" secondAttribute="bottom" id="301-DR-SKR"/>
                             <constraint firstItem="K2r-vF-c72" firstAttribute="leading" secondItem="Eya-Eo-pXH" secondAttribute="leading" id="heN-Of-3ps"/>
@@ -544,6 +546,8 @@
                     <connections>
                         <outlet property="groupsCollectionView" destination="G6o-BU-thI" id="sta-Y7-di7"/>
                         <outlet property="instructorsTableView" destination="fx8-2T-HbD" id="78T-Wv-v6D"/>
+                        <outlet property="instructorsTableViewHeight" destination="q72-aE-OeG" id="3fk-vm-TMe"/>
+                        <outlet property="instructorsTableViewSuperViewHeight" destination="WK7-oq-iHG" id="Pvw-dW-1Qq"/>
                         <outlet property="lastNameTextField" destination="nIp-fX-Sc0" id="ahj-Nx-TcD"/>
                         <outlet property="nameTextField" destination="I3v-go-8lb" id="KbV-h4-oaC"/>
                         <outlet property="passportNumberTextField" destination="AqI-qX-iPJ" id="Rr2-76-q0E"/>
@@ -606,7 +610,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="hxq-YV-hpp" firstAttribute="top" secondItem="glQ-n1-iwL" secondAttribute="bottom" constant="5" id="14c-fK-02e"/>
                                                     <constraint firstAttribute="trailing" secondItem="glQ-n1-iwL" secondAttribute="trailing" constant="20" id="4jR-Dg-fHQ"/>
@@ -644,7 +648,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dha-ar-f8W"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="J52-3x-5Ia" firstAttribute="top" secondItem="55V-IN-n5k" secondAttribute="top" id="2mg-Hu-UY7"/>
                             <constraint firstItem="J52-3x-5Ia" firstAttribute="leading" secondItem="Dha-ar-f8W" secondAttribute="leading" id="D3L-62-5gL"/>

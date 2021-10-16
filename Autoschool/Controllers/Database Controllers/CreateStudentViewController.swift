@@ -24,6 +24,10 @@ class CreateStudentViewController: UIViewController {
     var selectedGroupIndex = 0
 
     @IBOutlet weak var instructorsTableView: UITableView!
+    @IBOutlet weak var instructorsTableViewSuperViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var instructorsTableViewHeight: NSLayoutConstraint!
+    let instructorsTableViewCellsCount = 7
+    var selectedInstructorIndex = 0
     
     var student0 = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
     var student1 = Student(firstName: "Артем", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
@@ -37,6 +41,8 @@ class CreateStudentViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить ученика"
         
+        instructorsTableView.rowHeight = 40
+
         configureCollectionViews()
         configureTableView()
     }
@@ -51,6 +57,11 @@ class CreateStudentViewController: UIViewController {
         instructorsTableView.delegate = self
         instructorsTableView.dataSource = self
         instructorsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructorsTableView")
+        instructorsTableView.isScrollEnabled = false
+        
+        instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        instructorsTableViewHeight.constant = CGFloat(instructorsTableViewCellsCount) * instructorsTableView.rowHeight + 10
+        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 25
     }
 }
 
@@ -69,7 +80,7 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
         // Check for selection
         if indexPath.item == selectedGroupIndex {
             cell.layer.borderWidth = 3
-            cell.layer.borderColor = UIColor.lightGreenSea.cgColor
+            cell.layer.borderColor = UIColor.systemRed.cgColor
         } else {
             cell.layer.borderWidth = 2
             cell.layer.borderColor = UIColor.darkGray.cgColor
@@ -111,22 +122,30 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Выберите инструктора"
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return instructorsTableViewCellsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "instructorsTableView", for: indexPath)
+        
+        if indexPath.row == selectedInstructorIndex {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         cell.textLabel?.text = "Сащеко Максим Андреевич"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        
+//        tableView.deselectRow(at: indexPath, animated: true)
+        selectedInstructorIndex = indexPath.row
+        tableView.reloadData()
+
     }
     
 }
