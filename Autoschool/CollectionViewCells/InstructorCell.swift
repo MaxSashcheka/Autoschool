@@ -35,7 +35,7 @@ class InstructorCell: UICollectionViewCell {
     }
     
     static func nib() -> UINib {
-        return UINib(nibName: "InstructorCell", bundle: nil)
+        return UINib(nibName: reuseIdentifier, bundle: nil)
     }
 
 

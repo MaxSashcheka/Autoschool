@@ -9,7 +9,6 @@ import UIKit
 
 class CreateGroupViewController: UIViewController {
 
-    
     @IBOutlet weak var groupNameLabel: UITextField!
     
     @IBOutlet weak var drivingCategorySegmentedControl: UISegmentedControl!
@@ -17,7 +16,6 @@ class CreateGroupViewController: UIViewController {
     
     @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
-    
     
     lazy var startLessonsDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -39,14 +37,24 @@ class CreateGroupViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить группу"
         
+        configureSegmentedControls()
+        configureTextFields()
+        setupBarButtonItems()
+    }
+    
+    private func configureSegmentedControls() {
         drivingCategorySegmentedControl.selectedSegmentTintColor = .lightGreenSea
         drivingCategorySegmentedControl.layer.borderWidth = 1
         drivingCategorySegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
+        drivingCategorySegmentedControl.backgroundColor = .white
         
         classesTimeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
         classesTimeSegmentedControl.layer.borderWidth = 1
         classesTimeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
-        
+        classesTimeSegmentedControl.backgroundColor = .white
+    }
+    
+    private func configureTextFields() {
         let startDateToolbar = UIToolbar()
         startDateToolbar.sizeToFit()
         let startDateDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveStartDate))
@@ -66,7 +74,10 @@ class CreateGroupViewController: UIViewController {
         
         endDateTextField.inputView = endLessonsDatePicker
         endDateTextField.inputAccessoryView = endDateToolbar
-        
+    }
+    
+    private func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
     @objc func saveStartDate() {
@@ -85,8 +96,8 @@ class CreateGroupViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func saveHandler(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+    @objc private func saveButtonHandler() {
+        
     }
     
 

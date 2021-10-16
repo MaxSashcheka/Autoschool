@@ -9,9 +9,9 @@ import UIKit
 
 class GroupsViewController: UIViewController {
     
-    var student0 = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
-    var student1 = Student(firstName: "РОМАН", lastName: "КАПЧАН", patronymic: "АНДРЕЕВИЧ", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
-    var student2 = Student(firstName: "АРТЕМ", lastName: "Малашкевич", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
+    var student0 = Student(firstName: "Имя", lastName: "Фамилия", patronymic: "Отчество", passportNumber: "МР3333333", phoneNumber: "+375 (29) 358-17-24", instructorName: "Иванов Иван Иванович")
+    var student1 = Student(firstName: "Имя", lastName: "Фамилия", patronymic: "Отчество", passportNumber: "МР3333333", phoneNumber: "+375 (29) 358-17-24", instructorName: "Иванов Иван Иванович")
+    var student2 = Student(firstName: "Имя", lastName: "Фамилия", patronymic: "Отчество", passportNumber: "МР3333333", phoneNumber: "+375 (29) 358-17-24", instructorName: "Иванов Иван Иванович")
     
     lazy var dataSource = [
         Group(name: "Группа-14", category: .AutomaticB, dayPart: .evening, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0, student1, student2, student0, student1, student2,]),
@@ -94,7 +94,7 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return groupsCollectionViewInsets.left * 1.23
+        return groupsCollectionViewInsets.bottom
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

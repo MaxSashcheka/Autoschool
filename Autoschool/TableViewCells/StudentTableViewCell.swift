@@ -31,11 +31,10 @@ class StudentTableViewCell: UITableViewCell {
         
         phoneNumberLabel.text = "Моб. телефон: \(student.phoneNumber)"
         instructorNameLabel.text = "Инструктор: \(student.instructorName)"
-
     }
     
     static func nib() -> UINib {
-        return UINib(nibName: "StudentTableViewCell", bundle: nil)
+        return UINib(nibName: reuseIdentifier, bundle: nil)
     }
 
 }

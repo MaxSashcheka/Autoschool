@@ -15,7 +15,18 @@ class CreateInstruсtorViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить инструктора"
         
+        setupBarButtonItems()
     }
+    
+    private func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    }
+    
+    @objc private func saveButtonHandler() {
+        
+    }
+    
+    
 
 }
 

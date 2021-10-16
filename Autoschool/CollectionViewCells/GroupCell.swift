@@ -60,7 +60,7 @@ class GroupCell: UICollectionViewCell {
     }
     
     static func nib() -> UINib {
-        return UINib(nibName: "GroupCell", bundle: nil)
+        return UINib(nibName: reuseIdentifier, bundle: nil)
     }
 
 }

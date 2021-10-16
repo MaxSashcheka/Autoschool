@@ -14,12 +14,15 @@ struct ViewControllerRepresentation {
 
 class DatabaseMainViewController: UIViewController {
     
-    let dataSource = [
-        0: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController"),
+    let controllersRepresentationModel = [
+        0: ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateGroupViewController"),
         1: ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController"),
-        2: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController"),
-        3: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController"),
-        4: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController")
+        2: ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateGroupViewController"),
+        3: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController"),
+        4: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController"),
+        5: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController"),
+        6: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateGroupViewController"),
+        7: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController"),
     ]
     
     lazy var tableView: UITableView = {
@@ -67,20 +70,20 @@ extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let controllerIdentifier = dataSource[indexPath.row]?.identifier ?? ""
+        let controllerIdentifier = controllersRepresentationModel[indexPath.row]?.identifier ?? ""
         let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: controllerIdentifier)
 //        present(viewController, animated: true, completion: nil)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return controllersRepresentationModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        cell.textLabel?.text = dataSource[indexPath.row]?.tableViewName
+        cell.textLabel?.text = controllersRepresentationModel[indexPath.row]?.tableViewName
         return cell
     }
     

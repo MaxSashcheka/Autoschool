@@ -17,42 +17,42 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iCE-6Z-qJI">
-                        <rect key="frame" x="10" y="40" width="442" height="112"/>
+                        <rect key="frame" x="10" y="36.5" width="442" height="120.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Инструктор: Скурат Денис " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-oP-0XD">
-                                <rect key="frame" x="0.0" y="0.0" width="442" height="37.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="442" height="40"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Моб. телефон: +375 (29) 358-17-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-WA-ZWd">
-                                <rect key="frame" x="0.0" y="37.5" width="442" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="40" width="442" height="40.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер паспорта: МР3178032" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-Ks-gtr">
-                                <rect key="frame" x="0.0" y="74.5" width="442" height="37.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="80.5" width="442" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Малашкевич Максим Андреевич" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDa-IH-Ue1">
-                        <rect key="frame" x="10" y="5" width="442" height="30"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                        <rect key="frame" x="10" y="5" width="442" height="26.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VDa-IH-Ue1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="12l-bf-upn"/>
-                    <constraint firstAttribute="bottom" secondItem="iCE-6Z-qJI" secondAttribute="bottom" constant="10" id="E7m-Dd-Hh4"/>
                     <constraint firstItem="VDa-IH-Ue1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TiD-y0-47b"/>
                     <constraint firstItem="iCE-6Z-qJI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="WiD-Fd-yk4"/>
                     <constraint firstItem="iCE-6Z-qJI" firstAttribute="top" secondItem="VDa-IH-Ue1" secondAttribute="bottom" constant="5" id="X4O-fi-yn2"/>
                     <constraint firstAttribute="trailing" secondItem="iCE-6Z-qJI" secondAttribute="trailing" constant="10" id="bkU-Ok-5Xm"/>
+                    <constraint firstAttribute="bottom" secondItem="iCE-6Z-qJI" secondAttribute="bottom" constant="5" id="itr-Dh-1kY"/>
                     <constraint firstAttribute="trailing" secondItem="VDa-IH-Ue1" secondAttribute="trailing" constant="10" id="oSf-fS-hR9"/>
                 </constraints>
             </tableViewCellContentView>

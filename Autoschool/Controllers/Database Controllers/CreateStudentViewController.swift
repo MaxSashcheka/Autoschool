@@ -45,6 +45,7 @@ class CreateStudentViewController: UIViewController {
 
         configureCollectionViews()
         configureTableView()
+        setupBarButtonItems()
     }
     
     private func configureCollectionViews() {
@@ -61,7 +62,15 @@ class CreateStudentViewController: UIViewController {
         
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
         instructorsTableViewHeight.constant = CGFloat(instructorsTableViewCellsCount) * instructorsTableView.rowHeight + 10
-        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 25
+        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 40
+    }
+    
+    private func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    }
+    
+    @objc private func saveButtonHandler() {
+        
     }
 }
 
@@ -141,11 +150,8 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        tableView.deselectRow(at: indexPath, animated: true)
         selectedInstructorIndex = indexPath.row
         tableView.reloadData()
-
     }
     
 }

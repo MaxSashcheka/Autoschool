@@ -11,8 +11,16 @@ class CreateCarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = "Добавить машину"
+        
+        setupBarButtonItems()
+    }
+    
+    private func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    }
+    
+    @objc private func saveButtonHandler() {
         
     }
     
