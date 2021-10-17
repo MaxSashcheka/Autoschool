@@ -9,6 +9,15 @@ import UIKit
 
 class CreateAgreementViewController: UIViewController {
 
+    
+    lazy var signingDatePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+
+        return datePicker
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить договор"

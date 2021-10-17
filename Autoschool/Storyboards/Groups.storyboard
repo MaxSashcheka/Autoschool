@@ -29,7 +29,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dzS-h7-cfV"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="dzS-h7-cfV" firstAttribute="bottom" secondItem="ygW-Dx-eR9" secondAttribute="bottom" id="0zW-sI-joN"/>
                             <constraint firstItem="ygW-Dx-eR9" firstAttribute="top" secondItem="dzS-h7-cfV" secondAttribute="top" id="GQF-SK-fBF"/>
@@ -56,11 +56,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="uBQ-5P-ptu">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bgo-fI-JOX"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="uBQ-5P-ptu" firstAttribute="top" secondItem="Bgo-fI-JOX" secondAttribute="top" id="GAL-e0-WVE"/>
                             <constraint firstAttribute="bottom" secondItem="uBQ-5P-ptu" secondAttribute="bottom" id="k7Y-rS-v5f"/>
@@ -99,8 +99,8 @@
     </scenes>
     <resources>
         <image name="person.3" catalog="system" width="128" height="62"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

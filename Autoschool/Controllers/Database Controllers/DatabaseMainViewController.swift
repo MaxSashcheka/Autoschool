@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 struct ViewControllerRepresentation {
     let tableViewName: String
     let identifier: String
@@ -42,6 +43,8 @@ class DatabaseMainViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
 
+        SPAlertView.appearance().duration = 1
+        SPAlertView.appearance().cornerRadius = 30
         
         setupNavigation()
     }
