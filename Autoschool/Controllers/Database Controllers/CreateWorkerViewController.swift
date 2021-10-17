@@ -57,10 +57,6 @@ class CreateWorkerViewController: UIViewController {
             return
         }
         
-        
-        
-        
-        
         successAlertView.present()
     }
     

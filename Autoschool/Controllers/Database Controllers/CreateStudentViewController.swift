@@ -39,7 +39,7 @@ class CreateStudentViewController: UIViewController {
         title = "Добавить ученика"
     
         configureCollectionViews()
-        configureTableView()
+        configureInstructorsTableView()
         setupBarButtonItems()
     }
     
@@ -49,16 +49,16 @@ class CreateStudentViewController: UIViewController {
         groupsCollectionView.register(GroupCell.nib(), forCellWithReuseIdentifier: GroupCell.reuseIdentifier)
     }
     
-    private func configureTableView() {
+    private func configureInstructorsTableView() {
         instructorsTableView.delegate = self
         instructorsTableView.dataSource = self
-        instructorsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructorsTableView")
-        instructorsTableView.rowHeight = 40
+        instructorsTableView.register(InstructorTableViewCell.nib(), forCellReuseIdentifier: InstructorTableViewCell.reuseIdentifier)
+        instructorsTableView.rowHeight = 90
         instructorsTableView.isScrollEnabled = false
         
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
         instructorsTableViewHeight.constant = CGFloat(instructorsTableViewCellsCount) * instructorsTableView.rowHeight + 10
-        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 40
+        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 20
     }
     
     private func setupBarButtonItems() {
@@ -161,7 +161,7 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "instructorsTableView", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath)
         
         if indexPath.row == selectedInstructorIndex {
             cell.accessoryType = .checkmark
@@ -170,7 +170,6 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
             cell.accessoryType = .none
         }
         
-        cell.textLabel?.text = "Сащеко Максим Андреевич"
         return cell
     }
     

@@ -9,7 +9,6 @@ import UIKit
 
 class CreateTeacherViewController: UIViewController {
 
-    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var patronymicTextField: UITextField!
