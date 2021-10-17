@@ -55,7 +55,7 @@ class DatabaseMainViewController: UIViewController {
         title = "База данных"
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 27, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.black
+            NSAttributedString.Key.foregroundColor: UIColor.darkGray
         ]
         
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes
@@ -63,7 +63,7 @@ class DatabaseMainViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .lightGreenSea
     }
 
 }
@@ -91,7 +91,7 @@ extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource
         let vcRepresentator = controllersRepresentationModel[indexPath.row]
         cell.textLabel?.text = vcRepresentator?.tableViewName
         cell.imageView?.image = vcRepresentator?.image
-        cell.imageView?.tintColor = .black
+        cell.imageView?.tintColor = .lightGreenSea
 
         return cell
     }

@@ -95,6 +95,7 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
             
             if indexPath.row == selectedWorkerIndex {
                 cell.accessoryType = .checkmark
+                cell.tintColor = .lightGreenSea
             } else {
                 cell.accessoryType = .none
             }
@@ -105,6 +106,7 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
 
             if indexPath.row == selectedStudentIndex {
                 cell.accessoryType = .checkmark
+                cell.tintColor = .lightGreenSea
             } else {
                 cell.accessoryType = .none
             }

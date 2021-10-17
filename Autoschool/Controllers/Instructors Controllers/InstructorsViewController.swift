@@ -22,6 +22,8 @@ class InstructorsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(InstructorTableViewCell.nib(), forCellReuseIdentifier: InstructorTableViewCell.reuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
         return tableView
     }()
@@ -39,7 +41,7 @@ class InstructorsViewController: UIViewController {
         title = "Инструкторы"
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.black
+            NSAttributedString.Key.foregroundColor: UIColor.darkGray
         ]
         
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes
@@ -47,21 +49,37 @@ class InstructorsViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .lightGreenSea
     }
 
 }
 
 extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        if section == 0 {
+            return 1
+        } else {
+            return dataSource.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath) as! InstructorTableViewCell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            cell.textLabel?.text = "Автопарк автошколы"
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath) as! InstructorTableViewCell
+            
+            return cell
+        }
         
-        return cell
     }
     
     

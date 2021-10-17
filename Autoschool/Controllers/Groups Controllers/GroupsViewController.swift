@@ -46,7 +46,7 @@ class GroupsViewController: UIViewController {
         title = "Группы"
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.black
+            NSAttributedString.Key.foregroundColor: UIColor.darkGray
         ]
         
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes
@@ -54,7 +54,7 @@ class GroupsViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .lightGreenSea
     }
     
 }

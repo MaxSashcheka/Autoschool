@@ -40,9 +40,7 @@ class CreateStudentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить ученика"
-        
-        instructorsTableView.rowHeight = 40
-
+    
         configureCollectionViews()
         configureTableView()
         setupBarButtonItems()
@@ -58,6 +56,7 @@ class CreateStudentViewController: UIViewController {
         instructorsTableView.delegate = self
         instructorsTableView.dataSource = self
         instructorsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructorsTableView")
+        instructorsTableView.rowHeight = 40
         instructorsTableView.isScrollEnabled = false
         
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
@@ -143,6 +142,7 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
         
         if indexPath.row == selectedInstructorIndex {
             cell.accessoryType = .checkmark
+            cell.tintColor = .lightGreenSea
         } else {
             cell.accessoryType = .none
         }

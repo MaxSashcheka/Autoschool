@@ -10,12 +10,44 @@ import UIKit
 class CreateInstruсtorViewController: UIViewController {
 
     var studentExample = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
-
+    
+    
+    
+    @IBOutlet weak var carTypeSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var carsTableView: UITableView!
+    let carsTableViewCellsCount = 5
+    var selectedCarIndex = 0
+    
+    @IBOutlet weak var carsSuperViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var carsTableViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить инструктора"
         
         setupBarButtonItems()
+        configureCarsTableView()
+        configureSegmentedControl()
+    }
+    
+    private func configureCarsTableView() {
+        carsTableView.delegate = self
+        carsTableView.dataSource = self
+        carsTableView.register(CarTableViewCell.nib(), forCellReuseIdentifier: CarTableViewCell.reuseIdentifier)
+        carsTableView.rowHeight = 80
+        carsTableView.isScrollEnabled = false
+
+        carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        carsTableViewHeight.constant = CGFloat(carsTableViewCellsCount) * carsTableView.rowHeight + 10
+        carsSuperViewHeight.constant = carsTableViewHeight.constant + 20
+    }
+    
+    private func configureSegmentedControl() {
+        carTypeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
+        carTypeSegmentedControl.layer.borderWidth = 1
+        carTypeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
+        carTypeSegmentedControl.backgroundColor = .white
     }
     
     private func setupBarButtonItems() {
@@ -25,61 +57,36 @@ class CreateInstruсtorViewController: UIViewController {
     @objc private func saveButtonHandler() {
         let alertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
         alertView.present()
-
     }
-    
-    
 
 }
 
-// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return carsTableViewCellsCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath)
+        
+        if indexPath.row == selectedCarIndex {
+            cell.accessoryType = .checkmark
+            cell.tintColor = .lightGreenSea
+        } else {
+            cell.accessoryType = .none
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+        selectedCarIndex = indexPath.row
+        tableView.reloadData()
+    }
+    
+    
+}
 
-//extension CreateInstruсtorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 8
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagePickerCollectionViewCell.reuseIdentifier, for: indexPath) as! ImagePickerCollectionViewCell
-//        cell.setup(withStudent: studentExample)
-//
-//        if indexPath.item == selectedInstructorImageIndex {
-//            cell.layer.shadowColor = UIColor.lightGreenSea.cgColor
-//        } else {
-//            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-//        }
-//
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        selectedInstructorImageIndex = indexPath.item
-//        collectionView.reloadData()
-//        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//    }
-//
-//}
-//
-//// MARK: - UICollectionViewDelegateFlowLayout
-//
-//extension CreateInstruсtorViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let itemWidth = instructorImageCollectionView.frame.width - instructorImageCollectionViewInsets.left * 6
-//        let itemHeight = itemWidth * 1.2
-//
-//        return CGSize(width: itemWidth, height: itemHeight)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return instructorImageCollectionViewInsets
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return instructorImageCollectionViewInsets.left
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return instructorImageCollectionViewInsets.left
-//    }
-//}
+

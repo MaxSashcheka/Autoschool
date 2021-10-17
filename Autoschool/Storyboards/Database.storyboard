@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Ttc-Br-BfD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="zKY-iE-kqw"/>
                 </viewController>
@@ -186,10 +186,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fq0-pW-uad">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKq-ea-t8a">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-Yv-fgh">
                                                         <rect key="frame" x="20" y="15" width="374" height="20.5"/>
@@ -239,20 +239,40 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Машина" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKR-io-VBz">
+                                                        <rect key="frame" x="20" y="322.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yPW-YA-YWW">
+                                                        <rect key="frame" x="20" y="348" width="374" height="32"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <segments>
+                                                            <segment title="Своя"/>
+                                                            <segment title="Автошколы"/>
+                                                        </segments>
+                                                    </segmentedControl>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="IKR-io-VBz" firstAttribute="top" secondItem="iJc-ox-bvQ" secondAttribute="bottom" constant="15" id="1HY-iS-psq"/>
                                                     <constraint firstItem="hJQ-65-mWO" firstAttribute="top" secondItem="SrT-MF-oRc" secondAttribute="bottom" constant="5" id="88j-TX-yZJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="SrT-MF-oRc" secondAttribute="trailing" constant="20" id="9Oa-YD-3Yr"/>
-                                                    <constraint firstAttribute="height" constant="330" id="BiV-wa-Pm8"/>
+                                                    <constraint firstAttribute="height" constant="400" id="BiV-wa-Pm8"/>
                                                     <constraint firstItem="iJc-ox-bvQ" firstAttribute="top" secondItem="bAM-Pp-xaK" secondAttribute="bottom" constant="5" id="DJv-OZ-F9G"/>
                                                     <constraint firstItem="iJc-ox-bvQ" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="JAY-jA-bfL"/>
+                                                    <constraint firstItem="yPW-YA-YWW" firstAttribute="top" secondItem="IKR-io-VBz" secondAttribute="bottom" constant="5" id="LUm-Ll-no9"/>
                                                     <constraint firstItem="b1f-Yv-fgh" firstAttribute="top" secondItem="LKq-ea-t8a" secondAttribute="top" constant="15" id="NTS-1x-vvs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yPW-YA-YWW" secondAttribute="trailing" constant="20" id="Nxp-kg-tfK"/>
                                                     <constraint firstAttribute="trailing" secondItem="3HZ-nN-cz1" secondAttribute="trailing" constant="20" id="PI0-lI-X03"/>
                                                     <constraint firstItem="hJQ-65-mWO" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="Um5-GF-irZ"/>
                                                     <constraint firstItem="SrT-MF-oRc" firstAttribute="top" secondItem="3HZ-nN-cz1" secondAttribute="bottom" constant="15" id="X7e-Bo-qq8"/>
+                                                    <constraint firstItem="yPW-YA-YWW" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="eCK-w0-1GX"/>
                                                     <constraint firstItem="bAM-Pp-xaK" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="ebP-NP-JPd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IKR-io-VBz" secondAttribute="trailing" constant="20" id="elK-hy-GKH"/>
                                                     <constraint firstItem="SrT-MF-oRc" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="gY6-kb-O7A"/>
+                                                    <constraint firstItem="IKR-io-VBz" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="gcO-mN-jhX"/>
                                                     <constraint firstAttribute="trailing" secondItem="bAM-Pp-xaK" secondAttribute="trailing" constant="20" id="iJo-N7-EeH"/>
                                                     <constraint firstItem="3HZ-nN-cz1" firstAttribute="leading" secondItem="LKq-ea-t8a" secondAttribute="leading" constant="20" id="iZf-MW-A95"/>
                                                     <constraint firstAttribute="trailing" secondItem="b1f-Yv-fgh" secondAttribute="trailing" constant="20" id="rwR-uF-3Wb"/>
@@ -261,6 +281,25 @@
                                                     <constraint firstItem="bAM-Pp-xaK" firstAttribute="top" secondItem="hJQ-65-mWO" secondAttribute="bottom" constant="15" id="yWI-31-5IH"/>
                                                     <constraint firstAttribute="trailing" secondItem="iJc-ox-bvQ" secondAttribute="trailing" constant="20" id="z2Q-zU-pCC"/>
                                                     <constraint firstAttribute="trailing" secondItem="hJQ-65-mWO" secondAttribute="trailing" constant="20" id="zFp-aW-MYd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zx2-3A-uZg">
+                                                <rect key="frame" x="0.0" y="400" width="414" height="300"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="U0F-r6-Sze">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="170" id="siF-LS-zfB"/>
+                                                        </constraints>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="G0Q-qp-qg3"/>
+                                                    <constraint firstItem="U0F-r6-Sze" firstAttribute="leading" secondItem="zx2-3A-uZg" secondAttribute="leading" id="RUc-iE-Idb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="U0F-r6-Sze" secondAttribute="trailing" id="ayK-hZ-uv1"/>
+                                                    <constraint firstItem="U0F-r6-Sze" firstAttribute="top" secondItem="zx2-3A-uZg" secondAttribute="top" id="kM0-jG-RqU"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -286,6 +325,12 @@
                             <constraint firstItem="71p-My-mld" firstAttribute="leading" secondItem="Lrn-vf-Yhg" secondAttribute="leading" id="bQz-Um-WLp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carTypeSegmentedControl" destination="yPW-YA-YWW" id="cfM-M1-sb0"/>
+                        <outlet property="carsSuperViewHeight" destination="G0Q-qp-qg3" id="g0l-hB-cTb"/>
+                        <outlet property="carsTableView" destination="U0F-r6-Sze" id="5bq-HC-M4z"/>
+                        <outlet property="carsTableViewHeight" destination="siF-LS-zfB" id="0hY-Pp-2mF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uce-Dj-nQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1070,9 +1115,6 @@
         <image name="table" catalog="system" width="128" height="93"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -46,6 +46,9 @@
 		DD6DFF24271C51B30073F63F /* DriverLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF23271C51B30073F63F /* DriverLicense.swift */; };
 		DD6DFF28271C6B190073F63F /* WorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */; };
 		DD6DFF29271C6B190073F63F /* WorkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */; };
+		DD6DFF2C271C70090073F63F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF2B271C70090073F63F /* Car.swift */; };
+		DD6DFF30271C713D0073F63F /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF2E271C713D0073F63F /* CarTableViewCell.swift */; };
+		DD6DFF31271C713D0073F63F /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFF2F271C713D0073F63F /* CarTableViewCell.xib */; };
 		DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */; };
 		DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */; };
 		DD801086270C68A30062955B /* CreateCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801085270C68A20062955B /* CreateCarViewController.swift */; };
@@ -106,6 +109,9 @@
 		DD6DFF23271C51B30073F63F /* DriverLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicense.swift; sourceTree = "<group>"; };
 		DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewCell.swift; sourceTree = "<group>"; };
 		DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkerTableViewCell.xib; sourceTree = "<group>"; };
+		DD6DFF2B271C70090073F63F /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		DD6DFF2E271C713D0073F63F /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		DD6DFF2F271C713D0073F63F /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
 		DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherTableViewCell.xib; sourceTree = "<group>"; };
 		DD801085270C68A20062955B /* CreateCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCarViewController.swift; sourceTree = "<group>"; };
@@ -142,14 +148,11 @@
 		DD5B16C9270A23F0007E5C38 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */,
-				DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */,
-				DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */,
-				DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */,
-				DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */,
-				DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */,
-				DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */,
-				DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */,
+				DD6DFF33271C71460073F63F /* Student */,
+				DD6DFF35271C71500073F63F /* Teacher */,
+				DD6DFF37271C715A0073F63F /* Instructor */,
+				DD6DFF39271C71640073F63F /* Worker */,
+				DD6DFF3B271C716A0073F63F /* Car */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -265,6 +268,51 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		DD6DFF33271C71460073F63F /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */,
+				DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		DD6DFF35271C71500073F63F /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */,
+				DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */,
+			);
+			path = Teacher;
+			sourceTree = "<group>";
+		};
+		DD6DFF37271C715A0073F63F /* Instructor */ = {
+			isa = PBXGroup;
+			children = (
+				DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */,
+				DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */,
+			);
+			path = Instructor;
+			sourceTree = "<group>";
+		};
+		DD6DFF39271C71640073F63F /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */,
+				DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		DD6DFF3B271C716A0073F63F /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				DD6DFF2E271C713D0073F63F /* CarTableViewCell.swift */,
+				DD6DFF2F271C713D0073F63F /* CarTableViewCell.xib */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
 		DD9A0C4227070A950040C839 = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +400,7 @@
 				DD1490D7270B983D000ACD8F /* Instructor.swift */,
 				DD6DFF20271C51290073F63F /* Worker.swift */,
 				DD6DFF23271C51B30073F63F /* DriverLicense.swift */,
+				DD6DFF2B271C70090073F63F /* Car.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -445,6 +494,7 @@
 				DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */,
 				DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */,
 				DD9A0C7227070C330040C839 /* Database.storyboard in Resources */,
+				DD6DFF31271C713D0073F63F /* CarTableViewCell.xib in Resources */,
 				DD6DFEF1271C33CE0073F63F /* Administration.storyboard in Resources */,
 				DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */,
 			);
@@ -471,10 +521,12 @@
 				DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */,
 				DD801089270C68AF0062955B /* CreateExamViewController.swift in Sources */,
 				DD43124D2719B2390009B35E /* StudentsViewController.swift in Sources */,
+				DD6DFF30271C713D0073F63F /* CarTableViewCell.swift in Sources */,
 				DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */,
 				DD6DFF1C271C3D650073F63F /* SPAlertIconAnimatable.swift in Sources */,
 				DD801086270C68A30062955B /* CreateCarViewController.swift in Sources */,
 				DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */,
+				DD6DFF2C271C70090073F63F /* Car.swift in Sources */,
 				DD6DFF17271C3D650073F63F /* SwiftUIExtension.swift in Sources */,
 				DD6DFEF5271C35570073F63F /* AdministrationViewController.swift in Sources */,
 				DD6DFF1E271C3D650073F63F /* SPAlert.swift in Sources */,
