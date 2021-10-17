@@ -23,6 +23,8 @@
 		DD62C844270A0D9800910092 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C843270A0D9800910092 /* Group.swift */; };
 		DD62C849270A0E6D00910092 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C847270A0E6D00910092 /* GroupCell.swift */; };
 		DD62C84A270A0E6D00910092 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62C848270A0E6D00910092 /* GroupCell.xib */; };
+		DD6DFEE1271C134C0073F63F /* InstructorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */; };
+		DD6DFEE2271C134C0073F63F /* InstructorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */; };
 		DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */; };
 		DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */; };
 		DD801086270C68A30062955B /* CreateCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801085270C68A20062955B /* CreateCarViewController.swift */; };
@@ -60,6 +62,8 @@
 		DD62C843270A0D9800910092 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DD62C847270A0E6D00910092 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		DD62C848270A0E6D00910092 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
+		DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorTableViewCell.swift; sourceTree = "<group>"; };
+		DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorTableViewCell.xib; sourceTree = "<group>"; };
 		DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherTableViewCell.xib; sourceTree = "<group>"; };
 		DD801085270C68A20062955B /* CreateCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCarViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */,
 				DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */,
 				DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */,
+				DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */,
+				DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6DFEE2271C134C0073F63F /* InstructorTableViewCell.xib in Resources */,
 				DD1490D5270B97FD000ACD8F /* InstructorCell.xib in Resources */,
 				DD9A0C5E27070A960040C839 /* LaunchScreen.storyboard in Resources */,
 				DD62C84A270A0E6D00910092 /* GroupCell.xib in Resources */,
@@ -317,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6DFEE1271C134C0073F63F /* InstructorTableViewCell.swift in Sources */,
 				DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */,
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
 				DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */,

@@ -22,6 +22,7 @@ class StudentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        accessoryType = .disclosureIndicator
     }
     
     func setup(withStudent student: Student) {

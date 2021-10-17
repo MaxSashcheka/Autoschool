@@ -20,12 +20,6 @@ class StudentsViewController: UIViewController {
         configureTableView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        studentsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-
-    }
-
     private func configureTableView() {
         studentsTableView.delegate = self
         studentsTableView.dataSource = self

@@ -18,6 +18,7 @@ class TeacherTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        accessoryType = .disclosureIndicator
         
     }
 

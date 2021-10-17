@@ -15,32 +15,10 @@
                     <view key="view" contentMode="scaleToFill" id="X0j-Au-7bz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-j5-4IR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NyC-JK-I3K">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Hff-sl-h7D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Hff-sl-h7D" firstAttribute="bottom" secondItem="pH5-j5-4IR" secondAttribute="bottom" id="NXc-FA-PoA"/>
-                            <constraint firstItem="pH5-j5-4IR" firstAttribute="leading" secondItem="Hff-sl-h7D" secondAttribute="leading" id="cJc-1x-9fh"/>
-                            <constraint firstItem="pH5-j5-4IR" firstAttribute="top" secondItem="Hff-sl-h7D" secondAttribute="top" id="lYf-0d-BrQ"/>
-                            <constraint firstItem="Hff-sl-h7D" firstAttribute="trailing" secondItem="pH5-j5-4IR" secondAttribute="trailing" id="svz-fk-tVU"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wvy-wD-gru"/>
-                    <connections>
-                        <outlet property="instructorsCollectionView" destination="pH5-j5-4IR" id="rpX-HY-Rbb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgK-6s-Igt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
