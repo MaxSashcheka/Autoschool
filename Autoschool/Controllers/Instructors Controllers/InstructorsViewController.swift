@@ -82,5 +82,13 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            let vc = CarParkViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     
 }
