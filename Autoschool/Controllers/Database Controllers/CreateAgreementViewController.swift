@@ -12,8 +12,11 @@ class CreateAgreementViewController: UIViewController {
     
     @IBOutlet weak var workersTableView: UITableView!
     let workersTableViewCellsCount = 5
+    var selectedWorkerIndex = 0
+    
     @IBOutlet weak var studentsTableView: UITableView!
     let studentsTableViewCellsCount = 3
+    var selectedStudentIndex = 0
 
     @IBOutlet weak var workersSuperViewHeight: NSLayoutConstraint!
     @IBOutlet weak var studentsSuperViewHeight: NSLayoutConstraint!
@@ -43,8 +46,8 @@ class CreateAgreementViewController: UIViewController {
     private func configureWorkersTableView() {
         workersTableView.delegate = self
         workersTableView.dataSource = self
-        workersTableView.register(UITableViewCell.self, forCellReuseIdentifier: "workersTableView")
-        workersTableView.rowHeight = 40
+        workersTableView.register(WorkerTableViewCell.nib(), forCellReuseIdentifier: WorkerTableViewCell.reuseIdentifier)
+        workersTableView.rowHeight = 80
         workersTableView.isScrollEnabled = false
         
         workersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
@@ -55,8 +58,8 @@ class CreateAgreementViewController: UIViewController {
     private func configureStudentsTableView() {
         studentsTableView.delegate = self
         studentsTableView.dataSource = self
-        studentsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "studentsTableView")
-        studentsTableView.rowHeight = 40
+        studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
+        studentsTableView.rowHeight = 100
         studentsTableView.isScrollEnabled = false
 
         studentsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
@@ -88,16 +91,39 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == workersTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "workersTableView", for: indexPath)
-            cell.textLabel?.text = "Сащеко Максим Администратор"
+            let cell = tableView.dequeueReusableCell(withIdentifier: WorkerTableViewCell.reuseIdentifier, for: indexPath)
+            
+            if indexPath.row == selectedWorkerIndex {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "studentsTableView", for: indexPath)
-            cell.textLabel?.text = "Сащеко Максим учащийся"
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath)
+
+            if indexPath.row == selectedStudentIndex {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
+
             return cell
         }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if tableView == workersTableView {
+            selectedWorkerIndex = indexPath.row
+        } else {
+            selectedStudentIndex = indexPath.row
+        }
+        
+        tableView.reloadData()
         
     }
     

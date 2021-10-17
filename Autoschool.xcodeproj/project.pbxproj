@@ -44,6 +44,8 @@
 		DD6DFF1E271C3D650073F63F /* SPAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF12271C3D650073F63F /* SPAlert.swift */; };
 		DD6DFF21271C51290073F63F /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF20271C51290073F63F /* Worker.swift */; };
 		DD6DFF24271C51B30073F63F /* DriverLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF23271C51B30073F63F /* DriverLicense.swift */; };
+		DD6DFF28271C6B190073F63F /* WorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */; };
+		DD6DFF29271C6B190073F63F /* WorkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */; };
 		DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */; };
 		DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */; };
 		DD801086270C68A30062955B /* CreateCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801085270C68A20062955B /* CreateCarViewController.swift */; };
@@ -102,6 +104,8 @@
 		DD6DFF12271C3D650073F63F /* SPAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlert.swift; sourceTree = "<group>"; };
 		DD6DFF20271C51290073F63F /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		DD6DFF23271C51B30073F63F /* DriverLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicense.swift; sourceTree = "<group>"; };
+		DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewCell.swift; sourceTree = "<group>"; };
+		DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkerTableViewCell.xib; sourceTree = "<group>"; };
 		DD70501C271B7D29005894F3 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherTableViewCell.xib; sourceTree = "<group>"; };
 		DD801085270C68A20062955B /* CreateCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCarViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */,
 				DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */,
 				DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */,
+				DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */,
+				DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */,
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
 				DD9A0C5627070A950040C839 /* Main.storyboard in Resources */,
+				DD6DFF29271C6B190073F63F /* WorkerTableViewCell.xib in Resources */,
 				DD5B16DA270A3F32007E5C38 /* Exams.storyboard in Resources */,
 				DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */,
 				DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */,
@@ -478,6 +485,7 @@
 				DD6DFF14271C3D650073F63F /* SPAlertLayout.swift in Sources */,
 				DD5B16E4270A405B007E5C38 /* ExamsViewController.swift in Sources */,
 				DD6DFF1B271C3D650073F63F /* SPAlertIconPreset.swift in Sources */,
+				DD6DFF28271C6B190073F63F /* WorkerTableViewCell.swift in Sources */,
 				DD6DFF1D271C3D650073F63F /* SPAlertHaptic.swift in Sources */,
 				DD6DFF24271C51B30073F63F /* DriverLicense.swift in Sources */,
 				DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */,
