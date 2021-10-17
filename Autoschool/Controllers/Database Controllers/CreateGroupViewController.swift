@@ -10,12 +10,17 @@ import UIKit
 class CreateGroupViewController: UIViewController {
 
     @IBOutlet weak var groupNameLabel: UITextField!
+    @IBOutlet weak var startDateTextField: UITextField!
+    @IBOutlet weak var endDateTextField: UITextField!
     
     @IBOutlet weak var drivingCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var classesTimeSegmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var startDateTextField: UITextField!
-    @IBOutlet weak var endDateTextField: UITextField!
+    @IBOutlet weak var teachersTableView: UITableView!
+    @IBOutlet weak var teachersTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var teachersSuperViewHeight: NSLayoutConstraint!
+    let teachersTableViewCount = 7
+    var selectedTeacherIndex = 0
     
     lazy var startLessonsDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -37,9 +42,21 @@ class CreateGroupViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить группу"
         
+        configureTeachersTableView()
         configureSegmentedControls()
         configureTextFields()
         setupBarButtonItems()
+    }
+    
+    private func configureTeachersTableView() {
+        teachersTableView.delegate = self
+        teachersTableView.dataSource = self
+        teachersTableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
+        teachersTableView.rowHeight = 76
+        teachersTableView.isScrollEnabled = false
+        teachersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        teachersTableViewHeight.constant = CGFloat(teachersTableViewCount) * teachersTableView.rowHeight + 10
+        teachersSuperViewHeight.constant = teachersTableViewHeight.constant + 40
     }
     
     private func configureSegmentedControls() {
@@ -97,11 +114,47 @@ class CreateGroupViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let alertView = SPAlertView(title: "Группа успешно добавлена в базу данных", preset: .done)
-        alertView.present()
-
+        let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        
+        guard let groupName = groupNameLabel.text, groupName != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let startDate = startDateTextField.text, startDate != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let endDate = endDateTextField.text, endDate != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        successAlertView.present()
     }
     
 
 }
 
+extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return teachersTableViewCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeacherTableViewCell.reuseIdentifier, for: indexPath) 
+        
+        if indexPath.row == selectedTeacherIndex {
+            cell.accessoryType = .checkmark
+            cell.tintColor = .lightGreenSea
+        } else {
+            cell.accessoryType = .none
+        }
+        
+        return cell
+    }
+    
+    
+}

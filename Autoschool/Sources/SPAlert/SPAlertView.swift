@@ -49,7 +49,7 @@ open class SPAlertView: UIView {
         }
     }
     
-    @objc dynamic open var duration: TimeInterval = 1
+    @objc dynamic open var duration: TimeInterval = 1.7
     
     // MARK: - Views
     

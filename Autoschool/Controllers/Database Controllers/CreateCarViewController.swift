@@ -8,7 +8,12 @@
 import UIKit
 
 class CreateCarViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var carNumberTextField: UITextField!
+    @IBOutlet weak var carNameTextField: UITextField!
+    @IBOutlet weak var carColorTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить машину"
@@ -21,9 +26,25 @@ class CreateCarViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let alertView = SPAlertView(title: "Машина успешно добавлена в базу данных", preset: .done)
-        alertView.present()
-
+        let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        
+        guard let carNumber = carNumberTextField.text, carNumber != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let carName = carNameTextField.text, carName != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let carColor = carColorTextField.text, carColor != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        successAlertView.present()
     }
     
 

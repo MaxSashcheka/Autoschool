@@ -9,9 +9,13 @@ import UIKit
 
 class CreateInstruсtorViewController: UIViewController {
 
-    var studentExample = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
     
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var patronymicTextField: UITextField!
     
+    @IBOutlet weak var drivingExperienceTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
     
     @IBOutlet weak var carTypeSegmentedControl: UISegmentedControl!
     
@@ -55,8 +59,35 @@ class CreateInstruсtorViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let alertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
-        alertView.present()
+        let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        
+        guard let firstName = firstNameTextField.text, firstName != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let lastName = lastNameTextField.text, lastName != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let patronymic = patronymicTextField.text, patronymic != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let drivingExperience = drivingExperienceTextField.text, drivingExperience != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        successAlertView.present()
     }
 
 }

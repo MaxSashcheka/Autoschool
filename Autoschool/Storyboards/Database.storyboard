@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="faM-Sk-ZDc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-9B-mNA">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
@@ -139,6 +139,25 @@
                                                     <constraint firstItem="LDC-fB-bZ1" firstAttribute="top" secondItem="CTr-QO-Lgd" secondAttribute="bottom" constant="5" id="yj0-8h-1E9"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-RQ-HAD">
+                                                <rect key="frame" x="0.0" y="380" width="414" height="300"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fv-gOw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="170" id="r5X-5I-X0n"/>
+                                                        </constraints>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="ghV-fv-gOw" firstAttribute="leading" secondItem="aTc-RQ-HAD" secondAttribute="leading" id="BWw-9c-09T"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ghV-fv-gOw" secondAttribute="trailing" id="GeK-kn-fwc"/>
+                                                    <constraint firstAttribute="height" constant="300" id="UiQ-Hl-e68"/>
+                                                    <constraint firstItem="ghV-fv-gOw" firstAttribute="top" secondItem="aTc-RQ-HAD" secondAttribute="top" id="pUj-gU-2z4"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -168,6 +187,9 @@
                         <outlet property="endDateTextField" destination="r33-eq-PNg" id="70V-lJ-WMH"/>
                         <outlet property="groupNameLabel" destination="CHb-9Q-vCj" id="wK7-6o-fkW"/>
                         <outlet property="startDateTextField" destination="jQ5-rm-KCG" id="lRj-De-VuH"/>
+                        <outlet property="teachersSuperViewHeight" destination="UiQ-Hl-e68" id="J2h-uT-2EP"/>
+                        <outlet property="teachersTableView" destination="ghV-fv-gOw" id="0Wr-U1-NEa"/>
+                        <outlet property="teachersTableViewHeight" destination="r5X-5I-X0n" id="1Gb-t1-MaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbQ-8T-Bz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -249,8 +271,8 @@
                                                         <rect key="frame" x="20" y="348" width="374" height="32"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <segments>
-                                                            <segment title="Своя"/>
                                                             <segment title="Автошколы"/>
+                                                            <segment title="Своя"/>
                                                         </segments>
                                                     </segmentedControl>
                                                 </subviews>
@@ -330,6 +352,11 @@
                         <outlet property="carsSuperViewHeight" destination="G0Q-qp-qg3" id="g0l-hB-cTb"/>
                         <outlet property="carsTableView" destination="U0F-r6-Sze" id="5bq-HC-M4z"/>
                         <outlet property="carsTableViewHeight" destination="siF-LS-zfB" id="0hY-Pp-2mF"/>
+                        <outlet property="drivingExperienceTextField" destination="hJQ-65-mWO" id="OCi-5x-Dhg"/>
+                        <outlet property="firstNameTextField" destination="CdX-zD-Azz" id="Ngg-Bo-eVG"/>
+                        <outlet property="lastNameTextField" destination="bK9-ZE-zbB" id="CoA-6X-ibD"/>
+                        <outlet property="patronymicTextField" destination="jWF-fo-cG9" id="MqW-BU-d11"/>
+                        <outlet property="phoneNumberTextField" destination="iJc-ox-bvQ" id="lU7-0f-09P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uce-Dj-nQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -448,6 +475,13 @@
                             <constraint firstItem="qit-vB-ti1" firstAttribute="trailing" secondItem="QNd-To-hTS" secondAttribute="trailing" id="cKQ-rN-N7X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="d3A-ez-Wsc" id="OSA-4f-HGH"/>
+                        <outlet property="firstNameTextField" destination="THB-3N-y5Q" id="Mny-vg-L2D"/>
+                        <outlet property="lastNameTextField" destination="waj-4u-Jg8" id="dXL-3N-ByQ"/>
+                        <outlet property="patronymicTextField" destination="P5U-R6-O7l" id="Hxn-YQ-Imx"/>
+                        <outlet property="phoneNumberTextField" destination="rzu-yJ-waH" id="H6p-0Q-bRt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdr-rV-gJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -637,12 +671,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstNameTextField" destination="I3v-go-8lb" id="KbV-h4-oaC"/>
                         <outlet property="groupsCollectionView" destination="G6o-BU-thI" id="sta-Y7-di7"/>
                         <outlet property="instructorsTableView" destination="fx8-2T-HbD" id="78T-Wv-v6D"/>
                         <outlet property="instructorsTableViewHeight" destination="q72-aE-OeG" id="3fk-vm-TMe"/>
                         <outlet property="instructorsTableViewSuperViewHeight" destination="WK7-oq-iHG" id="Pvw-dW-1Qq"/>
                         <outlet property="lastNameTextField" destination="nIp-fX-Sc0" id="ahj-Nx-TcD"/>
-                        <outlet property="nameTextField" destination="I3v-go-8lb" id="KbV-h4-oaC"/>
                         <outlet property="passportNumberTextField" destination="AqI-qX-iPJ" id="Rr2-76-q0E"/>
                         <outlet property="patronymicTextField" destination="dKu-Wb-hh8" id="rgF-VI-p2Z"/>
                         <outlet property="phoneNumberTextField" destination="Tuh-of-7Ox" id="oMv-zY-tXZ"/>
@@ -749,6 +783,11 @@
                             <constraint firstItem="J52-3x-5Ia" firstAttribute="trailing" secondItem="Dha-ar-f8W" secondAttribute="trailing" id="NWz-Xx-pX1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carColorTextField" destination="Db4-V7-Res" id="PJz-ce-wI9"/>
+                        <outlet property="carNameTextField" destination="hxq-YV-hpp" id="uW6-JV-H81"/>
+                        <outlet property="carNumberTextField" destination="cvf-Dv-y2n" id="xV2-nu-3BA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSx-Zm-41O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -981,6 +1020,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountTextField" destination="lfU-7h-D0g" id="bmS-Qi-Gs2"/>
+                        <outlet property="signingDateTextField" destination="8hT-X9-199" id="tN6-ve-m9b"/>
                         <outlet property="studentsSuperViewHeight" destination="yaK-8U-boJ" id="3cr-3u-Men"/>
                         <outlet property="studentsTableView" destination="EjA-B5-4ih" id="A1e-s4-snO"/>
                         <outlet property="studentsTableViewHeight" destination="CfD-YE-6Ch" id="377-77-ILE"/>
@@ -1105,6 +1146,13 @@
                             <constraint firstAttribute="bottom" secondItem="e6e-pf-Vtn" secondAttribute="bottom" id="fzF-PA-QAK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="tfS-nM-bkw" id="JUm-eB-5jk"/>
+                        <outlet property="lastNameTextField" destination="LJl-jy-cxJ" id="7xh-fZ-ZSD"/>
+                        <outlet property="passportNumberTextField" destination="Mwo-0n-iqe" id="tvY-g0-C02"/>
+                        <outlet property="patronymicTextField" destination="KvM-5G-fAr" id="qji-ru-8UV"/>
+                        <outlet property="phoneNumberTextField" destination="sdZ-5e-xry" id="EHg-RZ-jHq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47V-HG-Ki9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

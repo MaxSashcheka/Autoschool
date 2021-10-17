@@ -10,6 +10,9 @@ import UIKit
 class CreateAgreementViewController: UIViewController {
     
     
+    @IBOutlet weak var signingDateTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
+    
     @IBOutlet weak var workersTableView: UITableView!
     let workersTableViewCellsCount = 5
     var selectedWorkerIndex = 0
@@ -20,7 +23,6 @@ class CreateAgreementViewController: UIViewController {
 
     @IBOutlet weak var workersSuperViewHeight: NSLayoutConstraint!
     @IBOutlet weak var studentsSuperViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var workersTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var studentsTableViewHeight: NSLayoutConstraint!
     
@@ -72,9 +74,20 @@ class CreateAgreementViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let alertView = SPAlertView(title: "Договор успешно добавлен в базу данных", preset: .done)
-        alertView.present()
-
+        let successAlertView = SPAlertView(title: "Договор успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить договор в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        
+        guard let signingDate = signingDateTextField.text, signingDate != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let amount = amountTextField.text, amount != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        successAlertView.present()
     }
 
 }

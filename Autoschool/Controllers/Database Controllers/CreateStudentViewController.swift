@@ -9,15 +9,12 @@ import UIKit
 
 class CreateStudentViewController: UIViewController {
 
-    
+    @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var patronymicTextField: UITextField!
-    
     
     @IBOutlet weak var passportNumberTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
-    
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
@@ -69,9 +66,35 @@ class CreateStudentViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let alertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
-        alertView.present()
-
+        let successAlertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить ученика в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        
+        guard let firstName = firstNameTextField.text, firstName != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let lastName = lastNameTextField.text, lastName != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let patronymic = patronymicTextField.text, patronymic != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        successAlertView.present()
     }
 }
 
