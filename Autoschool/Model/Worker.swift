@@ -1,20 +1,19 @@
 //
-//  Student.swift
+//  Worker.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 10/3/21.
+//  Created by Max Sashcheka on 10/17/21.
 //
 
 import Foundation
 
-struct Student {
+struct Worker {
     
     var firstName: String
     var lastName: String
     var patronymic: String
     
-    var passportNumber: String
     var phoneNumber: String
-    var instructorName: String
+    var email: String
 
 }
