@@ -70,11 +70,9 @@ class CreateStudentViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        
-        let alertView = SPAlertView(title: "Successfuly added some feature", preset: .done)
-        alertView.present(haptic: .success, completion: {
-            self.navigationController?.popToRootViewController(animated: true)
-        })
+        let alertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
+        alertView.present()
+
     }
 }
 

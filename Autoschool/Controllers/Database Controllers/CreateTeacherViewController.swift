@@ -21,7 +21,9 @@ class CreateTeacherViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        
+        let alertView = SPAlertView(title: "Преподаватель успешно добавлен в базу данных", preset: .done)
+        alertView.present()
+
     }
 
 }

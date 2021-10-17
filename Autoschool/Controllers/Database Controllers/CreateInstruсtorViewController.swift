@@ -23,7 +23,9 @@ class CreateInstruсtorViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        
+        let alertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
+        alertView.present()
+
     }
     
     

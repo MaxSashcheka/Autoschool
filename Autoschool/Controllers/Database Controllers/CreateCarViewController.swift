@@ -21,7 +21,9 @@ class CreateCarViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        
+        let alertView = SPAlertView(title: "Машина успешно добавлена в базу данных", preset: .done)
+        alertView.present()
+
     }
     
 

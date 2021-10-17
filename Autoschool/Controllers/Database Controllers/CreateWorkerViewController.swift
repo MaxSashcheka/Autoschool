@@ -22,7 +22,8 @@ class CreateWorkerViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let alertView = SPAlertView(title: "Successfully added", message: "Thanks for adding to database", preset: .custom(UIImage(systemName: "person") ?? .add))
+        let alertView = SPAlertView(title: "Администратор успешно добавлен в базу данных", preset: .done)
+
         alertView.present()
     
 

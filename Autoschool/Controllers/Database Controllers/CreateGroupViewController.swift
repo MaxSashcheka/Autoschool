@@ -97,7 +97,9 @@ class CreateGroupViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        
+        let alertView = SPAlertView(title: "Группа успешно добавлена в базу данных", preset: .done)
+        alertView.present()
+
     }
     
 

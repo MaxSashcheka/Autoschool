@@ -11,19 +11,20 @@ import UIKit
 struct ViewControllerRepresentation {
     let tableViewName: String
     let identifier: String
+    let image: UIImage?
 }
 
 class DatabaseMainViewController: UIViewController {
     
     let controllersRepresentationModel = [
-        0: ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateWorkerViewController"),
-        1: ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController"),
-        2: ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateAgreementViewController"),
-        3: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController"),
-        4: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController"),
-        5: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController"),
-        6: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController"),
-        7: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController"),
+        0: ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateWorkerViewController", image: UIImage(systemName: "person")),
+        1: ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(systemName: "studentdesk")),
+        2: ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(systemName: "doc.text")),
+        3: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person.crop.rectangle")),
+        4: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
+        5: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
+        6: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
+        7: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
     ]
     
     lazy var tableView: UITableView = {
@@ -86,7 +87,12 @@ extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        cell.textLabel?.text = controllersRepresentationModel[indexPath.row]?.tableViewName
+        
+        let vcRepresentator = controllersRepresentationModel[indexPath.row]
+        cell.textLabel?.text = vcRepresentator?.tableViewName
+        cell.imageView?.image = vcRepresentator?.image
+        cell.imageView?.tintColor = .black
+
         return cell
     }
     
