@@ -33,7 +33,7 @@ class GroupCell: UICollectionViewCell {
     }
     
     func setup(withGroup group: Group) {
-    
+        backgroundColor = .white
         nameLabel.text = group.name
         
         switch group.category {
@@ -47,14 +47,14 @@ class GroupCell: UICollectionViewCell {
             categoryImageView.image = UIImage(systemName: "car")
             categoryNameLabel.text = "Категория В (МКПП)"
         }
-
+        
         switch group.dayPart {
         case .morning:
             dayPartIndicatorView.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
         case .evening:
             dayPartIndicatorView.backgroundColor = #colorLiteral(red: 0.3236978054, green: 0.1063579395, blue: 0.574860394, alpha: 1)
         }
-        
+
         dateLabel.text = "\(group.startLessonsDate) - \(group.endLesonnsDate)"
         studentsCountLabel.text = "Количество учеников: \(group.students.count)"
     }

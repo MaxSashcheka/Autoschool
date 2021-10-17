@@ -15,13 +15,13 @@ struct ViewControllerRepresentation {
 class DatabaseMainViewController: UIViewController {
     
     let controllersRepresentationModel = [
-        0: ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateGroupViewController"),
+        0: ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateWorkerViewController"),
         1: ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController"),
-        2: ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateGroupViewController"),
+        2: ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateAgreementViewController"),
         3: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController"),
         4: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController"),
         5: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController"),
-        6: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateGroupViewController"),
+        6: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController"),
         7: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController"),
     ]
     
@@ -50,7 +50,7 @@ class DatabaseMainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "База данных"
         let largeTitleAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold),
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 27, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         
