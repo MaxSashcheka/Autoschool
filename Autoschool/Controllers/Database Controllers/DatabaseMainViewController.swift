@@ -43,9 +43,6 @@ class DatabaseMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-
-        SPAlertView.appearance().duration = 1
-        SPAlertView.appearance().cornerRadius = 30
         
         setupNavigation()
     }
@@ -76,7 +73,7 @@ extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
         let controllerIdentifier = controllersRepresentationModel[indexPath.row]?.identifier ?? ""
         let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: controllerIdentifier)
-//        present(viewController, animated: true, completion: nil)
+
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

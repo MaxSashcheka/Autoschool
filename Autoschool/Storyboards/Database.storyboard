@@ -142,20 +142,29 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-RQ-HAD">
                                                 <rect key="frame" x="0.0" y="380" width="414" height="300"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fv-gOw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fv-gOw">
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="170"/>
+                                                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="170" id="r5X-5I-X0n"/>
                                                         </constraints>
                                                     </tableView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите преподавателя по теории" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-fM-baX">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="2Ec-fM-baX" secondAttribute="trailing" constant="20" id="6IJ-dn-CIN"/>
                                                     <constraint firstItem="ghV-fv-gOw" firstAttribute="leading" secondItem="aTc-RQ-HAD" secondAttribute="leading" id="BWw-9c-09T"/>
                                                     <constraint firstAttribute="trailing" secondItem="ghV-fv-gOw" secondAttribute="trailing" id="GeK-kn-fwc"/>
+                                                    <constraint firstItem="ghV-fv-gOw" firstAttribute="top" secondItem="2Ec-fM-baX" secondAttribute="bottom" id="Mil-Pk-yH1"/>
                                                     <constraint firstAttribute="height" constant="300" id="UiQ-Hl-e68"/>
-                                                    <constraint firstItem="ghV-fv-gOw" firstAttribute="top" secondItem="aTc-RQ-HAD" secondAttribute="top" id="pUj-gU-2z4"/>
+                                                    <constraint firstItem="2Ec-fM-baX" firstAttribute="top" secondItem="aTc-RQ-HAD" secondAttribute="top" id="YZo-zy-x6G"/>
+                                                    <constraint firstItem="2Ec-fM-baX" firstAttribute="leading" secondItem="aTc-RQ-HAD" secondAttribute="leading" constant="20" id="mbU-N5-zCY"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -173,7 +182,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r4Y-a1-CJh"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="Us4-7c-s18" firstAttribute="top" secondItem="PDF-pj-Jb2" secondAttribute="top" id="3ci-wu-aAf"/>
                             <constraint firstItem="Us4-7c-s18" firstAttribute="trailing" secondItem="r4Y-a1-CJh" secondAttribute="trailing" id="9wm-XF-kt5"/>
@@ -194,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbQ-8T-Bz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-894" y="869"/>
+            <point key="canvasLocation" x="-894.20289855072474" y="868.52678571428567"/>
         </scene>
         <!--Create Instruсtor View Controller-->
         <scene sceneID="Aa7-Eo-bHe">
@@ -309,19 +318,28 @@
                                                 <rect key="frame" x="0.0" y="400" width="414" height="300"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="U0F-r6-Sze">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="170"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="170" id="siF-LS-zfB"/>
                                                         </constraints>
                                                     </tableView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите машину" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0n-co-QIP">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="G0Q-qp-qg3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="P0n-co-QIP" secondAttribute="trailing" constant="20" id="GXb-4a-Ba0"/>
+                                                    <constraint firstItem="P0n-co-QIP" firstAttribute="leading" secondItem="zx2-3A-uZg" secondAttribute="leading" constant="20" id="Lje-Ry-OvH"/>
                                                     <constraint firstItem="U0F-r6-Sze" firstAttribute="leading" secondItem="zx2-3A-uZg" secondAttribute="leading" id="RUc-iE-Idb"/>
                                                     <constraint firstAttribute="trailing" secondItem="U0F-r6-Sze" secondAttribute="trailing" id="ayK-hZ-uv1"/>
-                                                    <constraint firstItem="U0F-r6-Sze" firstAttribute="top" secondItem="zx2-3A-uZg" secondAttribute="top" id="kM0-jG-RqU"/>
+                                                    <constraint firstItem="P0n-co-QIP" firstAttribute="top" secondItem="zx2-3A-uZg" secondAttribute="top" id="kfX-zK-1n5"/>
+                                                    <constraint firstItem="U0F-r6-Sze" firstAttribute="top" secondItem="P0n-co-QIP" secondAttribute="bottom" id="mA1-qt-Iti"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -361,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uce-Dj-nQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="869"/>
+            <point key="canvasLocation" x="-136.23188405797103" y="868.52678571428567"/>
         </scene>
         <!--Create Worker View Controller-->
         <scene sceneID="Iz6-sb-Bas">
@@ -775,7 +793,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dha-ar-f8W"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="J52-3x-5Ia" firstAttribute="top" secondItem="55V-IN-n5k" secondAttribute="top" id="2mg-Hu-UY7"/>
                             <constraint firstItem="J52-3x-5Ia" firstAttribute="leading" secondItem="Dha-ar-f8W" secondAttribute="leading" id="D3L-62-5gL"/>
@@ -850,7 +868,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LoD-Vh-aBd"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="nDn-3c-xbF" firstAttribute="leading" secondItem="LoD-Vh-aBd" secondAttribute="leading" id="8fo-JV-2la"/>
                             <constraint firstAttribute="bottom" secondItem="nDn-3c-xbF" secondAttribute="bottom" id="Fxs-8v-YpR"/>

@@ -44,7 +44,7 @@ class CreateInstruсtorViewController: UIViewController {
 
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
         carsTableViewHeight.constant = CGFloat(carsTableViewCellsCount) * carsTableView.rowHeight + 10
-        carsSuperViewHeight.constant = carsTableViewHeight.constant + 20
+        carsSuperViewHeight.constant = carsTableViewHeight.constant + 40
     }
     
     private func configureSegmentedControl() {

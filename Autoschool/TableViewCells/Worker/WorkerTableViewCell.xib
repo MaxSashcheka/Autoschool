@@ -17,22 +17,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Сащеко Максим Виссерионович" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-WN-QTC">
-                        <rect key="frame" x="10" y="5" width="415" height="24"/>
+                        <rect key="frame" x="10" y="5" width="415" height="33"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8aD-QY-VmZ">
-                        <rect key="frame" x="10" y="34" width="415" height="36"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8aD-QY-VmZ">
+                        <rect key="frame" x="10" y="43" width="415" height="36"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Моб.телефон: +375(29)358-17-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcK-Aj-dYh">
-                                <rect key="frame" x="0.0" y="0.0" width="242" height="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="415" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Почта: sashchekam@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZl-fg-Rg3">
-                                <rect key="frame" x="0.0" y="18" width="221" height="18"/>
+                                <rect key="frame" x="0.0" y="18" width="415" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,6 +44,7 @@
                     <constraint firstItem="8aD-QY-VmZ" firstAttribute="top" secondItem="uQX-WN-QTC" secondAttribute="bottom" constant="5" id="70f-rf-P2q"/>
                     <constraint firstAttribute="trailing" secondItem="8aD-QY-VmZ" secondAttribute="trailing" constant="10" id="9aD-RR-abH"/>
                     <constraint firstItem="uQX-WN-QTC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="EoQ-uB-vMj"/>
+                    <constraint firstAttribute="bottom" secondItem="8aD-QY-VmZ" secondAttribute="bottom" constant="5" id="IXJ-VW-Mgu"/>
                     <constraint firstAttribute="trailing" secondItem="uQX-WN-QTC" secondAttribute="trailing" constant="10" id="JMn-bV-TzK"/>
                     <constraint firstItem="uQX-WN-QTC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Nal-YN-AIX"/>
                     <constraint firstItem="8aD-QY-VmZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="h20-Lc-3zw"/>

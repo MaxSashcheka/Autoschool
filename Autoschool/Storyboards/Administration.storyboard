@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eS4-H0-04z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="q6x-zQ-WEK"/>
                 </viewController>
@@ -28,7 +28,7 @@
         <scene sceneID="Lxt-Uu-zfC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yvu-S7-MSC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Администрация" image="person.crop.square.fill.and.at.rectangle" selectedImage="person.crop.square.fill.and.at.rectangle" catalog="system" id="puK-Ww-Y55"/>
+                    <tabBarItem key="tabBarItem" title="Администрация" image="person.crop.square.fill.and.at.rectangle" catalog="system" selectedImage="person.crop.square.fill.and.at.rectangle" id="puK-Ww-Y55"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Smm-0w-ptH">
@@ -47,9 +47,8 @@
     </scenes>
     <resources>
         <image name="person.crop.square.fill.and.at.rectangle" catalog="system" width="128" height="93"/>
-        <image name="person.crop.square.fill.and.at.rectangle" width="128" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

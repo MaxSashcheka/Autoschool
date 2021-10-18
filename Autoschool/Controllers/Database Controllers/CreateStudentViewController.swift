@@ -58,7 +58,7 @@ class CreateStudentViewController: UIViewController {
         
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
         instructorsTableViewHeight.constant = CGFloat(instructorsTableViewCellsCount) * instructorsTableView.rowHeight + 10
-        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 20
+        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 40
     }
     
     private func setupBarButtonItems() {
