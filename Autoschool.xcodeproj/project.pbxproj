@@ -68,6 +68,9 @@
 		DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C85270718D40040C839 /* SaveButton.swift */; };
 		DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */; };
 		DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0D329271C8F400017A160 /* CarParkViewController.swift */; };
+		DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */; };
+		DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */; };
+		DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +137,9 @@
 		DD9A0C85270718D40040C839 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateInstruсtorViewController.swift"; sourceTree = "<group>"; };
 		DDD0D329271C8F400017A160 /* CarParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkViewController.swift; sourceTree = "<group>"; };
+		DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementsViewController.swift; sourceTree = "<group>"; };
+		DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementTableViewCell.swift; sourceTree = "<group>"; };
+		DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 		DD5B16C9270A23F0007E5C38 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				DDEC16AA271DC262007BF181 /* Agreement */,
 				DD6DFF33271C71460073F63F /* Student */,
 				DD6DFF35271C71500073F63F /* Teacher */,
 				DD6DFF37271C715A0073F63F /* Instructor */,
@@ -200,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				DD6DFEF4271C35570073F63F /* AdministrationViewController.swift */,
+				DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */,
 			);
 			path = "Administration Controllers";
 			sourceTree = "<group>";
@@ -424,6 +432,15 @@
 			path = "Database Controllers";
 			sourceTree = "<group>";
 		};
+		DDEC16AA271DC262007BF181 /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */,
+				DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */,
+			);
+			path = Agreement;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -491,6 +508,7 @@
 				DD62C84A270A0E6D00910092 /* GroupCell.xib in Resources */,
 				DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */,
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
+				DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */,
 				DD9A0C5627070A950040C839 /* Main.storyboard in Resources */,
 				DD6DFF29271C6B190073F63F /* WorkerTableViewCell.xib in Resources */,
 				DD5B16DA270A3F32007E5C38 /* Exams.storyboard in Resources */,
@@ -512,6 +530,7 @@
 			files = (
 				DD6DFEE1271C134C0073F63F /* InstructorTableViewCell.swift in Sources */,
 				DD6DFF19271C3D650073F63F /* SPAlertIconErrorView.swift in Sources */,
+				DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */,
 				DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */,
 				DD6DFF16271C3D650073F63F /* UIFontExtension.swift in Sources */,
 				DD6DFF21271C51290073F63F /* Worker.swift in Sources */,
@@ -519,6 +538,7 @@
 				DD6DFEE5271C1ACF0073F63F /* CreateWorkerViewController.swift in Sources */,
 				DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */,
 				DD9A0C5927070A950040C839 /* Autoschool.xcdatamodeld in Sources */,
+				DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */,
 				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
 				DD62C844270A0D9800910092 /* Group.swift in Sources */,
 				DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */,

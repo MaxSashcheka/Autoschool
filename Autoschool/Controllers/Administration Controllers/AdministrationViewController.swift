@@ -9,7 +9,7 @@ import UIKit
 
 class AdministrationViewController: UIViewController {
     
-    lazy var tableView: UITableView = {
+    lazy var workersTableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self
@@ -22,7 +22,7 @@ class AdministrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(tableView)
+        view.addSubview(workersTableView)
         
         setupNavigation()
     }
@@ -72,6 +72,14 @@ extension AdministrationViewController: UITableViewDelegate, UITableViewDataSour
             cell.accessoryType = .disclosureIndicator
 
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let agreementsVC = AgreementsViewController()
+            
+            navigationController?.pushViewController(agreementsVC, animated: true)
         }
     }
     
