@@ -41,8 +41,13 @@ class CreateAgreementViewController: UIViewController {
         
         configureWorkersTableView()
         configureStudentsTableView()
+        configureTextFields()
 
         setupBarButtonItems()
+    }
+    
+    private func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
     private func configureWorkersTableView() {
@@ -68,9 +73,24 @@ class CreateAgreementViewController: UIViewController {
         studentsTableViewHeight.constant = CGFloat(studentsTableViewCellsCount) * studentsTableView.rowHeight + 10
         studentsSuperViewHeight.constant = studentsTableViewHeight.constant + 40
     }
-
-    private func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    
+    private func configureTextFields() {
+        let signingDateToolBar = UIToolbar()
+        signingDateToolBar.sizeToFit()
+        let signingDateDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveSigningDate))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        signingDateToolBar.setItems([flexSpace, signingDateDoneButton], animated: true)
+        
+        signingDateTextField.inputView = signingDatePicker
+        signingDateTextField.inputAccessoryView = signingDateToolBar
+    }
+    
+    @objc private func saveSigningDate() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        signingDateTextField.text = formatter.string(from: signingDatePicker.date)
+        
+        view.endEditing(true)
     }
     
     @objc private func saveButtonHandler() {

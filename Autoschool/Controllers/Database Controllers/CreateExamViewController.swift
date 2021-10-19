@@ -19,6 +19,14 @@ class CreateExamViewController: UIViewController {
     let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     var selectedGroupIndex = 0
     
+    lazy var examDatePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+
+        return datePicker
+    }()
+    
     var student0 = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
     var student1 = Student(firstName: "Артем", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
     var student2 = Student(firstName: "Максим", lastName: "Малашкевич", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
@@ -31,6 +39,7 @@ class CreateExamViewController: UIViewController {
         
         configureGroupsCollectionView()
         configureSegmentedControls()
+        configureTextFields()
         setupBarButtonItems()
     }
     
@@ -45,12 +54,29 @@ class CreateExamViewController: UIViewController {
         examInternalExternalSegmentedControl.selectedSegmentTintColor = .lightGreenSea
         examInternalExternalSegmentedControl.layer.borderWidth = 1
         examInternalExternalSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
-//        examInternalExternalSegmentedControl.backgroundColor = .white
-        
+
         examTheoryPracticeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
         examTheoryPracticeSegmentedControl.layer.borderWidth = 1
         examTheoryPracticeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
-//        examTheoryPracticeSegmentedControl.backgroundColor = .white
+    }
+    
+    private func configureTextFields() {
+        let examDateToolbar = UIToolbar()
+        examDateToolbar.sizeToFit()
+        let examDateDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveExamDate))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        examDateToolbar.setItems([flexSpace, examDateDoneButton], animated: true)
+        
+        examDateTextField.inputView = examDatePicker
+        examDateTextField.inputAccessoryView = examDateToolbar
+    }
+    
+    @objc private func saveExamDate() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        examDateTextField.text = formatter.string(from: examDatePicker.date)
+        
+        view.endEditing(true)
     }
     
     private func setupBarButtonItems() {
