@@ -25,10 +25,7 @@ class AgreementsViewController: UIViewController {
         view.backgroundColor = .systemGray5
         
         view.addSubview(agreementsTableView)
-        
     }
-    
-
 
 }
 

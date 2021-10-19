@@ -63,12 +63,12 @@ class CreateGroupViewController: UIViewController {
         drivingCategorySegmentedControl.selectedSegmentTintColor = .lightGreenSea
         drivingCategorySegmentedControl.layer.borderWidth = 1
         drivingCategorySegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
-        drivingCategorySegmentedControl.backgroundColor = .white
+//        drivingCategorySegmentedControl.backgroundColor = .white
         
         classesTimeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
         classesTimeSegmentedControl.layer.borderWidth = 1
         classesTimeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
-        classesTimeSegmentedControl.backgroundColor = .white
+//        classesTimeSegmentedControl.backgroundColor = .white
     }
     
     private func configureTextFields() {

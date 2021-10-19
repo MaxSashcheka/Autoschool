@@ -17,8 +17,6 @@ class CreateInstruсtorViewController: UIViewController {
     @IBOutlet weak var drivingExperienceTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
-    @IBOutlet weak var carTypeSegmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var carsTableView: UITableView!
     let carsTableViewCellsCount = 5
     var selectedCarIndex = 0
@@ -32,7 +30,7 @@ class CreateInstruсtorViewController: UIViewController {
         
         setupBarButtonItems()
         configureCarsTableView()
-        configureSegmentedControl()
+        
     }
     
     private func configureCarsTableView() {
@@ -45,13 +43,6 @@ class CreateInstruсtorViewController: UIViewController {
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
         carsTableViewHeight.constant = CGFloat(carsTableViewCellsCount) * carsTableView.rowHeight + 10
         carsSuperViewHeight.constant = carsTableViewHeight.constant + 40
-    }
-    
-    private func configureSegmentedControl() {
-        carTypeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
-        carTypeSegmentedControl.layer.borderWidth = 1
-        carTypeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
-        carTypeSegmentedControl.backgroundColor = .white
     }
     
     private func setupBarButtonItems() {
