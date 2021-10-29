@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct DriverLesence {
+struct DriverLisence {
     
+    var driverLisenceID: Int
     var issueDate: String
     var number: String
     var validity: String

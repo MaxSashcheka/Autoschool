@@ -29,7 +29,7 @@ class InstructorCell: UICollectionViewCell {
     }
     
     func setup(withInstructor instructor: Instructor) {
-        nameLabel.text = "\(instructor.lastName) \(instructor.firstName) \(instructor.patronymic)"
+        nameLabel.text = "\(instructor.lastName) \(instructor.firstName) \(instructor.middleName)"
         phoneNumberLabel.text = "Моб. телефон:\(instructor.phoneNumber)"
         drivingExperienceLabel.text = "Стаж вождения: \(instructor.drivingExperience) \(instructor.drivingExperience < 4 ? "года" : "лет")"
     }

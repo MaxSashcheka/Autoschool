@@ -42,10 +42,9 @@
 		DD6DFF1C271C3D650073F63F /* SPAlertIconAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF0F271C3D650073F63F /* SPAlertIconAnimatable.swift */; };
 		DD6DFF1D271C3D650073F63F /* SPAlertHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF11271C3D650073F63F /* SPAlertHaptic.swift */; };
 		DD6DFF1E271C3D650073F63F /* SPAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF12271C3D650073F63F /* SPAlert.swift */; };
-		DD6DFF21271C51290073F63F /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF20271C51290073F63F /* Worker.swift */; };
 		DD6DFF24271C51B30073F63F /* DriverLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF23271C51B30073F63F /* DriverLicense.swift */; };
-		DD6DFF28271C6B190073F63F /* WorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */; };
-		DD6DFF29271C6B190073F63F /* WorkerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */; };
+		DD6DFF28271C6B190073F63F /* AdministratorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF26271C6B190073F63F /* AdministratorTableViewCell.swift */; };
+		DD6DFF29271C6B190073F63F /* AdministratorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFF27271C6B190073F63F /* AdministratorTableViewCell.xib */; };
 		DD6DFF2C271C70090073F63F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF2B271C70090073F63F /* Car.swift */; };
 		DD6DFF30271C713D0073F63F /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFF2E271C713D0073F63F /* CarTableViewCell.swift */; };
 		DD6DFF31271C713D0073F63F /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFF2F271C713D0073F63F /* CarTableViewCell.xib */; };
@@ -56,7 +55,6 @@
 		DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C4E27070A950040C839 /* AppDelegate.swift */; };
 		DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C5027070A950040C839 /* SceneDelegate.swift */; };
 		DD9A0C5627070A950040C839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9A0C5427070A950040C839 /* Main.storyboard */; };
-		DD9A0C5927070A950040C839 /* Autoschool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C5727070A950040C839 /* Autoschool.xcdatamodeld */; };
 		DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9A0C5A27070A960040C839 /* Assets.xcassets */; };
 		DD9A0C5E27070A960040C839 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9A0C5C27070A960040C839 /* LaunchScreen.storyboard */; };
 		DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C6C27070B340040C839 /* Extensions.swift */; };
@@ -67,6 +65,10 @@
 		DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C82270715D60040C839 /* CreateGroupViewController.swift */; };
 		DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C85270718D40040C839 /* SaveButton.swift */; };
 		DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */; };
+		DDB53C81272C3F8F009B69CF /* Administrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB53C80272C3F8F009B69CF /* Administrator.swift */; };
+		DDB53C86272C4139009B69CF /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB53C85272C4139009B69CF /* Exam.swift */; };
+		DDB53C89272C41FC009B69CF /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB53C88272C41FC009B69CF /* Teacher.swift */; };
+		DDB53C8F272C4859009B69CF /* Agreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB53C8E272C4859009B69CF /* Agreement.swift */; };
 		DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0D329271C8F400017A160 /* CarParkViewController.swift */; };
 		DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */; };
 		DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */; };
@@ -109,10 +111,9 @@
 		DD6DFF0F271C3D650073F63F /* SPAlertIconAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlertIconAnimatable.swift; sourceTree = "<group>"; };
 		DD6DFF11271C3D650073F63F /* SPAlertHaptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlertHaptic.swift; sourceTree = "<group>"; };
 		DD6DFF12271C3D650073F63F /* SPAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlert.swift; sourceTree = "<group>"; };
-		DD6DFF20271C51290073F63F /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		DD6DFF23271C51B30073F63F /* DriverLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicense.swift; sourceTree = "<group>"; };
-		DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewCell.swift; sourceTree = "<group>"; };
-		DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkerTableViewCell.xib; sourceTree = "<group>"; };
+		DD6DFF26271C6B190073F63F /* AdministratorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorTableViewCell.swift; sourceTree = "<group>"; };
+		DD6DFF27271C6B190073F63F /* AdministratorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdministratorTableViewCell.xib; sourceTree = "<group>"; };
 		DD6DFF2B271C70090073F63F /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		DD6DFF2E271C713D0073F63F /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		DD6DFF2F271C713D0073F63F /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
@@ -124,7 +125,6 @@
 		DD9A0C4E27070A950040C839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD9A0C5027070A950040C839 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD9A0C5527070A950040C839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DD9A0C5827070A950040C839 /* Autoschool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Autoschool.xcdatamodel; sourceTree = "<group>"; };
 		DD9A0C5A27070A960040C839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD9A0C5D27070A960040C839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD9A0C5F27070A960040C839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +136,10 @@
 		DD9A0C82270715D60040C839 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		DD9A0C85270718D40040C839 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateInstruсtorViewController.swift"; sourceTree = "<group>"; };
+		DDB53C80272C3F8F009B69CF /* Administrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Administrator.swift; sourceTree = "<group>"; };
+		DDB53C85272C4139009B69CF /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		DDB53C88272C41FC009B69CF /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		DDB53C8E272C4859009B69CF /* Agreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agreement.swift; sourceTree = "<group>"; };
 		DDD0D329271C8F400017A160 /* CarParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkViewController.swift; sourceTree = "<group>"; };
 		DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementsViewController.swift; sourceTree = "<group>"; };
 		DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementTableViewCell.swift; sourceTree = "<group>"; };
@@ -309,8 +313,8 @@
 		DD6DFF39271C71640073F63F /* Worker */ = {
 			isa = PBXGroup;
 			children = (
-				DD6DFF26271C6B190073F63F /* WorkerTableViewCell.swift */,
-				DD6DFF27271C6B190073F63F /* WorkerTableViewCell.xib */,
+				DD6DFF26271C6B190073F63F /* AdministratorTableViewCell.swift */,
+				DD6DFF27271C6B190073F63F /* AdministratorTableViewCell.xib */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -405,13 +409,15 @@
 		DD9A0C6A27070AE70040C839 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DD9A0C5727070A950040C839 /* Autoschool.xcdatamodeld */,
+				DDB53C85272C4139009B69CF /* Exam.swift */,
 				DD62C843270A0D9800910092 /* Group.swift */,
 				DD5B16D0270A2465007E5C38 /* Student.swift */,
 				DD1490D7270B983D000ACD8F /* Instructor.swift */,
-				DD6DFF20271C51290073F63F /* Worker.swift */,
 				DD6DFF23271C51B30073F63F /* DriverLicense.swift */,
 				DD6DFF2B271C70090073F63F /* Car.swift */,
+				DDB53C80272C3F8F009B69CF /* Administrator.swift */,
+				DDB53C88272C41FC009B69CF /* Teacher.swift */,
+				DDB53C8E272C4859009B69CF /* Agreement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,7 +516,7 @@
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
 				DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */,
 				DD9A0C5627070A950040C839 /* Main.storyboard in Resources */,
-				DD6DFF29271C6B190073F63F /* WorkerTableViewCell.xib in Resources */,
+				DD6DFF29271C6B190073F63F /* AdministratorTableViewCell.xib in Resources */,
 				DD5B16DA270A3F32007E5C38 /* Exams.storyboard in Resources */,
 				DD5B16D7270A3F2A007E5C38 /* Instructors.storyboard in Resources */,
 				DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */,
@@ -533,14 +539,14 @@
 				DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */,
 				DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */,
 				DD6DFF16271C3D650073F63F /* UIFontExtension.swift in Sources */,
-				DD6DFF21271C51290073F63F /* Worker.swift in Sources */,
+				DDB53C81272C3F8F009B69CF /* Administrator.swift in Sources */,
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
 				DD6DFEE5271C1ACF0073F63F /* CreateWorkerViewController.swift in Sources */,
 				DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */,
-				DD9A0C5927070A950040C839 /* Autoschool.xcdatamodeld in Sources */,
 				DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */,
 				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
 				DD62C844270A0D9800910092 /* Group.swift in Sources */,
+				DDB53C89272C41FC009B69CF /* Teacher.swift in Sources */,
 				DD9A0C76270712A10040C839 /* DatabaseMainButton.swift in Sources */,
 				DD801089270C68AF0062955B /* CreateExamViewController.swift in Sources */,
 				DD43124D2719B2390009B35E /* StudentsViewController.swift in Sources */,
@@ -560,7 +566,9 @@
 				DD6DFF14271C3D650073F63F /* SPAlertLayout.swift in Sources */,
 				DD5B16E4270A405B007E5C38 /* ExamsViewController.swift in Sources */,
 				DD6DFF1B271C3D650073F63F /* SPAlertIconPreset.swift in Sources */,
-				DD6DFF28271C6B190073F63F /* WorkerTableViewCell.swift in Sources */,
+				DD6DFF28271C6B190073F63F /* AdministratorTableViewCell.swift in Sources */,
+				DDB53C86272C4139009B69CF /* Exam.swift in Sources */,
+				DDB53C8F272C4859009B69CF /* Agreement.swift in Sources */,
 				DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */,
 				DD6DFF1D271C3D650073F63F /* SPAlertHaptic.swift in Sources */,
 				DD6DFF24271C51B30073F63F /* DriverLicense.swift in Sources */,
@@ -777,19 +785,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DD9A0C5727070A950040C839 /* Autoschool.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DD9A0C5827070A950040C839 /* Autoschool.xcdatamodel */,
-			);
-			currentVersion = DD9A0C5827070A950040C839 /* Autoschool.xcdatamodel */;
-			path = Autoschool.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DD9A0C4327070A950040C839 /* Project object */;
 }

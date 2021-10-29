@@ -9,10 +9,12 @@ import Foundation
 
 struct Instructor {
     
+    var instructorID: Int
     var firstName: String
     var lastName: String
-    var patronymic: String
-    var phoneNumber: String
+    var middleName: String
     var drivingExperience: Int
+    var passportNumber: String
+    var phoneNumber: String
     
 }

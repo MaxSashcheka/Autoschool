@@ -8,6 +8,7 @@
 import Foundation
 
 struct Car {
+    var cardID: Int
     var number: String
     var name: String
     var color: String

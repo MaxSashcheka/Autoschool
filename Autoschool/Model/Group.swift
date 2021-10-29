@@ -8,24 +8,14 @@
 import Foundation
 
 struct Group {
-    
+
+    var groupID: Int
     var name: String
-    var category: DrivingCategory
-    var dayPart: DayPart
+    var categoryID: Int
+    var lessonsTypeID: Int
+
     var startLessonsDate: String
     var endLesonnsDate: String
     
     var students = [Student]()
-    
-}
-
-enum DrivingCategory {
-    case a
-    case ManuallyB
-    case AutomaticB
-}
-
-enum DayPart {
-    case morning
-    case evening
 }

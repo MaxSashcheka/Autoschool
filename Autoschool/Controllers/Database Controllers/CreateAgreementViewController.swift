@@ -37,7 +37,6 @@ class CreateAgreementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить договор"
-
         
         configureWorkersTableView()
         configureStudentsTableView()
@@ -45,7 +44,7 @@ class CreateAgreementViewController: UIViewController {
 
         setupBarButtonItems()
     }
-    
+
     private func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
@@ -53,7 +52,7 @@ class CreateAgreementViewController: UIViewController {
     private func configureWorkersTableView() {
         workersTableView.delegate = self
         workersTableView.dataSource = self
-        workersTableView.register(WorkerTableViewCell.nib(), forCellReuseIdentifier: WorkerTableViewCell.reuseIdentifier)
+        workersTableView.register(AdministratorTableViewCell.nib(), forCellReuseIdentifier: AdministratorTableViewCell.reuseIdentifier)
         workersTableView.rowHeight = 80
         workersTableView.isScrollEnabled = false
         
@@ -124,7 +123,7 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == workersTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: WorkerTableViewCell.reuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdministratorTableViewCell.reuseIdentifier, for: indexPath)
             
             if indexPath.row == selectedWorkerIndex {
                 cell.accessoryType = .checkmark

@@ -13,7 +13,7 @@ class TeacherTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fullNameLabel: UILabel!
     
-    @IBOutlet weak var mobilePhoneNumberLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var passportNumberLabel: UILabel!
     
     override func awakeFromNib() {
@@ -26,5 +26,11 @@ class TeacherTableViewCell: UITableViewCell {
         return UINib(nibName: reuseIdentifier, bundle: nil)
     }
     
+    func setup(withTeacher teacher: Teacher) {
+        fullNameLabel.text = "\(teacher.lastName) \(teacher.firstName) \(teacher.middleName)"
+        phoneNumberLabel.text = "Моб.телефон: \(teacher.phoneNumber)"
+        passportNumberLabel.text = "Номер паспорта: \(teacher.passportNumber)"
+        
+    }
     
 }

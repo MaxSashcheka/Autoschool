@@ -9,7 +9,6 @@ import UIKit
 
 class CreateExamViewController: UIViewController {
 
-    
     @IBOutlet weak var examDateTextField: UITextField!
     
     @IBOutlet weak var examInternalExternalSegmentedControl: UISegmentedControl!

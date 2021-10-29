@@ -38,7 +38,8 @@ class GroupCell: UICollectionViewCell {
         
         switch group.category {
         case .a:
-            categoryImageView.image = UIImage(systemName: "bicycle")
+            categoryImageView.image = UIImage(named: "motorbike")
+//            categoryImageView.image = UIImage(systemName: "bicycle")
             categoryNameLabel.text = "Категория А"
         case .AutomaticB:
             categoryImageView.image = UIImage(systemName: "car")

@@ -10,7 +10,7 @@ import UIKit
 class AgreementsViewController: UIViewController {
     
     lazy var agreementsTableView: UITableView = {
-        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+        let tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AgreementTableViewCell.nib(), forCellReuseIdentifier: AgreementTableViewCell.reuseIdentifier)
@@ -37,6 +37,8 @@ extension AgreementsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AgreementTableViewCell.reuseIdentifier, for: indexPath)
+        
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }

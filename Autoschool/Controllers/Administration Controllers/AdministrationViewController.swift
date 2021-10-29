@@ -13,7 +13,7 @@ class AdministrationViewController: UIViewController {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(WorkerTableViewCell.nib(), forCellReuseIdentifier: WorkerTableViewCell.reuseIdentifier)
+        tableView.register(AdministratorTableViewCell.nib(), forCellReuseIdentifier: AdministratorTableViewCell.reuseIdentifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
@@ -68,7 +68,7 @@ extension AdministrationViewController: UITableViewDelegate, UITableViewDataSour
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: WorkerTableViewCell.reuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdministratorTableViewCell.reuseIdentifier, for: indexPath)
             cell.accessoryType = .disclosureIndicator
 
             return cell

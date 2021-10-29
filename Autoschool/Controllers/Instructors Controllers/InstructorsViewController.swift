@@ -9,10 +9,10 @@ import UIKit
 
 class InstructorsViewController: UIViewController {
     
-    let instructor0 = Instructor(firstName: "Артем", lastName: "Малашкевич", patronymic: "Викторович", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 2)
-    let instructor1 = Instructor(firstName: "Сащеко", lastName: "Максим", patronymic: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 4)
-    let instructor2 = Instructor(firstName: "Артем", lastName: "Малашкевич", patronymic: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 5)
-    let instructor3 = Instructor(firstName: "Артем", lastName: "Малашкевич", patronymic: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 15)
+    let instructor0 = Instructor(firstName: "Артем", lastName: "Малашкевич", middleName: "Викторович", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 2)
+    let instructor1 = Instructor(firstName: "Сащеко", lastName: "Максим", middleName: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 4)
+    let instructor2 = Instructor(firstName: "Артем", lastName: "Малашкевич", middleName: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 5)
+    let instructor3 = Instructor(firstName: "Артем", lastName: "Малашкевич", middleName: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 15)
     
     lazy var dataSource = [instructor0, instructor1, instructor2, instructor3]
     

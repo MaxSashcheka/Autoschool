@@ -20,7 +20,6 @@ class GroupsViewController: UIViewController {
         Group(name: "Группа-9", category: .AutomaticB, dayPart: .morning, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0,]),
         Group(name: "Группа-24", category: .a, dayPart: .morning, startLessonsDate: "24.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1]),
     ]
-
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)

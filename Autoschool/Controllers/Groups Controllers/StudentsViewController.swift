@@ -17,6 +17,9 @@ class StudentsViewController: UIViewController {
         super.viewDidLoad()
         title = group.name
         
+        studentsTableView.contentInsetAdjustmentBehavior = .never
+        studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
         configureTableView()
     }
     
@@ -25,6 +28,7 @@ class StudentsViewController: UIViewController {
         studentsTableView.dataSource = self
         studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
         studentsTableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
+
         studentsTableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: 0, right: 0)
     }
 }
@@ -64,7 +68,13 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         }
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateStudentViewController")
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

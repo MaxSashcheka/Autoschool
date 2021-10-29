@@ -1,19 +1,17 @@
 //
-//  Worker.swift
+//  Administrator.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 10/17/21.
+//  Created by Max Sashcheka on 10/29/21.
 //
 
 import Foundation
 
-struct Worker {
-    
+struct Administrator {
+    var administratorID: Int
     var firstName: String
     var lastName: String
-    var patronymic: String
-    
+    var middleName: String
     var phoneNumber: String
     var email: String
-
 }

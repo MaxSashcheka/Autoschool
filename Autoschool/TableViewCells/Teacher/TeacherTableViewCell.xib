@@ -53,8 +53,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="fullNameLabel" destination="3G6-Tz-Qze" id="ziE-0A-r9b"/>
-                <outlet property="mobilePhoneNumberLabel" destination="zTP-Bt-hNP" id="1Gr-7e-7sE"/>
                 <outlet property="passportNumberLabel" destination="52Z-Vj-Gzc" id="Bzj-M3-7UZ"/>
+                <outlet property="phoneNumberLabel" destination="zTP-Bt-hNP" id="1Gr-7e-7sE"/>
             </connections>
             <point key="canvasLocation" x="215.94202898550725" y="132.92410714285714"/>
         </tableViewCell>

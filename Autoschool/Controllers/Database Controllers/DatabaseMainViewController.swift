@@ -89,6 +89,7 @@ extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource
         cell.textLabel?.text = vcRepresentator?.tableViewName
         cell.imageView?.image = vcRepresentator?.image
         cell.imageView?.tintColor = .lightGreenSea
+        cell.imageView?.contentMode = .scaleAspectFit
 
         return cell
     }

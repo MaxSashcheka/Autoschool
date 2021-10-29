@@ -26,13 +26,14 @@ class StudentTableViewCell: UITableViewCell {
     }
     
     func setup(withStudent student: Student) {
-        fullNameLabel.text = "\(student.lastName) \(student.firstName) \(student.patronymic)"
+        fullNameLabel.text = "\(student.lastName) \(student.firstName) \(student.middleName)"
         
         passportNumberLabel.text = "Номер паспорта: \(student.passportNumber)"
         
         phoneNumberLabel.text = "Моб. телефон: \(student.phoneNumber)"
-        instructorNameLabel.text = "Инструктор: \(student.instructorName)"
+        instructorNameLabel.text = "Инструктор: Гурский Никита Сергеевич"
     }
+    
     
     static func nib() -> UINib {
         return UINib(nibName: reuseIdentifier, bundle: nil)
