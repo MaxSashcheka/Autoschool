@@ -24,17 +24,17 @@
                             <constraint firstAttribute="width" constant="7" id="hVX-r3-whg"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа 14-2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-OA-ZTc">
-                        <rect key="frame" x="86" y="15" width="214.5" height="33.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="VQS-B7-p0M">
-                        <rect key="frame" x="44" y="73.5" width="327" height="98"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VQS-B7-p0M">
+                        <rect key="frame" x="44" y="35.5" width="327" height="124"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TRc-n2-wy6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа 14-2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-OA-ZTc">
                                 <rect key="frame" x="0.0" y="0.0" width="327" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TRc-n2-wy6">
+                                <rect key="frame" x="0.0" y="48" width="327" height="28"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dmv-Qc-dap">
                                         <rect key="frame" x="0.0" y="1.5" width="34" height="25.5"/>
@@ -52,15 +52,9 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.03.2021 - 22.04.2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UIM-lK-zQJ">
-                                <rect key="frame" x="0.0" y="35" width="327" height="28"/>
+                                <rect key="frame" x="0.0" y="96" width="327" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество учеников: 22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XYl-Hk-27q">
-                                <rect key="frame" x="0.0" y="70" width="327" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -71,12 +65,10 @@
             <constraints>
                 <constraint firstItem="VQS-B7-p0M" firstAttribute="leading" secondItem="5ce-Vn-rXY" secondAttribute="trailing" constant="17" id="51U-2G-0Md"/>
                 <constraint firstAttribute="trailing" secondItem="VQS-B7-p0M" secondAttribute="trailing" constant="15" id="6KM-V8-pQ8"/>
-                <constraint firstItem="5Ul-OA-ZTc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="6ik-hf-zxE"/>
                 <constraint firstItem="5ce-Vn-rXY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="8RW-Pb-mff"/>
                 <constraint firstAttribute="bottom" secondItem="5ce-Vn-rXY" secondAttribute="bottom" constant="20" id="Cjh-gw-awW"/>
                 <constraint firstItem="5ce-Vn-rXY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="K9U-rI-lpj"/>
-                <constraint firstItem="5Ul-OA-ZTc" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="fuW-E5-ckN"/>
-                <constraint firstItem="VQS-B7-p0M" firstAttribute="top" secondItem="5Ul-OA-ZTc" secondAttribute="bottom" constant="25" id="oP9-xV-auK"/>
+                <constraint firstItem="VQS-B7-p0M" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="YUO-u4-jKN"/>
             </constraints>
             <size key="customSize" width="386" height="195"/>
             <connections>
@@ -85,7 +77,6 @@
                 <outlet property="dateLabel" destination="UIM-lK-zQJ" id="GgE-tG-85R"/>
                 <outlet property="lessonsTimeLabel" destination="5ce-Vn-rXY" id="Fs3-3J-fzM"/>
                 <outlet property="nameLabel" destination="5Ul-OA-ZTc" id="NhC-SP-xlx"/>
-                <outlet property="studentsCountLabel" destination="XYl-Hk-27q" id="grX-4P-RbC"/>
             </connections>
             <point key="canvasLocation" x="355.07246376811599" y="132.92410714285714"/>
         </collectionViewCell>

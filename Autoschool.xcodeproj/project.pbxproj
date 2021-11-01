@@ -166,7 +166,7 @@
 				DD6DFF33271C71460073F63F /* Student */,
 				DD6DFF35271C71500073F63F /* Teacher */,
 				DD6DFF37271C715A0073F63F /* Instructor */,
-				DD6DFF39271C71640073F63F /* Worker */,
+				DD6DFF39271C71640073F63F /* Administrator */,
 				DD6DFF3B271C716A0073F63F /* Car */,
 			);
 			path = TableViewCells;
@@ -312,13 +312,13 @@
 			path = Instructor;
 			sourceTree = "<group>";
 		};
-		DD6DFF39271C71640073F63F /* Worker */ = {
+		DD6DFF39271C71640073F63F /* Administrator */ = {
 			isa = PBXGroup;
 			children = (
 				DD6DFF26271C6B190073F63F /* AdministratorTableViewCell.swift */,
 				DD6DFF27271C6B190073F63F /* AdministratorTableViewCell.xib */,
 			);
-			path = Worker;
+			path = Administrator;
 			sourceTree = "<group>";
 		};
 		DD6DFF3B271C716A0073F63F /* Car */ = {

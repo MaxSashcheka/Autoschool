@@ -29,6 +29,14 @@ class AdministrationViewController: UIViewController {
         setupNavigation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
+            self.administrators = fetchedAdministrators
+            self.administratorsTableView.reloadData()
+        }
+    }
+    
     private func setupNavigation() {
         
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -58,7 +66,7 @@ extension AdministrationViewController: UITableViewDelegate, UITableViewDataSour
         if section == 0 {
             return 1
         } else {
-            return 10
+            return administrators.count
         }
     }
     

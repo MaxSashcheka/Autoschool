@@ -31,6 +31,14 @@ class CarParkViewController: UIViewController {
         title = "Автопарк"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchCars { fetchedCars in
+            self.cars = fetchedCars
+            self.carsTableView.reloadData()
+        }
+    }
+    
 
 }
 
@@ -41,7 +49,11 @@ extension CarParkViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath) as! CarTableViewCell
+        
+        let car = cars[indexPath.row]
+        cell.setup(withCar: car)
+        
         cell.accessoryType = .disclosureIndicator
         
         return cell

@@ -13,9 +13,19 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     
+    let apiRoute = "http://localhost:5000"
+    
+    public enum HTTPMethod: String {
+        case get = "GET"
+        case post = "POST"
+        case put = "PUT"
+        case patch = "PATCH"
+        case delete = "DELETE"
+    }
+    
     // MARK: - groups GET
     func fetchGroups(completionHandler: @escaping ([Group]) -> Void) {
-        guard let url = URL(string: "http://localhost:5000/groups") else { return }
+        guard let url = URL(string: "\(apiRoute)/groups") else { return }
         
         URLSession.shared.dataTask(with: url) { data, responce, error in
 
@@ -40,7 +50,7 @@ class NetworkManager {
     
     // MARK: - students GET
     func fetchStudents(withGroupId groupId: Int, completionHandler: @escaping ([Student]) -> Void) {
-        guard let url = URL(string: "http://localhost:5000/students/group/\(groupId)") else { return }
+        guard let url = URL(string: "\(apiRoute)/students/group/\(groupId)") else { return }
         
         URLSession.shared.dataTask(with: url) { data, responce, error in
 
@@ -65,7 +75,7 @@ class NetworkManager {
     
     // MARK: - teacher GET
     func fetchTeacher(forGroupId groupId: Int, completionHandler: @escaping ([Teacher]) -> Void) {
-        guard let url = URL(string: "http://localhost:5000/teachers/\(groupId)") else { return }
+        guard let url = URL(string: "\(apiRoute)/teachers/\(groupId)") else { return }
         
         URLSession.shared.dataTask(with: url) { data, responce, error in
 
@@ -88,6 +98,81 @@ class NetworkManager {
         }.resume()
     }
     
+    // MARK: - teacher GET
+    func fetchInstructors(completionHandler: @escaping ([Instructor]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/instructors") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let instructorsData = try JSONDecoder().decode([Instructor].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(instructorsData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+
+        }.resume()
+    }
+    
+    // MARK: - cars GET
+    func fetchCars(completionHandler: @escaping ([Car]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/cars") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let carsData = try JSONDecoder().decode([Car].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(carsData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+
+        }.resume()
+    }
+    
+    // MARK: - administrators GET
+    func fetchAdministrators(completionHandler: @escaping ([Administrator]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/administrators") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let administratorsData = try JSONDecoder().decode([Administrator].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(administratorsData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+
+        }.resume()
+    }
+    
     
     
     // MARK: - POST
@@ -100,7 +185,7 @@ class NetworkManager {
 //            "group_id": "3"
 //        ]
 
-        guard let url = URL(string: "http://localhost:5000/createStudent") else { return }
+        guard let url = URL(string: "\(apiRoute)/createStudent") else { return }
         
         do {
 
@@ -132,7 +217,7 @@ class NetworkManager {
     // MARK: - DELETE
 
     func deleteStudent(withId studentId: Int) {
-        guard let url = URL(string: "http://localhost:5000/deleteStudent/\(studentId)") else { return }
+        guard let url = URL(string: "\(apiRoute)/deleteStudent/\(studentId)") else { return }
         
         do {
             var request = URLRequest(url: url)

@@ -13,7 +13,7 @@ class AdministratorTableViewCell: UITableViewCell {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    static let reuseIdentifier = "WorkerTableViewCell"
+    static let reuseIdentifier = "AdministratorTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

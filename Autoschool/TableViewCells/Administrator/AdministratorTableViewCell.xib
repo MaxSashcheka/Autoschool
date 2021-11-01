@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="435" height="84"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Сащеко Максим Виссерионович" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-WN-QTC">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Сащеко Максим Виссерионович" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-WN-QTC">
                         <rect key="frame" x="10" y="5" width="415" height="33"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                         <nil key="textColor"/>

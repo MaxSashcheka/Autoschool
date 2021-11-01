@@ -81,7 +81,7 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let itemWidth = collectionView.frame.width - groupsCollectionViewInsets.left * 2
-        let itemHeight = itemWidth / 1.85
+        let itemHeight = itemWidth / 2
         
         return CGSize(width: itemWidth, height: itemHeight)
     }

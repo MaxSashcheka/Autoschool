@@ -11,7 +11,7 @@ class InstructorsViewController: UIViewController {
     
     var instructors = [Instructor]()
     
-    lazy var tableView: UITableView = {
+    lazy var instructorsTableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         
         tableView.delegate = self
@@ -25,9 +25,17 @@ class InstructorsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(tableView)
+        view.addSubview(instructorsTableView)
 
         setupNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchInstructors { fetchedInstructors in
+            self.instructors = fetchedInstructors
+            self.instructorsTableView.reloadData()
+        }
     }
     
     private func setupNavigation() {

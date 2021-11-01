@@ -17,9 +17,7 @@ class GroupCell: UICollectionViewCell {
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var studentsCountLabel: UILabel!
-    
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
