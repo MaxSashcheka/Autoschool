@@ -12,7 +12,7 @@ class GroupCell: UICollectionViewCell {
     static let reuseIdentifier = "GroupCell"
 
     
-    @IBOutlet weak var dayPartIndicatorView: UIView!
+    @IBOutlet weak var lessonsTimeLabel: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
@@ -23,7 +23,7 @@ class GroupCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        dayPartIndicatorView.layer.cornerRadius = dayPartIndicatorView.frame.width / 2
+        lessonsTimeLabel.layer.cornerRadius = lessonsTimeLabel.frame.width / 2
         categoryImageView.tintColor = .black
         
         backgroundColor = .white
@@ -36,28 +36,37 @@ class GroupCell: UICollectionViewCell {
         backgroundColor = .white
         nameLabel.text = group.name
         
-        switch group.category {
-        case .a:
+        switch group.categoryId {
+        case 1:
             categoryImageView.image = UIImage(named: "motorbike")
-//            categoryImageView.image = UIImage(systemName: "bicycle")
             categoryNameLabel.text = "Категория А"
-        case .AutomaticB:
+        case 2:
             categoryImageView.image = UIImage(systemName: "car")
             categoryNameLabel.text = "Категория B (АКПП)"
-        case .ManuallyB:
+        case 3:
             categoryImageView.image = UIImage(systemName: "car")
             categoryNameLabel.text = "Категория В (МКПП)"
+        default:
+            print("Wrong categoryId")
         }
         
-        switch group.dayPart {
-        case .morning:
-            dayPartIndicatorView.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
-        case .evening:
-            dayPartIndicatorView.backgroundColor = #colorLiteral(red: 0.3236978054, green: 0.1063579395, blue: 0.574860394, alpha: 1)
+        switch group.lessonsTimeId {
+        case 1:
+            lessonsTimeLabel.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        case 2:
+            lessonsTimeLabel.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+        case 3:
+            lessonsTimeLabel.backgroundColor = #colorLiteral(red: 0.3236978054, green: 0.1063579395, blue: 0.574860394, alpha: 1)
+        default:
+            print("Wrong lessonsTimeId")
         }
+        let endOfDate = String.Index(encodedOffset: 9)
 
-        dateLabel.text = "\(group.startLessonsDate) - \(group.endLesonnsDate)"
-        studentsCountLabel.text = "Количество учеников: \(group.students.count)"
+        let lessonsStartDateString = group.lessonsStartDate[...endOfDate].replacingOccurrences(of: "-", with: "/")
+        let lessonsEndDateString = group.lessonsEndDate[...endOfDate].replacingOccurrences(of: "-", with: "/")
+        
+        dateLabel.text = "\(lessonsStartDateString) - \(lessonsEndDateString)"
+//        studentsCountLabel.text = "Количество учеников: \(group.students.count)"
     }
     
     static func nib() -> UINib {

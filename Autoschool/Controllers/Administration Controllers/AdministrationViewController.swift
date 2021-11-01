@@ -9,7 +9,9 @@ import UIKit
 
 class AdministrationViewController: UIViewController {
     
-    lazy var workersTableView: UITableView = {
+    var administrators = [Administrator]()
+    
+    lazy var administratorsTableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self
@@ -22,7 +24,7 @@ class AdministrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(workersTableView)
+        view.addSubview(administratorsTableView)
         
         setupNavigation()
     }
@@ -68,7 +70,12 @@ extension AdministrationViewController: UITableViewDelegate, UITableViewDataSour
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: AdministratorTableViewCell.reuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdministratorTableViewCell.reuseIdentifier, for: indexPath) as! AdministratorTableViewCell
+
+            let administrator = administrators[indexPath.row]
+            cell.setup(withAdministrator: administrator)
+            
+            
             cell.accessoryType = .disclosureIndicator
 
             return cell

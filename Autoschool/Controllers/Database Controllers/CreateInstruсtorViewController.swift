@@ -8,8 +8,10 @@
 import UIKit
 
 class CreateInstruсtorViewController: UIViewController {
-
     
+    var cars = [Car]()
+    var driverLicenses = [DriverLisence]()
+
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var patronymicTextField: UITextField!
@@ -18,7 +20,6 @@ class CreateInstruсtorViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
     @IBOutlet weak var carsTableView: UITableView!
-    let carsTableViewCellsCount = 5
     var selectedCarIndex = 0
     
     @IBOutlet weak var carsSuperViewHeight: NSLayoutConstraint!
@@ -41,7 +42,7 @@ class CreateInstruсtorViewController: UIViewController {
         carsTableView.isScrollEnabled = false
 
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        carsTableViewHeight.constant = CGFloat(carsTableViewCellsCount) * carsTableView.rowHeight + 10
+        carsTableViewHeight.constant = CGFloat(cars.count) * carsTableView.rowHeight + 10
         carsSuperViewHeight.constant = carsTableViewHeight.constant + 40
     }
     
@@ -86,7 +87,7 @@ class CreateInstruсtorViewController: UIViewController {
 extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return carsTableViewCellsCount
+        return cars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

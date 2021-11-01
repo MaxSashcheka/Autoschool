@@ -9,16 +9,16 @@ import UIKit
 
 class CreateAgreementViewController: UIViewController {
     
+    var students = [Student]()
+    var administrators = [Administrator]()
     
     @IBOutlet weak var signingDateTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     
-    @IBOutlet weak var workersTableView: UITableView!
-    let workersTableViewCellsCount = 5
-    var selectedWorkerIndex = 0
+    @IBOutlet weak var administratorsTableView: UITableView!
+    var selectedAdministratorIndex = 0
     
     @IBOutlet weak var studentsTableView: UITableView!
-    let studentsTableViewCellsCount = 3
     var selectedStudentIndex = 0
 
     @IBOutlet weak var workersSuperViewHeight: NSLayoutConstraint!
@@ -50,14 +50,14 @@ class CreateAgreementViewController: UIViewController {
     }
     
     private func configureWorkersTableView() {
-        workersTableView.delegate = self
-        workersTableView.dataSource = self
-        workersTableView.register(AdministratorTableViewCell.nib(), forCellReuseIdentifier: AdministratorTableViewCell.reuseIdentifier)
-        workersTableView.rowHeight = 80
-        workersTableView.isScrollEnabled = false
+        administratorsTableView.delegate = self
+        administratorsTableView.dataSource = self
+        administratorsTableView.register(AdministratorTableViewCell.nib(), forCellReuseIdentifier: AdministratorTableViewCell.reuseIdentifier)
+        administratorsTableView.rowHeight = 80
+        administratorsTableView.isScrollEnabled = false
         
-        workersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        workersTableViewHeight.constant = CGFloat(workersTableViewCellsCount) * workersTableView.rowHeight + 10
+        administratorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        workersTableViewHeight.constant = CGFloat(administrators.count) * administratorsTableView.rowHeight + 10
         workersSuperViewHeight.constant = workersTableViewHeight.constant + 40
     }
     
@@ -69,7 +69,7 @@ class CreateAgreementViewController: UIViewController {
         studentsTableView.isScrollEnabled = false
 
         studentsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        studentsTableViewHeight.constant = CGFloat(studentsTableViewCellsCount) * studentsTableView.rowHeight + 10
+        studentsTableViewHeight.constant = CGFloat(students.count) * studentsTableView.rowHeight + 10
         studentsSuperViewHeight.constant = studentsTableViewHeight.constant + 40
     }
     
@@ -114,18 +114,18 @@ class CreateAgreementViewController: UIViewController {
 extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == workersTableView {
-            return workersTableViewCellsCount
+        if tableView == administratorsTableView {
+            return administrators.count
         } else {
-            return studentsTableViewCellsCount
+            return students.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == workersTableView {
+        if tableView == administratorsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: AdministratorTableViewCell.reuseIdentifier, for: indexPath)
             
-            if indexPath.row == selectedWorkerIndex {
+            if indexPath.row == selectedAdministratorIndex {
                 cell.accessoryType = .checkmark
                 cell.tintColor = .lightGreenSea
             } else {
@@ -151,8 +151,8 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if tableView == workersTableView {
-            selectedWorkerIndex = indexPath.row
+        if tableView == administratorsTableView {
+            selectedAdministratorIndex = indexPath.row
         } else {
             selectedStudentIndex = indexPath.row
         }

@@ -83,7 +83,7 @@
                 <outlet property="categoryImageView" destination="dmv-Qc-dap" id="P4c-yu-5z4"/>
                 <outlet property="categoryNameLabel" destination="CgG-EF-c7S" id="sfc-hC-eMC"/>
                 <outlet property="dateLabel" destination="UIM-lK-zQJ" id="GgE-tG-85R"/>
-                <outlet property="dayPartIndicatorView" destination="5ce-Vn-rXY" id="Fs3-3J-fzM"/>
+                <outlet property="lessonsTimeLabel" destination="5ce-Vn-rXY" id="Fs3-3J-fzM"/>
                 <outlet property="nameLabel" destination="5Ul-OA-ZTc" id="NhC-SP-xlx"/>
                 <outlet property="studentsCountLabel" destination="XYl-Hk-27q" id="grX-4P-RbC"/>
             </connections>

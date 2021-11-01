@@ -25,7 +25,7 @@
 		DD62C84A270A0E6D00910092 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62C848270A0E6D00910092 /* GroupCell.xib */; };
 		DD6DFEE1271C134C0073F63F /* InstructorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */; };
 		DD6DFEE2271C134C0073F63F /* InstructorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */; };
-		DD6DFEE5271C1ACF0073F63F /* CreateWorkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEE4271C1ACF0073F63F /* CreateWorkerViewController.swift */; };
+		DD6DFEE5271C1ACF0073F63F /* CreateAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEE4271C1ACF0073F63F /* CreateAdministratorViewController.swift */; };
 		DD6DFEE8271C1B990073F63F /* CreateAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEE7271C1B990073F63F /* CreateAgreementViewController.swift */; };
 		DD6DFEEC271C1BC80073F63F /* CreateTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEEB271C1BC80073F63F /* CreateTeacherViewController.swift */; };
 		DD6DFEF1271C33CE0073F63F /* Administration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFEF0271C33CE0073F63F /* Administration.storyboard */; };
@@ -73,6 +73,7 @@
 		DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */; };
 		DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */; };
 		DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */; };
+		DDF02DC027300D1100F372B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF02DBF27300D1100F372B2 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +95,7 @@
 		DD62C848270A0E6D00910092 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorTableViewCell.swift; sourceTree = "<group>"; };
 		DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorTableViewCell.xib; sourceTree = "<group>"; };
-		DD6DFEE4271C1ACF0073F63F /* CreateWorkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkerViewController.swift; sourceTree = "<group>"; };
+		DD6DFEE4271C1ACF0073F63F /* CreateAdministratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdministratorViewController.swift; sourceTree = "<group>"; };
 		DD6DFEE7271C1B990073F63F /* CreateAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAgreementViewController.swift; sourceTree = "<group>"; };
 		DD6DFEEB271C1BC80073F63F /* CreateTeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeacherViewController.swift; sourceTree = "<group>"; };
 		DD6DFEF0271C33CE0073F63F /* Administration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Administration.storyboard; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementsViewController.swift; sourceTree = "<group>"; };
 		DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementTableViewCell.swift; sourceTree = "<group>"; };
 		DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementTableViewCell.xib; sourceTree = "<group>"; };
+		DDF02DBF27300D1100F372B2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,7 +349,7 @@
 		DD9A0C4D27070A950040C839 /* Autoschool */ = {
 			isa = PBXGroup;
 			children = (
-				DD6DFF00271C3D650073F63F /* Sources */,
+				DDF02DBE27300CFF00F372B2 /* Networking */,
 				DD5B16C9270A23F0007E5C38 /* TableViewCells */,
 				DD62C846270A0E4F00910092 /* CollectionViewCells */,
 				DD9A0C6927070AC50040C839 /* Controllers */,
@@ -356,6 +358,7 @@
 				DD9A0C6827070AB90040C839 /* Utilities */,
 				DD9A0C6627070AA50040C839 /* Application files */,
 				DD9A0C5F27070A960040C839 /* Info.plist */,
+				DD6DFF00271C3D650073F63F /* Sources */,
 			);
 			path = Autoschool;
 			sourceTree = "<group>";
@@ -426,7 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				DD9A0C7A270713E30040C839 /* DatabaseMainViewController.swift */,
-				DD6DFEE4271C1ACF0073F63F /* CreateWorkerViewController.swift */,
+				DD6DFEE4271C1ACF0073F63F /* CreateAdministratorViewController.swift */,
 				DD9A0C7F270715BD0040C839 /* CreateStudentViewController.swift */,
 				DD6DFEE7271C1B990073F63F /* CreateAgreementViewController.swift */,
 				DD9A0CAA2707444D0040C839 /* CreateInstruсtorViewController.swift */,
@@ -445,6 +448,14 @@
 				DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */,
 			);
 			path = Agreement;
+			sourceTree = "<group>";
+		};
+		DDF02DBE27300CFF00F372B2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DDF02DBF27300D1100F372B2 /* NetworkManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,7 +552,7 @@
 				DD6DFF16271C3D650073F63F /* UIFontExtension.swift in Sources */,
 				DDB53C81272C3F8F009B69CF /* Administrator.swift in Sources */,
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
-				DD6DFEE5271C1ACF0073F63F /* CreateWorkerViewController.swift in Sources */,
+				DD6DFEE5271C1ACF0073F63F /* CreateAdministratorViewController.swift in Sources */,
 				DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */,
 				DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */,
 				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
@@ -561,6 +572,7 @@
 				DD6DFF1E271C3D650073F63F /* SPAlert.swift in Sources */,
 				DD6DFF13271C3D650073F63F /* SPAlertView.swift in Sources */,
 				DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */,
+				DDF02DC027300D1100F372B2 /* NetworkManager.swift in Sources */,
 				DD62C849270A0E6D00910092 /* GroupCell.swift in Sources */,
 				DD6DFEEC271C1BC80073F63F /* CreateTeacherViewController.swift in Sources */,
 				DD6DFF14271C3D650073F63F /* SPAlertLayout.swift in Sources */,

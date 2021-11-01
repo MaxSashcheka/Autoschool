@@ -8,7 +8,7 @@
 import UIKit
 
 
-class CreateWorkerViewController: UIViewController {
+class CreateAdministratorViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -62,7 +62,7 @@ class CreateWorkerViewController: UIViewController {
     
 }
 
-extension CreateWorkerViewController: UITextFieldDelegate {
+extension CreateAdministratorViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }

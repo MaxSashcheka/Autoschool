@@ -9,6 +9,8 @@ import UIKit
 
 class AgreementsViewController: UIViewController {
     
+    var agreements = [Agreement]()
+    
     lazy var agreementsTableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.delegate = self
@@ -32,11 +34,14 @@ class AgreementsViewController: UIViewController {
 extension AgreementsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return agreements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AgreementTableViewCell.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: AgreementTableViewCell.reuseIdentifier, for: indexPath) as! AgreementTableViewCell
+        
+        let agreement = agreements[indexPath.row]
+        cell.setup(withAgreement: agreement)
         
         cell.accessoryType = .disclosureIndicator
         

@@ -9,17 +9,7 @@ import UIKit
 
 class GroupsViewController: UIViewController {
     
-    var student0 = Student(firstName: "Имя", lastName: "Фамилия", patronymic: "Отчество", passportNumber: "МР3333333", phoneNumber: "+375 (29) 358-17-24", instructorName: "Иванов Иван Иванович")
-    var student1 = Student(firstName: "Имя", lastName: "Фамилия", patronymic: "Отчество", passportNumber: "МР3333333", phoneNumber: "+375 (29) 358-17-24", instructorName: "Иванов Иван Иванович")
-    var student2 = Student(firstName: "Имя", lastName: "Фамилия", patronymic: "Отчество", passportNumber: "МР3333333", phoneNumber: "+375 (29) 358-17-24", instructorName: "Иванов Иван Иванович")
-    
-    lazy var dataSource = [
-        Group(name: "Группа-14", category: .AutomaticB, dayPart: .evening, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0, student1, student2, student0, student1, student2,]),
-        Group(name: "Группа-19", category: .ManuallyB, dayPart: .morning, startLessonsDate: "24.07.2021", endLesonnsDate: "18.11.2022", students: [student1, student2,student0, student1, student2,]),
-        Group(name: "Группа-24", category: .a, dayPart: .evening, startLessonsDate: "24.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0, student1, student2,]),
-        Group(name: "Группа-9", category: .AutomaticB, dayPart: .morning, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0,]),
-        Group(name: "Группа-24", category: .a, dayPart: .morning, startLessonsDate: "24.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1]),
-    ]
+    var groups = [Group]()
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -31,6 +21,14 @@ class GroupsViewController: UIViewController {
         configureCollectionView()
         
         setupNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchGroups { fetchedGroups in
+            self.groups = fetchedGroups
+            self.groupsCollectionView.reloadData()
+        }
     }
     
     private func configureCollectionView() {
@@ -62,13 +60,13 @@ class GroupsViewController: UIViewController {
 
 extension GroupsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+        return groups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
         
-        let group = dataSource[indexPath.row]
+        let group = groups[indexPath.row]
         cell.setup(withGroup: group)
         
         return cell
@@ -98,7 +96,7 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "StudentsViewController") as! StudentsViewController
-        let selectedGroup = dataSource[indexPath.item]
+        let selectedGroup = groups[indexPath.item]
         viewController.group = selectedGroup
         
         self.navigationController?.pushViewController(viewController, animated: true)

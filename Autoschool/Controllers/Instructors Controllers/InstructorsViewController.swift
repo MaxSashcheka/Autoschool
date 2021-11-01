@@ -9,12 +9,7 @@ import UIKit
 
 class InstructorsViewController: UIViewController {
     
-    let instructor0 = Instructor(firstName: "Артем", lastName: "Малашкевич", middleName: "Викторович", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 2)
-    let instructor1 = Instructor(firstName: "Сащеко", lastName: "Максим", middleName: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 4)
-    let instructor2 = Instructor(firstName: "Артем", lastName: "Малашкевич", middleName: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 5)
-    let instructor3 = Instructor(firstName: "Артем", lastName: "Малашкевич", middleName: "Андреевич", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 15)
-    
-    lazy var dataSource = [instructor0, instructor1, instructor2, instructor3]
+    var instructors = [Instructor]()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
@@ -64,7 +59,7 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
         if section == 0 {
             return 1
         } else {
-            return dataSource.count
+            return instructors.count
         }
     }
     
@@ -76,6 +71,9 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath) as! InstructorTableViewCell
+            
+            let instructor = instructors[indexPath.row]
+            cell.setup(withInstructor: instructor)
             
             return cell
         }

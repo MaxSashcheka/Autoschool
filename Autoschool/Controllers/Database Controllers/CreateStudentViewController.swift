@@ -8,6 +8,9 @@
 import UIKit
 
 class CreateStudentViewController: UIViewController {
+    
+    var groups = [Group]()
+    var instructors = [Instructor]()
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -23,16 +26,7 @@ class CreateStudentViewController: UIViewController {
     @IBOutlet weak var instructorsTableView: UITableView!
     @IBOutlet weak var instructorsTableViewSuperViewHeight: NSLayoutConstraint!
     @IBOutlet weak var instructorsTableViewHeight: NSLayoutConstraint!
-    let instructorsTableViewCellsCount = 7
     var selectedInstructorIndex = 0
-    
-    var student0 = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
-    var student1 = Student(firstName: "Артем", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
-    var student2 = Student(firstName: "Максим", lastName: "Малашкевич", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
-
-    lazy var group = Group(name: "Группа-14", category: .AutomaticB, dayPart: .evening, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0, student1, student2, student0, student1, student2,])
-    
-    let instructor0 = Instructor(firstName: "Артем", lastName: "Малашкевич", patronymic: "Викторович", phoneNumber: "+375 (29) 358-17-24", drivingExperience: 15)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +51,7 @@ class CreateStudentViewController: UIViewController {
         instructorsTableView.isScrollEnabled = false
         
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        instructorsTableViewHeight.constant = CGFloat(instructorsTableViewCellsCount) * instructorsTableView.rowHeight + 10
+        instructorsTableViewHeight.constant = CGFloat(instructors.count) * instructorsTableView.rowHeight + 10
         instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 40
     }
     
@@ -103,11 +97,13 @@ class CreateStudentViewController: UIViewController {
 extension CreateStudentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return groups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
+        
+        let group = groups[indexPath.item]
         cell.setup(withGroup: group)
         
         // Check for selection
@@ -157,7 +153,7 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
 extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return instructorsTableViewCellsCount
+        return instructors.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

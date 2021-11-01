@@ -8,6 +8,8 @@
 import UIKit
 
 class ExamsViewController: UIViewController {
+    
+    var exams = [Exam]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

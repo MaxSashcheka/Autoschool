@@ -8,6 +8,8 @@
 import UIKit
 
 class CreateExamViewController: UIViewController {
+    
+    var groups = [Group]()
 
     @IBOutlet weak var examDateTextField: UITextField!
     
@@ -25,12 +27,7 @@ class CreateExamViewController: UIViewController {
 
         return datePicker
     }()
-    
-    var student0 = Student(firstName: "Максим", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Малашкевич Денисааа")
-    var student1 = Student(firstName: "Артем", lastName: "Сащеко", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
-    var student2 = Student(firstName: "Максим", lastName: "Малашкевич", patronymic: "Сащеко", passportNumber: "МР3718032", phoneNumber: "+375 (29) 358-17-24", instructorName: "Скурат Денис")
 
-    lazy var group = Group(name: "Группа-14", category: .AutomaticB, dayPart: .evening, startLessonsDate: "14.01.2021", endLesonnsDate: "18.02.2022", students: [student0, student1, student2,student0, student1, student2,student0, student1, student2, student0, student1, student2,])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +96,7 @@ extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
     
+        let group = groups[indexPath.item]
         cell.setup(withGroup: group)
         
         // Check for selection

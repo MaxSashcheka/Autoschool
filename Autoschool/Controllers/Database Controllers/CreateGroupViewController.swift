@@ -8,6 +8,8 @@
 import UIKit
 
 class CreateGroupViewController: UIViewController {
+    
+    var teachers = [Teacher]()
 
     @IBOutlet weak var groupNameLabel: UITextField!
     @IBOutlet weak var startDateTextField: UITextField!
@@ -19,7 +21,6 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var teachersTableView: UITableView!
     @IBOutlet weak var teachersTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var teachersSuperViewHeight: NSLayoutConstraint!
-    let teachersTableViewCount = 7
     var selectedTeacherIndex = 0
     
     lazy var startLessonsDatePicker: UIDatePicker = {
@@ -55,7 +56,7 @@ class CreateGroupViewController: UIViewController {
         teachersTableView.rowHeight = 76
         teachersTableView.isScrollEnabled = false
         teachersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        teachersTableViewHeight.constant = CGFloat(teachersTableViewCount) * teachersTableView.rowHeight + 10
+        teachersTableViewHeight.constant = CGFloat(teachers.count) * teachersTableView.rowHeight + 10
         teachersSuperViewHeight.constant = teachersTableViewHeight.constant + 20
     }
     
@@ -140,7 +141,7 @@ class CreateGroupViewController: UIViewController {
 
 extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teachersTableViewCount
+        return teachers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

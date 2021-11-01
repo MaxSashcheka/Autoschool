@@ -9,6 +9,8 @@ import UIKit
 
 class CarParkViewController: UIViewController {
     
+    var cars = [Car]()
+    
     lazy var carsTableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.delegate = self
@@ -21,7 +23,6 @@ class CarParkViewController: UIViewController {
         
         return tableView
     }()
-    let carsTableViewCount = 7
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class CarParkViewController: UIViewController {
 extension CarParkViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return carsTableViewCount
+        return cars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

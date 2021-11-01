@@ -12,6 +12,7 @@ class StudentsViewController: UIViewController {
     @IBOutlet weak var studentsTableView: UITableView!
     
     var group: Group!
+    var students = [Student]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,11 @@ class StudentsViewController: UIViewController {
         studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
         configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        NetworkManager.shared.fe
     }
     
     private func configureTableView() {
@@ -52,7 +58,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return group.students.count
+            return students.count
         }
     }
     
@@ -63,7 +69,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
-            let student = group.students[indexPath.row]
+            let student = students[indexPath.row]
             cell.setup(withStudent: student)
             
             return cell
