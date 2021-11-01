@@ -14,7 +14,7 @@ class CreateStudentViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var patronymicTextField: UITextField!
+    @IBOutlet weak var middleNameTextField: UITextField!
     
     @IBOutlet weak var passportNumberTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -31,10 +31,22 @@ class CreateStudentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить ученика"
-    
+        
         configureCollectionViews()
         configureInstructorsTableView()
         setupBarButtonItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchGroups { fetchedGroups in
+            self.groups = fetchedGroups
+            self.groupsCollectionView.reloadData()
+        }
+        NetworkManager.shared.fetchInstructors { fetchedInstructors in
+            self.instructors = fetchedInstructors
+            self.instructorsTableView.reloadData()
+        }
     }
     
     private func configureCollectionViews() {
@@ -63,30 +75,39 @@ class CreateStudentViewController: UIViewController {
         let successAlertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить ученика в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-        guard let firstName = firstNameTextField.text, firstName != "" else {
-            failureAlertView.present()
-            return
-        }
+//        guard var firstName = firstNameTextField.text, firstName != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//
+//        guard var lastName = lastNameTextField.text, lastName != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//
+//        guard var middleName = middleNameTextField.text, middleName != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//
+//        guard var phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//
+//        guard var passportNumber = passportNumberTextField.text, passportNumber != "" else {
+//            failureAlertView.present()
+//            return
+//        }
         
-        guard let lastName = lastNameTextField.text, lastName != "" else {
-            failureAlertView.present()
-            return
-        }
+        var firstName = "Max"
+        var lastName = "Sashcheka"
+        var middleName = "Andreevich"
+        var passportNumber = "MP3719335"
+        var phoneNumber = "+ 375 (29) 358-17-24"
         
-        guard let patronymic = patronymicTextField.text, patronymic != "" else {
-            failureAlertView.present()
-            return
-        }
-        
-        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
-            failureAlertView.present()
-            return
-        }
-        
-        guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
-            failureAlertView.present()
-            return
-        }
+        let student = Student(studentId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: 1, groupId: 1)
+        NetworkManager.shared.postStudent(student)
         
         successAlertView.present()
     }

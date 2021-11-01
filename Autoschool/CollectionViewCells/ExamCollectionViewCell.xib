@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ExamCollectionViewCell" customModule="Autoschool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="418" height="169"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="418" height="169"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Идентификатор: 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-VJ-uJP">
+                        <rect key="frame" x="114" y="10" width="190.5" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="maW-4b-osq">
+                        <rect key="frame" x="10" y="44" width="398" height="67.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа: 913802" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvd-fo-uFQ">
+                                <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тип экзамена: внутренний теория" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tu-bq-JtM">
+                                <rect key="frame" x="0.0" y="23.5" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата проведения: 2012-10-12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea3-j4-UbZ">
+                                <rect key="frame" x="0.0" y="47" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="kfc-VJ-uJP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="0HY-wB-GhP"/>
+                <constraint firstItem="maW-4b-osq" firstAttribute="top" secondItem="kfc-VJ-uJP" secondAttribute="bottom" constant="10" id="7M3-Rn-izB"/>
+                <constraint firstItem="maW-4b-osq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="99N-fL-7mc"/>
+                <constraint firstAttribute="trailing" secondItem="maW-4b-osq" secondAttribute="trailing" constant="10" id="cdj-Iw-D2p"/>
+                <constraint firstItem="kfc-VJ-uJP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qOv-cv-HLr"/>
+            </constraints>
+            <size key="customSize" width="418" height="169"/>
+            <connections>
+                <outlet property="examDateLabel" destination="ea3-j4-UbZ" id="eSN-K8-F11"/>
+                <outlet property="examIdentifierLabel" destination="kfc-VJ-uJP" id="1yb-HP-C0o"/>
+                <outlet property="examTypeLabel" destination="1Tu-bq-JtM" id="JFT-Oa-CdK"/>
+                <outlet property="groupNameLabel" destination="Qvd-fo-uFQ" id="0ZK-LK-Vmj"/>
+            </connections>
+            <point key="canvasLocation" x="304.34782608695656" y="124.21875"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -21,9 +21,9 @@ class CreateAgreementViewController: UIViewController {
     @IBOutlet weak var studentsTableView: UITableView!
     var selectedStudentIndex = 0
 
-    @IBOutlet weak var workersSuperViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var administratosSuperViewHeight: NSLayoutConstraint!
     @IBOutlet weak var studentsSuperViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var workersTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var administratorsTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var studentsTableViewHeight: NSLayoutConstraint!
     
     lazy var signingDatePicker: UIDatePicker = {
@@ -44,6 +44,21 @@ class CreateAgreementViewController: UIViewController {
 
         setupBarButtonItems()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchStudents { fetchedStudents in
+            self.students = fetchedStudents
+            self.studentsTableView.reloadData()
+            self.studentsTableViewHeight.constant = CGFloat(self.students.count) * self.studentsTableView.rowHeight + 10
+
+        }
+        NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
+            self.administrators = fetchedAdministrators
+            self.administratorsTableView.reloadData()
+            self.administratorsTableViewHeight.constant = CGFloat(self.administrators.count) * self.administratorsTableView.rowHeight + 10
+        }
+    }
 
     private func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
@@ -53,12 +68,11 @@ class CreateAgreementViewController: UIViewController {
         administratorsTableView.delegate = self
         administratorsTableView.dataSource = self
         administratorsTableView.register(AdministratorTableViewCell.nib(), forCellReuseIdentifier: AdministratorTableViewCell.reuseIdentifier)
-        administratorsTableView.rowHeight = 80
+        administratorsTableView.rowHeight = 100
         administratorsTableView.isScrollEnabled = false
         
         administratorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        workersTableViewHeight.constant = CGFloat(administrators.count) * administratorsTableView.rowHeight + 10
-        workersSuperViewHeight.constant = workersTableViewHeight.constant + 40
+        administratosSuperViewHeight.constant = administratorsTableViewHeight.constant + 40
     }
     
     private func configureStudentsTableView() {
@@ -69,7 +83,6 @@ class CreateAgreementViewController: UIViewController {
         studentsTableView.isScrollEnabled = false
 
         studentsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        studentsTableViewHeight.constant = CGFloat(students.count) * studentsTableView.rowHeight + 10
         studentsSuperViewHeight.constant = studentsTableViewHeight.constant + 40
     }
     
@@ -123,7 +136,10 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == administratorsTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: AdministratorTableViewCell.reuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdministratorTableViewCell.reuseIdentifier, for: indexPath) as! AdministratorTableViewCell
+            
+            let administrator = administrators[indexPath.row]
+            cell.setup(withAdministrator: administrator)
             
             if indexPath.row == selectedAdministratorIndex {
                 cell.accessoryType = .checkmark
@@ -134,7 +150,10 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
+            
+            let student = students[indexPath.row]
+            cell.setup(withStudent: student)
 
             if indexPath.row == selectedStudentIndex {
                 cell.accessoryType = .checkmark

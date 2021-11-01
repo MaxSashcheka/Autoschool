@@ -70,6 +70,8 @@
 		DDB53C89272C41FC009B69CF /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB53C88272C41FC009B69CF /* Teacher.swift */; };
 		DDB53C8F272C4859009B69CF /* Agreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB53C8E272C4859009B69CF /* Agreement.swift */; };
 		DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0D329271C8F400017A160 /* CarParkViewController.swift */; };
+		DDD412C82730833300E7107F /* ExamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD412C62730833300E7107F /* ExamCollectionViewCell.swift */; };
+		DDD412C92730833300E7107F /* ExamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */; };
 		DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */; };
 		DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */; };
 		DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */; };
@@ -142,6 +144,8 @@
 		DDB53C88272C41FC009B69CF /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		DDB53C8E272C4859009B69CF /* Agreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agreement.swift; sourceTree = "<group>"; };
 		DDD0D329271C8F400017A160 /* CarParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkViewController.swift; sourceTree = "<group>"; };
+		DDD412C62730833300E7107F /* ExamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamCollectionViewCell.xib; sourceTree = "<group>"; };
 		DDEC16A7271DC19F007BF181 /* AgreementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementsViewController.swift; sourceTree = "<group>"; };
 		DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementTableViewCell.swift; sourceTree = "<group>"; };
 		DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementTableViewCell.xib; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 				DD62C848270A0E6D00910092 /* GroupCell.xib */,
 				DD1490D2270B97FD000ACD8F /* InstructorCell.swift */,
 				DD1490D3270B97FD000ACD8F /* InstructorCell.xib */,
+				DDD412C62730833300E7107F /* ExamCollectionViewCell.swift */,
+				DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD412C92730833300E7107F /* ExamCollectionViewCell.xib in Resources */,
 				DD6DFEE2271C134C0073F63F /* InstructorTableViewCell.xib in Resources */,
 				DD1490D5270B97FD000ACD8F /* InstructorCell.xib in Resources */,
 				DD9A0C5E27070A960040C839 /* LaunchScreen.storyboard in Resources */,
@@ -546,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD6DFEE1271C134C0073F63F /* InstructorTableViewCell.swift in Sources */,
+				DDD412C82730833300E7107F /* ExamCollectionViewCell.swift in Sources */,
 				DD6DFF19271C3D650073F63F /* SPAlertIconErrorView.swift in Sources */,
 				DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */,
 				DD1490D4270B97FD000ACD8F /* InstructorCell.swift in Sources */,

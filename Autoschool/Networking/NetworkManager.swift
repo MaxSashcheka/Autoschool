@@ -73,6 +73,30 @@ class NetworkManager {
         }.resume()
     }
     
+    func fetchStudents(completionHandler: @escaping ([Student]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/students") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let studentsData = try JSONDecoder().decode([Student].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(studentsData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+            
+        }.resume()
+    }
+    
     // MARK: - teacher GET
     func fetchTeacher(forGroupId groupId: Int, completionHandler: @escaping ([Teacher]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/teachers/\(groupId)") else { return }
@@ -173,29 +197,45 @@ class NetworkManager {
         }.resume()
     }
     
+    // MARK: - exams GET
+    func fetchExams(completionHandler: @escaping ([Exam]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/exams") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let examsData = try JSONDecoder().decode([Exam].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(examsData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+
+        }.resume()
+    }
+    
     
     
     // MARK: - POST
-    func postStudent() {
-        
-//        let parameters: [String: String] = [
-//            "student_id": "100",
-//            "full_name": "Фамилия имя",
-//            "phone_number": "+ 375 (29) 726-68-15",
-//            "group_id": "3"
-//        ]
+    func postStudent(_ student: Student) {
 
-        guard let url = URL(string: "\(apiRoute)/createStudent") else { return }
+        guard let url = URL(string: "\(apiRoute)/create") else { return }
         
         do {
-
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            let post = "student_id=100&full_name=Sashcheka%20Max&phone_number=+375%20(29)%20358-17-24&group_id=1"
+            let post = "first_name=\(student.firstName)&last_name=\(student.lastName)&middle_name=\(student.middleName)&passport_number=\(student.passportNumber)&phone_number=\(student.phoneNumber)&instructor_id=\(student.instructorId)&group_id=\(student.groupId)"
             let postData = post.data(using: String.Encoding.ascii, allowLossyConversion: true)!
             request.httpBody = postData
-
             
             URLSession.shared.dataTask(with: request) { (data, res, error) in
                 guard let data = data, error == nil else {
