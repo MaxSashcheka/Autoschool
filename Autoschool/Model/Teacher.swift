@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Teacher {
+struct Teacher: Codable {
     var teacherID: Int
     var firstName: String
     var lastName: String
     var middleName: String
-    var phoneNumber: String
     var passportNumber: String
+    var phoneNumber: String
 }

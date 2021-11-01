@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Exam {
-    var examID: Int
+struct Exam: Codable {
+    var examId: Int
     var date: String
-    var examName: String
-    
+    var examTypeId: Int
+    var groupId: Int
 }

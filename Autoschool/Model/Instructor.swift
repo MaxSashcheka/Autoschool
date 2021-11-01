@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Instructor {
-    
+struct Instructor: Codable {
     var instructorID: Int
     var firstName: String
     var lastName: String
@@ -16,5 +15,6 @@ struct Instructor {
     var drivingExperience: Int
     var passportNumber: String
     var phoneNumber: String
-    
+    var carId: Int
+    var driverLicenseId: Int
 }

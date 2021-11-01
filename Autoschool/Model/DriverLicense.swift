@@ -7,11 +7,9 @@
 
 import Foundation
 
-struct DriverLisence {
-    
-    var driverLisenceID: Int
+struct DriverLisence: Codable {
+    var driverLicenseId: Int
     var issueDate: String
     var number: String
-    var validity: String
-
+    var validity: Int
 }

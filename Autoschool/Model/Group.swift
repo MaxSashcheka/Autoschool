@@ -7,15 +7,12 @@
 
 import Foundation
 
-struct Group {
-
-    var groupID: Int
+struct Group: Codable {
+    var groupId: Int
     var name: String
-    var categoryID: Int
-    var lessonsTypeID: Int
-
-    var startLessonsDate: String
-    var endLesonnsDate: String
-    
-    var students = [Student]()
+    var lessonsStartDate: String
+    var lessonsEndDate: String
+    var categoryId: Int
+    var teacherId: Int
+    var lessonsTimeId: Int
 }

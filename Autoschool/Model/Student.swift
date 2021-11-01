@@ -7,14 +7,13 @@
 
 import Foundation
 
-struct Student {
-    
+struct Student: Codable {
     var studentID: Int
     var firstName: String
     var lastName: String
     var middleName: String
-    
     var passportNumber: String
     var phoneNumber: String
-    
+    var instructorId: Int
+    var groupId: Int
 }
