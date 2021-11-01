@@ -27,7 +27,7 @@ class AgreementTableViewCell: UITableViewCell {
     }
     
     func setup(withAgreement agreement: Agreement) {
-        identifierLabel.text = "Договор номер: \(agreement.agreementID)"
+        identifierLabel.text = "Договор номер: \(agreement.agreementId)"
         administratorNameLabel.text = "Скурат Денис Сергеевич"
         studentNameLabel.text = "Сащеко Максим Андреевич"
         signingDateLabel.text = "Дата подписания: \(agreement.signingDate)"

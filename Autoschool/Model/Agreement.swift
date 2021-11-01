@@ -8,7 +8,7 @@
 import Foundation
 
 struct Agreement: Codable {
-    var agreementID: Int
+    var agreementId: Int
     var amount: Int
     var signingDate: String
     var administratorId: Int

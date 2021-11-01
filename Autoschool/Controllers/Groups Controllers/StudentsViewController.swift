@@ -13,6 +13,7 @@ class StudentsViewController: UIViewController {
     
     var group: Group!
     var students = [Student]()
+    var teachers = [Teacher]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,15 @@ class StudentsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        NetworkManager.shared.fe
+        NetworkManager.shared.fetchStudents(withGroupId: group.groupId) { fetchedStudents in
+            self.students = fetchedStudents
+            self.studentsTableView.reloadData()
+        }
+        NetworkManager.shared.fetchTeacher(forGroupId: group.groupId) { fetchedTeacher in
+            self.teachers = fetchedTeacher
+            self.studentsTableView.reloadData()
+        }
+        
     }
     
     private func configureTableView() {
@@ -56,7 +65,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return teachers.count
         } else {
             return students.count
         }
@@ -65,6 +74,9 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TeacherTableViewCell.reuseIdentifier, for: indexPath) as! TeacherTableViewCell
+    
+            let teacher = teachers[indexPath.row]
+            cell.setup(withTeacher: teacher)
             
             return cell
         } else {

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Instructor: Codable {
-    var instructorID: Int
+    var instructorId: Int
     var firstName: String
     var lastName: String
     var middleName: String

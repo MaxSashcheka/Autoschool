@@ -8,7 +8,7 @@
 import Foundation
 
 struct Car: Codable {
-    var carID: Int
+    var carId: Int
     var number: String
     var name: String
     var color: String
