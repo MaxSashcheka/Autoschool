@@ -19,6 +19,7 @@ class InstructorsViewController: UIViewController {
         tableView.register(InstructorTableViewCell.nib(), forCellReuseIdentifier: InstructorTableViewCell.reuseIdentifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        tableView.backgroundColor = .clear
         
         return tableView
     }()
@@ -26,6 +27,7 @@ class InstructorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(instructorsTableView)
+        view.backgroundColor = UIColor.viewBackground
 
         setupNavigation()
     }

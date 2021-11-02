@@ -42,6 +42,8 @@ class CreateGroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить группу"
+        view.backgroundColor = UIColor.viewBackground
+
         
         configureTeachersTableView()
         configureSegmentedControls()

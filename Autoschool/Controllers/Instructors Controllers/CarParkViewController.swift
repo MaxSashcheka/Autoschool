@@ -27,8 +27,8 @@ class CarParkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(carsTableView)
-        view.backgroundColor = .systemGray5
         title = "Автопарк"
+        view.backgroundColor = UIColor.viewBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {

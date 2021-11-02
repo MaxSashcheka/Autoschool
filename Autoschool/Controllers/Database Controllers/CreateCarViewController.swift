@@ -17,6 +17,8 @@ class CreateCarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить машину"
+        view.backgroundColor = UIColor.viewBackground
+
         
         setupBarButtonItems()
     }

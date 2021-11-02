@@ -32,6 +32,8 @@ class CreateExamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить экзамен"
+        view.backgroundColor = UIColor.viewBackground
+
         
         configureGroupsCollectionView()
         configureSegmentedControls()
@@ -107,13 +109,10 @@ extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDa
         let group = groups[indexPath.item]
         cell.setup(withGroup: group)
         
-        // Check for selection
         if indexPath.item == selectedGroupIndex {
-            cell.layer.borderWidth = 3
-            cell.layer.borderColor = UIColor.systemRed.cgColor
+            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.70).cgColor
         } else {
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.darkGray.cgColor
+            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
         }
         
         return cell

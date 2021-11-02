@@ -19,7 +19,8 @@ class ExamsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.viewBackground
+
         configureExamsCollectionView()
         configureSegmentedControl()
         setupNavigation()

@@ -17,4 +17,8 @@ struct Instructor: Codable {
     var phoneNumber: String
     var carId: Int
     var driverLicenseId: Int
+    
+    var fullName: String {
+        return "\(lastName) \(firstName) \(middleName)"
+    }
 }

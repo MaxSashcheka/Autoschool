@@ -14,4 +14,8 @@ struct Teacher: Codable {
     var middleName: String
     var passportNumber: String
     var phoneNumber: String
+    
+    var fullName: String {
+        return "\(lastName) \(firstName) \(middleName)"
+    }
 }

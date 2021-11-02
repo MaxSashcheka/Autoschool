@@ -19,6 +19,7 @@ class CreateTeacherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить преподавателя"
+        view.backgroundColor = UIColor.viewBackground
 
         setupBarButtonItems()
     }

@@ -28,6 +28,8 @@ class CreateInstruсtorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить инструктора"
+        view.backgroundColor = UIColor.viewBackground
+
         
         setupBarButtonItems()
         configureCarsTableView()

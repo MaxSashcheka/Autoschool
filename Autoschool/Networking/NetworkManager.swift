@@ -246,6 +246,31 @@ class NetworkManager {
         }.resume()
     }
     
+    // MARK: - agreements GET
+    func fetchAgreements(completionHandler: @escaping ([Agreement]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/agreements") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let agreementsData = try JSONDecoder().decode([Agreement].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(agreementsData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+
+        }.resume()
+    }
+    
     
     
     // MARK: - POST

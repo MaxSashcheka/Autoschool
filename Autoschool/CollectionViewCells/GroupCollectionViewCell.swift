@@ -25,15 +25,16 @@ class GroupCollectionViewCell: UICollectionViewCell {
         lessonsTimeView.layer.cornerRadius = lessonsTimeView.frame.width / 2
         categoryImageView.tintColor = .black
         
+        
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
+        layer.shadowRadius = 3.0
+        layer.shadowOpacity = 1.0
+        layer.shadowOffset = .zero
+        layer.masksToBounds = false
         backgroundColor = .white
-        layer.cornerRadius = 30
-//        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.33).cgColor
-//        layer.shadowRadius = 5.0
-//        layer.shadowOpacity = 1.0
-//        layer.shadowOffset = .zero
-//        layer.masksToBounds = false
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.darkGray.cgColor
+        layer.cornerRadius = 25
+//        layer.borderWidth = 2
+//        layer.borderColor = UIColor.darkGray.cgColor
     }
     
     func setup(withGroup group: Group) {
@@ -56,7 +57,7 @@ class GroupCollectionViewCell: UICollectionViewCell {
         
         switch group.lessonsTimeId {
         case 1:
-            lessonsTimeView.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+            lessonsTimeView.backgroundColor = #colorLiteral(red: 0.9880984426, green: 0.9543653131, blue: 0.02447881922, alpha: 1)
             lessonsTimeLabel.text = "Время занятий: утро"
         case 2:
             lessonsTimeView.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)

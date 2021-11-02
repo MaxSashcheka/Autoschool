@@ -31,6 +31,7 @@ class CreateStudentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить ученика"
+        view.backgroundColor = UIColor.viewBackground
         
         configureCollectionViews()
         configureInstructorsTableView()
@@ -127,13 +128,10 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
         let group = groups[indexPath.item]
         cell.setup(withGroup: group)
         
-        // Check for selection
         if indexPath.item == selectedGroupIndex {
-            cell.layer.borderWidth = 3
-            cell.layer.borderColor = UIColor.systemRed.cgColor
+            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.70).cgColor
         } else {
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.darkGray.cgColor
+            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
         }
         
         return cell
@@ -178,7 +176,10 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath) as! InstructorTableViewCell
+        
+        let instructor = instructors[indexPath.row]
+        cell.setup(withInstructor: instructor)
         
         if indexPath.row == selectedInstructorIndex {
             cell.accessoryType = .checkmark

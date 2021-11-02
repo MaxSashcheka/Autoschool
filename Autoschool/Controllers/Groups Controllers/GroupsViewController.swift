@@ -16,6 +16,7 @@ class GroupsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.viewBackground
         
         configureCollectionView()
         setupNavigation()
@@ -64,6 +65,7 @@ extension GroupsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCollectionViewCell.reuseIdentifier, for: indexPath) as! GroupCollectionViewCell
+        cell.layer.shadowRadius = 4
         
         let group = groups[indexPath.row]
         cell.setup(withGroup: group)

@@ -38,6 +38,8 @@ class CreateAgreementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить договор"
+        view.backgroundColor = UIColor.viewBackground
+
         
         configureAdministratorsTableView()
         configureStudentsTableView()

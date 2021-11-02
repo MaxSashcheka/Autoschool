@@ -498,7 +498,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U6Z-Ak-dCV">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="980"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="995"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27q-SL-mQd">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
@@ -576,7 +576,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dva-lu-bYE">
-                                                <rect key="frame" x="0.0" y="330" width="414" height="240"/>
+                                                <rect key="frame" x="0.0" y="330" width="414" height="255"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G6o-BU-thI">
                                                         <rect key="frame" x="0.0" y="25.5" width="414" height="210"/>
@@ -601,7 +601,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="7n5-TR-niF"/>
+                                                    <constraint firstAttribute="height" constant="255" id="7n5-TR-niF"/>
                                                     <constraint firstAttribute="trailing" secondItem="G6o-BU-thI" secondAttribute="trailing" id="Cw4-fe-2AV"/>
                                                     <constraint firstItem="G6o-BU-thI" firstAttribute="leading" secondItem="dva-lu-bYE" secondAttribute="leading" id="Ikb-Ih-eiU"/>
                                                     <constraint firstItem="YDK-S5-pev" firstAttribute="top" secondItem="dva-lu-bYE" secondAttribute="top" id="ane-B5-F2f"/>
@@ -610,7 +610,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxS-NG-HEc">
-                                                <rect key="frame" x="0.0" y="570" width="414" height="410"/>
+                                                <rect key="frame" x="0.0" y="585" width="414" height="410"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvR-cJ-l2r">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
@@ -796,7 +796,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-1J-e5u">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="455"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-dl-WrD">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -854,7 +854,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LW7-OA-fwa">
-                                                <rect key="frame" x="0.0" y="200" width="414" height="240"/>
+                                                <rect key="frame" x="0.0" y="200" width="414" height="255"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XmK-cw-czZ">
                                                         <rect key="frame" x="0.0" y="25.5" width="414" height="210"/>
@@ -882,7 +882,7 @@
                                                     <constraint firstItem="XmK-cw-czZ" firstAttribute="leading" secondItem="LW7-OA-fwa" secondAttribute="leading" id="FZ5-hR-rAu"/>
                                                     <constraint firstItem="HDn-gt-moA" firstAttribute="leading" secondItem="LW7-OA-fwa" secondAttribute="leading" constant="20" id="LmV-i6-X71"/>
                                                     <constraint firstItem="XmK-cw-czZ" firstAttribute="top" secondItem="HDn-gt-moA" secondAttribute="bottom" constant="5" id="Uec-BU-k8t"/>
-                                                    <constraint firstAttribute="height" constant="240" id="i0J-ni-993"/>
+                                                    <constraint firstAttribute="height" constant="255" id="i0J-ni-993"/>
                                                     <constraint firstAttribute="trailing" secondItem="XmK-cw-czZ" secondAttribute="trailing" id="mEo-NX-3FD"/>
                                                     <constraint firstItem="HDn-gt-moA" firstAttribute="top" secondItem="LW7-OA-fwa" secondAttribute="top" id="sSo-vL-zZC"/>
                                                 </constraints>
@@ -1009,7 +1009,7 @@
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vcI-ZW-Sdt">
                                                         <rect key="frame" x="0.0" y="20.5" width="414" height="384.5"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="384.5" id="lzA-KS-ain"/>
                                                         </constraints>
@@ -1037,7 +1037,7 @@
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EjA-B5-4ih">
                                                         <rect key="frame" x="0.0" y="20.5" width="414" height="384.5"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="384.5" id="CfD-YE-6Ch"/>
                                                         </constraints>

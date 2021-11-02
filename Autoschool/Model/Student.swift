@@ -16,4 +16,8 @@ struct Student: Codable {
     var phoneNumber: String
     var instructorId: Int
     var groupId: Int
+    
+    var fullName: String {
+        return "\(lastName) \(firstName) \(middleName)"
+    }
 }

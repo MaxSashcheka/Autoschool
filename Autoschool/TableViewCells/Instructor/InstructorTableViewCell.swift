@@ -27,7 +27,7 @@ class InstructorTableViewCell: UITableViewCell {
     }
     
     func setup(withInstructor instructor: Instructor) {
-        fullNameLabel.text = "\(instructor.lastName) \(instructor.firstName) \(instructor.middleName)"
+        fullNameLabel.text = "\(instructor.fullName)"
         drivingExperienceLabel.text = "Опыт вождения: \(instructor.drivingExperience) \(instructor.drivingExperience > 4 ? "лет" : "года")"
         passportNumberLabel.text = "Номер паспорта: \(instructor.passportNumber)"
         phoneNumberLabel.text = "Моб.телефон: \(instructor.phoneNumber)"

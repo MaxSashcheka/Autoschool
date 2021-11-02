@@ -25,7 +25,8 @@ class AdministrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(administratorsTableView)
-        
+        view.backgroundColor = UIColor.viewBackground
+
         setupNavigation()
     }
     
