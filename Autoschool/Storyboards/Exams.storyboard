@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bzs-x5-vF1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="684"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C82-DJ-0Uj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -37,18 +37,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PdD-cy-AhW">
+                                <rect key="frame" x="20" y="93" width="374" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Все"/>
+                                    <segment title="Автошкола"/>
+                                    <segment title="Гаи"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeDisplayedExams:" destination="dAg-Cc-y86" eventType="valueChanged" id="Dax-B1-BuA"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="trK-Mb-3ao"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstItem="trK-Mb-3ao" firstAttribute="trailing" secondItem="PdD-cy-AhW" secondAttribute="trailing" constant="20" id="0Ka-WR-lYI"/>
                             <constraint firstItem="Bzs-x5-vF1" firstAttribute="leading" secondItem="trK-Mb-3ao" secondAttribute="leading" id="Bdl-8p-2Jr"/>
+                            <constraint firstItem="Bzs-x5-vF1" firstAttribute="top" secondItem="PdD-cy-AhW" secondAttribute="bottom" constant="5" id="I9T-9v-vJ7"/>
                             <constraint firstItem="trK-Mb-3ao" firstAttribute="trailing" secondItem="Bzs-x5-vF1" secondAttribute="trailing" id="IvW-kj-Fsk"/>
-                            <constraint firstItem="Bzs-x5-vF1" firstAttribute="top" secondItem="trK-Mb-3ao" secondAttribute="top" id="aEi-y3-lcW"/>
+                            <constraint firstItem="PdD-cy-AhW" firstAttribute="leading" secondItem="trK-Mb-3ao" secondAttribute="leading" constant="20" id="Nyj-hs-TM8"/>
+                            <constraint firstItem="PdD-cy-AhW" firstAttribute="top" secondItem="trK-Mb-3ao" secondAttribute="top" constant="5" id="kds-mk-s5b"/>
                             <constraint firstItem="trK-Mb-3ao" firstAttribute="bottom" secondItem="Bzs-x5-vF1" secondAttribute="bottom" id="mcT-Kc-kRq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UBM-GZ-Mfk"/>
                     <connections>
+                        <outlet property="examTypeSegmentedControl" destination="PdD-cy-AhW" id="nVE-3Y-Mkp"/>
                         <outlet property="examsCollectionView" destination="Bzs-x5-vF1" id="VWH-iS-CAQ"/>
                     </connections>
                 </viewController>

@@ -12,13 +12,16 @@ class ExamsViewController: UIViewController {
     var exams = [Exam]()
     var groups = [Group]()
     
+    @IBOutlet weak var examTypeSegmentedControl: UISegmentedControl!
+    
     @IBOutlet weak var examsCollectionView: UICollectionView!
     let examsCollectionViewInsets = UIEdgeInsets(top: 20, left: 25, bottom: 20, right: 25)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureExamsCollectionView()
-
+        configureSegmentedControl()
         setupNavigation()
     }
     
@@ -29,6 +32,12 @@ class ExamsViewController: UIViewController {
         examsCollectionView.backgroundColor = .clear
     }
     
+    private func configureSegmentedControl() {
+        examTypeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
+        examTypeSegmentedControl.layer.borderWidth = 1
+        examTypeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NetworkManager.shared.fetchExams { fetchedExams in
@@ -37,6 +46,7 @@ class ExamsViewController: UIViewController {
         }
         NetworkManager.shared.fetchGroups { fetchedGroups in
             self.groups = fetchedGroups
+            self.examsCollectionView.reloadData()
         }
     }
     
@@ -56,7 +66,43 @@ class ExamsViewController: UIViewController {
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
         navigationController?.navigationBar.tintColor = .lightGreenSea
     }
-
+    
+    
+    @IBAction func changeDisplayedExams(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            NetworkManager.shared.fetchExams { fetchedExams in
+                self.exams = fetchedExams
+                self.examsCollectionView.reloadData()
+            }
+        case 1:
+            NetworkManager.shared.fetchExams { fetchedExams in
+                var arrayOfMatchedExams = [Exam]()
+                for exam in fetchedExams {
+                    if exam.examTypeId == 1 || exam.examTypeId == 2 {
+                        arrayOfMatchedExams.append(exam)
+                    }
+                }
+                self.exams = arrayOfMatchedExams
+                self.examsCollectionView.reloadData()
+            }
+        case 2:
+            NetworkManager.shared.fetchExams { fetchedExams in
+                var arrayOfMatchedExams = [Exam]()
+                for exam in fetchedExams {
+                    if exam.examTypeId == 3 || exam.examTypeId == 4 {
+                        arrayOfMatchedExams.append(exam)
+                    }
+                }
+                self.exams = arrayOfMatchedExams
+                self.examsCollectionView.reloadData()
+            }
+        default:
+            print("Error")
+        }
+        examsCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredVertically, animated: true)
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
