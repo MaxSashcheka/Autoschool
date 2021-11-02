@@ -12,7 +12,7 @@ class GroupsViewController: UIViewController {
     var groups = [Group]()
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 23, right: 20)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 26, bottom: 23, right: 26)
 //    var selectedGroupIndex = 0
     
     override func viewDidLoad() {

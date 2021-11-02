@@ -24,17 +24,11 @@
                             <constraint firstAttribute="width" constant="7" id="hVX-r3-whg"/>
                         </constraints>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VQS-B7-p0M">
-                        <rect key="frame" x="44" y="35.5" width="327" height="124"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VQS-B7-p0M">
+                        <rect key="frame" x="42" y="69" width="334" height="94"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа 14-2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-OA-ZTc">
-                                <rect key="frame" x="0.0" y="0.0" width="327" height="28"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TRc-n2-wy6">
-                                <rect key="frame" x="0.0" y="48" width="327" height="28"/>
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="28"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dmv-Qc-dap">
                                         <rect key="frame" x="0.0" y="1.5" width="34" height="25.5"/>
@@ -44,7 +38,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Категория B (МКПП)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CgG-EF-c7S">
-                                        <rect key="frame" x="44" y="0.0" width="283" height="28"/>
+                                        <rect key="frame" x="44" y="0.0" width="290" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,30 +46,47 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.03.2021 - 22.04.2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UIM-lK-zQJ">
-                                <rect key="frame" x="0.0" y="96" width="327" height="28"/>
+                                <rect key="frame" x="0.0" y="33" width="334" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время занятий: утро" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zrF-1u-m7A">
+                                <rect key="frame" x="0.0" y="66" width="334" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группа 14-2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-OA-ZTc">
+                        <rect key="frame" x="42" y="20" width="334" height="36"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="VQS-B7-p0M" firstAttribute="leading" secondItem="5ce-Vn-rXY" secondAttribute="trailing" constant="17" id="51U-2G-0Md"/>
-                <constraint firstAttribute="trailing" secondItem="VQS-B7-p0M" secondAttribute="trailing" constant="15" id="6KM-V8-pQ8"/>
+                <constraint firstAttribute="trailing" secondItem="5Ul-OA-ZTc" secondAttribute="trailing" constant="10" id="0dX-uK-iuW"/>
                 <constraint firstItem="5ce-Vn-rXY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="8RW-Pb-mff"/>
                 <constraint firstAttribute="bottom" secondItem="5ce-Vn-rXY" secondAttribute="bottom" constant="20" id="Cjh-gw-awW"/>
                 <constraint firstItem="5ce-Vn-rXY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="K9U-rI-lpj"/>
-                <constraint firstItem="VQS-B7-p0M" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="YUO-u4-jKN"/>
+                <constraint firstItem="5Ul-OA-ZTc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="NPI-AO-cSo"/>
+                <constraint firstItem="VQS-B7-p0M" firstAttribute="top" secondItem="5Ul-OA-ZTc" secondAttribute="bottom" constant="13" id="YdB-4n-cTh"/>
+                <constraint firstItem="5Ul-OA-ZTc" firstAttribute="leading" secondItem="5ce-Vn-rXY" secondAttribute="trailing" constant="15" id="hlJ-Dz-MHT"/>
+                <constraint firstAttribute="trailing" secondItem="VQS-B7-p0M" secondAttribute="trailing" constant="10" id="lJH-eC-oyK"/>
+                <constraint firstItem="VQS-B7-p0M" firstAttribute="leading" secondItem="5ce-Vn-rXY" secondAttribute="trailing" constant="15" id="sKW-6c-bOJ"/>
             </constraints>
             <size key="customSize" width="386" height="195"/>
             <connections>
                 <outlet property="categoryImageView" destination="dmv-Qc-dap" id="P4c-yu-5z4"/>
                 <outlet property="categoryNameLabel" destination="CgG-EF-c7S" id="sfc-hC-eMC"/>
                 <outlet property="dateLabel" destination="UIM-lK-zQJ" id="GgE-tG-85R"/>
-                <outlet property="lessonsTimeLabel" destination="5ce-Vn-rXY" id="Fs3-3J-fzM"/>
+                <outlet property="lessonsTimeLabel" destination="zrF-1u-m7A" id="TBZ-xR-9bj"/>
+                <outlet property="lessonsTimeView" destination="5ce-Vn-rXY" id="Xsl-4f-GLw"/>
                 <outlet property="nameLabel" destination="5Ul-OA-ZTc" id="NhC-SP-xlx"/>
             </connections>
             <point key="canvasLocation" x="355.07246376811599" y="132.92410714285714"/>

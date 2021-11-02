@@ -10,9 +10,10 @@ import UIKit
 class ExamsViewController: UIViewController {
     
     var exams = [Exam]()
+    var groups = [Group]()
     
     @IBOutlet weak var examsCollectionView: UICollectionView!
-    let examsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    let examsCollectionViewInsets = UIEdgeInsets(top: 20, left: 25, bottom: 20, right: 25)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,9 @@ class ExamsViewController: UIViewController {
         NetworkManager.shared.fetchExams { fetchedExams in
             self.exams = fetchedExams
             self.examsCollectionView.reloadData()
+        }
+        NetworkManager.shared.fetchGroups { fetchedGroups in
+            self.groups = fetchedGroups
         }
     }
     
@@ -66,7 +70,11 @@ extension ExamsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExamCollectionViewCell.reuseIdentifier, for: indexPath) as! ExamCollectionViewCell
         
         let exam = exams[indexPath.row]
-        cell.setup(withExam: exam)
+        for group in groups {
+            if exam.groupId == group.groupId {
+                cell.setup(withExam: exam, andGroup: group)
+            }
+        }
         
         return cell
     }
@@ -80,7 +88,7 @@ extension ExamsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let itemWidth = collectionView.frame.width - examsCollectionViewInsets.left * 2
-        let itemHeight = itemWidth / 2
+        let itemHeight = itemWidth / 2.3
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
