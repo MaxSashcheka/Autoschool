@@ -39,7 +39,7 @@ class CreateAgreementViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить договор"
         
-        configureWorkersTableView()
+        configureAdministratorsTableView()
         configureStudentsTableView()
         configureTextFields()
 
@@ -54,13 +54,16 @@ class CreateAgreementViewController: UIViewController {
         NetworkManager.shared.fetchStudents { fetchedStudents in
             self.students = fetchedStudents
             self.studentsTableView.reloadData()
-            self.studentsTableViewHeight.constant = CGFloat(self.students.count) * self.studentsTableView.rowHeight + 10
+            self.studentsTableViewHeight.constant = CGFloat(self.students.count) * self.studentsTableView.rowHeight
+            self.studentsSuperViewHeight.constant = self.studentsTableViewHeight.constant + 40
+
 
         }
         NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
             self.administrators = fetchedAdministrators
             self.administratorsTableView.reloadData()
             self.administratorsTableViewHeight.constant = CGFloat(self.administrators.count) * self.administratorsTableView.rowHeight + 10
+            self.administratosSuperViewHeight.constant = self.administratorsTableViewHeight.constant + 30
         }
     }
 
@@ -68,26 +71,24 @@ class CreateAgreementViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
-    private func configureWorkersTableView() {
+    private func configureAdministratorsTableView() {
         administratorsTableView.delegate = self
         administratorsTableView.dataSource = self
         administratorsTableView.register(AdministratorTableViewCell.nib(), forCellReuseIdentifier: AdministratorTableViewCell.reuseIdentifier)
-        administratorsTableView.rowHeight = 100
+        administratorsTableView.rowHeight = 80
         administratorsTableView.isScrollEnabled = false
         
         administratorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        administratosSuperViewHeight.constant = administratorsTableViewHeight.constant + 40
     }
     
     private func configureStudentsTableView() {
         studentsTableView.delegate = self
         studentsTableView.dataSource = self
         studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
-        studentsTableView.rowHeight = 100
+        studentsTableView.rowHeight = 90
         studentsTableView.isScrollEnabled = false
 
         studentsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        studentsSuperViewHeight.constant = studentsTableViewHeight.constant + 40
     }
     
     private func configureTextFields() {
@@ -144,6 +145,7 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
             
             let administrator = administrators[indexPath.row]
             cell.setup(withAdministrator: administrator)
+            cell.fullNameLabel.numberOfLines = 1
             
             if indexPath.row == selectedAdministratorIndex {
                 cell.accessoryType = .checkmark

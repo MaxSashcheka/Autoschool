@@ -20,7 +20,7 @@ class CreateStudentViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     var selectedGroupIndex = 0
 
     @IBOutlet weak var instructorsTableView: UITableView!
@@ -46,6 +46,8 @@ class CreateStudentViewController: UIViewController {
         NetworkManager.shared.fetchInstructors { fetchedInstructors in
             self.instructors = fetchedInstructors
             self.instructorsTableView.reloadData()
+            self.instructorsTableViewHeight.constant = CGFloat(self.instructors.count) * self.instructorsTableView.rowHeight + 10
+            self.instructorsTableViewSuperViewHeight.constant = self.instructorsTableViewHeight.constant + 40
         }
     }
     
@@ -63,8 +65,6 @@ class CreateStudentViewController: UIViewController {
         instructorsTableView.isScrollEnabled = false
         
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        instructorsTableViewHeight.constant = CGFloat(instructors.count) * instructorsTableView.rowHeight + 10
-        instructorsTableViewSuperViewHeight.constant = instructorsTableViewHeight.constant + 40
     }
     
     private func setupBarButtonItems() {
@@ -153,7 +153,7 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = groupsCollectionView.frame.width * 0.8
-        let itemHeight = groupsCollectionView.frame.height - groupsCollectionViewInsets.top * 2
+        let itemHeight = groupsCollectionView.frame.height - 10
         
         return CGSize(width: itemWidth, height: itemHeight)
     }

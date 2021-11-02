@@ -17,7 +17,7 @@ class CreateExamViewController: UIViewController {
     @IBOutlet weak var examTheoryPracticeSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     var selectedGroupIndex = 0
     
     lazy var examDatePicker: UIDatePicker = {
@@ -37,6 +37,14 @@ class CreateExamViewController: UIViewController {
         configureSegmentedControls()
         configureTextFields()
         setupBarButtonItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchGroups { fetchedGroups in
+            self.groups = fetchedGroups
+            self.groupsCollectionView.reloadData()
+        }
     }
     
     private func configureGroupsCollectionView() {
@@ -90,7 +98,7 @@ class CreateExamViewController: UIViewController {
 extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return groups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -122,8 +130,11 @@ extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDa
 extension CreateExamViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let itemWidth = groupsCollectionView.frame.width - groupsCollectionViewInsets.left * 2
+//        let itemHeight = itemWidth / 2
         let itemWidth = groupsCollectionView.frame.width * 0.8
-        let itemHeight = groupsCollectionView.frame.height - groupsCollectionViewInsets.top * 2
+        let itemHeight = groupsCollectionView.frame.height - 10
+        
         
         return CGSize(width: itemWidth, height: itemHeight)
     }

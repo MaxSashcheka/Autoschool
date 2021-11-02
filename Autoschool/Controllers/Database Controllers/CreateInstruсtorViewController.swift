@@ -39,6 +39,8 @@ class CreateInstruсtorViewController: UIViewController {
             self.cars = fetchedCars
             self.carsTableView.reloadData()
             self.carsTableViewHeight.constant = CGFloat(self.cars.count) * self.carsTableView.rowHeight + 10
+            self.carsSuperViewHeight.constant = self.carsTableViewHeight.constant + 30
+
         }
     }
     
@@ -50,7 +52,6 @@ class CreateInstruсtorViewController: UIViewController {
         carsTableView.isScrollEnabled = false
 
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        carsSuperViewHeight.constant = carsTableViewHeight.constant + 40
     }
     
     private func setupBarButtonItems() {

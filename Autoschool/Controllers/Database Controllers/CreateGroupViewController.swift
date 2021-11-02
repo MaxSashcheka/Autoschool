@@ -55,6 +55,7 @@ class CreateGroupViewController: UIViewController {
             self.teachers = fetchedTeachers
             self.teachersTableView.reloadData()
             self.teachersTableViewHeight.constant = CGFloat(self.teachers.count) * self.teachersTableView.rowHeight + 10
+            self.teachersSuperViewHeight.constant = self.teachersTableViewHeight.constant + 20
 
         }
     }
@@ -66,7 +67,6 @@ class CreateGroupViewController: UIViewController {
         teachersTableView.rowHeight = 76
         teachersTableView.isScrollEnabled = false
         teachersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        teachersSuperViewHeight.constant = teachersTableViewHeight.constant + 20
     }
     
     private func configureSegmentedControls() {

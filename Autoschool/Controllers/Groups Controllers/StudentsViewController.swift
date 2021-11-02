@@ -18,7 +18,7 @@ class StudentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Группа: \(group.name)"
+        title = "Группа \(group.name)"
         
         studentsTableView.contentInsetAdjustmentBehavior = .never
         studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
