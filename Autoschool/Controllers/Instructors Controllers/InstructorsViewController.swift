@@ -44,7 +44,7 @@ class InstructorsViewController: UIViewController {
         title = "Инструкторы"
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.darkGray
+            NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes

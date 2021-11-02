@@ -31,7 +31,15 @@ class CreateInstruсtorViewController: UIViewController {
         
         setupBarButtonItems()
         configureCarsTableView()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchCars { fetchedCars in
+            self.cars = fetchedCars
+            self.carsTableView.reloadData()
+            self.carsTableViewHeight.constant = CGFloat(self.cars.count) * self.carsTableView.rowHeight + 10
+        }
     }
     
     private func configureCarsTableView() {
@@ -42,7 +50,6 @@ class CreateInstruсtorViewController: UIViewController {
         carsTableView.isScrollEnabled = false
 
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        carsTableViewHeight.constant = CGFloat(cars.count) * carsTableView.rowHeight + 10
         carsSuperViewHeight.constant = carsTableViewHeight.constant + 40
     }
     
@@ -91,7 +98,10 @@ extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath) as! CarTableViewCell
+        
+        let car = cars[indexPath.row]
+        cell.setup(withCar: car)
         
         if indexPath.row == selectedCarIndex {
             cell.accessoryType = .checkmark

@@ -31,7 +31,7 @@ class DatabaseMainViewController: UIViewController {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         
         tableView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = .secondarySystemBackground
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
@@ -44,15 +44,28 @@ class DatabaseMainViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
         
+        view.backgroundColor = .secondarySystemBackground
         setupNavigation()
     }
+    
+//    func setGradientBackground() {
+//        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+//        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
+//
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = [colorTop, colorBottom]
+//        gradientLayer.locations = [0.0, 0.5]
+//        gradientLayer.frame = self.view.bounds
+//
+//        view.layer.insertSublayer(gradientLayer, at:0)
+//    }
 
     private func setupNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "База данных"
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 27, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.darkGray
+            NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes
@@ -96,3 +109,5 @@ extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource
     
     
 }
+
+

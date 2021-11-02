@@ -43,7 +43,7 @@ class CreateExamViewController: UIViewController {
         groupsCollectionView.showsHorizontalScrollIndicator = false
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
-        groupsCollectionView.register(GroupCell.nib(), forCellWithReuseIdentifier: GroupCell.reuseIdentifier)
+        groupsCollectionView.register(GroupCollectionViewCell.nib(), forCellWithReuseIdentifier: GroupCollectionViewCell.reuseIdentifier)
     }
     
     private func configureSegmentedControls() {
@@ -94,7 +94,7 @@ extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCollectionViewCell.reuseIdentifier, for: indexPath) as! GroupCollectionViewCell
     
         let group = groups[indexPath.item]
         cell.setup(withGroup: group)

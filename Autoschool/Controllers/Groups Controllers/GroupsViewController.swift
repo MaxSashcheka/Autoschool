@@ -12,14 +12,13 @@ class GroupsViewController: UIViewController {
     var groups = [Group]()
     
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 23, right: 20)
 //    var selectedGroupIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureCollectionView()
-        
         setupNavigation()
     }
     
@@ -34,7 +33,8 @@ class GroupsViewController: UIViewController {
     private func configureCollectionView() {
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
-        groupsCollectionView.register(GroupCell.nib(), forCellWithReuseIdentifier: GroupCell.reuseIdentifier)
+        groupsCollectionView.register(GroupCollectionViewCell.nib(), forCellWithReuseIdentifier: GroupCollectionViewCell.reuseIdentifier)
+        groupsCollectionView.backgroundColor = .clear
     }
 
     private func setupNavigation() {
@@ -43,7 +43,7 @@ class GroupsViewController: UIViewController {
         title = "Группы"
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.darkGray
+            NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes
@@ -64,7 +64,7 @@ extension GroupsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCell.reuseIdentifier, for: indexPath) as! GroupCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCollectionViewCell.reuseIdentifier, for: indexPath) as! GroupCollectionViewCell
         
         let group = groups[indexPath.row]
         cell.setup(withGroup: group)

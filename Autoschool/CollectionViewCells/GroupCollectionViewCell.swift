@@ -7,9 +7,9 @@
 
 import UIKit
 
-class GroupCell: UICollectionViewCell {
+class GroupCollectionViewCell: UICollectionViewCell {
     
-    static let reuseIdentifier = "GroupCell"
+    static let reuseIdentifier = "GroupCollectionViewCell"
 
     
     @IBOutlet weak var lessonsTimeLabel: UIView!
@@ -26,6 +26,11 @@ class GroupCell: UICollectionViewCell {
         
         backgroundColor = .white
         layer.cornerRadius = 30
+//        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.33).cgColor
+//        layer.shadowRadius = 5.0
+//        layer.shadowOpacity = 1.0
+//        layer.shadowOffset = .zero
+//        layer.masksToBounds = false
         layer.borderWidth = 2
         layer.borderColor = UIColor.darkGray.cgColor
     }

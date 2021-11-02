@@ -25,13 +25,13 @@ class StudentTableViewCell: UITableViewCell {
         accessoryType = .disclosureIndicator
     }
     
-    func setup(withStudent student: Student) {
+    func setup(withStudent student: Student, andInstructor instructor: Instructor) {
         fullNameLabel.text = "\(student.lastName) \(student.firstName) \(student.middleName)"
         
         passportNumberLabel.text = "Номер паспорта: \(student.passportNumber)"
         
         phoneNumberLabel.text = "Моб. телефон: \(student.phoneNumber)"
-        instructorNameLabel.text = "Инструктор: Гурский Никита Сергеевич"
+        instructorNameLabel.text = "Инструктор: \(instructor.lastName) \(instructor.firstName)"
     }
     
     

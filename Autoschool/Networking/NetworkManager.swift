@@ -98,6 +98,30 @@ class NetworkManager {
     }
     
     // MARK: - teacher GET
+    func fetchTeacher(completionHandler: @escaping ([Teacher]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/teachers") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let teacherData = try JSONDecoder().decode([Teacher].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(teacherData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+            
+        }.resume()
+    }
+    
     func fetchTeacher(forGroupId groupId: Int, completionHandler: @escaping ([Teacher]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/teachers/\(groupId)") else { return }
         

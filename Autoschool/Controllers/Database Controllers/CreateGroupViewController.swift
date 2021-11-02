@@ -49,6 +49,16 @@ class CreateGroupViewController: UIViewController {
         setupBarButtonItems()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.fetchTeacher { fetchedTeachers in
+            self.teachers = fetchedTeachers
+            self.teachersTableView.reloadData()
+            self.teachersTableViewHeight.constant = CGFloat(self.teachers.count) * self.teachersTableView.rowHeight + 10
+
+        }
+    }
+    
     private func configureTeachersTableView() {
         teachersTableView.delegate = self
         teachersTableView.dataSource = self
@@ -56,7 +66,6 @@ class CreateGroupViewController: UIViewController {
         teachersTableView.rowHeight = 76
         teachersTableView.isScrollEnabled = false
         teachersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
-        teachersTableViewHeight.constant = CGFloat(teachers.count) * teachersTableView.rowHeight + 10
         teachersSuperViewHeight.constant = teachersTableViewHeight.constant + 20
     }
     
@@ -145,7 +154,10 @@ extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TeacherTableViewCell.reuseIdentifier, for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeacherTableViewCell.reuseIdentifier, for: indexPath) as! TeacherTableViewCell
+        
+        let teacher = teachers[indexPath.row]
+        cell.setup(withTeacher: teacher)
         
         if indexPath.row == selectedTeacherIndex {
             cell.accessoryType = .checkmark

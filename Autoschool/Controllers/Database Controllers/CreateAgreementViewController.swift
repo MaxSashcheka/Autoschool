@@ -11,6 +11,7 @@ class CreateAgreementViewController: UIViewController {
     
     var students = [Student]()
     var administrators = [Administrator]()
+    var instructors = [Instructor]()
     
     @IBOutlet weak var signingDateTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -47,6 +48,9 @@ class CreateAgreementViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NetworkManager.shared.fetchInstructors(completionHandler: { fetchedInstructors in
+            self.instructors = fetchedInstructors
+        })
         NetworkManager.shared.fetchStudents { fetchedStudents in
             self.students = fetchedStudents
             self.studentsTableView.reloadData()
@@ -153,7 +157,11 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
             let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
             
             let student = students[indexPath.row]
-            cell.setup(withStudent: student)
+            for instructor in instructors {
+                if student.instructorId == instructor.instructorId {
+                    cell.setup(withStudent: student, andInstructor: instructor)
+                }
+            }
 
             if indexPath.row == selectedStudentIndex {
                 cell.accessoryType = .checkmark

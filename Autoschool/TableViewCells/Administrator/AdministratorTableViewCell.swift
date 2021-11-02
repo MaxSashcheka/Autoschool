@@ -27,7 +27,7 @@ class AdministratorTableViewCell: UITableViewCell {
     func setup(withAdministrator administrator: Administrator) {
         fullNameLabel.text = "\(administrator.lastName) \(administrator.firstName) \(administrator.middleName)"
         phoneNumberLabel.text = "Моб. телефон: \(administrator.phoneNumber)"
-        emailLabel.text = "Почта \(administrator.email)"
+        emailLabel.text = "Почтa: \(administrator.email)"
     }
     
 }

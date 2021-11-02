@@ -466,7 +466,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QNd-To-hTS"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qit-vB-ti1" secondAttribute="bottom" id="1Hj-bh-pVI"/>
                             <constraint firstItem="qit-vB-ti1" firstAttribute="leading" secondItem="QNd-To-hTS" secondAttribute="leading" id="5DJ-ga-gle"/>
@@ -1069,7 +1069,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nlg-lc-aLC"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="gIa-m9-Upo" firstAttribute="top" secondItem="J76-OL-IRE" secondAttribute="top" id="0C7-6O-7VI"/>
                             <constraint firstItem="gIa-m9-Upo" firstAttribute="leading" secondItem="Nlg-lc-aLC" secondAttribute="leading" id="9Hh-Qb-kw7"/>
@@ -1196,7 +1196,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="39r-ef-5Zf"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="e6e-pf-Vtn" firstAttribute="top" secondItem="03O-mu-JrV" secondAttribute="top" id="AqC-Ht-56c"/>
                             <constraint firstItem="e6e-pf-Vtn" firstAttribute="trailing" secondItem="39r-ef-5Zf" secondAttribute="trailing" id="F5g-JC-bxV"/>
