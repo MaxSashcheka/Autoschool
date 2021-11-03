@@ -50,6 +50,7 @@
 		DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */; };
 		DD801086270C68A30062955B /* CreateCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801085270C68A20062955B /* CreateCarViewController.swift */; };
 		DD801089270C68AF0062955B /* CreateExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801088270C68AF0062955B /* CreateExamViewController.swift */; };
+		DD90500427331D1E00BFF6D3 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90500327331D1E00BFF6D3 /* Test.swift */; };
 		DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C4E27070A950040C839 /* AppDelegate.swift */; };
 		DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9A0C5027070A950040C839 /* SceneDelegate.swift */; };
 		DD9A0C5627070A950040C839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9A0C5427070A950040C839 /* Main.storyboard */; };
@@ -120,6 +121,7 @@
 		DD70501D271B7D29005894F3 /* TeacherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherTableViewCell.xib; sourceTree = "<group>"; };
 		DD801085270C68A20062955B /* CreateCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCarViewController.swift; sourceTree = "<group>"; };
 		DD801088270C68AF0062955B /* CreateExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExamViewController.swift; sourceTree = "<group>"; };
+		DD90500327331D1E00BFF6D3 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		DD9A0C4B27070A950040C839 /* Autoschool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autoschool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9A0C4E27070A950040C839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD9A0C5027070A950040C839 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				DD9A0C5F27070A960040C839 /* Info.plist */,
 				DD6DFF00271C3D650073F63F /* Sources */,
 				DD252D922732AC3000135257 /* README.md */,
+				DD90500327331D1E00BFF6D3 /* Test.swift */,
 			);
 			path = Autoschool;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */,
 				DD6DFF1D271C3D650073F63F /* SPAlertHaptic.swift in Sources */,
 				DD6DFF24271C51B30073F63F /* DriverLicense.swift in Sources */,
+				DD90500427331D1E00BFF6D3 /* Test.swift in Sources */,
 				DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */,
 				DD6DFF18271C3D650073F63F /* SPAlertIconHeartView.swift in Sources */,
 				DD9A0C7B270713E30040C839 /* DatabaseMainViewController.swift in Sources */,

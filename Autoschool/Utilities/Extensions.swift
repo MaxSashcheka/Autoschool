@@ -11,7 +11,7 @@ extension UIColor {
     static let lightGreenSea: UIColor = UIColor(red: 33.0 / 255.0, green: 176.0 / 255.0, blue: 142.0 / 255.0, alpha: 1.0)
     static let chillSky: UIColor = UIColor(red: .zero, green: 178.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
     static let quarterBlack: UIColor = UIColor(red: .zero, green: .zero, blue: .zero, alpha: 0.25)
-    static let viewBackground: UIColor = UIColor.secondarySystemBackground
+    static let viewBackground: UIColor = #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 1)
 }
 
 

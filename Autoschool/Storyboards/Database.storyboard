@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="DatabaseMainViewController" id="TXx-rR-8FF" customClass="DatabaseMainViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ha7-T8-ipR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Ttc-Br-BfD"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -29,129 +29,146 @@
             <objects>
                 <viewController storyboardIdentifier="CreateGroupViewController" id="KWP-Aj-QHB" customClass="CreateGroupViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PDF-pj-Jb2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-7c-s18">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="faM-Sk-ZDc">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="680"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-9B-mNA">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="380"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBB-7u-DCu">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-Br-Idi">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название группы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-9Q-vCj">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите категорию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-QO-Lgd">
-                                                        <rect key="frame" x="20" y="89.5" width="560" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-fB-bZ1">
-                                                        <rect key="frame" x="20" y="115" width="560" height="32"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-9B-mNA">
+                                                        <rect key="frame" x="12" y="0.0" width="390" height="380"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-Br-Idi">
+                                                                <rect key="frame" x="20" y="15" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название группы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-9Q-vCj">
+                                                                <rect key="frame" x="20" y="40.5" width="350" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите категорию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-QO-Lgd">
+                                                                <rect key="frame" x="20" y="89.5" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-fB-bZ1">
+                                                                <rect key="frame" x="20" y="115" width="350" height="32"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <segments>
+                                                                    <segment title="A"/>
+                                                                    <segment title="B (МКПП)"/>
+                                                                    <segment title="B (АКПП)"/>
+                                                                </segments>
+                                                            </segmentedControl>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите время проведения занятий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-Bx-19j">
+                                                                <rect key="frame" x="20" y="161" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jay-HZ-Jod">
+                                                                <rect key="frame" x="20" y="186.5" width="350" height="32"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <segments>
+                                                                    <segment title="Утро"/>
+                                                                    <segment title="День"/>
+                                                                    <segment title="Вечер"/>
+                                                                </segments>
+                                                            </segmentedControl>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата начала обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-0x-ouE">
+                                                                <rect key="frame" x="20" y="232.5" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-rm-KCG">
+                                                                <rect key="frame" x="20" y="258" width="350" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата окончания обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-RX-hgk">
+                                                                <rect key="frame" x="20" y="307" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r33-eq-PNg">
+                                                                <rect key="frame" x="20" y="332.5" width="350" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <segments>
-                                                            <segment title="A"/>
-                                                            <segment title="B (МКПП)"/>
-                                                            <segment title="B (АКПП)"/>
-                                                        </segments>
-                                                    </segmentedControl>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите время проведения занятий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-Bx-19j">
-                                                        <rect key="frame" x="20" y="161" width="560" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jay-HZ-Jod">
-                                                        <rect key="frame" x="20" y="186.5" width="560" height="32"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <segments>
-                                                            <segment title="Утро"/>
-                                                            <segment title="День"/>
-                                                            <segment title="Вечер"/>
-                                                        </segments>
-                                                    </segmentedControl>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата начала обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-0x-ouE">
-                                                        <rect key="frame" x="20" y="232.5" width="560" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-rm-KCG">
-                                                        <rect key="frame" x="20" y="258" width="560" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата окончания обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-RX-hgk">
-                                                        <rect key="frame" x="20" y="307" width="560" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r33-eq-PNg">
-                                                        <rect key="frame" x="20" y="332.5" width="560" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="CTr-QO-Lgd" secondAttribute="trailing" constant="20" id="2mP-sm-qxc"/>
+                                                            <constraint firstItem="Pdk-0x-ouE" firstAttribute="top" secondItem="Jay-HZ-Jod" secondAttribute="bottom" constant="15" id="3fa-m1-aJT"/>
+                                                            <constraint firstItem="Jay-HZ-Jod" firstAttribute="top" secondItem="CRB-Bx-19j" secondAttribute="bottom" constant="5" id="6UK-6y-NeT"/>
+                                                            <constraint firstItem="jQ5-rm-KCG" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="7Ob-pJ-PsQ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="LDC-fB-bZ1" secondAttribute="trailing" constant="20" id="7rN-C5-72n"/>
+                                                            <constraint firstItem="I0e-RX-hgk" firstAttribute="top" secondItem="jQ5-rm-KCG" secondAttribute="bottom" constant="15" id="93x-Rk-ILE"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jQ5-rm-KCG" secondAttribute="trailing" constant="20" id="F4P-Xt-5Xx"/>
+                                                            <constraint firstItem="CTr-QO-Lgd" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="GLg-tO-kJb"/>
+                                                            <constraint firstItem="Jay-HZ-Jod" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="HHJ-kn-T8v"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Jay-HZ-Jod" secondAttribute="trailing" constant="20" id="KuC-ms-oJN"/>
+                                                            <constraint firstAttribute="height" constant="380" id="MS7-zG-DfK"/>
+                                                            <constraint firstItem="CRB-Bx-19j" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="MZ7-9v-yRi"/>
+                                                            <constraint firstItem="CHb-9Q-vCj" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="NPb-N0-MHz"/>
+                                                            <constraint firstItem="CRB-Bx-19j" firstAttribute="top" secondItem="LDC-fB-bZ1" secondAttribute="bottom" constant="15" id="OPS-tt-zvQ"/>
+                                                            <constraint firstItem="LDC-fB-bZ1" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="Oal-FE-AAy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="CHb-9Q-vCj" secondAttribute="trailing" constant="20" id="QRQ-fL-3f3"/>
+                                                            <constraint firstItem="jQ5-rm-KCG" firstAttribute="top" secondItem="Pdk-0x-ouE" secondAttribute="bottom" constant="5" id="U2u-K9-rIC"/>
+                                                            <constraint firstAttribute="width" constant="390" id="Y9l-hj-S35"/>
+                                                            <constraint firstItem="r33-eq-PNg" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="ZI8-mu-rSg"/>
+                                                            <constraint firstAttribute="trailing" secondItem="I0e-RX-hgk" secondAttribute="trailing" constant="20" id="bfl-so-GEd"/>
+                                                            <constraint firstItem="MQO-Br-Idi" firstAttribute="top" secondItem="FAo-9B-mNA" secondAttribute="top" constant="15" id="dck-rQ-UaM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="r33-eq-PNg" secondAttribute="trailing" constant="20" id="eDc-QV-uKp"/>
+                                                            <constraint firstItem="r33-eq-PNg" firstAttribute="top" secondItem="I0e-RX-hgk" secondAttribute="bottom" constant="5" id="f1r-x0-DOD"/>
+                                                            <constraint firstItem="MQO-Br-Idi" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="hM1-1S-6m7"/>
+                                                            <constraint firstItem="CHb-9Q-vCj" firstAttribute="top" secondItem="MQO-Br-Idi" secondAttribute="bottom" constant="5" id="hZ3-ZA-gAK"/>
+                                                            <constraint firstItem="I0e-RX-hgk" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="iYm-hS-veW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="MQO-Br-Idi" secondAttribute="trailing" constant="20" id="lAf-Cs-GQG"/>
+                                                            <constraint firstItem="CTr-QO-Lgd" firstAttribute="top" secondItem="CHb-9Q-vCj" secondAttribute="bottom" constant="15" id="ptJ-ak-aPm"/>
+                                                            <constraint firstItem="Pdk-0x-ouE" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="qCa-Gt-f3p"/>
+                                                            <constraint firstAttribute="trailing" secondItem="CRB-Bx-19j" secondAttribute="trailing" constant="20" id="qUO-rp-4o4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Pdk-0x-ouE" secondAttribute="trailing" constant="20" id="uaW-lZ-cli"/>
+                                                            <constraint firstItem="LDC-fB-bZ1" firstAttribute="top" secondItem="CTr-QO-Lgd" secondAttribute="bottom" constant="5" id="yj0-8h-1E9"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="CTr-QO-Lgd" secondAttribute="trailing" constant="20" id="2mP-sm-qxc"/>
-                                                    <constraint firstItem="Pdk-0x-ouE" firstAttribute="top" secondItem="Jay-HZ-Jod" secondAttribute="bottom" constant="15" id="3fa-m1-aJT"/>
-                                                    <constraint firstItem="Jay-HZ-Jod" firstAttribute="top" secondItem="CRB-Bx-19j" secondAttribute="bottom" constant="5" id="6UK-6y-NeT"/>
-                                                    <constraint firstItem="jQ5-rm-KCG" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="7Ob-pJ-PsQ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="LDC-fB-bZ1" secondAttribute="trailing" constant="20" id="7rN-C5-72n"/>
-                                                    <constraint firstItem="I0e-RX-hgk" firstAttribute="top" secondItem="jQ5-rm-KCG" secondAttribute="bottom" constant="15" id="93x-Rk-ILE"/>
-                                                    <constraint firstAttribute="trailing" secondItem="jQ5-rm-KCG" secondAttribute="trailing" constant="20" id="F4P-Xt-5Xx"/>
-                                                    <constraint firstItem="CTr-QO-Lgd" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="GLg-tO-kJb"/>
-                                                    <constraint firstItem="Jay-HZ-Jod" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="HHJ-kn-T8v"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Jay-HZ-Jod" secondAttribute="trailing" constant="20" id="KuC-ms-oJN"/>
-                                                    <constraint firstAttribute="height" constant="380" id="MS7-zG-DfK"/>
-                                                    <constraint firstItem="CRB-Bx-19j" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="MZ7-9v-yRi"/>
-                                                    <constraint firstItem="CHb-9Q-vCj" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="NPb-N0-MHz"/>
-                                                    <constraint firstItem="CRB-Bx-19j" firstAttribute="top" secondItem="LDC-fB-bZ1" secondAttribute="bottom" constant="15" id="OPS-tt-zvQ"/>
-                                                    <constraint firstItem="LDC-fB-bZ1" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="Oal-FE-AAy"/>
-                                                    <constraint firstAttribute="trailing" secondItem="CHb-9Q-vCj" secondAttribute="trailing" constant="20" id="QRQ-fL-3f3"/>
-                                                    <constraint firstItem="jQ5-rm-KCG" firstAttribute="top" secondItem="Pdk-0x-ouE" secondAttribute="bottom" constant="5" id="U2u-K9-rIC"/>
-                                                    <constraint firstItem="r33-eq-PNg" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="ZI8-mu-rSg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="I0e-RX-hgk" secondAttribute="trailing" constant="20" id="bfl-so-GEd"/>
-                                                    <constraint firstItem="MQO-Br-Idi" firstAttribute="top" secondItem="FAo-9B-mNA" secondAttribute="top" constant="15" id="dck-rQ-UaM"/>
-                                                    <constraint firstAttribute="trailing" secondItem="r33-eq-PNg" secondAttribute="trailing" constant="20" id="eDc-QV-uKp"/>
-                                                    <constraint firstItem="r33-eq-PNg" firstAttribute="top" secondItem="I0e-RX-hgk" secondAttribute="bottom" constant="5" id="f1r-x0-DOD"/>
-                                                    <constraint firstItem="MQO-Br-Idi" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="hM1-1S-6m7"/>
-                                                    <constraint firstItem="CHb-9Q-vCj" firstAttribute="top" secondItem="MQO-Br-Idi" secondAttribute="bottom" constant="5" id="hZ3-ZA-gAK"/>
-                                                    <constraint firstItem="I0e-RX-hgk" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="iYm-hS-veW"/>
-                                                    <constraint firstAttribute="trailing" secondItem="MQO-Br-Idi" secondAttribute="trailing" constant="20" id="lAf-Cs-GQG"/>
-                                                    <constraint firstItem="CTr-QO-Lgd" firstAttribute="top" secondItem="CHb-9Q-vCj" secondAttribute="bottom" constant="15" id="ptJ-ak-aPm"/>
-                                                    <constraint firstItem="Pdk-0x-ouE" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="qCa-Gt-f3p"/>
-                                                    <constraint firstAttribute="trailing" secondItem="CRB-Bx-19j" secondAttribute="trailing" constant="20" id="qUO-rp-4o4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Pdk-0x-ouE" secondAttribute="trailing" constant="20" id="uaW-lZ-cli"/>
-                                                    <constraint firstItem="LDC-fB-bZ1" firstAttribute="top" secondItem="CTr-QO-Lgd" secondAttribute="bottom" constant="5" id="yj0-8h-1E9"/>
+                                                    <constraint firstItem="FAo-9B-mNA" firstAttribute="centerY" secondItem="RBB-7u-DCu" secondAttribute="centerY" id="EnJ-0l-0IA"/>
+                                                    <constraint firstItem="FAo-9B-mNA" firstAttribute="centerX" secondItem="RBB-7u-DCu" secondAttribute="centerX" id="gGm-vw-Y3T"/>
+                                                    <constraint firstAttribute="height" constant="380" id="uqq-nn-t60"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-RQ-HAD">
-                                                <rect key="frame" x="0.0" y="380" width="600" height="300"/>
+                                                <rect key="frame" x="0.0" y="380" width="414" height="300"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-fv-gOw">
-                                                        <rect key="frame" x="0.0" y="20.5" width="600" height="170"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="170"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="170" id="r5X-5I-X0n"/>
                                                         </constraints>
                                                     </tableView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите преподавателя по теории" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-fM-baX">
-                                                        <rect key="frame" x="20" y="0.0" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -212,63 +229,63 @@
             <objects>
                 <viewController storyboardIdentifier="CreateInstruсtorViewController" id="g7K-38-bJg" customClass="CreateInstruсtorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mT7-TJ-Lde">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71p-My-mld">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fq0-pW-uad">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="620"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKq-ea-t8a">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-Yv-fgh">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3HZ-nN-cz1">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="118"/>
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="118"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bK9-ZE-zbB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CdX-zD-Azz">
-                                                                <rect key="frame" x="0.0" y="42" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="42" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jWF-fo-cG9">
-                                                                <rect key="frame" x="0.0" y="84" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="84" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите стаж вождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrT-MF-oRc">
-                                                        <rect key="frame" x="20" y="173.5" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="173.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Стаж вождения" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-65-mWO">
-                                                        <rect key="frame" x="20" y="199" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="199" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите мобильный телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAM-Pp-xaK">
-                                                        <rect key="frame" x="20" y="248" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="248" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мобильный телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJc-ox-bvQ">
-                                                        <rect key="frame" x="20" y="273.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="273.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
@@ -297,17 +314,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zx2-3A-uZg">
-                                                <rect key="frame" x="0.0" y="320" width="600" height="300"/>
+                                                <rect key="frame" x="0.0" y="320" width="414" height="300"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="U0F-r6-Sze">
-                                                        <rect key="frame" x="0.0" y="20.5" width="600" height="170"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="170"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="170" id="siF-LS-zfB"/>
                                                         </constraints>
                                                     </tableView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите машину" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0n-co-QIP">
-                                                        <rect key="frame" x="20" y="0.0" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -367,63 +384,63 @@
             <objects>
                 <viewController storyboardIdentifier="CreateWorkerViewController" id="UIB-jp-gAe" customClass="CreateAdministratorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34q-Nw-hzK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qit-vB-ti1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n4Q-XX-uel">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BG4-3K-pAt">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPN-89-ass">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CfV-Cz-dNR">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="118"/>
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="118"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waj-4u-Jg8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="THB-3N-y5Q">
-                                                                <rect key="frame" x="0.0" y="42" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="42" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5U-R6-O7l">
-                                                                <rect key="frame" x="0.0" y="84" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="84" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите мобильный телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwR-Qr-Bee">
-                                                        <rect key="frame" x="20" y="173.5" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="173.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мобильный телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rzu-yJ-waH">
-                                                        <rect key="frame" x="20" y="199" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="199" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите электронную почту" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7Q-07-am5">
-                                                        <rect key="frame" x="20" y="248" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="248" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Электронная почта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3A-ez-Wsc">
-                                                        <rect key="frame" x="20" y="273.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="273.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
@@ -491,63 +508,63 @@
             <objects>
                 <viewController storyboardIdentifier="CreateStudentViewController" automaticallyAdjustsScrollViewInsets="NO" id="n59-9A-gjf" customClass="CreateStudentViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bMc-mW-RnI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2r-vF-c72">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U6Z-Ak-dCV">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="995"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="995"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27q-SL-mQd">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО учащегося" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBs-tM-2WE">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Ld-fc-z3q">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="118"/>
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="118"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIp-fX-Sc0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3v-go-8lb">
-                                                                <rect key="frame" x="0.0" y="42" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="42" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKu-Wb-hh8">
-                                                                <rect key="frame" x="0.0" y="84" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="84" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер паспорта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1To-Qx-1Jz">
-                                                        <rect key="frame" x="20" y="173.5" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="173.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер паспорта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AqI-qX-iPJ">
-                                                        <rect key="frame" x="20" y="199" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="199" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите мобильный телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57a-j2-1vi">
-                                                        <rect key="frame" x="20" y="248" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="248" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мобильный телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tuh-of-7Ox">
-                                                        <rect key="frame" x="20" y="273.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="273.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
@@ -576,10 +593,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dva-lu-bYE">
-                                                <rect key="frame" x="0.0" y="330" width="600" height="255"/>
+                                                <rect key="frame" x="0.0" y="330" width="414" height="255"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G6o-BU-thI">
-                                                        <rect key="frame" x="0.0" y="25.5" width="600" height="210"/>
+                                                        <rect key="frame" x="0.0" y="25.5" width="414" height="210"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="210" id="02q-XO-k1G"/>
@@ -610,16 +627,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxS-NG-HEc">
-                                                <rect key="frame" x="0.0" y="585" width="600" height="410"/>
+                                                <rect key="frame" x="0.0" y="585" width="414" height="410"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvR-cJ-l2r">
-                                                        <rect key="frame" x="20" y="0.0" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fx8-2T-HbD">
-                                                        <rect key="frame" x="0.0" y="25.5" width="600" height="384.5"/>
+                                                        <rect key="frame" x="0.0" y="25.5" width="414" height="384.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="384.5" id="q72-aE-OeG"/>
@@ -682,48 +699,48 @@
             <objects>
                 <viewController storyboardIdentifier="CreateCarViewController" id="Xhf-Rl-1cP" customClass="CreateCarViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="55V-IN-n5k">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J52-3x-5Ia">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7kY-L0-c6G">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOH-3P-7RP">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите государственный номер машины" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ3-kG-2BK">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Государственный номер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvf-Dv-y2n">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название машины" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glQ-n1-iwL">
-                                                        <rect key="frame" x="20" y="89.5" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="89.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Марка" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxq-YV-hpp">
-                                                        <rect key="frame" x="20" y="115" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="115" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите цвет машины" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvs-tn-ai4">
-                                                        <rect key="frame" x="20" y="164" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="164" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Цвет" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Db4-V7-Res">
-                                                        <rect key="frame" x="20" y="189.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="189.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -789,44 +806,44 @@
             <objects>
                 <viewController storyboardIdentifier="CreateExamViewController" id="tkD-3f-rXc" customClass="CreateExamViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Osv-rA-6lK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-3c-xbF">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-1J-e5u">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="455"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="455"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-dl-WrD">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите дату экзамна" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgL-f9-t2R">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дата экзамена" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtb-uI-reU">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите тип экзамена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzx-MU-oXt">
-                                                        <rect key="frame" x="20" y="84.5" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="84.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i3M-oq-9E4">
-                                                        <rect key="frame" x="20" y="110" width="560" height="32"/>
+                                                        <rect key="frame" x="20" y="110" width="374" height="32"/>
                                                         <segments>
                                                             <segment title="Внутренний"/>
                                                             <segment title="Гаи"/>
                                                         </segments>
                                                     </segmentedControl>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z32-SY-V5c">
-                                                        <rect key="frame" x="20" y="148" width="560" height="32"/>
+                                                        <rect key="frame" x="20" y="148" width="374" height="32"/>
                                                         <segments>
                                                             <segment title="Теория"/>
                                                             <segment title="Практика"/>
@@ -854,10 +871,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LW7-OA-fwa">
-                                                <rect key="frame" x="0.0" y="200" width="600" height="255"/>
+                                                <rect key="frame" x="0.0" y="200" width="414" height="255"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XmK-cw-czZ">
-                                                        <rect key="frame" x="0.0" y="25.5" width="600" height="210"/>
+                                                        <rect key="frame" x="0.0" y="25.5" width="414" height="210"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="210" id="zK8-Hj-6vx"/>
@@ -929,7 +946,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gsL-Rq-Svv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -946,37 +963,37 @@
             <objects>
                 <viewController storyboardIdentifier="CreateAgreementViewController" id="cQj-ub-apP" customClass="CreateAgreementViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J76-OL-IRE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIa-m9-Upo">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rNq-He-uqk">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="990"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="990"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Q7-SE-Dlv">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="170"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата подписания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXu-nl-SQY">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8hT-X9-199">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите стоимость" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVb-v5-wfH">
-                                                        <rect key="frame" x="20" y="89.5" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="89.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Стоимость" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfU-7h-D0g">
-                                                        <rect key="frame" x="20" y="115" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="115" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
@@ -999,16 +1016,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-bd-Q5x">
-                                                <rect key="frame" x="0.0" y="170" width="600" height="410"/>
+                                                <rect key="frame" x="0.0" y="170" width="414" height="410"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите администратора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVI-Zi-na0">
-                                                        <rect key="frame" x="20" y="0.0" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vcI-ZW-Sdt">
-                                                        <rect key="frame" x="0.0" y="20.5" width="600" height="384.5"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="384.5"/>
                                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="384.5" id="lzA-KS-ain"/>
@@ -1027,16 +1044,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGl-nw-2ao">
-                                                <rect key="frame" x="0.0" y="580" width="600" height="410"/>
+                                                <rect key="frame" x="0.0" y="580" width="414" height="410"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите студента" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-zS-ADH">
-                                                        <rect key="frame" x="20" y="0.0" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EjA-B5-4ih">
-                                                        <rect key="frame" x="0.0" y="20.5" width="600" height="384.5"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="384.5"/>
                                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="384.5" id="CfD-YE-6Ch"/>
@@ -1097,63 +1114,63 @@
             <objects>
                 <viewController storyboardIdentifier="CreateTeacherViewController" id="utD-l6-722" customClass="CreateTeacherViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="03O-mu-JrV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6e-pf-Vtn">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H7c-WR-sIX">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJM-97-e3L">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkg-hH-N5i">
-                                                        <rect key="frame" x="20" y="15" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dz0-d8-vx3">
-                                                        <rect key="frame" x="20" y="40.5" width="560" height="118"/>
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="118"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJl-jy-cxJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-nM-bkw">
-                                                                <rect key="frame" x="0.0" y="42" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="42" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KvM-5G-fAr">
-                                                                <rect key="frame" x="0.0" y="84" width="560" height="34"/>
+                                                                <rect key="frame" x="0.0" y="84" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер паспорта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMv-K4-hyq">
-                                                        <rect key="frame" x="20" y="173.5" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="173.5" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер паспорта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mwo-0n-iqe">
-                                                        <rect key="frame" x="20" y="199" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="199" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите мобильный телефон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-pz-Tzs">
-                                                        <rect key="frame" x="20" y="248" width="560" height="20.5"/>
+                                                        <rect key="frame" x="20" y="248" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Мобильный телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sdZ-5e-xry">
-                                                        <rect key="frame" x="20" y="273.5" width="560" height="34"/>
+                                                        <rect key="frame" x="20" y="273.5" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
