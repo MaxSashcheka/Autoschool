@@ -34,7 +34,7 @@ class StudentsViewController: UIViewController {
             self.students = fetchedStudents
             self.studentsTableView.reloadData()
         }
-        NetworkManager.shared.fetchTeacher(forGroupId: group.groupId) { fetchedTeacher in
+        NetworkManager.shared.fetchTeachers(forGroup: group) { fetchedTeacher in
             self.teachers = fetchedTeacher
             self.studentsTableView.reloadData()
         }
@@ -58,6 +58,12 @@ class StudentsViewController: UIViewController {
 // MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 25 {
+            studentsTableView.contentInsetAdjustmentBehavior = .always
+        }
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Преподаватель группы"

@@ -20,11 +20,12 @@ class DatabaseMainViewController: UIViewController {
         0: ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateWorkerViewController", image: UIImage(systemName: "person")),
         1: ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(systemName: "studentdesk")),
         2: ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(systemName: "doc.text")),
-        3: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person.crop.rectangle")),
-        4: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
-        5: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
-        6: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
-        7: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
+        3: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person")),
+        4: ViewControllerRepresentation(tableViewName: "Добавить вод. удостоверение", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person.crop.rectangle")),
+        5: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
+        6: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
+        7: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
+        8: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
     ]
     
     lazy var tableView: UITableView = {

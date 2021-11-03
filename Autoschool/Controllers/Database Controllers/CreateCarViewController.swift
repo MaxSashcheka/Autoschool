@@ -28,8 +28,8 @@ class CreateCarViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        let successAlertView = SPAlertView(title: "Машина успешно добавлена в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить машину в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let carNumber = carNumberTextField.text, carNumber != "" else {
             failureAlertView.present()

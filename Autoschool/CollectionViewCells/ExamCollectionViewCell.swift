@@ -23,7 +23,7 @@ class ExamCollectionViewCell: UICollectionViewCell {
         examTypeView.layer.cornerRadius = examTypeView.frame.width / 2
         
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
-        layer.shadowRadius = 3.0
+        layer.shadowRadius = 5.0
         layer.shadowOpacity = 1.0
         layer.shadowOffset = .zero
         layer.masksToBounds = false

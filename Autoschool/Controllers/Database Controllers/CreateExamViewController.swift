@@ -90,8 +90,35 @@ class CreateExamViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let alertView = SPAlertView(title: "Экзамен успешно добавлен в базу данных", preset: .done)
-        alertView.present()
+        let successAlertView = SPAlertView(title: "Экзамен успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить экзамен в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        
+//        guard let firstName = firstNameTextField.text, firstName != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//        
+//        guard let lastName = lastNameTextField.text, lastName != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//        
+//        guard let patronymic = patronymicTextField.text, patronymic != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//        
+//        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+//        
+//        guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
+//            failureAlertView.present()
+//            return
+//        }
+        
+        successAlertView.present()
 
     }
 

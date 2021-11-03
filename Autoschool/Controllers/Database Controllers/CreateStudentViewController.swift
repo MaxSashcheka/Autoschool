@@ -76,38 +76,35 @@ class CreateStudentViewController: UIViewController {
         let successAlertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить ученика в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-//        guard var firstName = firstNameTextField.text, firstName != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//
-//        guard var lastName = lastNameTextField.text, lastName != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//
-//        guard var middleName = middleNameTextField.text, middleName != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//
-//        guard var phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//
-//        guard var passportNumber = passportNumberTextField.text, passportNumber != "" else {
-//            failureAlertView.present()
-//            return
-//        }
+        guard var firstName = firstNameTextField.text, firstName != "" else {
+            failureAlertView.present()
+            return
+        }
+
+        guard var lastName = lastNameTextField.text, lastName != "" else {
+            failureAlertView.present()
+            return
+        }
+
+        guard var middleName = middleNameTextField.text, middleName != "" else {
+            failureAlertView.present()
+            return
+        }
+
+        guard var phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+            failureAlertView.present()
+            return
+        }
+
+        guard var passportNumber = passportNumberTextField.text, passportNumber != "" else {
+            failureAlertView.present()
+            return
+        }
         
-        var firstName = "Max"
-        var lastName = "Sashcheka"
-        var middleName = "Andreevich"
-        var passportNumber = "MP3719335"
-        var phoneNumber = "+ 375 (29) 358-17-24"
+        let selectedGroup = groups[selectedGroupIndex]
+        let selectedInstructor = instructors[selectedInstructorIndex]
         
-        let student = Student(studentId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: 1, groupId: 1)
+        let student = Student(studentId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: selectedInstructor.instructorId, groupId: selectedGroup.groupId)
         NetworkManager.shared.postStudent(student)
         
         successAlertView.present()
@@ -151,7 +148,7 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = groupsCollectionView.frame.width * 0.8
-        let itemHeight = groupsCollectionView.frame.height - 10
+        let itemHeight = groupsCollectionView.frame.height - 20
         
         return CGSize(width: itemWidth, height: itemHeight)
     }

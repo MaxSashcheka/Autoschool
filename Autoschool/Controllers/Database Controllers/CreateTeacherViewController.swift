@@ -29,8 +29,8 @@ class CreateTeacherViewController: UIViewController {
     }
     
     @objc private func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось добавить ученика в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        let successAlertView = SPAlertView(title: "Преподаватель успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить преподавателя в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
             failureAlertView.present()

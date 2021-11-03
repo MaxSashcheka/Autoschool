@@ -23,7 +23,7 @@ class NetworkManager {
         case delete = "DELETE"
     }
     
-    // MARK: - groups GET
+    // MARK: - Groups
     func fetchGroups(completionHandler: @escaping ([Group]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/groups") else { return }
         
@@ -48,7 +48,37 @@ class NetworkManager {
         }.resume()
     }
     
-    // MARK: - students GET
+    func postGroup(_ group: Group) {
+
+        guard let url = URL(string: "\(apiRoute)/groups/create") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+            let post = "name=\(group.name)&lessons_start_date=\(group.lessonsStartDate)&lessons_end_date=\(group.lessonsEndDate)&category_id=\(group.categoryId)&teacher_id=\(group.teacherId)&lessons_time_id=\(group.lessonsTimeId)"
+            let postData = post.data(using: .utf8, allowLossyConversion: true)! //String.Encoding.ascii
+            request.httpBody = postData
+            
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                guard let data = data, error == nil else {
+                    return
+                }
+                do {
+                    let responce  = try JSONDecoder().decode(Group.self, from: data)
+                    print("Success \(responce)")
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
+    // MARK: - Students
     func fetchStudents(withGroupId groupId: Int, completionHandler: @escaping ([Student]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/students/group/\(groupId)") else { return }
         
@@ -97,7 +127,37 @@ class NetworkManager {
         }.resume()
     }
     
-    // MARK: - teacher GET
+    func postStudent(_ student: Student) {
+
+        guard let url = URL(string: "\(apiRoute)/students/create") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            let post = "first_name=\(student.firstName)&last_name=\(student.lastName)&middle_name=\(student.middleName)&passport_number=\(student.passportNumber)&phone_number=\(student.phoneNumber)&instructor_id=\(student.instructorId)&group_id=\(student.groupId)"
+            let postData = post.data(using: .utf8, allowLossyConversion: true)!
+            request.httpBody = postData
+            
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                guard let data = data, error == nil else {
+                    return
+                }
+                do {
+                    let responce  = try JSONDecoder().decode(Student.self, from: data)
+                    print("Success \(responce)")
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
+    // MARK: - Teachers
+    // fetch all teachers
     func fetchTeacher(completionHandler: @escaping ([Teacher]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/teachers") else { return }
         
@@ -121,9 +181,9 @@ class NetworkManager {
             
         }.resume()
     }
-    
-    func fetchTeacher(forGroupId groupId: Int, completionHandler: @escaping ([Teacher]) -> Void) {
-        guard let url = URL(string: "\(apiRoute)/teachers/\(groupId)") else { return }
+    // fetch teacher for certain group
+    func fetchTeachers(forGroup group: Group, completionHandler: @escaping ([Teacher]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/teachers/\(group.teacherId)") else { return }
         
         URLSession.shared.dataTask(with: url) { data, responce, error in
 
@@ -271,38 +331,6 @@ class NetworkManager {
         }.resume()
     }
     
-    
-    
-    // MARK: - POST
-    func postStudent(_ student: Student) {
-
-        guard let url = URL(string: "\(apiRoute)/create") else { return }
-        
-        do {
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            let post = "first_name=\(student.firstName)&last_name=\(student.lastName)&middle_name=\(student.middleName)&passport_number=\(student.passportNumber)&phone_number=\(student.phoneNumber)&instructor_id=\(student.instructorId)&group_id=\(student.groupId)"
-            let postData = post.data(using: String.Encoding.ascii, allowLossyConversion: true)!
-            request.httpBody = postData
-            
-            URLSession.shared.dataTask(with: request) { (data, res, error) in
-                guard let data = data, error == nil else {
-                    return
-                }
-                do {
-                    let responce  = try JSONDecoder().decode(Student.self, from: data)
-                    print("Success \(responce)")
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }.resume()
-            
-        } catch let serializationError {
-            print("serializationError: \(serializationError.localizedDescription)")
-        }
-    }
-    
     // MARK: - DELETE
 
     func deleteStudent(withId studentId: Int) {
@@ -312,8 +340,7 @@ class NetworkManager {
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//            request.httpBody = try! JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
-            
+
             URLSession.shared.dataTask(with: request) { (data, res, error) in
 //                guard let data = data, error == nil else {
 //                    return

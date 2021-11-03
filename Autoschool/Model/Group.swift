@@ -8,11 +8,11 @@
 import Foundation
 
 struct Group: Codable {
-    var groupId: Int
-    var name: String
-    var lessonsStartDate: String
-    var lessonsEndDate: String
-    var categoryId: Int
-    var teacherId: Int
-    var lessonsTimeId: Int
+    var groupId: Int = 0
+    var name: String = ""
+    var lessonsStartDate: String = ""
+    var lessonsEndDate: String = ""
+    var categoryId: Int = 0
+    var teacherId: Int = 0
+    var lessonsTimeId: Int = 0
 }

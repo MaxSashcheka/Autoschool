@@ -110,7 +110,7 @@ class CreateGroupViewController: UIViewController {
     
     @objc func saveStartDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "yyyy.MM.dd"
         startDateTextField.text = formatter.string(from: startLessonsDatePicker.date)
         
         view.endEditing(true)
@@ -118,30 +118,38 @@ class CreateGroupViewController: UIViewController {
     
     @objc func saveEndDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "yyyy.MM.dd"
         endDateTextField.text = formatter.string(from: endLessonsDatePicker.date)
         
         view.endEditing(true)
     }
     
     @objc private func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        let successAlertView = SPAlertView(title: "Группа успешно добавлена в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить группу в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let groupName = groupNameLabel.text, groupName != "" else {
             failureAlertView.present()
             return
         }
         
-        guard let startDate = startDateTextField.text, startDate != "" else {
+        guard let startDateString = startDateTextField.text, startDateString != "" else {
             failureAlertView.present()
             return
         }
         
-        guard let endDate = endDateTextField.text, endDate != "" else {
+        guard let endDateString = endDateTextField.text, endDateString != "" else {
             failureAlertView.present()
             return
         }
+        
+        let selectedCategoryId = drivingCategorySegmentedControl.selectedSegmentIndex + 1
+        let selectedlessonsTimeId = classesTimeSegmentedControl.selectedSegmentIndex + 1
+        let selectedTeacherId = teachers[selectedTeacherIndex].teacherId
+        
+        let groupToPost = Group(groupId: 0, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
+        NetworkManager.shared.postGroup(groupToPost)
+        
         
         successAlertView.present()
     }
