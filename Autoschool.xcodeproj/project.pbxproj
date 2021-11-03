@@ -77,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		DD1490D7270B983D000ACD8F /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
+		DD252D922732AC3000135257 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DD43124C2719B2390009B35E /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
@@ -357,6 +358,7 @@
 				DD9A0C6627070AA50040C839 /* Application files */,
 				DD9A0C5F27070A960040C839 /* Info.plist */,
 				DD6DFF00271C3D650073F63F /* Sources */,
+				DD252D922732AC3000135257 /* README.md */,
 			);
 			path = Autoschool;
 			sourceTree = "<group>";

@@ -11,7 +11,7 @@ class CreateTeacherViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var patronymicTextField: UITextField!
+    @IBOutlet weak var middleNameTextField: UITextField!
     
     @IBOutlet weak var passportNumberTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -42,7 +42,7 @@ class CreateTeacherViewController: UIViewController {
             return
         }
         
-        guard let patronymic = patronymicTextField.text, patronymic != "" else {
+        guard let middleName = middleNameTextField.text, middleName != "" else {
             failureAlertView.present()
             return
         }
@@ -56,6 +56,10 @@ class CreateTeacherViewController: UIViewController {
             failureAlertView.present()
             return
         }
+        
+        let teacher = Teacher(teacherId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber)
+        NetworkManager.shared.postTeacher(teacher)
+        
         
         successAlertView.present()
 
