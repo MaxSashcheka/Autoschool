@@ -28,7 +28,6 @@ class CreateExamViewController: UIViewController {
         return datePicker
     }()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавить экзамен"
@@ -79,7 +78,7 @@ class CreateExamViewController: UIViewController {
     
     @objc private func saveExamDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "yyyy.MM.dd"
         examDateTextField.text = formatter.string(from: examDatePicker.date)
         
         view.endEditing(true)
@@ -93,30 +92,12 @@ class CreateExamViewController: UIViewController {
         let successAlertView = SPAlertView(title: "Экзамен успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить экзамен в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-//        guard let firstName = firstNameTextField.text, firstName != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//        
-//        guard let lastName = lastNameTextField.text, lastName != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//        
-//        guard let patronymic = patronymicTextField.text, patronymic != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//        
-//        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
-//            failureAlertView.present()
-//            return
-//        }
-//        
-//        guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
-//            failureAlertView.present()
-//            return
-//        }
+        guard let examDateString = examDateTextField.text, examDateString != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        let selectedGroupId = groups[selectedGroupIndex].groupId
         
         successAlertView.present()
 
@@ -159,7 +140,7 @@ extension CreateExamViewController: UICollectionViewDelegateFlowLayout {
 //        let itemWidth = groupsCollectionView.frame.width - groupsCollectionViewInsets.left * 2
 //        let itemHeight = itemWidth / 2
         let itemWidth = groupsCollectionView.frame.width * 0.8
-        let itemHeight = groupsCollectionView.frame.height - 10
+        let itemHeight = groupsCollectionView.frame.height - 20
         
         
         return CGSize(width: itemWidth, height: itemHeight)

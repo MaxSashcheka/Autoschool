@@ -14,7 +14,7 @@ class CreateInstruсtorViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var patronymicTextField: UITextField!
+    @IBOutlet weak var middleNameTextField: UITextField!
     
     @IBOutlet weak var drivingExperienceTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -74,7 +74,7 @@ class CreateInstruсtorViewController: UIViewController {
             return
         }
         
-        guard let patronymic = patronymicTextField.text, patronymic != "" else {
+        guard let middleName = middleNameTextField.text, middleName != "" else {
             failureAlertView.present()
             return
         }
@@ -88,6 +88,11 @@ class CreateInstruсtorViewController: UIViewController {
             failureAlertView.present()
             return
         }
+        
+        let selectedCarId = cars[selectedCarIndex].carId
+//        let selectedDriverLicenseId =
+        
+//        let instructor = Instructor(instructorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, drivingExperience: Int(drivingExperience) ?? 0, passportNumber: pass, phoneNumber: phoneNumber, carId: <#T##Int#>, driverLicenseId: <#T##Int#>)
         
         successAlertView.present()
     }

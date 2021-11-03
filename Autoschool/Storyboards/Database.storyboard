@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Vw-TN-acq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -353,7 +354,7 @@
                         <outlet property="drivingExperienceTextField" destination="hJQ-65-mWO" id="OCi-5x-Dhg"/>
                         <outlet property="firstNameTextField" destination="CdX-zD-Azz" id="Ngg-Bo-eVG"/>
                         <outlet property="lastNameTextField" destination="bK9-ZE-zbB" id="CoA-6X-ibD"/>
-                        <outlet property="patronymicTextField" destination="jWF-fo-cG9" id="MqW-BU-d11"/>
+                        <outlet property="middleNameTextField" destination="jWF-fo-cG9" id="MqW-BU-d11"/>
                         <outlet property="phoneNumberTextField" destination="iJc-ox-bvQ" id="lU7-0f-09P"/>
                     </connections>
                 </viewController>
@@ -477,7 +478,7 @@
                         <outlet property="emailTextField" destination="d3A-ez-Wsc" id="OSA-4f-HGH"/>
                         <outlet property="firstNameTextField" destination="THB-3N-y5Q" id="Mny-vg-L2D"/>
                         <outlet property="lastNameTextField" destination="waj-4u-Jg8" id="dXL-3N-ByQ"/>
-                        <outlet property="patronymicTextField" destination="P5U-R6-O7l" id="Hxn-YQ-Imx"/>
+                        <outlet property="middleNameTextField" destination="P5U-R6-O7l" id="Hxn-YQ-Imx"/>
                         <outlet property="phoneNumberTextField" destination="rzu-yJ-waH" id="H6p-0Q-bRt"/>
                     </connections>
                 </viewController>
@@ -928,7 +929,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gsL-Rq-Svv">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

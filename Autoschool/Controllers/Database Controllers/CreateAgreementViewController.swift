@@ -58,8 +58,6 @@ class CreateAgreementViewController: UIViewController {
             self.studentsTableView.reloadData()
             self.studentsTableViewHeight.constant = CGFloat(self.students.count) * self.studentsTableView.rowHeight
             self.studentsSuperViewHeight.constant = self.studentsTableViewHeight.constant + 40
-
-
         }
         NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
             self.administrators = fetchedAdministrators
@@ -106,7 +104,7 @@ class CreateAgreementViewController: UIViewController {
     
     @objc private func saveSigningDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "yyyy.MM.dd"
         signingDateTextField.text = formatter.string(from: signingDatePicker.date)
         
         view.endEditing(true)
@@ -125,6 +123,11 @@ class CreateAgreementViewController: UIViewController {
             failureAlertView.present()
             return
         }
+        
+        let selectedAdministratorId = administrators[selectedAdministratorIndex].administratorId
+        let selectedStudentId = students[selectedStudentIndex].studentId
+        let agreement = Agreement(agreementId: 0, amount: Int(amount) ?? 0, signingDate: signingDate, administratorId: selectedAdministratorId, studentId: selectedStudentId)
+        NetworkManager.shared.post(agreement)
         
         successAlertView.present()
     }

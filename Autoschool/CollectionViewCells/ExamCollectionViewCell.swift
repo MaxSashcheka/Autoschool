@@ -43,18 +43,11 @@ class ExamCollectionViewCell: UICollectionViewCell {
         let examDateString = exam.date[...endOfDate]
         examDateLabel.text = "Дата проведения: \(examDateString)"
         
+        examTypeLabel.text = "Тип экзамена: \(exam.examType.examTypeName)"
         switch exam.examTypeId {
-        case 1:
-            examTypeLabel.text = "Тип экзамена: внутренний теория"
+        case 1, 2:
             examTypeView.backgroundColor = .systemGreen
-        case 2:
-            examTypeLabel.text = "Тип экзамена: внутренний практика"
-            examTypeView.backgroundColor = .systemGreen
-        case 3:
-            examTypeLabel.text = "Тип экзамена: гаи теория"
-            examTypeView.backgroundColor = .systemRed
-        case 4:
-            examTypeLabel.text = "Тип экзамена: гаи практика"
+        case 3, 4:
             examTypeView.backgroundColor = .systemRed
         default: examTypeLabel.text = "Ошибка"
         }

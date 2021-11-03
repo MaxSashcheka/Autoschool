@@ -12,7 +12,7 @@ class CreateAdministratorViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var patronymicTextField: UITextField!
+    @IBOutlet weak var middleNameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -43,7 +43,7 @@ class CreateAdministratorViewController: UIViewController {
             return
         }
         
-        guard let patronymic = patronymicTextField.text, patronymic != "" else {
+        guard let middleName = middleNameTextField.text, middleName != "" else {
             failureAlertView.present()
             return
         }
@@ -57,6 +57,10 @@ class CreateAdministratorViewController: UIViewController {
             failureAlertView.present()
             return
         }
+        
+        let administrator = Administrator(administratorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email)
+        NetworkManager.shared.post(administrator)
+        
         
         successAlertView.present()
     }

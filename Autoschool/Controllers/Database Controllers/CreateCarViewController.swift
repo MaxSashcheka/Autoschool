@@ -31,20 +31,23 @@ class CreateCarViewController: UIViewController {
         let successAlertView = SPAlertView(title: "Машина успешно добавлена в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить машину в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-        guard let carNumber = carNumberTextField.text, carNumber != "" else {
+        guard let number = carNumberTextField.text, number != "" else {
             failureAlertView.present()
             return
         }
         
-        guard let carName = carNameTextField.text, carName != "" else {
+        guard let name = carNameTextField.text, name != "" else {
             failureAlertView.present()
             return
         }
         
-        guard let carColor = carColorTextField.text, carColor != "" else {
+        guard let color = carColorTextField.text, color != "" else {
             failureAlertView.present()
             return
         }
+        
+        let car = Car(carId: 0, number: number, name: name, color: color)
+        NetworkManager.shared.postCar(car)
         
         successAlertView.present()
     }

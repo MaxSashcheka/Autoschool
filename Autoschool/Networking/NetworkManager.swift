@@ -472,7 +472,7 @@ class NetworkManager {
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            let post = "amount=\(agreement.amount)&singing_date=\(agreement.signingDate)&administrator_id=\(agreement.administratorId)&student_id=\(agreement.studentId)"
+            let post = "amount=\(agreement.amount)&signing_date=\(agreement.signingDate)&administrator_id=\(agreement.administratorId)&student_id=\(agreement.studentId)"
             let postData = post.data(using: .utf8, allowLossyConversion: true)!
             request.httpBody = postData
             
