@@ -38,124 +38,113 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="faM-Sk-ZDc">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBB-7u-DCu">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-9B-mNA">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-9B-mNA">
-                                                        <rect key="frame" x="12" y="0.0" width="390" height="380"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-Br-Idi">
-                                                                <rect key="frame" x="20" y="15" width="350" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название группы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-9Q-vCj">
-                                                                <rect key="frame" x="20" y="40.5" width="350" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите категорию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-QO-Lgd">
-                                                                <rect key="frame" x="20" y="89.5" width="350" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-fB-bZ1">
-                                                                <rect key="frame" x="20" y="115" width="350" height="32"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <segments>
-                                                                    <segment title="A"/>
-                                                                    <segment title="B (МКПП)"/>
-                                                                    <segment title="B (АКПП)"/>
-                                                                </segments>
-                                                            </segmentedControl>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите время проведения занятий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-Bx-19j">
-                                                                <rect key="frame" x="20" y="161" width="350" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jay-HZ-Jod">
-                                                                <rect key="frame" x="20" y="186.5" width="350" height="32"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <segments>
-                                                                    <segment title="Утро"/>
-                                                                    <segment title="День"/>
-                                                                    <segment title="Вечер"/>
-                                                                </segments>
-                                                            </segmentedControl>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата начала обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-0x-ouE">
-                                                                <rect key="frame" x="20" y="232.5" width="350" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-rm-KCG">
-                                                                <rect key="frame" x="20" y="258" width="350" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата окончания обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-RX-hgk">
-                                                                <rect key="frame" x="20" y="307" width="350" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r33-eq-PNg">
-                                                                <rect key="frame" x="20" y="332.5" width="350" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-Br-Idi">
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название группы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-9Q-vCj">
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите категорию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-QO-Lgd">
+                                                        <rect key="frame" x="20" y="89.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-fB-bZ1">
+                                                        <rect key="frame" x="20" y="115" width="374" height="32"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="CTr-QO-Lgd" secondAttribute="trailing" constant="20" id="2mP-sm-qxc"/>
-                                                            <constraint firstItem="Pdk-0x-ouE" firstAttribute="top" secondItem="Jay-HZ-Jod" secondAttribute="bottom" constant="15" id="3fa-m1-aJT"/>
-                                                            <constraint firstItem="Jay-HZ-Jod" firstAttribute="top" secondItem="CRB-Bx-19j" secondAttribute="bottom" constant="5" id="6UK-6y-NeT"/>
-                                                            <constraint firstItem="jQ5-rm-KCG" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="7Ob-pJ-PsQ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="LDC-fB-bZ1" secondAttribute="trailing" constant="20" id="7rN-C5-72n"/>
-                                                            <constraint firstItem="I0e-RX-hgk" firstAttribute="top" secondItem="jQ5-rm-KCG" secondAttribute="bottom" constant="15" id="93x-Rk-ILE"/>
-                                                            <constraint firstAttribute="trailing" secondItem="jQ5-rm-KCG" secondAttribute="trailing" constant="20" id="F4P-Xt-5Xx"/>
-                                                            <constraint firstItem="CTr-QO-Lgd" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="GLg-tO-kJb"/>
-                                                            <constraint firstItem="Jay-HZ-Jod" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="HHJ-kn-T8v"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Jay-HZ-Jod" secondAttribute="trailing" constant="20" id="KuC-ms-oJN"/>
-                                                            <constraint firstAttribute="height" constant="380" id="MS7-zG-DfK"/>
-                                                            <constraint firstItem="CRB-Bx-19j" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="MZ7-9v-yRi"/>
-                                                            <constraint firstItem="CHb-9Q-vCj" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="NPb-N0-MHz"/>
-                                                            <constraint firstItem="CRB-Bx-19j" firstAttribute="top" secondItem="LDC-fB-bZ1" secondAttribute="bottom" constant="15" id="OPS-tt-zvQ"/>
-                                                            <constraint firstItem="LDC-fB-bZ1" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="Oal-FE-AAy"/>
-                                                            <constraint firstAttribute="trailing" secondItem="CHb-9Q-vCj" secondAttribute="trailing" constant="20" id="QRQ-fL-3f3"/>
-                                                            <constraint firstItem="jQ5-rm-KCG" firstAttribute="top" secondItem="Pdk-0x-ouE" secondAttribute="bottom" constant="5" id="U2u-K9-rIC"/>
-                                                            <constraint firstAttribute="width" constant="390" id="Y9l-hj-S35"/>
-                                                            <constraint firstItem="r33-eq-PNg" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="ZI8-mu-rSg"/>
-                                                            <constraint firstAttribute="trailing" secondItem="I0e-RX-hgk" secondAttribute="trailing" constant="20" id="bfl-so-GEd"/>
-                                                            <constraint firstItem="MQO-Br-Idi" firstAttribute="top" secondItem="FAo-9B-mNA" secondAttribute="top" constant="15" id="dck-rQ-UaM"/>
-                                                            <constraint firstAttribute="trailing" secondItem="r33-eq-PNg" secondAttribute="trailing" constant="20" id="eDc-QV-uKp"/>
-                                                            <constraint firstItem="r33-eq-PNg" firstAttribute="top" secondItem="I0e-RX-hgk" secondAttribute="bottom" constant="5" id="f1r-x0-DOD"/>
-                                                            <constraint firstItem="MQO-Br-Idi" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="hM1-1S-6m7"/>
-                                                            <constraint firstItem="CHb-9Q-vCj" firstAttribute="top" secondItem="MQO-Br-Idi" secondAttribute="bottom" constant="5" id="hZ3-ZA-gAK"/>
-                                                            <constraint firstItem="I0e-RX-hgk" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="iYm-hS-veW"/>
-                                                            <constraint firstAttribute="trailing" secondItem="MQO-Br-Idi" secondAttribute="trailing" constant="20" id="lAf-Cs-GQG"/>
-                                                            <constraint firstItem="CTr-QO-Lgd" firstAttribute="top" secondItem="CHb-9Q-vCj" secondAttribute="bottom" constant="15" id="ptJ-ak-aPm"/>
-                                                            <constraint firstItem="Pdk-0x-ouE" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="qCa-Gt-f3p"/>
-                                                            <constraint firstAttribute="trailing" secondItem="CRB-Bx-19j" secondAttribute="trailing" constant="20" id="qUO-rp-4o4"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Pdk-0x-ouE" secondAttribute="trailing" constant="20" id="uaW-lZ-cli"/>
-                                                            <constraint firstItem="LDC-fB-bZ1" firstAttribute="top" secondItem="CTr-QO-Lgd" secondAttribute="bottom" constant="5" id="yj0-8h-1E9"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
+                                                        <segments>
+                                                            <segment title="A"/>
+                                                            <segment title="B (МКПП)"/>
+                                                            <segment title="B (АКПП)"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите время проведения занятий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-Bx-19j">
+                                                        <rect key="frame" x="20" y="161" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jay-HZ-Jod">
+                                                        <rect key="frame" x="20" y="186.5" width="374" height="32"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <segments>
+                                                            <segment title="Утро"/>
+                                                            <segment title="День"/>
+                                                            <segment title="Вечер"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата начала обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-0x-ouE">
+                                                        <rect key="frame" x="20" y="232.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-rm-KCG">
+                                                        <rect key="frame" x="20" y="258" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата окончания обучения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-RX-hgk">
+                                                        <rect key="frame" x="20" y="307" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r33-eq-PNg">
+                                                        <rect key="frame" x="20" y="332.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="FAo-9B-mNA" firstAttribute="centerY" secondItem="RBB-7u-DCu" secondAttribute="centerY" id="EnJ-0l-0IA"/>
-                                                    <constraint firstItem="FAo-9B-mNA" firstAttribute="centerX" secondItem="RBB-7u-DCu" secondAttribute="centerX" id="gGm-vw-Y3T"/>
-                                                    <constraint firstAttribute="height" constant="380" id="uqq-nn-t60"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CTr-QO-Lgd" secondAttribute="trailing" constant="20" id="2mP-sm-qxc"/>
+                                                    <constraint firstItem="Pdk-0x-ouE" firstAttribute="top" secondItem="Jay-HZ-Jod" secondAttribute="bottom" constant="15" id="3fa-m1-aJT"/>
+                                                    <constraint firstItem="Jay-HZ-Jod" firstAttribute="top" secondItem="CRB-Bx-19j" secondAttribute="bottom" constant="5" id="6UK-6y-NeT"/>
+                                                    <constraint firstItem="jQ5-rm-KCG" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="7Ob-pJ-PsQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LDC-fB-bZ1" secondAttribute="trailing" constant="20" id="7rN-C5-72n"/>
+                                                    <constraint firstItem="I0e-RX-hgk" firstAttribute="top" secondItem="jQ5-rm-KCG" secondAttribute="bottom" constant="15" id="93x-Rk-ILE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jQ5-rm-KCG" secondAttribute="trailing" constant="20" id="F4P-Xt-5Xx"/>
+                                                    <constraint firstItem="CTr-QO-Lgd" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="GLg-tO-kJb"/>
+                                                    <constraint firstItem="Jay-HZ-Jod" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="HHJ-kn-T8v"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Jay-HZ-Jod" secondAttribute="trailing" constant="20" id="KuC-ms-oJN"/>
+                                                    <constraint firstAttribute="height" constant="380" id="MS7-zG-DfK"/>
+                                                    <constraint firstItem="CRB-Bx-19j" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="MZ7-9v-yRi"/>
+                                                    <constraint firstItem="CHb-9Q-vCj" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="NPb-N0-MHz"/>
+                                                    <constraint firstItem="CRB-Bx-19j" firstAttribute="top" secondItem="LDC-fB-bZ1" secondAttribute="bottom" constant="15" id="OPS-tt-zvQ"/>
+                                                    <constraint firstItem="LDC-fB-bZ1" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="Oal-FE-AAy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CHb-9Q-vCj" secondAttribute="trailing" constant="20" id="QRQ-fL-3f3"/>
+                                                    <constraint firstItem="jQ5-rm-KCG" firstAttribute="top" secondItem="Pdk-0x-ouE" secondAttribute="bottom" constant="5" id="U2u-K9-rIC"/>
+                                                    <constraint firstAttribute="width" constant="414" id="Y9l-hj-S35"/>
+                                                    <constraint firstItem="r33-eq-PNg" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="ZI8-mu-rSg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="I0e-RX-hgk" secondAttribute="trailing" constant="20" id="bfl-so-GEd"/>
+                                                    <constraint firstItem="MQO-Br-Idi" firstAttribute="top" secondItem="FAo-9B-mNA" secondAttribute="top" constant="15" id="dck-rQ-UaM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="r33-eq-PNg" secondAttribute="trailing" constant="20" id="eDc-QV-uKp"/>
+                                                    <constraint firstItem="r33-eq-PNg" firstAttribute="top" secondItem="I0e-RX-hgk" secondAttribute="bottom" constant="5" id="f1r-x0-DOD"/>
+                                                    <constraint firstItem="MQO-Br-Idi" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="hM1-1S-6m7"/>
+                                                    <constraint firstItem="CHb-9Q-vCj" firstAttribute="top" secondItem="MQO-Br-Idi" secondAttribute="bottom" constant="5" id="hZ3-ZA-gAK"/>
+                                                    <constraint firstItem="I0e-RX-hgk" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="iYm-hS-veW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MQO-Br-Idi" secondAttribute="trailing" constant="20" id="lAf-Cs-GQG"/>
+                                                    <constraint firstItem="CTr-QO-Lgd" firstAttribute="top" secondItem="CHb-9Q-vCj" secondAttribute="bottom" constant="15" id="ptJ-ak-aPm"/>
+                                                    <constraint firstItem="Pdk-0x-ouE" firstAttribute="leading" secondItem="FAo-9B-mNA" secondAttribute="leading" constant="20" id="qCa-Gt-f3p"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CRB-Bx-19j" secondAttribute="trailing" constant="20" id="qUO-rp-4o4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Pdk-0x-ouE" secondAttribute="trailing" constant="20" id="uaW-lZ-cli"/>
+                                                    <constraint firstItem="LDC-fB-bZ1" firstAttribute="top" secondItem="CTr-QO-Lgd" secondAttribute="bottom" constant="5" id="yj0-8h-1E9"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-RQ-HAD">
                                                 <rect key="frame" x="0.0" y="380" width="414" height="300"/>
@@ -938,6 +927,113 @@
             </objects>
             <point key="canvasLocation" x="2221.739130434783" y="868.52678571428567"/>
         </scene>
+        <!--Create Driver License View Controller-->
+        <scene sceneID="7Av-gv-ut7">
+            <objects>
+                <viewController storyboardIdentifier="CreateDriverLicenseViewController" id="uWQ-iU-8cd" customClass="CreateDriverLicenseViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="83E-M2-FnO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9G-cr-3G6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rmx-LV-gp4">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhj-1y-edK">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hm-cY-3ua">
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер водительского удостоверения" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="guj-Vo-O6k">
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите дату выдачи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soi-OP-uGO">
+                                                        <rect key="frame" x="20" y="89.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер водительского удостоверения" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sx6-aj-Vzd">
+                                                        <rect key="frame" x="20" y="115" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите срок действия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCZ-aj-QAG">
+                                                        <rect key="frame" x="20" y="164" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Срок действительности" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8b-Mk-ENk">
+                                                        <rect key="frame" x="20" y="189.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="sx6-aj-Vzd" firstAttribute="leading" secondItem="Mhj-1y-edK" secondAttribute="leading" constant="20" id="1BZ-94-I0i"/>
+                                                    <constraint firstAttribute="trailing" secondItem="O8b-Mk-ENk" secondAttribute="trailing" constant="20" id="3Hu-6g-PE5"/>
+                                                    <constraint firstItem="soi-OP-uGO" firstAttribute="leading" secondItem="Mhj-1y-edK" secondAttribute="leading" constant="20" id="3lv-qh-281"/>
+                                                    <constraint firstItem="sx6-aj-Vzd" firstAttribute="top" secondItem="soi-OP-uGO" secondAttribute="bottom" constant="5" id="9fs-ZD-o6M"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sx6-aj-Vzd" secondAttribute="trailing" constant="20" id="EbV-kc-K04"/>
+                                                    <constraint firstItem="2hm-cY-3ua" firstAttribute="top" secondItem="Mhj-1y-edK" secondAttribute="top" constant="15" id="FA4-Os-aja"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2hm-cY-3ua" secondAttribute="trailing" constant="20" id="Hlx-ne-F5j"/>
+                                                    <constraint firstAttribute="trailing" secondItem="guj-Vo-O6k" secondAttribute="trailing" constant="20" id="IPb-bh-avd"/>
+                                                    <constraint firstItem="NCZ-aj-QAG" firstAttribute="top" secondItem="sx6-aj-Vzd" secondAttribute="bottom" constant="15" id="MfA-DI-wp9"/>
+                                                    <constraint firstItem="guj-Vo-O6k" firstAttribute="top" secondItem="2hm-cY-3ua" secondAttribute="bottom" constant="5" id="Q8n-14-iuT"/>
+                                                    <constraint firstItem="O8b-Mk-ENk" firstAttribute="leading" secondItem="Mhj-1y-edK" secondAttribute="leading" constant="20" id="VOi-pD-tdn"/>
+                                                    <constraint firstItem="guj-Vo-O6k" firstAttribute="leading" secondItem="Mhj-1y-edK" secondAttribute="leading" constant="20" id="ZM3-A6-ycV"/>
+                                                    <constraint firstItem="NCZ-aj-QAG" firstAttribute="leading" secondItem="Mhj-1y-edK" secondAttribute="leading" constant="20" id="ZlI-QN-tqu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NCZ-aj-QAG" secondAttribute="trailing" constant="20" id="cwF-HK-m7b"/>
+                                                    <constraint firstAttribute="height" constant="250" id="hrx-Hq-gRI"/>
+                                                    <constraint firstItem="soi-OP-uGO" firstAttribute="top" secondItem="guj-Vo-O6k" secondAttribute="bottom" constant="15" id="j2Y-5m-LlU"/>
+                                                    <constraint firstItem="2hm-cY-3ua" firstAttribute="leading" secondItem="Mhj-1y-edK" secondAttribute="leading" constant="20" id="sfk-KD-KNQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="soi-OP-uGO" secondAttribute="trailing" constant="20" id="u3c-fG-81f"/>
+                                                    <constraint firstItem="O8b-Mk-ENk" firstAttribute="top" secondItem="NCZ-aj-QAG" secondAttribute="bottom" constant="5" id="wNa-qM-ajw"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Rmx-LV-gp4" firstAttribute="leading" secondItem="87y-kP-bKH" secondAttribute="leading" id="50c-oA-EYA"/>
+                                    <constraint firstItem="Rmx-LV-gp4" firstAttribute="bottom" secondItem="87y-kP-bKH" secondAttribute="bottom" id="6eL-gF-bZO"/>
+                                    <constraint firstItem="Rmx-LV-gp4" firstAttribute="trailing" secondItem="87y-kP-bKH" secondAttribute="trailing" id="AaX-UY-lUy"/>
+                                    <constraint firstItem="Rmx-LV-gp4" firstAttribute="width" secondItem="0jl-In-ceH" secondAttribute="width" id="XJy-CL-fWC"/>
+                                    <constraint firstItem="Rmx-LV-gp4" firstAttribute="top" secondItem="87y-kP-bKH" secondAttribute="top" id="wWR-fK-ptq"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="87y-kP-bKH"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="0jl-In-ceH"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YQF-jW-3N1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C9G-cr-3G6" firstAttribute="leading" secondItem="YQF-jW-3N1" secondAttribute="leading" id="ATr-un-ffZ"/>
+                            <constraint firstAttribute="bottom" secondItem="C9G-cr-3G6" secondAttribute="bottom" id="Emk-nc-WFB"/>
+                            <constraint firstItem="C9G-cr-3G6" firstAttribute="top" secondItem="83E-M2-FnO" secondAttribute="top" id="dZa-Z1-yzl"/>
+                            <constraint firstItem="C9G-cr-3G6" firstAttribute="trailing" secondItem="YQF-jW-3N1" secondAttribute="trailing" id="hpl-ha-ahm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="issueDateTextField" destination="sx6-aj-Vzd" id="BhP-aG-dIX"/>
+                        <outlet property="numberTextField" destination="guj-Vo-O6k" id="ocJ-QM-eR3"/>
+                        <outlet property="validityTextField" destination="O8b-Mk-ENk" id="9cz-Cp-i0P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LqK-Xl-3wj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3085.507246376812" y="868.52678571428567"/>
+        </scene>
         <!--База данных-->
         <scene sceneID="D0x-z1-Z4U">
             <objects>
@@ -1236,6 +1332,9 @@
     </scenes>
     <resources>
         <image name="table" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
