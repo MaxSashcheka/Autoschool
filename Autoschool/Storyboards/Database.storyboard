@@ -225,7 +225,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fq0-pW-uad">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="920"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKq-ea-t8a">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -330,6 +330,34 @@
                                                     <constraint firstItem="U0F-r6-Sze" firstAttribute="top" secondItem="P0n-co-QIP" secondAttribute="bottom" id="mA1-qt-Iti"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNg-Rz-kWr">
+                                                <rect key="frame" x="0.0" y="620" width="414" height="300"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tBj-LY-bFT">
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="170"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="170" id="fsS-q8-RrM"/>
+                                                        </constraints>
+                                                    </tableView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите водительское удостоверение" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybL-A8-H1h">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="1Ac-lo-TUq"/>
+                                                    <constraint firstItem="ybL-A8-H1h" firstAttribute="leading" secondItem="RNg-Rz-kWr" secondAttribute="leading" constant="20" id="6k6-Dr-NmD"/>
+                                                    <constraint firstItem="ybL-A8-H1h" firstAttribute="top" secondItem="RNg-Rz-kWr" secondAttribute="top" id="8Sv-rc-9sU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ybL-A8-H1h" secondAttribute="trailing" constant="20" id="91e-0H-E8N"/>
+                                                    <constraint firstItem="tBj-LY-bFT" firstAttribute="top" secondItem="ybL-A8-H1h" secondAttribute="bottom" id="bfz-IE-wUB"/>
+                                                    <constraint firstItem="tBj-LY-bFT" firstAttribute="leading" secondItem="RNg-Rz-kWr" secondAttribute="leading" id="sbI-AV-6LF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tBj-LY-bFT" secondAttribute="trailing" id="weD-x6-kNA"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -357,6 +385,9 @@
                         <outlet property="carsSuperViewHeight" destination="G0Q-qp-qg3" id="g0l-hB-cTb"/>
                         <outlet property="carsTableView" destination="U0F-r6-Sze" id="5bq-HC-M4z"/>
                         <outlet property="carsTableViewHeight" destination="siF-LS-zfB" id="0hY-Pp-2mF"/>
+                        <outlet property="driverLicenseSuperViewHeight" destination="1Ac-lo-TUq" id="eRL-gL-3j3"/>
+                        <outlet property="driverLicenseTableViewHeight" destination="fsS-q8-RrM" id="Ttw-MM-PUW"/>
+                        <outlet property="driverLicensesTableView" destination="tBj-LY-bFT" id="Cmp-dI-rsQ"/>
                         <outlet property="drivingExperienceTextField" destination="hJQ-65-mWO" id="OCi-5x-Dhg"/>
                         <outlet property="firstNameTextField" destination="CdX-zD-Azz" id="Ngg-Bo-eVG"/>
                         <outlet property="lastNameTextField" destination="bK9-ZE-zbB" id="CoA-6X-ibD"/>

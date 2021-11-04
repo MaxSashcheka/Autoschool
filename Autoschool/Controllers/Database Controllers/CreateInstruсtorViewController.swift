@@ -22,8 +22,14 @@ class CreateInstruсtorViewController: UIViewController {
     @IBOutlet weak var carsTableView: UITableView!
     var selectedCarIndex = 0
     
+    @IBOutlet weak var driverLicensesTableView: UITableView!
+    var selectedDriverLicenseIndex = 0
+    
     @IBOutlet weak var carsSuperViewHeight: NSLayoutConstraint!
     @IBOutlet weak var carsTableViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var driverLicenseTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var driverLicenseSuperViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +49,7 @@ class CreateInstruсtorViewController: UIViewController {
         
         setupBarButtonItems()
         configureCarsTableView()
+        configureDriverLicenseTableView()
     }
     
     @objc func hideKeyboard() {
@@ -56,7 +63,12 @@ class CreateInstruсtorViewController: UIViewController {
             self.carsTableView.reloadData()
             self.carsTableViewHeight.constant = CGFloat(self.cars.count) * self.carsTableView.rowHeight + 10
             self.carsSuperViewHeight.constant = self.carsTableViewHeight.constant + 30
-
+        }
+        NetworkManager.shared.fetchDriverLicenses { fetchedDriverLicenses in
+            self.driverLicenses = fetchedDriverLicenses
+            self.driverLicensesTableView.reloadData()
+            self.driverLicenseTableViewHeight.constant = CGFloat(self.driverLicenses.count) * self.driverLicensesTableView.rowHeight + 10
+            self.driverLicenseSuperViewHeight.constant = self.driverLicenseTableViewHeight.constant + 30
         }
     }
     
@@ -68,6 +80,16 @@ class CreateInstruсtorViewController: UIViewController {
         carsTableView.isScrollEnabled = false
 
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+    }
+    
+    private func configureDriverLicenseTableView() {
+        driverLicensesTableView.delegate = self
+        driverLicensesTableView.dataSource = self
+        driverLicensesTableView.register(DriverLicenseTableViewCell.nib(), forCellReuseIdentifier: DriverLicenseTableViewCell.reuseIdentifier)
+        driverLicensesTableView.rowHeight = 80
+        driverLicensesTableView.isScrollEnabled = false
+
+        driverLicensesTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
     private func setupBarButtonItems() {
@@ -116,28 +138,52 @@ class CreateInstruсtorViewController: UIViewController {
 extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cars.count
+        if tableView == carsTableView {
+            return cars.count
+        } else {
+            return driverLicenses.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath) as! CarTableViewCell
-        
-        let car = cars[indexPath.row]
-        cell.setup(withCar: car)
-        
-        if indexPath.row == selectedCarIndex {
-            cell.accessoryType = .checkmark
-            cell.tintColor = .lightGreenSea
+        if tableView == carsTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath) as! CarTableViewCell
+            
+            let car = cars[indexPath.row]
+            cell.setup(withCar: car)
+            
+            if indexPath.row == selectedCarIndex {
+                cell.accessoryType = .checkmark
+                cell.tintColor = .lightGreenSea
+            } else {
+                cell.accessoryType = .none
+            }
+            
+            return cell
         } else {
-            cell.accessoryType = .none
+            let cell = tableView.dequeueReusableCell(withIdentifier: DriverLicenseTableViewCell.reuseIdentifier, for: indexPath) as! DriverLicenseTableViewCell
+            
+            let driverLicense = driverLicenses[indexPath.row]
+            cell.setup(withDriverLicense: driverLicense)
+            
+            if indexPath.row == selectedDriverLicenseIndex {
+                cell.accessoryType = .checkmark
+                cell.tintColor = .lightGreenSea
+            } else {
+                cell.accessoryType = .none
+            }
+            
+            return cell
         }
         
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-        selectedCarIndex = indexPath.row
+        if tableView == carsTableView {
+            selectedCarIndex = indexPath.row
+        } else {
+            selectedDriverLicenseIndex = indexPath.row
+        }
         tableView.reloadData()
     }
 }
@@ -151,7 +197,7 @@ extension CreateInstruсtorViewController: UITextFieldDelegate {
 
 extension CreateInstruсtorViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if touch.view!.isDescendant(of: carsTableView) {
+        if touch.view!.isDescendant(of: carsTableView) || touch.view!.isDescendant(of: driverLicensesTableView) {
             return false
         }
         return true

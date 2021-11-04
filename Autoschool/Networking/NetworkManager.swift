@@ -493,6 +493,58 @@ class NetworkManager {
         }
     }
     
+    // MARK: - DriverLicenses
+    func fetchDriverLicenses(completionHandler: @escaping ([DriverLisence]) -> Void) {
+        guard let url = URL(string: "\(apiRoute)/driverlicense") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+
+            if error != nil {
+                print("error: \(error?.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let driverLicenseData = try JSONDecoder().decode([DriverLisence].self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(driverLicenseData)
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+
+        }.resume()
+    }
+    
+    func post(_ driverLicense: DriverLisence) {
+        guard let url = URL(string: "\(apiRoute)/driverlicense/create") else { return }
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            let post = "issue_date=\(driverLicense.issueDate)&number=\(driverLicense.number)&validity=\(driverLicense.validity)"
+            let postData = post.data(using: .utf8, allowLossyConversion: true)!
+            request.httpBody = postData
+            
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                guard let data = data, error == nil else {
+                    return
+                }
+                do {
+                    let responce  = try JSONDecoder().decode(Agreement.self, from: data)
+                    print("Success \(responce)")
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
     
     
 
