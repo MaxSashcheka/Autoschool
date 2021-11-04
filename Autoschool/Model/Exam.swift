@@ -8,14 +8,14 @@
 import Foundation
 
 struct Exam: Codable {
-    var examId: Int
-    var date: String
-    var examTypeId: Int
-    var examType: ExamType
-    var groupId: Int
+    var examId: Int = 0
+    var date: String = ""
+    var examTypeId: Int = 0
+    var examType: ExamType = ExamType()
+    var groupId: Int = 0
 }
 
 struct ExamType: Codable {
-    var examTypeId: Int
-    var examTypeName: String
+    var examTypeId: Int = 0
+    var examTypeName: String = ""
 }

@@ -67,7 +67,7 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return 2
         } else {
             return instructors.count
         }
@@ -76,8 +76,15 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-            cell.textLabel?.text = "Автопарк автошколы"
             cell.accessoryType = .disclosureIndicator
+            cell.tintColor = .lightGreenSea
+            if indexPath.row == 0 {
+                cell.imageView?.image = UIImage(systemName: "car.2.fill")
+                cell.textLabel?.text = "Автопарк автошколы"
+            } else {
+                cell.imageView?.image = UIImage(systemName: "person.crop.rectangle")
+                cell.textLabel?.text = "Водительские удостоверения"
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath) as! InstructorTableViewCell
@@ -93,8 +100,14 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
-            let vc = CarParkViewController()
-            navigationController?.pushViewController(vc, animated: true)
+            if indexPath.row == 0 {
+                let carParkViewController = CarParkViewController()
+                navigationController?.pushViewController(carParkViewController, animated: true)
+            } else {
+                let driverLicensesViewController = DriverLicensesViewController()
+                navigationController?.pushViewController(driverLicensesViewController, animated: true)
+            }
+            
         }
     }
     

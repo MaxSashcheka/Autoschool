@@ -69,6 +69,7 @@
 		DDB53C8F272C4859009B69CF /* Agreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB53C8E272C4859009B69CF /* Agreement.swift */; };
 		DDCC6B492733CF9000394561 /* DriverLicenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCC6B472733CF9000394561 /* DriverLicenseTableViewCell.swift */; };
 		DDCC6B4A2733CF9000394561 /* DriverLicenseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCC6B482733CF9000394561 /* DriverLicenseTableViewCell.xib */; };
+		DDCC6B4D2733E57700394561 /* DriverLicensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCC6B4C2733E57700394561 /* DriverLicensesViewController.swift */; };
 		DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0D329271C8F400017A160 /* CarParkViewController.swift */; };
 		DDD412C82730833300E7107F /* ExamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD412C62730833300E7107F /* ExamCollectionViewCell.swift */; };
 		DDD412C92730833300E7107F /* ExamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */; };
@@ -144,6 +145,7 @@
 		DDB53C8E272C4859009B69CF /* Agreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agreement.swift; sourceTree = "<group>"; };
 		DDCC6B472733CF9000394561 /* DriverLicenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicenseTableViewCell.swift; sourceTree = "<group>"; };
 		DDCC6B482733CF9000394561 /* DriverLicenseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DriverLicenseTableViewCell.xib; sourceTree = "<group>"; };
+		DDCC6B4C2733E57700394561 /* DriverLicensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLicensesViewController.swift; sourceTree = "<group>"; };
 		DDD0D329271C8F400017A160 /* CarParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParkViewController.swift; sourceTree = "<group>"; };
 		DDD412C62730833300E7107F /* ExamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */,
 				DDD0D329271C8F400017A160 /* CarParkViewController.swift */,
+				DDCC6B4C2733E57700394561 /* DriverLicensesViewController.swift */,
 			);
 			path = "Instructors Controllers";
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */,
 				DD6DFF1A271C3D650073F63F /* SPAlertIconDoneView.swift in Sources */,
 				DD5B16E1270A4053007E5C38 /* InstructorsViewController.swift in Sources */,
+				DDCC6B4D2733E57700394561 /* DriverLicensesViewController.swift in Sources */,
 				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
 				DD6DFEE8271C1B990073F63F /* CreateAgreementViewController.swift in Sources */,
 				DD6DFF15271C3D650073F63F /* UILabelExtension.swift in Sources */,

@@ -102,7 +102,6 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
 
                 }
             }
-            
             return cell
         }
     }
@@ -110,8 +109,10 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateStudentViewController")
-
-//        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
     }
     
 }

@@ -35,6 +35,7 @@ class CreateDriverLicenseViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         
         configureTextField()
+        setupBarButtonItems()
     }
     
     @objc func hideKeyboard() {

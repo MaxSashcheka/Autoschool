@@ -72,7 +72,7 @@ class CreateAdministratorViewController: UIViewController {
         }
         
         let administrator = Administrator(administratorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email)
-        NetworkManager.shared.post(administrator)
+        NetworkManager.shared.postAdministrator(administrator)
         
         
         successAlertView.present()

@@ -106,7 +106,22 @@ class CreateExamViewController: UIViewController {
         }
         
         let selectedGroupId = groups[selectedGroupIndex].groupId
-        
+        var selectedExamTypeId = 1
+        if examInternalExternalSegmentedControl.selectedSegmentIndex == 0 {
+            if examTheoryPracticeSegmentedControl.selectedSegmentIndex == 0 {
+                selectedExamTypeId = 1
+            } else {
+                selectedExamTypeId = 2
+            }
+        } else {
+            if examTheoryPracticeSegmentedControl.selectedSegmentIndex == 0 {
+                selectedExamTypeId = 3
+            } else {
+                selectedExamTypeId = 4
+            }
+        }
+        let exam = Exam(examId: 0, date: examDateString, examTypeId: selectedExamTypeId, examType: ExamType(), groupId: selectedGroupId)
+        NetworkManager.shared.postExam(exam)
         successAlertView.present()
 
     }

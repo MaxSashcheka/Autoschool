@@ -17,6 +17,8 @@ class CreateInstruсtorViewController: UIViewController {
     @IBOutlet weak var middleNameTextField: UITextField!
     
     @IBOutlet weak var drivingExperienceTextField: UITextField!
+    
+    @IBOutlet weak var passportNumberTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
     @IBOutlet weak var carsTableView: UITableView!
@@ -40,6 +42,7 @@ class CreateInstruсtorViewController: UIViewController {
         lastNameTextField.delegate = self
         middleNameTextField.delegate = self
         drivingExperienceTextField.delegate = self
+        passportNumberTextField.delegate = self
         phoneNumberTextField.delegate = self
 
         let tapGesture = UITapGestureRecognizer(target: self,
@@ -120,15 +123,21 @@ class CreateInstruсtorViewController: UIViewController {
             return
         }
         
+        guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
+            failureAlertView.present()
+            return
+        }
+        
         guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
             failureAlertView.present()
             return
         }
         
         let selectedCarId = cars[selectedCarIndex].carId
-//        let selectedDriverLicenseId =
+        let selectedDriverLicenseId = driverLicenses[selectedDriverLicenseIndex].driverLicenseId
         
-//        let instructor = Instructor(instructorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, drivingExperience: Int(drivingExperience) ?? 0, passportNumber: pass, phoneNumber: phoneNumber, carId: <#T##Int#>, driverLicenseId: <#T##Int#>)
+        let instructor = Instructor(instructorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, drivingExperience: Int(drivingExperience) ?? 0, passportNumber: passportNumber, phoneNumber: phoneNumber, carId: selectedCarId, driverLicenseId: selectedDriverLicenseId)
+        NetworkManager.shared.postInstructor(instructor)
         
         successAlertView.present()
     }

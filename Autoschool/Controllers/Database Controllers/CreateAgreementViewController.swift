@@ -136,7 +136,7 @@ class CreateAgreementViewController: UIViewController {
         let selectedAdministratorId = administrators[selectedAdministratorIndex].administratorId
         let selectedStudentId = students[selectedStudentIndex].studentId
         let agreement = Agreement(agreementId: 0, amount: Int(amount) ?? 0, signingDate: signingDate, administratorId: selectedAdministratorId, studentId: selectedStudentId)
-        NetworkManager.shared.post(agreement)
+        NetworkManager.shared.postAgreement(agreement)
         
         successAlertView.present()
     }

@@ -362,7 +362,7 @@ class NetworkManager {
         }.resume()
     }
     
-    func post(_ administrator: Administrator) {
+    func postAdministrator(_ administrator: Administrator) {
         guard let url = URL(string: "\(apiRoute)/administrators/create") else { return }
         do {
             var request = URLRequest(url: url)
@@ -414,7 +414,7 @@ class NetworkManager {
         }.resume()
     }
     
-    func post(_ exam: Exam) {
+    func postExam(_ exam: Exam) {
         guard let url = URL(string: "\(apiRoute)/exams/create") else { return }
         do {
             var request = URLRequest(url: url)
@@ -466,7 +466,7 @@ class NetworkManager {
         }.resume()
     }
     
-    func post(_ agreement: Agreement) {
+    func postAgreement(_ agreement: Agreement) {
         guard let url = URL(string: "\(apiRoute)/agreements/create") else { return }
         do {
             var request = URLRequest(url: url)
@@ -518,7 +518,7 @@ class NetworkManager {
         }.resume()
     }
     
-    func post(_ driverLicense: DriverLisence) {
+    func postDriverLicense(_ driverLicense: DriverLisence) {
         guard let url = URL(string: "\(apiRoute)/driverlicense/create") else { return }
         do {
             var request = URLRequest(url: url)
