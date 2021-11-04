@@ -85,7 +85,7 @@ class CreateDriverLicenseViewController: UIViewController {
         }
 
         let driverLicense = DriverLisence(driverLicenseId: 0, issueDate: issueDateString, number: number, validity: Int(validity) ?? 0)
-//        NetworkManager.shared.postGroup(groupToPost)
+        NetworkManager.shared.postDriverLicense(driverLicense)
         
         
         successAlertView.present()
