@@ -20,9 +20,22 @@ class CreateAdministratorViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить администратора"
         view.backgroundColor = UIColor.viewBackground
-
-        setupBarButtonItems()
+        
         firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        middleNameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        emailTextField.delegate = self
+
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        setupBarButtonItems()
+    }
+
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 
     private func setupBarButtonItems() {
@@ -67,9 +80,10 @@ class CreateAdministratorViewController: UIViewController {
     
 }
 
+
 extension CreateAdministratorViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
-    
 }

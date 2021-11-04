@@ -29,10 +29,24 @@ class CreateInstruсtorViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить инструктора"
         view.backgroundColor = UIColor.viewBackground
+        
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        middleNameTextField.delegate = self
+        drivingExperienceTextField.delegate = self
+        phoneNumberTextField.delegate = self
 
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
         
         setupBarButtonItems()
         configureCarsTableView()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -126,8 +140,22 @@ extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataS
         selectedCarIndex = indexPath.row
         tableView.reloadData()
     }
-    
-    
+}
+
+extension CreateInstruсtorViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension CreateInstruсtorViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view!.isDescendant(of: carsTableView) {
+            return false
+        }
+        return true
+    }
 }
 
 

@@ -43,12 +43,22 @@ class CreateGroupViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить группу"
         view.backgroundColor = UIColor.viewBackground
-
+        
+        groupNameLabel.delegate = self
+    
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
         
         configureTeachersTableView()
         configureSegmentedControls()
         configureTextFields()
         setupBarButtonItems()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -182,6 +192,20 @@ extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource 
         selectedTeacherIndex = indexPath.row
         tableView.reloadData()
     }
-    
-    
+}
+
+extension CreateGroupViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension CreateGroupViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view!.isDescendant(of: teachersTableView) {
+            return false
+        }
+        return true
+    }
 }

@@ -18,9 +18,20 @@ class CreateCarViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить машину"
         view.backgroundColor = UIColor.viewBackground
+        
+        carNumberTextField.delegate = self
+        carNameTextField.delegate = self
+        carColorTextField.delegate = self
 
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
         
         setupBarButtonItems()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     private func setupBarButtonItems() {
@@ -53,4 +64,11 @@ class CreateCarViewController: UIViewController {
     }
     
 
+}
+
+extension CreateCarViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

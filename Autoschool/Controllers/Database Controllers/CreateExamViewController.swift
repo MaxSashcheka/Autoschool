@@ -33,11 +33,19 @@ class CreateExamViewController: UIViewController {
         title = "Добавить экзамен"
         view.backgroundColor = UIColor.viewBackground
 
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
         
         configureGroupsCollectionView()
         configureSegmentedControls()
         configureTextFields()
         setupBarButtonItems()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,3 +166,20 @@ extension CreateExamViewController: UICollectionViewDelegateFlowLayout {
         return groupsCollectionViewInsets.left
     }
 }
+
+extension CreateExamViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension CreateExamViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view!.isDescendant(of: groupsCollectionView) {
+            return false
+        }
+        return true
+    }
+}
+

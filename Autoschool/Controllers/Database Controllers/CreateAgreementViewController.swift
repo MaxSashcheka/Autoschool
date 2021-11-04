@@ -39,13 +39,22 @@ class CreateAgreementViewController: UIViewController {
         super.viewDidLoad()
         title = "Добавить договор"
         view.backgroundColor = UIColor.viewBackground
-
+        
+        amountTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
         
         configureAdministratorsTableView()
         configureStudentsTableView()
         configureTextFields()
-
         setupBarButtonItems()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -194,6 +203,20 @@ extension CreateAgreementViewController: UITableViewDelegate, UITableViewDataSou
         tableView.reloadData()
         
     }
-    
-    
+}
+
+extension CreateAgreementViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension CreateAgreementViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view!.isDescendant(of: studentsTableView) || touch.view!.isDescendant(of: administratorsTableView) {
+            return false
+        }
+        return true
+    }
 }

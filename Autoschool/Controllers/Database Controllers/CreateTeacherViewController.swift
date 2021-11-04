@@ -21,7 +21,21 @@ class CreateTeacherViewController: UIViewController {
         title = "Добавить преподавателя"
         view.backgroundColor = UIColor.viewBackground
 
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        middleNameTextField.delegate = self
+        passportNumberTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
         setupBarButtonItems()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     private func setupBarButtonItems() {
@@ -65,4 +79,11 @@ class CreateTeacherViewController: UIViewController {
 
     }
 
+}
+
+extension CreateTeacherViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

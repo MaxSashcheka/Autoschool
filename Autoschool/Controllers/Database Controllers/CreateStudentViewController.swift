@@ -33,9 +33,24 @@ class CreateStudentViewController: UIViewController {
         title = "Добавить ученика"
         view.backgroundColor = UIColor.viewBackground
         
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        middleNameTextField.delegate = self
+        passportNumberTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+        
         configureCollectionViews()
         configureInstructorsTableView()
         setupBarButtonItems()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -193,4 +208,20 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
         tableView.reloadData()
     }
     
+}
+
+extension CreateStudentViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension CreateStudentViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view!.isDescendant(of: groupsCollectionView) || touch.view!.isDescendant(of: instructorsTableView) {
+            return false
+        }
+        return true
+    }
 }

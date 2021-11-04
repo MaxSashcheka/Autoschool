@@ -27,7 +27,18 @@ class CreateDriverLicenseViewController: UIViewController {
         title = "Добавить удостоверение"
         view.backgroundColor = UIColor.viewBackground
         
+        numberTextField.delegate = self
+        validityTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
         configureTextField()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     private func setupBarButtonItems() {
@@ -79,4 +90,11 @@ class CreateDriverLicenseViewController: UIViewController {
         successAlertView.present()
     }
 
+}
+
+extension CreateDriverLicenseViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
