@@ -12,6 +12,7 @@ class CreateAgreementViewController: UIViewController {
     var students = [Student]()
     var administrators = [Administrator]()
     var instructors = [Instructor]()
+    var agreements = [Agreement]()
     
     @IBOutlet weak var signingDateTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -59,20 +60,36 @@ class CreateAgreementViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NetworkManager.shared.fetchAgreements { fetchedAgreements in
+            self.agreements = fetchedAgreements
+        }
         NetworkManager.shared.fetchInstructors(completionHandler: { fetchedInstructors in
             self.instructors = fetchedInstructors
         })
-        NetworkManager.shared.fetchStudents { fetchedStudents in
-            self.students = fetchedStudents
-            self.studentsTableView.reloadData()
-            self.studentsTableViewHeight.constant = CGFloat(self.students.count) * self.studentsTableView.rowHeight
-            self.studentsSuperViewHeight.constant = self.studentsTableViewHeight.constant + 40
-        }
         NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
             self.administrators = fetchedAdministrators
             self.administratorsTableView.reloadData()
             self.administratorsTableViewHeight.constant = CGFloat(self.administrators.count) * self.administratorsTableView.rowHeight + 10
             self.administratosSuperViewHeight.constant = self.administratorsTableViewHeight.constant + 30
+        }
+        NetworkManager.shared.fetchStudents { fetchedStudents in
+            var studentsWithoutAgreement = [Student]()
+            for student in fetchedStudents {
+                var isNonRepeated = true
+                for agreement in self.agreements {
+                    if agreement.studentId == student.studentId {
+                        isNonRepeated = false
+                        break
+                    }
+                }
+                if isNonRepeated {
+                    studentsWithoutAgreement.append(student)
+                }
+            }
+            self.students = studentsWithoutAgreement
+            self.studentsTableView.reloadData()
+            self.studentsTableViewHeight.constant = CGFloat(self.students.count) * self.studentsTableView.rowHeight
+            self.studentsSuperViewHeight.constant = self.studentsTableViewHeight.constant + 40
         }
     }
 

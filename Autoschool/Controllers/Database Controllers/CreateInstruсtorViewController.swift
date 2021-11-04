@@ -11,13 +11,12 @@ class CreateInstruсtorViewController: UIViewController {
     
     var cars = [Car]()
     var driverLicenses = [DriverLisence]()
+    var instructors = [Instructor]()
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var middleNameTextField: UITextField!
-    
     @IBOutlet weak var drivingExperienceTextField: UITextField!
-    
     @IBOutlet weak var passportNumberTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
@@ -61,18 +60,51 @@ class CreateInstruсtorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NetworkManager.shared.fetchInstructors { fetchedInstructors in
+            self.instructors = fetchedInstructors
+        }
         NetworkManager.shared.fetchCars { fetchedCars in
-            self.cars = fetchedCars
+            var carsWithoutOwner = [Car]()
+            for car in fetchedCars {
+                var isNonRepeated = true
+                for instructor in self.instructors {
+                    if instructor.carId == car.carId {
+                        isNonRepeated = false
+                        break
+                    }
+                }
+                if isNonRepeated {
+                    carsWithoutOwner.append(car)
+                }
+            }
+            self.cars = carsWithoutOwner
+            
             self.carsTableView.reloadData()
             self.carsTableViewHeight.constant = CGFloat(self.cars.count) * self.carsTableView.rowHeight + 10
             self.carsSuperViewHeight.constant = self.carsTableViewHeight.constant + 30
         }
         NetworkManager.shared.fetchDriverLicenses { fetchedDriverLicenses in
-            self.driverLicenses = fetchedDriverLicenses
+            var driverLicensesWithoutOwner = [DriverLisence]()
+            for driverLicense in fetchedDriverLicenses {
+                var isNonRepeated = true
+                for instructor in self.instructors {
+                    if instructor.driverLicenseId == driverLicense.driverLicenseId {
+                        isNonRepeated = false
+                        break
+                    }
+                }
+                if isNonRepeated {
+                    driverLicensesWithoutOwner.append(driverLicense)
+                }
+            }
+            self.driverLicenses = driverLicensesWithoutOwner
+            
             self.driverLicensesTableView.reloadData()
             self.driverLicenseTableViewHeight.constant = CGFloat(self.driverLicenses.count) * self.driverLicensesTableView.rowHeight + 10
             self.driverLicenseSuperViewHeight.constant = self.driverLicenseTableViewHeight.constant + 30
         }
+        
+        
     }
     
     private func configureCarsTableView() {
