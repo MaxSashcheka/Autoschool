@@ -76,7 +76,7 @@ class CreateGroupViewController: UIViewController {
         teachersTableView.delegate = self
         teachersTableView.dataSource = self
         teachersTableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
-        teachersTableView.rowHeight = 76
+        teachersTableView.rowHeight = 75
         teachersTableView.isScrollEnabled = false
         teachersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }

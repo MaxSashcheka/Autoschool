@@ -67,7 +67,7 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return 3
         } else {
             return instructors.count
         }
@@ -81,9 +81,12 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
             if indexPath.row == 0 {
                 cell.imageView?.image = UIImage(systemName: "car.2.fill")
                 cell.textLabel?.text = "Автопарк автошколы"
-            } else {
+            } else if indexPath.row == 1 {
                 cell.imageView?.image = UIImage(systemName: "person.crop.rectangle")
                 cell.textLabel?.text = "Водительские удостоверения"
+            } else {
+                cell.imageView?.image = UIImage(systemName: "person.3")
+                cell.textLabel?.text = "Преподаватели теории"
             }
             return cell
         } else {
@@ -103,13 +106,40 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
             if indexPath.row == 0 {
                 let carParkViewController = CarParkViewController()
                 navigationController?.pushViewController(carParkViewController, animated: true)
-            } else {
+            } else if indexPath.row == 1 {
                 let driverLicensesViewController = DriverLicensesViewController()
                 navigationController?.pushViewController(driverLicensesViewController, animated: true)
+            } else {
+                let teachersViewController = TeachersViewController()
+                navigationController?.pushViewController(teachersViewController, animated: true)
             }
             
+        } else {
+            let instructorDetailViewController = InstructorDetailViewController()
+            let selectedInstructor = instructors[indexPath.row]
+            instructorDetailViewController.instructor = selectedInstructor
+            navigationController?.pushViewController(instructorDetailViewController, animated: true)
         }
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.section == 1 {
+            return .delete
+        }
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            
+            let instructorId = instructors[indexPath.row].instructorId
+            NetworkManager.shared.deleteInstructor(withId: instructorId)
+            instructors.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
+    }
     
 }

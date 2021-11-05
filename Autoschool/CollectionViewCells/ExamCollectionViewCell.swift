@@ -20,7 +20,6 @@ class ExamCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        examTypeView.layer.cornerRadius = examTypeView.frame.width / 2
         
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
         layer.shadowRadius = 5.0
@@ -29,6 +28,7 @@ class ExamCollectionViewCell: UICollectionViewCell {
         layer.masksToBounds = false
         backgroundColor = .white
         layer.cornerRadius = 20
+        examTypeView.layer.cornerRadius = layer.cornerRadius
     }
     
     static func nib() -> UINib {

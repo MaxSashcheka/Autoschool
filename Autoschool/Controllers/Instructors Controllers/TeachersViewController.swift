@@ -1,24 +1,24 @@
 //
-//  CarParkViewController.swift
+//  TeachersViewController.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 10/17/21.
+//  Created by Max Sashcheka on 11/5/21.
 //
 
 import UIKit
 
-class CarParkViewController: UIViewController {
+class TeachersViewController: UIViewController {
     
-    var cars = [Car]()
+    var teachers = [Teacher]()
     
-    lazy var carsTableView: UITableView = {
+    lazy var teachersTableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(CarTableViewCell.nib(), forCellReuseIdentifier: CarTableViewCell.reuseIdentifier)
+        tableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
         
         tableView.backgroundColor = .clear
-        tableView.rowHeight = 80
+        tableView.rowHeight = 75
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
         return tableView
@@ -26,34 +26,33 @@ class CarParkViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(carsTableView)
-        title = "Автопарк"
+        view.addSubview(teachersTableView)
+        title = "Преподаватели теории"
         view.backgroundColor = UIColor.viewBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NetworkManager.shared.fetchCars { fetchedCars in
-            self.cars = fetchedCars
-            self.carsTableView.reloadData()
+        NetworkManager.shared.fetchTeacher { fetchedTeachers in
+            self.teachers = fetchedTeachers
+            self.teachersTableView.reloadData()
         }
     }
     
 
 }
 
-extension CarParkViewController: UITableViewDelegate, UITableViewDataSource {
+extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cars.count
+        return teachers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath) as! CarTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeacherTableViewCell.reuseIdentifier, for: indexPath) as! TeacherTableViewCell
         
-        let car = cars[indexPath.row]
-        cell.setup(withCar: car)
-        
+        let teacher = teachers[indexPath.row]
+        cell.setup(withTeacher: teacher)
         cell.accessoryType = .disclosureIndicator
         
         return cell
@@ -67,13 +66,13 @@ extension CarParkViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             tableView.beginUpdates()
             
-            let carId = cars[indexPath.row].carId
-            NetworkManager.shared.deleteCar(withId: carId)
-            cars.remove(at: indexPath.row)
+            let teacherId = teachers[indexPath.row].teacherId
+            NetworkManager.shared.deleteTeacher(withId: teacherId)
+            teachers.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             tableView.endUpdates()
         }
     }
-    
+
 }

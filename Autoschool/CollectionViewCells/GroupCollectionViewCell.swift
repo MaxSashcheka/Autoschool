@@ -22,19 +22,18 @@ class GroupCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        lessonsTimeView.layer.cornerRadius = lessonsTimeView.frame.width / 2
         categoryImageView.tintColor = .black
-        
+        layer.masksToBounds = false
+        backgroundColor = .white
         
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
         layer.shadowRadius = 5.0
         layer.shadowOpacity = 1.0
         layer.shadowOffset = .zero
-        layer.masksToBounds = false
-        backgroundColor = .white
         layer.cornerRadius = 25
-//        layer.borderWidth = 2
-//        layer.borderColor = UIColor.darkGray.cgColor
+        lessonsTimeView.layer.cornerRadius = layer.cornerRadius
+
+
     }
     
     func setup(withGroup group: Group) {
@@ -76,3 +75,4 @@ class GroupCollectionViewCell: UICollectionViewCell {
     }
 
 }
+
