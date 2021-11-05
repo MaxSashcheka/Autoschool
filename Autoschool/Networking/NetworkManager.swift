@@ -78,6 +78,24 @@ class NetworkManager {
         }
     }
     
+    func deleteGroup(withId groupId: Int) {
+        guard let url = URL(string: "\(apiRoute)/groups/delete/\(groupId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
+    
     // MARK: - Students
     // fetch students for certain group
     func fetchStudents(withGroupId groupId: Int, completionHandler: @escaping ([Student]) -> Void) {
@@ -149,6 +167,23 @@ class NetworkManager {
                 } catch {
                     print(error.localizedDescription)
                 }
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
+    func deleteStudent(withId studentId: Int) {
+        guard let url = URL(string: "\(apiRoute)/students/delete/\(studentId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
             }.resume()
             
         } catch let serializationError {
@@ -233,6 +268,23 @@ class NetworkManager {
         }
     }
     
+    func deleteTeacher(withId teacherId: Int) {
+        guard let url = URL(string: "\(apiRoute)/teachers/delete/\(teacherId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
     // MARK: - Instructors
     func fetchInstructors(completionHandler: @escaping ([Instructor]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/instructors") else { return }
@@ -278,6 +330,23 @@ class NetworkManager {
                 } catch {
                     print(error.localizedDescription)
                 }
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
+    func deleteInstructor(withId instructorId: Int) {
+        guard let url = URL(string: "\(apiRoute)/instructors/delete/\(instructorId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
             }.resume()
             
         } catch let serializationError {
@@ -337,6 +406,23 @@ class NetworkManager {
         }
     }
     
+    func deleteCar(withId carId: Int) {
+        guard let url = URL(string: "\(apiRoute)/cars/delete/\(carId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
     // MARK: - Administrators
     func fetchAdministrators(completionHandler: @escaping ([Administrator]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/administrators") else { return }
@@ -382,6 +468,23 @@ class NetworkManager {
                 } catch {
                     print(error.localizedDescription)
                 }
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
+    func deleteAdministrator(withId administratorId: Int) {
+        guard let url = URL(string: "\(apiRoute)/administrators/delete/\(administratorId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
             }.resume()
             
         } catch let serializationError {
@@ -441,6 +544,23 @@ class NetworkManager {
         }
     }
     
+    func deleteExam(withId examId: Int) {
+        guard let url = URL(string: "\(apiRoute)/exams/delete/\(examId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
     // MARK: - Agreements
     func fetchAgreements(completionHandler: @escaping ([Agreement]) -> Void) {
         guard let url = URL(string: "\(apiRoute)/agreements") else { return }
@@ -486,6 +606,23 @@ class NetworkManager {
                 } catch {
                     print(error.localizedDescription)
                 }
+            }.resume()
+            
+        } catch let serializationError {
+            print("serializationError: \(serializationError.localizedDescription)")
+        }
+    }
+    
+    func deleteAgreement(withId agreementId: Int) {
+        guard let url = URL(string: "\(apiRoute)/agreements/delete/\(agreementId)") else { return }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
+
+            URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
             }.resume()
             
         } catch let serializationError {
@@ -545,36 +682,22 @@ class NetworkManager {
         }
     }
     
-    
-    
-
-    
-    // MARK: - DELETE
-
-    func deleteStudent(withId studentId: Int) {
-        guard let url = URL(string: "\(apiRoute)/deleteStudent/\(studentId)") else { return }
+    func deleteDriverLicense(withId driverLicenseId: Int) {
+        guard let url = URL(string: "\(apiRoute)/driverlicense/delete/\(driverLicenseId)") else { return }
         
         do {
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
 
             URLSession.shared.dataTask(with: request) { (data, res, error) in
-//                guard let data = data, error == nil else {
-//                    return
-//                }
-//                do {
-//                    let responce  = try JSONDecoder().decode(Student.self, from: data)
-//                    print("Success \(responce)")
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
+                
             }.resume()
             
         } catch let serializationError {
             print("serializationError: \(serializationError.localizedDescription)")
         }
     }
-    
+
     
 }

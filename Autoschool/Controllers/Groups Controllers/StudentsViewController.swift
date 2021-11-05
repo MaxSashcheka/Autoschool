@@ -25,6 +25,7 @@ class StudentsViewController: UIViewController {
         studentsTableView.contentInsetAdjustmentBehavior = .never
         studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
+        configureNavigationItems()
         configureTableView()
     }
     
@@ -42,7 +43,15 @@ class StudentsViewController: UIViewController {
             self.instructors = fetchedInstructors
             self.studentsTableView.reloadData()
         }
-        
+    }
+    
+    private func configureNavigationItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(editButtonHandler))
+    }
+    
+    @objc private func editButtonHandler() {
+        let isEditing = studentsTableView.isEditing
+        studentsTableView.setEditing(!isEditing, animated: true)
     }
     
     private func configureTableView() {
@@ -58,6 +67,7 @@ class StudentsViewController: UIViewController {
 // MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 25 {
             studentsTableView.contentInsetAdjustmentBehavior = .always
@@ -112,7 +122,23 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
+        if indexPath.section == 1 {
+            return .delete
+        }
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            
+            let studentId = students[indexPath.row].studentId
+            NetworkManager.shared.deleteStudent(withId: studentId)
+            students.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
     }
     
 }
