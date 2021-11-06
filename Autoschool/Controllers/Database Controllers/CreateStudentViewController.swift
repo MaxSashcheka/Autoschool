@@ -262,7 +262,7 @@ extension CreateStudentViewController: UITextFieldDelegate {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true

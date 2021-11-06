@@ -64,7 +64,12 @@ class InstructorDetailViewController: UIViewController {
         title = "\(instructor.lastName) \(instructor.firstName)"
         view.backgroundColor = UIColor.viewBackground
 
+        setupBarButtonItems()
+    }
+    
+    private func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateInstructorController))
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     @objc private func openUpdateInstructorController() {
@@ -125,6 +130,10 @@ extension InstructorDetailViewController: UITableViewDelegate, UITableViewDataSo
             cell.setup(withStudent: student, andInstructor: instructor)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

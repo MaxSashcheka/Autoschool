@@ -27,6 +27,7 @@ class UpdateDriverLicenseViewController: UIViewController {
         title = "Изменить удостоверение"
         view.backgroundColor = UIColor.viewBackground
         
+        fillDriverLicenseInfo()
         setupTextFields()
         setupTapGesture()
         setupBarButtonItems()
@@ -37,6 +38,10 @@ class UpdateDriverLicenseViewController: UIViewController {
 // MARK: - Private interface
 
 private extension UpdateDriverLicenseViewController {
+    
+    func fillDriverLicenseInfo() {
+        
+    }
     
     func setupTextFields () {
         let startDateToolbar = UIToolbar()

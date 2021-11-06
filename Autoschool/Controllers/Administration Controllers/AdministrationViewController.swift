@@ -100,7 +100,11 @@ extension AdministrationViewController: UITableViewDelegate, UITableViewDataSour
             let agreementsVC = AgreementsViewController()
             navigationController?.pushViewController(agreementsVC, animated: true)
         } else {
-            let updateAdministratorVC = UIStoryboard(name: "Administration", bundle: nil).instantiateViewController(identifier: "UpdateAdministratorViewController")
+            let updateAdministratorVC = UIStoryboard(name: "Administration", bundle: nil).instantiateViewController(identifier: "UpdateAdministratorViewController") as! UpdateAdministratorViewController
+            
+            let selectedAdministrator = administrators[indexPath.row]
+            updateAdministratorVC.administrator = selectedAdministrator
+            
             self.navigationController?.pushViewController(updateAdministratorVC, animated: true)
         }
     }

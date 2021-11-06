@@ -63,6 +63,7 @@ extension UpdateGroupViewController {
         title = "Изменить группу"
         view.backgroundColor = UIColor.viewBackground
         
+        fillGroupInfo()
         setupTeachersTableView()
         setupSegmentedControls()
         setupTextFields()
@@ -75,6 +76,10 @@ extension UpdateGroupViewController {
 // MARK: - Private interface
 
 private extension UpdateGroupViewController {
+    
+    func fillGroupInfo() {
+        
+    }
     
     func setupTeachersTableView() {
         teachersTableView.delegate = self
@@ -132,7 +137,7 @@ private extension UpdateGroupViewController {
     
     @objc func saveStartDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         startDateTextField.text = formatter.string(from: startLessonsDatePicker.date)
         
         view.endEditing(true)
@@ -140,7 +145,7 @@ private extension UpdateGroupViewController {
     
     @objc func saveEndDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         endDateTextField.text = formatter.string(from: endLessonsDatePicker.date)
         
         view.endEditing(true)

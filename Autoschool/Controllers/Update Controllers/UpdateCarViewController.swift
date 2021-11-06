@@ -19,6 +19,7 @@ class UpdateCarViewController: UIViewController {
         title = "Изменить машину"
         view.backgroundColor = UIColor.viewBackground
         
+        fillCarInfo()
         setupTapGesture()
         setupTextFields()
         setupBarButtonItems()
@@ -29,6 +30,10 @@ class UpdateCarViewController: UIViewController {
 // MARK: - Private interface
 
 private extension UpdateCarViewController {
+    
+    func fillCarInfo() {
+        
+    }
     
     func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self,

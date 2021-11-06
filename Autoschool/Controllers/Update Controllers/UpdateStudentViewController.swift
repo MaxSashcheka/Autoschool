@@ -11,6 +11,8 @@ class UpdateStudentViewController: UIViewController {
     
     var groups = [Group]()
     var instructors = [Instructor]()
+    
+    var student: Student!
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -39,13 +41,15 @@ extension UpdateStudentViewController {
         
         NetworkManager.shared.fetchGroups { fetchedGroups in
             self.groups = fetchedGroups
+            self.fillStudentInfo()
             self.groupsCollectionView.reloadData()
         }
         NetworkManager.shared.fetchInstructors { fetchedInstructors in
             self.instructors = fetchedInstructors
-            self.instructorsTableView.reloadData()
             self.instructorsTableViewHeight.constant = CGFloat(self.instructors.count) * self.instructorsTableView.rowHeight + 25
             self.instructorsTableViewSuperViewHeight.constant = self.instructorsTableViewHeight.constant + 25
+            self.fillStudentInfo()
+            self.instructorsTableView.reloadData()
         }
     }
     
@@ -60,12 +64,42 @@ extension UpdateStudentViewController {
         setupTapGesture()
         setupTextFields()
         setupBarButtonItems()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        groupsCollectionView.contentOffset = .init(x: CGFloat(selectedGroupIndex) * groupsCollectionView.frame.width * 0.8, y: 0)
     }
 }
 
 // MARK: - Private interface
 
 private extension UpdateStudentViewController {
+    
+    func fillStudentInfo() {
+        firstNameTextField.text = student.firstName
+        lastNameTextField.text = student.lastName
+        middleNameTextField.text = student.middleName
+        passportNumberTextField.text = student.passportNumber
+        phoneNumberTextField.text = student.phoneNumber
+        
+        
+        for index in groups.indices {
+            if student.groupId == groups[index].groupId {
+                selectedGroupIndex = index
+                break
+            }
+        }
+        
+        for index in instructors.indices {
+            if student.instructorId == instructors[index].instructorId {
+                selectedInstructorIndex = index
+                break
+            }
+        }
+        
+    }
     
     func setupCollectionViews() {
         groupsCollectionView.delegate = self
@@ -262,7 +296,7 @@ extension UpdateStudentViewController: UITextFieldDelegate {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true

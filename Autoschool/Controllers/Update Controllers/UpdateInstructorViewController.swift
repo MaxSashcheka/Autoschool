@@ -93,6 +93,7 @@ extension UpdateInstruсtorViewController {
         title = "Изменить инструктора"
         view.backgroundColor = UIColor.viewBackground
         
+        fillInstructorInfo()
         setupCarsTableView()
         setupDriverLicenseTableView()
         setupTextFields()
@@ -105,6 +106,10 @@ extension UpdateInstruсtorViewController {
 // MARK: - Private interface
 
 private extension UpdateInstruсtorViewController {
+    
+    func fillInstructorInfo() {
+        
+    }
     
     func setupCarsTableView() {
         carsTableView.delegate = self

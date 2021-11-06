@@ -141,7 +141,7 @@ private extension CreateAgreementViewController {
     
     @objc func saveSigningDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         signingDateTextField.text = formatter.string(from: signingDatePicker.date)
         
         view.endEditing(true)

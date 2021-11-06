@@ -54,6 +54,7 @@ extension UpdateExamViewController {
         title = "Изменить экзамен"
         view.backgroundColor = UIColor.viewBackground
 
+        fillExamInfo()
         setupGroupsCollectionView()
         setupSegmentedControls()
         setupTextFields()
@@ -66,6 +67,10 @@ extension UpdateExamViewController {
 // MARK: - Private interface
 
 private extension UpdateExamViewController {
+    
+    func fillExamInfo() {
+        
+    }
     
     func setupGroupsCollectionView() {
         groupsCollectionView.showsHorizontalScrollIndicator = false
@@ -108,7 +113,7 @@ private extension UpdateExamViewController {
 
     @objc func saveExamDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         examDateTextField.text = formatter.string(from: examDatePicker.date)
         
         view.endEditing(true)

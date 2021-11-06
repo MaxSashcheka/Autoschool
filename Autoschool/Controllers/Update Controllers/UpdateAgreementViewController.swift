@@ -14,6 +14,8 @@ class UpdateAgreementViewController: UIViewController {
     var instructors = [Instructor]()
     var agreements = [Agreement]()
     
+    var agreement: Agreement!
+    
     @IBOutlet weak var signingDateTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     
@@ -48,14 +50,16 @@ extension UpdateAgreementViewController {
         NetworkManager.shared.fetchAgreements { fetchedAgreements in
             self.agreements = fetchedAgreements
         }
-        NetworkManager.shared.fetchInstructors(completionHandler: { fetchedInstructors in
+        NetworkManager.shared.fetchInstructors { fetchedInstructors in
             self.instructors = fetchedInstructors
-        })
+        }
         NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
             self.administrators = fetchedAdministrators
-            self.administratorsTableView.reloadData()
             self.administratorsTableViewHeight.constant = CGFloat(self.administrators.count) * self.administratorsTableView.rowHeight + 10
             self.administratosSuperViewHeight.constant = self.administratorsTableViewHeight.constant + 30
+            self.fillAgreementInfo()
+            self.administratorsTableView.reloadData()
+            
         }
         NetworkManager.shared.fetchStudents { fetchedStudents in
             var studentsWithoutAgreement = [Student]()
@@ -72,9 +76,11 @@ extension UpdateAgreementViewController {
                 }
             }
             self.students = studentsWithoutAgreement
-            self.studentsTableView.reloadData()
+            self.fillAgreementInfo()
             self.studentsTableViewHeight.constant = CGFloat(self.students.count) * self.studentsTableView.rowHeight
             self.studentsSuperViewHeight.constant = self.studentsTableViewHeight.constant + 40
+            self.studentsTableView.reloadData()
+
         }
     }
     
@@ -96,6 +102,33 @@ extension UpdateAgreementViewController {
 // MARK: - Private interface
 
 private extension UpdateAgreementViewController {
+    
+    func fillAgreementInfo() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        let endOfDate = String.Index(encodedOffset: 9)
+        let stringDate = String(agreement.signingDate[...endOfDate])
+        let date = dateFormatter.date(from: stringDate)!
+        signingDatePicker.date = date
+        
+        signingDateTextField.text = dateFormatter.string(from: date)
+        amountTextField.text = String(agreement.amount)
+        
+        for index in administrators.indices {
+            if agreement.administratorId == administrators[index].administratorId {
+                selectedAdministratorIndex = index
+                break
+            }
+        }
+        for index in students.indices {
+            if agreement.studentId == students[index].studentId {
+                selectedStudentIndex = index
+                break
+            }
+        }
+
+    }
     
     func setupAdministratorsTableView() {
         administratorsTableView.delegate = self
@@ -141,7 +174,7 @@ private extension UpdateAgreementViewController {
     
     @objc func saveSigningDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         signingDateTextField.text = formatter.string(from: signingDatePicker.date)
         
         view.endEditing(true)

@@ -37,6 +37,8 @@ class CarParkViewController: UIViewController {
         view.addSubview(carsTableView)
         title = "Автопарк"
         view.backgroundColor = UIColor.viewBackground
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+
     }
 
 }

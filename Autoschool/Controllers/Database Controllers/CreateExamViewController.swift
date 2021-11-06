@@ -108,7 +108,7 @@ private extension CreateExamViewController {
 
     @objc func saveExamDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         examDateTextField.text = formatter.string(from: examDatePicker.date)
         
         view.endEditing(true)

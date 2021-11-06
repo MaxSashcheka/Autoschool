@@ -38,7 +38,7 @@ class StudentsViewController: UIViewController {
         
         title = "Группа \(group.name)"
         view.backgroundColor = UIColor.viewBackground
-        
+
         setupStudentsTableView()
         setupBarButtonItems()
     }
@@ -48,7 +48,6 @@ class StudentsViewController: UIViewController {
         studentsTableView.dataSource = self
         studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
         studentsTableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
-        studentsTableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: 0, right: 0)
         
         studentsTableView.contentInsetAdjustmentBehavior = .never
         studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
@@ -56,6 +55,8 @@ class StudentsViewController: UIViewController {
     
     private func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateGroup))
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+
     }
     
     @objc private func openUpdateGroup() {
@@ -139,7 +140,11 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 1 {
-            let updateStudentVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateStudentViewController")
+            let updateStudentVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateStudentViewController") as! UpdateStudentViewController
+            
+            let selectedStudent = students[indexPath.row]
+            updateStudentVC.student = selectedStudent
+            
             self.navigationController?.pushViewController(updateStudentVC, animated: true)
         }
     }

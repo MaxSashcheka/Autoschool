@@ -132,7 +132,7 @@ private extension CreateGroupViewController {
     
     @objc func saveStartDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         startDateTextField.text = formatter.string(from: startLessonsDatePicker.date)
         
         view.endEditing(true)
@@ -140,7 +140,7 @@ private extension CreateGroupViewController {
     
     @objc func saveEndDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         endDateTextField.text = formatter.string(from: endLessonsDatePicker.date)
         
         view.endEditing(true)
@@ -173,6 +173,7 @@ private extension CreateGroupViewController {
         let selectedlessonsTimeId = classesTimeSegmentedControl.selectedSegmentIndex + 1
         let selectedTeacherId = teachers[selectedTeacherIndex].teacherId
         
+        print(startDateString)
         let groupToPost = Group(groupId: 0, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
         NetworkManager.shared.postGroup(groupToPost)
         

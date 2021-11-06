@@ -22,6 +22,7 @@ class UpdateTeacherViewController: UIViewController {
         title = "Изменить преподавателя"
         view.backgroundColor = UIColor.viewBackground
         
+        fillTeacherInfo()
         setupTextFields()
         setupTapGesture()
         setupBarButtonItems()
@@ -32,6 +33,10 @@ class UpdateTeacherViewController: UIViewController {
 // MARK: - Private interface
 
 extension UpdateTeacherViewController {
+    
+    func fillTeacherInfo() {
+        
+    }
     
     func setupTextFields() {
         firstNameTextField.delegate = self
@@ -122,7 +127,7 @@ extension UpdateTeacherViewController: UITextFieldDelegate {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true

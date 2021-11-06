@@ -16,12 +16,15 @@ class UpdateAdministratorViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    var administrator: Administrator!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Изменить администратора"
         view.backgroundColor = UIColor.viewBackground
         
+        fillAdministratorInfo()
         setupTextFields()
         setupTapGesture()
         setupBarButtonItems()
@@ -31,6 +34,14 @@ class UpdateAdministratorViewController: UIViewController {
 // MARK: - Private interface
 
 private extension UpdateAdministratorViewController {
+    
+    func fillAdministratorInfo() {
+        firstNameTextField.text = administrator.firstName
+        lastNameTextField.text = administrator.lastName
+        middleNameTextField.text = administrator.middleName
+        phoneNumberTextField.text = administrator.phoneNumber
+        emailTextField.text = administrator.email
+    }
 
     func setupTextFields() {
         firstNameTextField.delegate = self
@@ -120,7 +131,7 @@ extension UpdateAdministratorViewController: UITextFieldDelegate {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true

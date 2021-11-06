@@ -38,6 +38,8 @@ class DriverLicensesViewController: UIViewController {
         view.addSubview(driverLicensesTableView)
         title = "Удостоверения"
         view.backgroundColor = UIColor.viewBackground
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+
     }
     
 }

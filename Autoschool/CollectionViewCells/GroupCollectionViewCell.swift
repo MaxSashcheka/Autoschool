@@ -64,6 +64,7 @@ class GroupCollectionViewCell: UICollectionViewCell {
         default:
             print("Wrong lessonsTimeId")
         }
+        
         let endOfDate = String.Index(encodedOffset: 9)
         let lessonsStartDateString = group.lessonsStartDate[...endOfDate].replacingOccurrences(of: "-", with: "/")
         let lessonsEndDateString = group.lessonsEndDate[...endOfDate].replacingOccurrences(of: "-", with: "/")

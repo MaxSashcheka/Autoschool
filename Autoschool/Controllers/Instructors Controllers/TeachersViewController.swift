@@ -38,6 +38,8 @@ class TeachersViewController: UIViewController {
         view.addSubview(teachersTableView)
         title = "Преподаватели теории"
         view.backgroundColor = UIColor.viewBackground
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+
     }
     
 }
