@@ -1,8 +1,8 @@
 //
-//  UpdateAdministratorViewController.swift
+//  UpdateGroupViewController.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 11/6/21.
+//  Created by Max Sashcheka on 10/1/21.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ class UpdateGroupViewController: UIViewController {
     
     var teachers = [Teacher]()
 
-    @IBOutlet weak var groupNameLabel: UITextField!
+    @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
     
@@ -38,31 +38,16 @@ class UpdateGroupViewController: UIViewController {
 
         return datePicker
     }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Группа"
-        view.backgroundColor = UIColor.viewBackground
-        
-        groupNameLabel.delegate = self
-    
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
-        
-        configureTeachersTableView()
-        configureSegmentedControls()
-        configureTextFields()
-        setupBarButtonItems()
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+
+}
+
+// MARK: - ViewController overrides
+
+extension UpdateGroupViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchTeacher { fetchedTeachers in
             self.teachers = fetchedTeachers
             self.teachersTableView.reloadData()
@@ -72,7 +57,26 @@ class UpdateGroupViewController: UIViewController {
         }
     }
     
-    private func configureTeachersTableView() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Изменить группу"
+        view.backgroundColor = UIColor.viewBackground
+        
+        setupTeachersTableView()
+        setupSegmentedControls()
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
+    }
+    
+}
+
+// MARK: - Private interface
+
+private extension UpdateGroupViewController {
+    
+    func setupTeachersTableView() {
         teachersTableView.delegate = self
         teachersTableView.dataSource = self
         teachersTableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
@@ -81,18 +85,17 @@ class UpdateGroupViewController: UIViewController {
         teachersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func configureSegmentedControls() {
+    func setupSegmentedControls() {
         drivingCategorySegmentedControl.selectedSegmentTintColor = .lightGreenSea
         drivingCategorySegmentedControl.layer.borderWidth = 1
         drivingCategorySegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
-
         
         classesTimeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
         classesTimeSegmentedControl.layer.borderWidth = 1
         classesTimeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
     }
     
-    private func configureTextFields() {
+    func setupTextFields() {
         let startDateToolbar = UIToolbar()
         startDateToolbar.sizeToFit()
         let startDateDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveStartDate))
@@ -112,9 +115,18 @@ class UpdateGroupViewController: UIViewController {
         
         endDateTextField.inputView = endLessonsDatePicker
         endDateTextField.inputAccessoryView = endDateToolbar
+        
+        groupNameTextField.delegate = self
     }
     
-    private func setupBarButtonItems() {
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    
+    func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
@@ -134,11 +146,15 @@ class UpdateGroupViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @objc private func saveButtonHandler() {
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Группа успешно добавлена в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить группу в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-        guard let groupName = groupNameLabel.text, groupName != "" else {
+        guard let groupName = groupNameTextField.text, groupName != "" else {
             failureAlertView.present()
             return
         }
@@ -163,11 +179,10 @@ class UpdateGroupViewController: UIViewController {
         
         successAlertView.present()
     }
-    
-
 }
 
 extension UpdateGroupViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teachers.count
     }
@@ -192,7 +207,10 @@ extension UpdateGroupViewController: UITableViewDelegate, UITableViewDataSource 
         selectedTeacherIndex = indexPath.row
         tableView.reloadData()
     }
+    
 }
+
+// MARK: - UITextFieldDelegate
 
 extension UpdateGroupViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -200,6 +218,8 @@ extension UpdateGroupViewController: UITextFieldDelegate {
         return true
     }
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension UpdateGroupViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -209,4 +229,3 @@ extension UpdateGroupViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
-

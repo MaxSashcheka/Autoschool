@@ -1,8 +1,8 @@
 //
-//  UpdateAdministratorViewController.swift
+//  UpdateAgreementViewController.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 11/6/21.
+//  Created by Max Sashcheka on 10/17/21.
 //
 
 import UIKit
@@ -35,31 +35,16 @@ class UpdateAgreementViewController: UIViewController {
 
         return datePicker
     }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Договор"
-        view.backgroundColor = UIColor.viewBackground
-        
-        amountTextField.delegate = self
-        
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
-        
-        configureAdministratorsTableView()
-        configureStudentsTableView()
-        configureTextFields()
-        setupBarButtonItems()
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+
+}
+
+// MARK: - ViewController overrides
+
+extension UpdateAgreementViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchAgreements { fetchedAgreements in
             self.agreements = fetchedAgreements
         }
@@ -92,32 +77,45 @@ class UpdateAgreementViewController: UIViewController {
             self.studentsSuperViewHeight.constant = self.studentsTableViewHeight.constant + 40
         }
     }
-
-    private func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Изменить договор"
+        view.backgroundColor = UIColor.viewBackground
+        
+        setupAdministratorsTableView()
+        setupStudentsTableView()
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
     }
     
-    private func configureAdministratorsTableView() {
+}
+
+// MARK: - Private interface
+
+private extension UpdateAgreementViewController {
+    
+    func setupAdministratorsTableView() {
         administratorsTableView.delegate = self
         administratorsTableView.dataSource = self
         administratorsTableView.register(AdministratorTableViewCell.nib(), forCellReuseIdentifier: AdministratorTableViewCell.reuseIdentifier)
         administratorsTableView.rowHeight = 80
         administratorsTableView.isScrollEnabled = false
-        
         administratorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func configureStudentsTableView() {
+    func setupStudentsTableView() {
         studentsTableView.delegate = self
         studentsTableView.dataSource = self
         studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
         studentsTableView.rowHeight = 90
         studentsTableView.isScrollEnabled = false
-
         studentsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func configureTextFields() {
+    func setupTextFields() {
         let signingDateToolBar = UIToolbar()
         signingDateToolBar.sizeToFit()
         let signingDateDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveSigningDate))
@@ -126,9 +124,22 @@ class UpdateAgreementViewController: UIViewController {
         
         signingDateTextField.inputView = signingDatePicker
         signingDateTextField.inputAccessoryView = signingDateToolBar
+        
+        amountTextField.delegate = self
     }
     
-    @objc private func saveSigningDate() {
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    
+    func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    }
+    
+    @objc func saveSigningDate() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         signingDateTextField.text = formatter.string(from: signingDatePicker.date)
@@ -136,7 +147,11 @@ class UpdateAgreementViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @objc private func saveButtonHandler() {
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Договор успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить договор в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
@@ -157,8 +172,9 @@ class UpdateAgreementViewController: UIViewController {
         
         successAlertView.present()
     }
-
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension UpdateAgreementViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -205,22 +221,20 @@ extension UpdateAgreementViewController: UITableViewDelegate, UITableViewDataSou
 
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         if tableView == administratorsTableView {
             selectedAdministratorIndex = indexPath.row
         } else {
             selectedStudentIndex = indexPath.row
         }
-        
         tableView.reloadData()
-        
     }
 }
+
+// MARK: - UITextFieldDelegate
 
 extension UpdateAgreementViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -228,6 +242,8 @@ extension UpdateAgreementViewController: UITextFieldDelegate {
         return true
     }
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension UpdateAgreementViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

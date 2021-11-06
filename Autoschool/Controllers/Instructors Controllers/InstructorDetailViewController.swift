@@ -21,21 +21,11 @@ class InstructorDetailViewController: UIViewController {
         tableView.register(CarTableViewCell.nib(), forCellReuseIdentifier: CarTableViewCell.reuseIdentifier)
         tableView.register(DriverLicenseTableViewCell.nib(), forCellReuseIdentifier: DriverLicenseTableViewCell.reuseIdentifier)
         tableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
-//        tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
         tableView.backgroundColor = .clear
         
         return tableView
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(instructorTableView)
-        title = "\(instructor.lastName) \(instructor.firstName)"
-        view.backgroundColor = UIColor.viewBackground
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateInstructorController))
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NetworkManager.shared.fetchCars { fetchedCars in
@@ -66,6 +56,15 @@ class InstructorDetailViewController: UIViewController {
             self.students = instructorRelatedStudents
             self.instructorTableView.reloadData()
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(instructorTableView)
+        title = "\(instructor.lastName) \(instructor.firstName)"
+        view.backgroundColor = UIColor.viewBackground
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateInstructorController))
     }
     
     @objc private func openUpdateInstructorController() {

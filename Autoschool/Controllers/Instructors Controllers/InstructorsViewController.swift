@@ -24,20 +24,21 @@ class InstructorsViewController: UIViewController {
         return tableView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(instructorsTableView)
-        view.backgroundColor = UIColor.viewBackground
-        
-        setupNavigation()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NetworkManager.shared.fetchInstructors { fetchedInstructors in
             self.instructors = fetchedInstructors
             self.instructorsTableView.reloadData()
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(instructorsTableView)
+        view.backgroundColor = UIColor.viewBackground
+        
+        setupNavigation()
     }
     
     private func setupNavigation() {
@@ -59,6 +60,8 @@ class InstructorsViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,8 +79,10 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            
             cell.accessoryType = .disclosureIndicator
             cell.tintColor = .lightGreenSea
+            
             if indexPath.row == 0 {
                 cell.imageView?.image = UIImage(systemName: "car.2.fill")
                 cell.textLabel?.text = "Автопарк автошколы"

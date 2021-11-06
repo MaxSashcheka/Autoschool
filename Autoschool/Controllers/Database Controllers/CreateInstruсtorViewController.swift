@@ -88,6 +88,7 @@ extension CreateInstruсtorViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Добавить инструктора"
         view.backgroundColor = UIColor.viewBackground
         
@@ -101,6 +102,7 @@ extension CreateInstruсtorViewController {
 }
 
 // MARK: - Private interface
+
 private extension CreateInstruсtorViewController {
     
     func setupCarsTableView() {
@@ -263,10 +265,12 @@ extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataS
 // MARK: - UITextFieldDelegate
 
 extension CreateInstruсtorViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
@@ -276,6 +280,7 @@ extension CreateInstruсtorViewController: UITextFieldDelegate {
         }
        return true
     }
+    
 }
 
 // MARK: - UIGestureRecognizerDelegate

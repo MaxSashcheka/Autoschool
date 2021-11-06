@@ -21,22 +21,26 @@ class AdministrationViewController: UIViewController {
         
         return tableView
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
+            self.administrators = fetchedAdministrators
+            self.administratorsTableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(administratorsTableView)
         view.backgroundColor = UIColor.viewBackground
 
         setupNavigation()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
-            self.administrators = fetchedAdministrators
-            self.administratorsTableView.reloadData()
-        }
-    }
+    
     
     private func setupNavigation() {
         

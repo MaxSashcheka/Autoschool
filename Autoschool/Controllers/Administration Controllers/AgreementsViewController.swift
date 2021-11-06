@@ -22,16 +22,6 @@ class AgreementsViewController: UIViewController {
         
         return tableView
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Список договоров"
-        view.backgroundColor = UIColor.viewBackground
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-
-        view.addSubview(agreementsTableView)
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,6 +40,16 @@ class AgreementsViewController: UIViewController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Список договоров"
+        view.backgroundColor = UIColor.viewBackground
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+
+        view.addSubview(agreementsTableView)
+    }
+    
 }
 
 extension AgreementsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -85,7 +85,6 @@ extension AgreementsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            
             let agreementId = agreements[indexPath.row].agreementId
             NetworkManager.shared.deleteAgreement(withId: agreementId)
             agreements.remove(at: indexPath.row)

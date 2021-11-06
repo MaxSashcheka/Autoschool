@@ -1,8 +1,8 @@
 //
-//  UpdateAdministratorViewController.swift
+//  UpdateExamViewController.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 11/6/21.
+//  Created by Max Sashcheka on 10/5/21.
 //
 
 import UIKit
@@ -28,29 +28,16 @@ class UpdateExamViewController: UIViewController {
 
         return datePicker
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Экзамен"
-        view.backgroundColor = UIColor.viewBackground
-
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
-        
-        configureGroupsCollectionView()
-        configureSegmentedControls()
-        configureTextFields()
-        setupBarButtonItems()
-    }
     
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+}
+
+// MARK: - ViewController overrides
+
+extension UpdateExamViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchGroups { fetchedGroups in
             self.groups = fetchedGroups
             self.groupsCollectionView.reloadData()
@@ -60,15 +47,34 @@ class UpdateExamViewController: UIViewController {
             self.groupsCollectionView.reloadData()
         }
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Изменить экзамен"
+        view.backgroundColor = UIColor.viewBackground
+
+        setupGroupsCollectionView()
+        setupSegmentedControls()
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
+    }
     
-    private func configureGroupsCollectionView() {
+}
+
+// MARK: - Private interface
+
+private extension UpdateExamViewController {
+    
+    func setupGroupsCollectionView() {
         groupsCollectionView.showsHorizontalScrollIndicator = false
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
         groupsCollectionView.register(GroupCollectionViewCell.nib(), forCellWithReuseIdentifier: GroupCollectionViewCell.reuseIdentifier)
     }
     
-    private func configureSegmentedControls() {
+    func setupSegmentedControls() {
         examInternalExternalSegmentedControl.selectedSegmentTintColor = .lightGreenSea
         examInternalExternalSegmentedControl.layer.borderWidth = 1
         examInternalExternalSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
@@ -78,7 +84,7 @@ class UpdateExamViewController: UIViewController {
         examTheoryPracticeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
     }
     
-    private func configureTextFields() {
+    func setupTextFields() {
         let examDateToolbar = UIToolbar()
         examDateToolbar.sizeToFit()
         let examDateDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveExamDate))
@@ -89,19 +95,30 @@ class UpdateExamViewController: UIViewController {
         examDateTextField.inputAccessoryView = examDateToolbar
     }
     
-    @objc private func saveExamDate() {
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    
+    func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    }
+
+    @objc func saveExamDate() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         examDateTextField.text = formatter.string(from: examDatePicker.date)
         
         view.endEditing(true)
     }
-    
-    private func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
-    
-    @objc private func saveButtonHandler() {
+
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Экзамен успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить экзамен в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
@@ -130,8 +147,9 @@ class UpdateExamViewController: UIViewController {
         successAlertView.present()
 
     }
-
 }
+
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 
 extension UpdateExamViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -163,6 +181,8 @@ extension UpdateExamViewController: UICollectionViewDelegate, UICollectionViewDa
     
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension UpdateExamViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -185,12 +205,16 @@ extension UpdateExamViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension UpdateExamViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension UpdateExamViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

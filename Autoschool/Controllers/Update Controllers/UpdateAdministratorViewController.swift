@@ -2,10 +2,11 @@
 //  UpdateAdministratorViewController.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 11/6/21.
+//  Created by Max Sashcheka on 10/17/21.
 //
 
 import UIKit
+
 
 class UpdateAdministratorViewController: UIViewController {
 
@@ -17,33 +18,45 @@ class UpdateAdministratorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Администратор"
+        
+        title = "Изменить администратора"
         view.backgroundColor = UIColor.viewBackground
         
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
+    }
+}
+
+// MARK: - Private interface
+
+private extension UpdateAdministratorViewController {
+
+    func setupTextFields() {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         middleNameTextField.delegate = self
         phoneNumberTextField.delegate = self
         emailTextField.delegate = self
-
+    }
+    
+    func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self,
                          action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
-        
-        setupBarButtonItems()
     }
-
+    
+    func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+    }
+    
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
-
-    private func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Обновить", style: .plain, target: self, action: #selector(updateAdministrator))
-    }
     
-    @objc private func updateAdministrator() {
-        let successAlertView = SPAlertView(title: "Администратор обновлен в базе данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось обновить администратора в базе данных", message: "Вы заполнили не все поля", preset: .error)
+    @objc func saveButtonHandler() {
+        let successAlertView = SPAlertView(title: "Администратор успешно добавлен в базу данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось добавить администратора в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
             failureAlertView.present()
@@ -73,7 +86,6 @@ class UpdateAdministratorViewController: UIViewController {
         let administrator = Administrator(administratorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email)
         NetworkManager.shared.postAdministrator(administrator)
         
-        
         successAlertView.present()
     }
     
@@ -82,17 +94,12 @@ class UpdateAdministratorViewController: UIViewController {
         var result = ""
         var index = numbers.startIndex // numbers iterator
 
-        // iterate over the mask characters until the iterator of numbers ends
         for ch in mask where index < numbers.endIndex {
             if ch == "X" {
-                // mask requires a number in this place, so take the next one
                 result.append(numbers[index])
-
-                // move numbers iterator to the next index
                 index = numbers.index(after: index)
-
             } else {
-                result.append(ch) // just append a mask character
+                result.append(ch)
             }
         }
         return result
@@ -100,12 +107,15 @@ class UpdateAdministratorViewController: UIViewController {
     
 }
 
+// MARK: - UITextFieldDelegate
 
 extension UpdateAdministratorViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
@@ -115,4 +125,5 @@ extension UpdateAdministratorViewController: UITextFieldDelegate {
         }
        return true
     }
+    
 }

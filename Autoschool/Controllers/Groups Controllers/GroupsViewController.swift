@@ -11,17 +11,8 @@ class GroupsViewController: UIViewController {
     
     var groups = [Group]()
     
-    
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 25, bottom: 23, right: 25)
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.viewBackground
-    
-        configureCollectionView()
-        setupNavigation()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,9 +21,16 @@ class GroupsViewController: UIViewController {
             self.groupsCollectionView.reloadData()
         }
     }
-
     
-    private func configureCollectionView() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.viewBackground
+    
+        setupCollectionView()
+        setupNavigation()
+    }
+
+    private func setupCollectionView() {
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
         groupsCollectionView.register(GroupCollectionViewCell.nib(), forCellWithReuseIdentifier: GroupCollectionViewCell.reuseIdentifier)
@@ -104,4 +102,5 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
         
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
 }

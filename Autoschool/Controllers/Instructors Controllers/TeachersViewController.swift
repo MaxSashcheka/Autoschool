@@ -16,7 +16,6 @@ class TeachersViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
-        
         tableView.backgroundColor = .clear
         tableView.rowHeight = 75
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
@@ -24,23 +23,26 @@ class TeachersViewController: UIViewController {
         return tableView
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(teachersTableView)
-        title = "Преподаватели теории"
-        view.backgroundColor = UIColor.viewBackground
-     
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchTeacher { fetchedTeachers in
             self.teachers = fetchedTeachers
             self.teachersTableView.reloadData()
         }
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(teachersTableView)
+        title = "Преподаватели теории"
+        view.backgroundColor = UIColor.viewBackground
+    }
+    
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
     

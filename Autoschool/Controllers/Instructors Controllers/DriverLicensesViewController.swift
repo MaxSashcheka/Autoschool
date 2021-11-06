@@ -16,32 +16,33 @@ class DriverLicensesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(DriverLicenseTableViewCell.nib(), forCellReuseIdentifier: DriverLicenseTableViewCell.reuseIdentifier)
-        
         tableView.backgroundColor = .clear
         tableView.rowHeight = 80
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
         return tableView
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(driverLicensesTableView)
-        title = "Удостоверения"
-        view.backgroundColor = UIColor.viewBackground
-        
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchDriverLicenses { fetchedDriverLicenses in
             self.driverLicenses = fetchedDriverLicenses
             self.driverLicensesTableView.reloadData()
         }
     }
-    
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(driverLicensesTableView)
+        title = "Удостоверения"
+        view.backgroundColor = UIColor.viewBackground
+    }
+    
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension DriverLicensesViewController: UITableViewDelegate, UITableViewDataSource {
     

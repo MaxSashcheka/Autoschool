@@ -1,8 +1,8 @@
 //
-//  UpdateAdministratorViewController.swift
+//  UpdateTeacherViewController.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 11/6/21.
+//  Created by Max Sashcheka on 10/17/21.
 //
 
 import UIKit
@@ -18,31 +18,44 @@ class UpdateTeacherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Преподаватель"
+        
+        title = "Изменить преподавателя"
         view.backgroundColor = UIColor.viewBackground
+        
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
+    }
 
+}
+
+// MARK: - Private interface
+
+extension UpdateTeacherViewController {
+    
+    func setupTextFields() {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         middleNameTextField.delegate = self
         passportNumberTextField.delegate = self
         phoneNumberTextField.delegate = self
-        
+    }
+    
+    func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self,
                          action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
-        
-        setupBarButtonItems()
+    }
+    
+    func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
     
-    private func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
-    }
-    
-    @objc private func saveButtonHandler() {
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Преподаватель успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить преподавателя в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
@@ -82,31 +95,29 @@ class UpdateTeacherViewController: UIViewController {
     func format(with mask: String, phone: String) -> String {
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
-        var index = numbers.startIndex // numbers iterator
+        var index = numbers.startIndex
 
-        // iterate over the mask characters until the iterator of numbers ends
         for ch in mask where index < numbers.endIndex {
             if ch == "X" {
-                // mask requires a number in this place, so take the next one
                 result.append(numbers[index])
-
-                // move numbers iterator to the next index
                 index = numbers.index(after: index)
-
             } else {
-                result.append(ch) // just append a mask character
+                result.append(ch)
             }
         }
         return result
     }
-
 }
 
+// MARK: - UITextFieldDelegate
+
 extension UpdateTeacherViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
@@ -116,4 +127,5 @@ extension UpdateTeacherViewController: UITextFieldDelegate {
         }
        return true
     }
+    
 }

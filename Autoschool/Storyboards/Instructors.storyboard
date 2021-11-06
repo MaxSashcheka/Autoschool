@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="279.71014492753625" y="109.82142857142857"/>
         </scene>
-        <!--Update Instructor View Controller-->
+        <!--Update Instruсtor View Controller-->
         <scene sceneID="BfP-Hg-iPy">
             <objects>
-                <viewController storyboardIdentifier="UpdateInstructorViewController" id="sHO-t4-Sg5" customClass="UpdateInstructorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateInstructorViewController" id="sHO-t4-Sg5" customClass="UpdateInstruсtorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YwU-SN-Mxz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,18 +231,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="carsSuperViewHeight" destination="dzq-vg-rhV" id="5TT-oY-jVp"/>
-                        <outlet property="carsTableView" destination="8xc-Wy-hn5" id="xz7-6b-tw5"/>
-                        <outlet property="carsTableViewHeight" destination="0b3-Eb-qE7" id="SkG-gu-fuh"/>
+                        <outlet property="carsSuperViewHeight" destination="dzq-vg-rhV" id="bVr-FN-pZw"/>
+                        <outlet property="carsTableView" destination="8xc-Wy-hn5" id="U7m-iZ-S8K"/>
+                        <outlet property="carsTableViewHeight" destination="0b3-Eb-qE7" id="fLk-Or-mBN"/>
                         <outlet property="driverLicenseSuperViewHeight" destination="qWH-wQ-Rlg" id="Czi-LF-mdw"/>
                         <outlet property="driverLicenseTableViewHeight" destination="vXZ-ds-l9Q" id="AB8-Jd-0c1"/>
-                        <outlet property="driverLicensesTableView" destination="5J0-Ys-cTQ" id="TmH-H6-Xie"/>
-                        <outlet property="drivingExperienceTextField" destination="Shq-Nv-LjR" id="NSx-iO-a1u"/>
-                        <outlet property="firstNameTextField" destination="anV-t8-uuH" id="DO5-AW-EhS"/>
-                        <outlet property="lastNameTextField" destination="agG-m4-Q0Q" id="htG-T3-ixz"/>
-                        <outlet property="middleNameTextField" destination="JBm-jz-73O" id="OBC-MN-ofA"/>
-                        <outlet property="passportNumberTextField" destination="t84-F5-QrU" id="Lim-80-CWC"/>
-                        <outlet property="phoneNumberTextField" destination="YS5-BS-AbD" id="tSn-Qg-lXn"/>
+                        <outlet property="driverLicensesTableView" destination="5J0-Ys-cTQ" id="9GJ-2k-zDb"/>
+                        <outlet property="drivingExperienceTextField" destination="Shq-Nv-LjR" id="FLV-18-OHN"/>
+                        <outlet property="firstNameTextField" destination="anV-t8-uuH" id="Jo8-sk-0RO"/>
+                        <outlet property="lastNameTextField" destination="agG-m4-Q0Q" id="dGY-ad-FiI"/>
+                        <outlet property="middleNameTextField" destination="JBm-jz-73O" id="Wrr-QE-hpe"/>
+                        <outlet property="passportNumberTextField" destination="t84-F5-QrU" id="JHC-WJ-ZLE"/>
+                        <outlet property="phoneNumberTextField" destination="YS5-BS-AbD" id="hpd-Lc-nsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qm4-ft-5ar" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

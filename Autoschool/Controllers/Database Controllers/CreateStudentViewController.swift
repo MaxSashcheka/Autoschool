@@ -31,6 +31,7 @@ class CreateStudentViewController: UIViewController {
 }
 
 // MARK: - ViewController overrides
+
 extension CreateStudentViewController {
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,7 @@ extension CreateStudentViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Добавить ученика"
         view.backgroundColor = UIColor.viewBackground
         

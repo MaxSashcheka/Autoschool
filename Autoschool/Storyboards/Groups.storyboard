@@ -274,7 +274,7 @@
                         <outlet property="classesTimeSegmentedControl" destination="BmY-q3-axa" id="htf-6W-T3R"/>
                         <outlet property="drivingCategorySegmentedControl" destination="yQb-Yc-yZ4" id="wWm-Lw-UF5"/>
                         <outlet property="endDateTextField" destination="Xhh-mh-TrF" id="wst-GI-IjP"/>
-                        <outlet property="groupNameLabel" destination="SKS-MS-EIw" id="8Ll-1a-hWT"/>
+                        <outlet property="groupNameTextField" destination="SKS-MS-EIw" id="u8f-D3-VX1"/>
                         <outlet property="startDateTextField" destination="dLi-iA-hDK" id="8nx-Jf-DQm"/>
                         <outlet property="teachersSuperViewHeight" destination="HMl-Hx-k7d" id="TQ4-F4-cCB"/>
                         <outlet property="teachersTableView" destination="M5C-Mv-vDa" id="Oyp-9E-hCA"/>

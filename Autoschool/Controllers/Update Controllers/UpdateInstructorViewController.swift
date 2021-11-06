@@ -1,13 +1,13 @@
 //
-//  UpdateAdministratorViewController.swift
+//  UpdateInstruсtorViewController.swift
 //  Autoschool
 //
-//  Created by Max Sashcheka on 11/6/21.
+//  Created by Max Sashcheka on 10/1/21.
 //
 
 import UIKit
 
-class UpdateInstructorViewController: UIViewController {
+class UpdateInstruсtorViewController: UIViewController {
     
     var cars = [Car]()
     var driverLicenses = [DriverLisence]()
@@ -26,40 +26,22 @@ class UpdateInstructorViewController: UIViewController {
     @IBOutlet weak var driverLicensesTableView: UITableView!
     var selectedDriverLicenseIndex = 0
     
-    @IBOutlet weak var carsSuperViewHeight: NSLayoutConstraint!
+   
     @IBOutlet weak var carsTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var carsSuperViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var driverLicenseTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var driverLicenseSuperViewHeight: NSLayoutConstraint!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Инструктор"
-        view.backgroundColor = UIColor.viewBackground
-        
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
-        middleNameTextField.delegate = self
-        drivingExperienceTextField.delegate = self
-        passportNumberTextField.delegate = self
-        phoneNumberTextField.delegate = self
+}
 
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
-        
-        setupBarButtonItems()
-        configureCarsTableView()
-        configureDriverLicenseTableView()
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+// MARK: - ViewController overrides
+
+extension UpdateInstruсtorViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchInstructors { fetchedInstructors in
             self.instructors = fetchedInstructors
         }
@@ -103,35 +85,70 @@ class UpdateInstructorViewController: UIViewController {
             self.driverLicenseTableViewHeight.constant = CGFloat(self.driverLicenses.count) * self.driverLicensesTableView.rowHeight + 10
             self.driverLicenseSuperViewHeight.constant = self.driverLicenseTableViewHeight.constant + 30
         }
-        
-        
     }
     
-    private func configureCarsTableView() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Изменить инструктора"
+        view.backgroundColor = UIColor.viewBackground
+        
+        setupCarsTableView()
+        setupDriverLicenseTableView()
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
+
+    }
+}
+
+// MARK: - Private interface
+
+private extension UpdateInstruсtorViewController {
+    
+    func setupCarsTableView() {
         carsTableView.delegate = self
         carsTableView.dataSource = self
         carsTableView.register(CarTableViewCell.nib(), forCellReuseIdentifier: CarTableViewCell.reuseIdentifier)
         carsTableView.rowHeight = 80
         carsTableView.isScrollEnabled = false
-
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func configureDriverLicenseTableView() {
+    func setupDriverLicenseTableView() {
         driverLicensesTableView.delegate = self
         driverLicensesTableView.dataSource = self
         driverLicensesTableView.register(DriverLicenseTableViewCell.nib(), forCellReuseIdentifier: DriverLicenseTableViewCell.reuseIdentifier)
         driverLicensesTableView.rowHeight = 80
         driverLicensesTableView.isScrollEnabled = false
-
         driverLicensesTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func setupBarButtonItems() {
+    func setupTextFields() {
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        middleNameTextField.delegate = self
+        drivingExperienceTextField.delegate = self
+        passportNumberTextField.delegate = self
+        phoneNumberTextField.delegate = self
+    }
+    
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    
+    func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
-    @objc private func saveButtonHandler() {
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
@@ -160,11 +177,11 @@ class UpdateInstructorViewController: UIViewController {
             return
         }
         
-        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+        guard var phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
             failureAlertView.present()
             return
         }
-        
+
         let selectedCarId = cars[selectedCarIndex].carId
         let selectedDriverLicenseId = driverLicenses[selectedDriverLicenseIndex].driverLicenseId
         
@@ -177,27 +194,23 @@ class UpdateInstructorViewController: UIViewController {
     func format(with mask: String, phone: String) -> String {
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
-        var index = numbers.startIndex // numbers iterator
+        var index = numbers.startIndex
 
-        // iterate over the mask characters until the iterator of numbers ends
         for ch in mask where index < numbers.endIndex {
             if ch == "X" {
-                // mask requires a number in this place, so take the next one
                 result.append(numbers[index])
-
-                // move numbers iterator to the next index
                 index = numbers.index(after: index)
-
             } else {
-                result.append(ch) // just append a mask character
+                result.append(ch)
             }
         }
         return result
     }
-
 }
 
-extension UpdateInstructorViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
+extension UpdateInstruсtorViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == carsTableView {
@@ -250,23 +263,30 @@ extension UpdateInstructorViewController: UITableViewDelegate, UITableViewDataSo
     }
 }
 
-extension UpdateInstructorViewController: UITextFieldDelegate {
+// MARK: - UITextFieldDelegate
+
+extension UpdateInstruсtorViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true
     }
+    
 }
 
-extension UpdateInstructorViewController: UIGestureRecognizerDelegate {
+// MARK: - UIGestureRecognizerDelegate
+
+extension UpdateInstruсtorViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if touch.view!.isDescendant(of: carsTableView) || touch.view!.isDescendant(of: driverLicensesTableView) {
             return false
@@ -274,4 +294,5 @@ extension UpdateInstructorViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
+
 

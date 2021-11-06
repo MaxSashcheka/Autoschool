@@ -18,31 +18,44 @@ class CreateTeacherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Добавить преподавателя"
         view.backgroundColor = UIColor.viewBackground
+        
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
+    }
 
+}
+
+// MARK: - Private interface
+
+extension CreateTeacherViewController {
+    
+    func setupTextFields() {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         middleNameTextField.delegate = self
         passportNumberTextField.delegate = self
         phoneNumberTextField.delegate = self
-        
+    }
+    
+    func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self,
                          action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
-        
-        setupBarButtonItems()
+    }
+    
+    func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
     
-    private func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
-    }
-    
-    @objc private func saveButtonHandler() {
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Преподаватель успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить преподавателя в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
@@ -94,7 +107,6 @@ class CreateTeacherViewController: UIViewController {
         }
         return result
     }
-
 }
 
 // MARK: - UITextFieldDelegate

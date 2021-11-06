@@ -16,21 +16,9 @@ class StudentsViewController: UIViewController {
     var teachers = [Teacher]()
     var instructors = [Instructor]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Группа \(group.name)"
-        view.backgroundColor = UIColor.viewBackground
-        
-        studentsTableView.contentInsetAdjustmentBehavior = .never
-        studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateGroup))
-        
-        configureTableView()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchStudents(withGroupId: group.groupId) { fetchedStudents in
             self.students = fetchedStudents
             self.studentsTableView.reloadData()
@@ -45,18 +33,34 @@ class StudentsViewController: UIViewController {
         }
     }
     
-    @objc private func openUpdateGroup() {
-        let updateGroupVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateGroupViewController")
-        self.navigationController?.pushViewController(updateGroupVC, animated: true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Группа \(group.name)"
+        view.backgroundColor = UIColor.viewBackground
+        
+        setupStudentsTableView()
+        setupBarButtonItems()
     }
 
-    private func configureTableView() {
+    private func setupStudentsTableView() {
         studentsTableView.delegate = self
         studentsTableView.dataSource = self
         studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
         studentsTableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
-
         studentsTableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: 0, right: 0)
+        
+        studentsTableView.contentInsetAdjustmentBehavior = .never
+        studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+    }
+    
+    private func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateGroup))
+    }
+    
+    @objc private func openUpdateGroup() {
+        let updateGroupVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateGroupViewController")
+        self.navigationController?.pushViewController(updateGroupVC, animated: true)
     }
 }
 

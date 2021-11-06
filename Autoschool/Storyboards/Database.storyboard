@@ -202,7 +202,7 @@
                         <outlet property="classesTimeSegmentedControl" destination="Jay-HZ-Jod" id="qhc-gv-iE3"/>
                         <outlet property="drivingCategorySegmentedControl" destination="LDC-fB-bZ1" id="3dK-G7-VnG"/>
                         <outlet property="endDateTextField" destination="r33-eq-PNg" id="70V-lJ-WMH"/>
-                        <outlet property="groupNameLabel" destination="CHb-9Q-vCj" id="wK7-6o-fkW"/>
+                        <outlet property="groupNameTextField" destination="CHb-9Q-vCj" id="wK7-6o-fkW"/>
                         <outlet property="startDateTextField" destination="jQ5-rm-KCG" id="lRj-De-VuH"/>
                         <outlet property="teachersSuperViewHeight" destination="UiQ-Hl-e68" id="J2h-uT-2EP"/>
                         <outlet property="teachersTableView" destination="ghV-fv-gOw" id="0Wr-U1-NEa"/>
