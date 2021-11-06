@@ -88,6 +88,8 @@
 		DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */; };
 		DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */; };
 		DDF02DC027300D1100F372B2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF02DBF27300D1100F372B2 /* NetworkManager.swift */; };
+		DDFAEB3F2737044E00B0EC74 /* DatabaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFAEB3D2737044E00B0EC74 /* DatabaseCollectionViewCell.swift */; };
+		DDFAEB402737044E00B0EC74 /* DatabaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDFAEB3E2737044E00B0EC74 /* DatabaseCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +177,8 @@
 		DDEC16AB271DC27E007BF181 /* AgreementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementTableViewCell.swift; sourceTree = "<group>"; };
 		DDEC16AC271DC27E007BF181 /* AgreementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementTableViewCell.xib; sourceTree = "<group>"; };
 		DDF02DBF27300D1100F372B2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DDFAEB3D2737044E00B0EC74 /* DatabaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDFAEB3E2737044E00B0EC74 /* DatabaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatabaseCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,10 +238,9 @@
 		DD62C846270A0E4F00910092 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DD62C847270A0E6D00910092 /* GroupCollectionViewCell.swift */,
-				DD62C848270A0E6D00910092 /* GroupCollectionViewCell.xib */,
-				DDD412C62730833300E7107F /* ExamCollectionViewCell.swift */,
-				DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */,
+				DDFAEB3C2737042B00B0EC74 /* Database */,
+				DDFAEB382737041700B0EC74 /* Group */,
+				DDFAEB3A2737042000B0EC74 /* Exam */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -518,6 +521,33 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		DDFAEB382737041700B0EC74 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				DD62C847270A0E6D00910092 /* GroupCollectionViewCell.swift */,
+				DD62C848270A0E6D00910092 /* GroupCollectionViewCell.xib */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		DDFAEB3A2737042000B0EC74 /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+				DDD412C62730833300E7107F /* ExamCollectionViewCell.swift */,
+				DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */,
+			);
+			path = Exam;
+			sourceTree = "<group>";
+		};
+		DDFAEB3C2737042B00B0EC74 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				DDFAEB3D2737044E00B0EC74 /* DatabaseCollectionViewCell.swift */,
+				DDFAEB3E2737044E00B0EC74 /* DatabaseCollectionViewCell.xib */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -582,6 +612,7 @@
 				DDD412C92730833300E7107F /* ExamCollectionViewCell.xib in Resources */,
 				DD6DFEE2271C134C0073F63F /* InstructorTableViewCell.xib in Resources */,
 				DD9A0C5E27070A960040C839 /* LaunchScreen.storyboard in Resources */,
+				DDFAEB402737044E00B0EC74 /* DatabaseCollectionViewCell.xib in Resources */,
 				DD62C84A270A0E6D00910092 /* GroupCollectionViewCell.xib in Resources */,
 				DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */,
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
@@ -668,6 +699,7 @@
 				DD6DFF15271C3D650073F63F /* UILabelExtension.swift in Sources */,
 				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,
 				DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */,
+				DDFAEB3F2737044E00B0EC74 /* DatabaseCollectionViewCell.swift in Sources */,
 				DD54882127334927002ED3BA /* CreateDriverLicenseViewController.swift in Sources */,
 				DD64DD422736702D001C7BB2 /* UpdateStudentViewController.swift in Sources */,
 			);

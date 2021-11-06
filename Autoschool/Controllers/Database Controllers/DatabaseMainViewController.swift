@@ -8,7 +8,7 @@
 import UIKit
 
 struct ViewControllerRepresentation {
-    let tableViewName: String
+    let name: String
     let identifier: String
     let image: UIImage?
 }
@@ -16,36 +16,34 @@ struct ViewControllerRepresentation {
 class DatabaseMainViewController: UIViewController {
     
     let controllersRepresentationModel = [
-        ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateAdministratorViewController", image: UIImage(systemName: "person")),
-        ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(systemName: "studentdesk")),
-        ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(systemName: "doc.text")),
-        ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person")),
-        ViewControllerRepresentation(tableViewName: "Добавить вод. удостоверение", identifier: "CreateDriverLicenseViewController", image: UIImage(systemName: "person.crop.rectangle")),
-        ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
-        ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
-        ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
-        ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
+        ViewControllerRepresentation(name: "Добавить администратора", identifier: "CreateAdministratorViewController", image: UIImage(systemName: "person")),
+        ViewControllerRepresentation(name: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(systemName: "studentdesk")),
+        ViewControllerRepresentation(name: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(systemName: "doc.text")),
+        ViewControllerRepresentation(name: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person")),
+        ViewControllerRepresentation(name: "Добавить водительское удостоверение", identifier: "CreateDriverLicenseViewController", image: UIImage(systemName: "person.crop.rectangle")),
+        ViewControllerRepresentation(name: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
+        ViewControllerRepresentation(name: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
+        ViewControllerRepresentation(name: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
+        ViewControllerRepresentation(name: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
     ]
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
-        
-        tableView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = .clear
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-        tableView.isScrollEnabled = false
-        
-        return tableView
-    }()
+    
+    @IBOutlet weak var databaseCollectionView: UICollectionView!
+    let databaseCollectionViewInsets = UIEdgeInsets(top: 23, left: 20, bottom: 17, right: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(tableView)
-        
         view.backgroundColor = UIColor.viewBackground
+        
+        setupDatabaseCollectionView()
         setupNavigation()
+    }
+    
+    private func setupDatabaseCollectionView() {
+        databaseCollectionView.backgroundColor = .clear
+        databaseCollectionView.delegate = self
+        databaseCollectionView.dataSource = self
+        databaseCollectionView.register(DatabaseCollectionViewCell.nib(), forCellWithReuseIdentifier: DatabaseCollectionViewCell.reuseIdentifier)
     }
 
     private func setupNavigation() {
@@ -66,35 +64,52 @@ class DatabaseMainViewController: UIViewController {
 
 }
 
-// MARK: - UITableViewDelegate & UITableViewDataSource
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 
-extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource {
+extension DatabaseMainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return controllersRepresentationModel.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DatabaseCollectionViewCell.reuseIdentifier, for: indexPath) as! DatabaseCollectionViewCell
+        
+        let vcRepresentator = controllersRepresentationModel[indexPath.row]
+        cell.setup(withRepresentator: vcRepresentator)
+        
+        return cell
+    }
+    
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension DatabaseMainViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth = collectionView.frame.width - databaseCollectionViewInsets.left * 2
+        let itemHeight = CGFloat(70)
+        
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return databaseCollectionViewInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return databaseCollectionViewInsets.bottom
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
         let controllerIdentifier = controllersRepresentationModel[indexPath.row].identifier
         let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: controllerIdentifier)
 
         self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
-        let vcRepresentator = controllersRepresentationModel[indexPath.row]
-        cell.textLabel?.text = vcRepresentator.tableViewName
-        cell.imageView?.image = vcRepresentator.image
-        cell.imageView?.tintColor = .lightGreenSea
-        cell.imageView?.contentMode = .scaleAspectFit
-
-        return cell
     }
-    
     
 }
 
