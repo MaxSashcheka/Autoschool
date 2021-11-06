@@ -94,8 +94,10 @@ extension AdministrationViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let agreementsVC = AgreementsViewController()
-            
             navigationController?.pushViewController(agreementsVC, animated: true)
+        } else {
+            let updateAdministratorVC = UIStoryboard(name: "Administration", bundle: nil).instantiateViewController(identifier: "UpdateAdministratorViewController")
+            self.navigationController?.pushViewController(updateAdministratorVC, animated: true)
         }
     }
     

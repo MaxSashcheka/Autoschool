@@ -9,7 +9,6 @@ import UIKit
 
 class CreateCarViewController: UIViewController {
     
-    
     @IBOutlet weak var carNumberTextField: UITextField!
     @IBOutlet weak var carNameTextField: UITextField!
     @IBOutlet weak var carColorTextField: UITextField!

@@ -421,7 +421,7 @@
         <!--Create Administrator View Controller-->
         <scene sceneID="Iz6-sb-Bas">
             <objects>
-                <viewController storyboardIdentifier="CreateWorkerViewController" id="UIB-jp-gAe" customClass="CreateAdministratorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAdministratorViewController" id="UIB-jp-gAe" customClass="CreateAdministratorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34q-Nw-hzK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

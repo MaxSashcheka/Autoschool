@@ -142,13 +142,8 @@ extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCollectionViewCell.reuseIdentifier, for: indexPath) as! GroupCollectionViewCell
     
-//        let group = groups[indexPath.item]
-//        for teacher in teachers {
-//            if group.teacherId == teacher.teacherId {
-//                
-//            }
-//        }
-//        cell.setup(withGroup: group)
+        let group = groups[indexPath.item]
+        cell.setup(withGroup: group)
         
         cell.layer.borderColor = UIColor.red.cgColor
         if indexPath.item == selectedGroupIndex {
@@ -171,11 +166,8 @@ extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDa
 extension CreateExamViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let itemWidth = groupsCollectionView.frame.width - groupsCollectionViewInsets.left * 2
-//        let itemHeight = itemWidth / 2
         let itemWidth = groupsCollectionView.frame.width * 0.8
         let itemHeight = groupsCollectionView.frame.height - 20
-        
         
         return CGSize(width: itemWidth, height: itemHeight)
     }

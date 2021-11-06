@@ -27,6 +27,8 @@ class AgreementsViewController: UIViewController {
         super.viewDidLoad()
         title = "Список договоров"
         view.backgroundColor = UIColor.viewBackground
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
 
         view.addSubview(agreementsTableView)
     }
@@ -91,6 +93,11 @@ extension AgreementsViewController: UITableViewDelegate, UITableViewDataSource {
             
             tableView.endUpdates()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let updateAdministratorVC = UIStoryboard(name: "Administration", bundle: nil).instantiateViewController(identifier: "UpdateAgreementViewController")
+        self.navigationController?.pushViewController(updateAdministratorVC, animated: true)
     }
     
     

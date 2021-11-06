@@ -118,7 +118,6 @@
 		DD64DD3B2736702A001C7BB2 /* UpdateInstructorViewController copy 6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateInstructorViewController copy 6.swift"; sourceTree = "<group>"; };
 		DD64DD3E2736702C001C7BB2 /* UpdateAgreementViewController copy 7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateAgreementViewController copy 7.swift"; sourceTree = "<group>"; };
 		DD64DD412736702D001C7BB2 /* UpdateStudentViewController copy 8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateStudentViewController copy 8.swift"; sourceTree = "<group>"; };
-		DD64DD4D273672C3001C7BB2 /* DatabaseUpdate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatabaseUpdate.storyboard; sourceTree = "<group>"; };
 		DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorTableViewCell.swift; sourceTree = "<group>"; };
 		DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorTableViewCell.xib; sourceTree = "<group>"; };
 		DD6DFEE4271C1ACF0073F63F /* CreateAdministratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdministratorViewController.swift; sourceTree = "<group>"; };
@@ -430,7 +429,6 @@
 				DD9A0C5C27070A960040C839 /* LaunchScreen.storyboard */,
 				DD9A0C5427070A950040C839 /* Main.storyboard */,
 				DD9A0C7127070C330040C839 /* Database.storyboard */,
-				DD64DD4D273672C3001C7BB2 /* DatabaseUpdate.storyboard */,
 				DD62C83A270A083500910092 /* Groups.storyboard */,
 				DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */,
 				DD5B16D9270A3F32007E5C38 /* Exams.storyboard */,
