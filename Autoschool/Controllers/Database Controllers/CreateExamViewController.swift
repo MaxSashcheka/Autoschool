@@ -10,6 +10,7 @@ import UIKit
 class CreateExamViewController: UIViewController {
     
     var groups = [Group]()
+    var teachers = [Teacher]()
 
     @IBOutlet weak var examDateTextField: UITextField!
     
@@ -52,6 +53,10 @@ class CreateExamViewController: UIViewController {
         super.viewWillAppear(animated)
         NetworkManager.shared.fetchGroups { fetchedGroups in
             self.groups = fetchedGroups
+            self.groupsCollectionView.reloadData()
+        }
+        NetworkManager.shared.fetchTeacher { fetchedTeachers in
+            self.teachers = fetchedTeachers
             self.groupsCollectionView.reloadData()
         }
     }
@@ -137,13 +142,19 @@ extension CreateExamViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCollectionViewCell.reuseIdentifier, for: indexPath) as! GroupCollectionViewCell
     
-        let group = groups[indexPath.item]
-        cell.setup(withGroup: group)
+//        let group = groups[indexPath.item]
+//        for teacher in teachers {
+//            if group.teacherId == teacher.teacherId {
+//                
+//            }
+//        }
+//        cell.setup(withGroup: group)
         
+        cell.layer.borderColor = UIColor.red.cgColor
         if indexPath.item == selectedGroupIndex {
-            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.70).cgColor
+            cell.layer.borderWidth = 1
         } else {
-            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
+            cell.layer.borderWidth = 0
         }
         
         return cell

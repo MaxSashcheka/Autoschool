@@ -29,6 +29,7 @@ class TeachersViewController: UIViewController {
         view.addSubview(teachersTableView)
         title = "Преподаватели теории"
         view.backgroundColor = UIColor.viewBackground
+     
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +39,6 @@ class TeachersViewController: UIViewController {
             self.teachersTableView.reloadData()
         }
     }
-    
 
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Vw-TN-acq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,26 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Database Main View Controller-->
-        <scene sceneID="EJL-Y0-qBu">
-            <objects>
-                <viewController storyboardIdentifier="DatabaseMainViewController" id="TXx-rR-8FF" customClass="DatabaseMainViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ha7-T8-ipR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Ttc-Br-BfD"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="zKY-iE-kqw"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="184-fe-TNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1155.072463768116" y="160.71428571428569"/>
-        </scene>
-        <!--Create Group View Controller-->
+        <!--Update Group View Controller-->
         <scene sceneID="iOp-EP-V3n">
             <objects>
-                <viewController storyboardIdentifier="CreateGroupViewController" id="KWP-Aj-QHB" customClass="CreateGroupViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateGroupViewController" id="KWP-Aj-QHB" customClass="UpdateGroupViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PDF-pj-Jb2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="-894.20289855072474" y="868.52678571428567"/>
         </scene>
-        <!--Create Instruсtor View Controller-->
+        <!--Update Instructor View Controller-->
         <scene sceneID="Aa7-Eo-bHe">
             <objects>
-                <viewController storyboardIdentifier="CreateInstruсtorViewController" id="g7K-38-bJg" customClass="CreateInstruсtorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateInstruсtorViewController" id="g7K-38-bJg" customClass="UpdateInstructorViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mT7-TJ-Lde">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,10 +402,10 @@
             </objects>
             <point key="canvasLocation" x="-136.23188405797103" y="868.52678571428567"/>
         </scene>
-        <!--Create Administrator View Controller-->
+        <!--Update Administrator View Controller-->
         <scene sceneID="Iz6-sb-Bas">
             <objects>
-                <viewController storyboardIdentifier="CreateWorkerViewController" id="UIB-jp-gAe" customClass="CreateAdministratorViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateWorkerViewController" id="UIB-jp-gAe" customClass="UpdateAdministratorViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34q-Nw-hzK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -542,10 +526,10 @@
             </objects>
             <point key="canvasLocation" x="-401.44927536231887" y="1567.6339285714284"/>
         </scene>
-        <!--Create Student View Controller-->
+        <!--Update Student View Controller-->
         <scene sceneID="e2N-4J-UIq">
             <objects>
-                <viewController storyboardIdentifier="CreateStudentViewController" automaticallyAdjustsScrollViewInsets="NO" id="n59-9A-gjf" customClass="CreateStudentViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateStudentViewController" automaticallyAdjustsScrollViewInsets="NO" id="n59-9A-gjf" customClass="UpdateStudentViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bMc-mW-RnI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -716,10 +700,10 @@
             </objects>
             <point key="canvasLocation" x="649" y="869"/>
         </scene>
-        <!--Create Car View Controller-->
+        <!--Update Car View Controller-->
         <scene sceneID="RTD-gN-l3o">
             <objects>
-                <viewController storyboardIdentifier="CreateCarViewController" id="Xhf-Rl-1cP" customClass="CreateCarViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateCarViewController" id="Xhf-Rl-1cP" customClass="UpdateCarViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="55V-IN-n5k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -823,10 +807,10 @@
             </objects>
             <point key="canvasLocation" x="1424.6376811594205" y="868.52678571428567"/>
         </scene>
-        <!--Create Exam View Controller-->
+        <!--Update Exam View Controller-->
         <scene sceneID="n4d-5B-4di">
             <objects>
-                <viewController storyboardIdentifier="CreateExamViewController" id="tkD-3f-rXc" customClass="CreateExamViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateExamViewController" id="tkD-3f-rXc" customClass="UpdateExamViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Osv-rA-6lK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -960,10 +944,10 @@
             </objects>
             <point key="canvasLocation" x="2221.739130434783" y="868.52678571428567"/>
         </scene>
-        <!--Create Driver License View Controller-->
+        <!--Update Driver License View Controller-->
         <scene sceneID="7Av-gv-ut7">
             <objects>
-                <viewController storyboardIdentifier="CreateDriverLicenseViewController" id="uWQ-iU-8cd" customClass="CreateDriverLicenseViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateDriverLicenseViewController" id="uWQ-iU-8cd" customClass="UpdateDriverLicenseViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="83E-M2-FnO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1067,30 +1051,10 @@
             </objects>
             <point key="canvasLocation" x="3085.507246376812" y="868.52678571428567"/>
         </scene>
-        <!--База данных-->
-        <scene sceneID="D0x-z1-Z4U">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Vw-TN-acq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="База данных" image="table" catalog="system" id="uAi-uG-71h"/>
-                    <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gsL-Rq-Svv">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="TXx-rR-8FF" kind="relationship" relationship="rootViewController" id="Z1e-cG-lv2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uQ0-2P-Dsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="244.92753623188409" y="160.71428571428569"/>
-        </scene>
-        <!--Create Agreement View Controller-->
+        <!--Update Agreement View Controller-->
         <scene sceneID="6pe-Ah-Jd8">
             <objects>
-                <viewController storyboardIdentifier="CreateAgreementViewController" id="cQj-ub-apP" customClass="CreateAgreementViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAgreementViewController" id="cQj-ub-apP" customClass="UpdateAgreementViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J76-OL-IRE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1238,10 +1202,10 @@
             </objects>
             <point key="canvasLocation" x="355" y="1568"/>
         </scene>
-        <!--Create Teacher View Controller-->
+        <!--Update Teacher View Controller-->
         <scene sceneID="U3A-kO-pil">
             <objects>
-                <viewController storyboardIdentifier="CreateTeacherViewController" id="utD-l6-722" customClass="CreateTeacherViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateTeacherViewController" id="utD-l6-722" customClass="UpdateTeacherViewController" customModule="Autoschool" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="03O-mu-JrV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1364,7 +1328,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="table" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

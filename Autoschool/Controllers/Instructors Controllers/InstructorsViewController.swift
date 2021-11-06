@@ -28,7 +28,7 @@ class InstructorsViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(instructorsTableView)
         view.backgroundColor = UIColor.viewBackground
-
+        
         setupNavigation()
     }
     

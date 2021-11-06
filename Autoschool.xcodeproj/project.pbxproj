@@ -24,6 +24,15 @@
 		DD62C849270A0E6D00910092 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C847270A0E6D00910092 /* GroupCollectionViewCell.swift */; };
 		DD62C84A270A0E6D00910092 /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62C848270A0E6D00910092 /* GroupCollectionViewCell.xib */; };
 		DD62EB39273569870060D587 /* InstructorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62EB38273569870060D587 /* InstructorDetailViewController.swift */; };
+		DD64DD2A2736701C001C7BB2 /* UpdateExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD292736701C001C7BB2 /* UpdateExamViewController.swift */; };
+		DD64DD2D27367022001C7BB2 /* UpdateGroupViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD2C27367022001C7BB2 /* UpdateGroupViewController copy.swift */; };
+		DD64DD3027367024001C7BB2 /* UpdateTeacherViewController copy 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD2F27367024001C7BB2 /* UpdateTeacherViewController copy 2.swift */; };
+		DD64DD3327367025001C7BB2 /* UpdateAdministratorViewController copy 3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD3227367025001C7BB2 /* UpdateAdministratorViewController copy 3.swift */; };
+		DD64DD3627367026001C7BB2 /* UpdateCarViewController copy 4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD3527367026001C7BB2 /* UpdateCarViewController copy 4.swift */; };
+		DD64DD3927367029001C7BB2 /* UpdateDriverLicenseViewController copy 5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD3827367028001C7BB2 /* UpdateDriverLicenseViewController copy 5.swift */; };
+		DD64DD3C2736702A001C7BB2 /* UpdateInstructorViewController copy 6.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD3B2736702A001C7BB2 /* UpdateInstructorViewController copy 6.swift */; };
+		DD64DD3F2736702C001C7BB2 /* UpdateAgreementViewController copy 7.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD3E2736702C001C7BB2 /* UpdateAgreementViewController copy 7.swift */; };
+		DD64DD422736702D001C7BB2 /* UpdateStudentViewController copy 8.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64DD412736702D001C7BB2 /* UpdateStudentViewController copy 8.swift */; };
 		DD6DFEE1271C134C0073F63F /* InstructorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */; };
 		DD6DFEE2271C134C0073F63F /* InstructorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */; };
 		DD6DFEE5271C1ACF0073F63F /* CreateAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DFEE4271C1ACF0073F63F /* CreateAdministratorViewController.swift */; };
@@ -100,6 +109,16 @@
 		DD62C847270A0E6D00910092 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD62C848270A0E6D00910092 /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD62EB38273569870060D587 /* InstructorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorDetailViewController.swift; sourceTree = "<group>"; };
+		DD64DD292736701C001C7BB2 /* UpdateExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateExamViewController.swift; sourceTree = "<group>"; };
+		DD64DD2C27367022001C7BB2 /* UpdateGroupViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateGroupViewController copy.swift"; sourceTree = "<group>"; };
+		DD64DD2F27367024001C7BB2 /* UpdateTeacherViewController copy 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateTeacherViewController copy 2.swift"; sourceTree = "<group>"; };
+		DD64DD3227367025001C7BB2 /* UpdateAdministratorViewController copy 3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateAdministratorViewController copy 3.swift"; sourceTree = "<group>"; };
+		DD64DD3527367026001C7BB2 /* UpdateCarViewController copy 4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateCarViewController copy 4.swift"; sourceTree = "<group>"; };
+		DD64DD3827367028001C7BB2 /* UpdateDriverLicenseViewController copy 5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateDriverLicenseViewController copy 5.swift"; sourceTree = "<group>"; };
+		DD64DD3B2736702A001C7BB2 /* UpdateInstructorViewController copy 6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateInstructorViewController copy 6.swift"; sourceTree = "<group>"; };
+		DD64DD3E2736702C001C7BB2 /* UpdateAgreementViewController copy 7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateAgreementViewController copy 7.swift"; sourceTree = "<group>"; };
+		DD64DD412736702D001C7BB2 /* UpdateStudentViewController copy 8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateStudentViewController copy 8.swift"; sourceTree = "<group>"; };
+		DD64DD4D273672C3001C7BB2 /* DatabaseUpdate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatabaseUpdate.storyboard; sourceTree = "<group>"; };
 		DD6DFEDF271C134C0073F63F /* InstructorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorTableViewCell.swift; sourceTree = "<group>"; };
 		DD6DFEE0271C134C0073F63F /* InstructorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorTableViewCell.xib; sourceTree = "<group>"; };
 		DD6DFEE4271C1ACF0073F63F /* CreateAdministratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdministratorViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +241,22 @@
 				DDD412C72730833300E7107F /* ExamCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		DD64DD2727366FD4001C7BB2 /* Update Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD64DD3227367025001C7BB2 /* UpdateAdministratorViewController copy 3.swift */,
+				DD64DD412736702D001C7BB2 /* UpdateStudentViewController copy 8.swift */,
+				DD64DD3E2736702C001C7BB2 /* UpdateAgreementViewController copy 7.swift */,
+				DD64DD3B2736702A001C7BB2 /* UpdateInstructorViewController copy 6.swift */,
+				DD64DD3827367028001C7BB2 /* UpdateDriverLicenseViewController copy 5.swift */,
+				DD64DD3527367026001C7BB2 /* UpdateCarViewController copy 4.swift */,
+				DD64DD2C27367022001C7BB2 /* UpdateGroupViewController copy.swift */,
+				DD64DD2F27367024001C7BB2 /* UpdateTeacherViewController copy 2.swift */,
+				DD64DD292736701C001C7BB2 /* UpdateExamViewController.swift */,
+			);
+			path = "Update Controllers";
 			sourceTree = "<group>";
 		};
 		DD6DFEEF271C32060073F63F /* Administration Controllers */ = {
@@ -395,6 +430,7 @@
 				DD9A0C5C27070A960040C839 /* LaunchScreen.storyboard */,
 				DD9A0C5427070A950040C839 /* Main.storyboard */,
 				DD9A0C7127070C330040C839 /* Database.storyboard */,
+				DD64DD4D273672C3001C7BB2 /* DatabaseUpdate.storyboard */,
 				DD62C83A270A083500910092 /* Groups.storyboard */,
 				DD5B16D6270A3F2A007E5C38 /* Instructors.storyboard */,
 				DD5B16D9270A3F32007E5C38 /* Exams.storyboard */,
@@ -420,6 +456,7 @@
 				DD5B16DD270A3FFF007E5C38 /* Instructors Controllers */,
 				DD5B16DE270A4014007E5C38 /* Exams Controllers */,
 				DD6DFEEF271C32060073F63F /* Administration Controllers */,
+				DD64DD2727366FD4001C7BB2 /* Update Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -577,13 +614,16 @@
 				DD6DFF19271C3D650073F63F /* SPAlertIconErrorView.swift in Sources */,
 				DDEC16AD271DC27E007BF181 /* AgreementTableViewCell.swift in Sources */,
 				DD6DFF16271C3D650073F63F /* UIFontExtension.swift in Sources */,
+				DD64DD3927367029001C7BB2 /* UpdateDriverLicenseViewController copy 5.swift in Sources */,
 				DD1852D027353A24001F670A /* TeachersViewController.swift in Sources */,
 				DDB53C81272C3F8F009B69CF /* Administrator.swift in Sources */,
+				DD64DD2D27367022001C7BB2 /* UpdateGroupViewController copy.swift in Sources */,
 				DD9A0C6D27070B340040C839 /* Extensions.swift in Sources */,
 				DD6DFEE5271C1ACF0073F63F /* CreateAdministratorViewController.swift in Sources */,
 				DD70501E271B7D29005894F3 /* TeacherTableViewCell.swift in Sources */,
 				DDEC16A8271DC19F007BF181 /* AgreementsViewController.swift in Sources */,
 				DDCC6B492733CF9000394561 /* DriverLicenseTableViewCell.swift in Sources */,
+				DD64DD2A2736701C001C7BB2 /* UpdateExamViewController.swift in Sources */,
 				DD9A0C83270715D60040C839 /* CreateGroupViewController.swift in Sources */,
 				DD62C844270A0D9800910092 /* Group.swift in Sources */,
 				DDB53C89272C41FC009B69CF /* Teacher.swift in Sources */,
@@ -607,17 +647,22 @@
 				DD5B16E4270A405B007E5C38 /* ExamsViewController.swift in Sources */,
 				DD6DFF1B271C3D650073F63F /* SPAlertIconPreset.swift in Sources */,
 				DD6DFF28271C6B190073F63F /* AdministratorTableViewCell.swift in Sources */,
+				DD64DD3C2736702A001C7BB2 /* UpdateInstructorViewController copy 6.swift in Sources */,
 				DDB53C86272C4139009B69CF /* Exam.swift in Sources */,
 				DDB53C8F272C4859009B69CF /* Agreement.swift in Sources */,
 				DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */,
 				DD6DFF1D271C3D650073F63F /* SPAlertHaptic.swift in Sources */,
 				DD6DFF24271C51B30073F63F /* DriverLicense.swift in Sources */,
+				DD64DD3027367024001C7BB2 /* UpdateTeacherViewController copy 2.swift in Sources */,
 				DD9A0C86270718D40040C839 /* SaveButton.swift in Sources */,
+				DD64DD3F2736702C001C7BB2 /* UpdateAgreementViewController copy 7.swift in Sources */,
 				DD6DFF18271C3D650073F63F /* SPAlertIconHeartView.swift in Sources */,
 				DD9A0C7B270713E30040C839 /* DatabaseMainViewController.swift in Sources */,
+				DD64DD3627367026001C7BB2 /* UpdateCarViewController copy 4.swift in Sources */,
 				DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */,
 				DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */,
 				DD6DFF1A271C3D650073F63F /* SPAlertIconDoneView.swift in Sources */,
+				DD64DD3327367025001C7BB2 /* UpdateAdministratorViewController copy 3.swift in Sources */,
 				DD5B16E1270A4053007E5C38 /* InstructorsViewController.swift in Sources */,
 				DDCC6B4D2733E57700394561 /* DriverLicensesViewController.swift in Sources */,
 				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
@@ -626,6 +671,7 @@
 				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,
 				DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */,
 				DD54882127334927002ED3BA /* CreateDriverLicenseViewController.swift in Sources */,
+				DD64DD422736702D001C7BB2 /* UpdateStudentViewController copy 8.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

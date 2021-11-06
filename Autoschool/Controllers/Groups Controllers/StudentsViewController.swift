@@ -20,12 +20,12 @@ class StudentsViewController: UIViewController {
         super.viewDidLoad()
         title = "Группа \(group.name)"
         view.backgroundColor = UIColor.viewBackground
-
         
         studentsTableView.contentInsetAdjustmentBehavior = .never
         studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
-        configureNavigationItems()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openChangeStudentController))
+        
         configureTableView()
     }
     
@@ -45,15 +45,10 @@ class StudentsViewController: UIViewController {
         }
     }
     
-    private func configureNavigationItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(editButtonHandler))
+    @objc private func openChangeStudentController() {
+        
     }
-    
-    @objc private func editButtonHandler() {
-        let isEditing = studentsTableView.isEditing
-        studentsTableView.setEditing(!isEditing, animated: true)
-    }
-    
+
     private func configureTableView() {
         studentsTableView.delegate = self
         studentsTableView.dataSource = self
@@ -104,7 +99,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
-            
+            cell.accessoryType = .disclosureIndicator
             let student = students[indexPath.row]
             for instructor in instructors {
                 if student.instructorId == instructor.instructorId {
@@ -114,11 +109,6 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "CreateStudentViewController")
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

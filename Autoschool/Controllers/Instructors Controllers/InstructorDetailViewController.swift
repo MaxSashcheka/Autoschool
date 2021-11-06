@@ -12,6 +12,7 @@ class InstructorDetailViewController: UIViewController {
     var instructor: Instructor!
     var selectedDriverLicense: DriverLisence!
     var selectedCar: Car!
+    var students = [Student]()
     
     lazy var instructorTableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
@@ -19,9 +20,9 @@ class InstructorDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(CarTableViewCell.nib(), forCellReuseIdentifier: CarTableViewCell.reuseIdentifier)
         tableView.register(DriverLicenseTableViewCell.nib(), forCellReuseIdentifier: DriverLicenseTableViewCell.reuseIdentifier)
-        tableView.rowHeight = 85
+        tableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
+//        tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
         tableView.backgroundColor = .clear
-
         
         return tableView
     }()
@@ -31,6 +32,8 @@ class InstructorDetailViewController: UIViewController {
         view.addSubview(instructorTableView)
         title = "\(instructor.lastName) \(instructor.firstName)"
         view.backgroundColor = UIColor.viewBackground
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openChangeInstructorController))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,26 +56,53 @@ class InstructorDetailViewController: UIViewController {
             }
             self.instructorTableView.reloadData()
         }
+        NetworkManager.shared.fetchStudents { fetchedStudent in
+            var instructorRelatedStudents = [Student]()
+            for student in fetchedStudent {
+                if student.instructorId == self.instructor.instructorId {
+                    instructorRelatedStudents.append(student)
+                }
+            }
+            self.students = instructorRelatedStudents
+            self.instructorTableView.reloadData()
+        }
     }
     
+    @objc private func openChangeInstructorController() {
+        
+    }
 
 }
 
 extension InstructorDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 || section == 1 {
+            return 1
+        } else {
+            return students.count
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Водительское удостоверение"
-        } else {
+        } else if section == 1{
             return "Машина"
+        } else {
+            return "Ученики"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 2 {
+            return 100
+        } else {
+            return 83
         }
     }
     
@@ -83,11 +113,16 @@ extension InstructorDetailViewController: UITableViewDelegate, UITableViewDataSo
                 cell.setup(withDriverLicense: selectedDriverLicense)
             }
             return cell
-        } else {
+        } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier, for: indexPath) as! CarTableViewCell
             if let selectedCar = selectedCar {
                 cell.setup(withCar: selectedCar)
             }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.reuseIdentifier, for: indexPath) as! StudentTableViewCell
+            let student = students[indexPath.row]
+            cell.setup(withStudent: student, andInstructor: instructor)
             return cell
         }
     }

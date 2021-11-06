@@ -29,6 +29,7 @@ class DriverLicensesViewController: UIViewController {
         view.addSubview(driverLicensesTableView)
         title = "Удостоверения"
         view.backgroundColor = UIColor.viewBackground
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

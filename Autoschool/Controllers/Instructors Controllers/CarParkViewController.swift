@@ -28,6 +28,7 @@ class CarParkViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(carsTableView)
         title = "Автопарк"
+            
         view.backgroundColor = UIColor.viewBackground
     }
     
@@ -38,7 +39,6 @@ class CarParkViewController: UIViewController {
             self.carsTableView.reloadData()
         }
     }
-    
 
 }
 

@@ -62,8 +62,8 @@ class CreateStudentViewController: UIViewController {
         NetworkManager.shared.fetchInstructors { fetchedInstructors in
             self.instructors = fetchedInstructors
             self.instructorsTableView.reloadData()
-            self.instructorsTableViewHeight.constant = CGFloat(self.instructors.count) * self.instructorsTableView.rowHeight + 10
-            self.instructorsTableViewSuperViewHeight.constant = self.instructorsTableViewHeight.constant + 40
+            self.instructorsTableViewHeight.constant = CGFloat(self.instructors.count) * self.instructorsTableView.rowHeight + 25
+            self.instructorsTableViewSuperViewHeight.constant = self.instructorsTableViewHeight.constant + 25
         }
     }
     
@@ -161,10 +161,11 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
         let group = groups[indexPath.item]
         cell.setup(withGroup: group)
         
+        cell.layer.borderColor = UIColor.red.cgColor
         if indexPath.item == selectedGroupIndex {
-            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.70).cgColor
+            cell.layer.borderWidth = 1
         } else {
-            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.30).cgColor
+            cell.layer.borderWidth = 0
         }
         
         return cell
@@ -203,6 +204,10 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Выберите инструктора"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return instructors.count

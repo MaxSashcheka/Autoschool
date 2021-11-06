@@ -18,6 +18,7 @@ class GroupCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lessonsTimeLabel: UILabel!
+    @IBOutlet weak var teacherNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

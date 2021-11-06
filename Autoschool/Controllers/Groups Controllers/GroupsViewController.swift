@@ -11,13 +11,14 @@ class GroupsViewController: UIViewController {
     
     var groups = [Group]()
     
+    
     @IBOutlet weak var groupsCollectionView: UICollectionView!
-    let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 26, bottom: 23, right: 26)
+    let groupsCollectionViewInsets = UIEdgeInsets(top: 20, left: 25, bottom: 23, right: 25)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.viewBackground
-        
+    
         configureCollectionView()
         setupNavigation()
     }
@@ -29,6 +30,7 @@ class GroupsViewController: UIViewController {
             self.groupsCollectionView.reloadData()
         }
     }
+
     
     private func configureCollectionView() {
         groupsCollectionView.delegate = self
@@ -38,7 +40,6 @@ class GroupsViewController: UIViewController {
     }
 
     private func setupNavigation() {
-        
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Группы"
         let largeTitleAttributes = [
@@ -53,8 +54,9 @@ class GroupsViewController: UIViewController {
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
         navigationController?.navigationBar.tintColor = .lightGreenSea
     }
-    
 }
+
+
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 
