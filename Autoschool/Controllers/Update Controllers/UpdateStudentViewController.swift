@@ -12,7 +12,7 @@ class UpdateStudentViewController: UIViewController {
     var groups = [Group]()
     var instructors = [Instructor]()
     
-    var student: Student!
+    var selectedStudent: Student!
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -78,21 +78,21 @@ extension UpdateStudentViewController {
 private extension UpdateStudentViewController {
     
     func fillStudentInfo() {
-        firstNameTextField.text = student.firstName
-        lastNameTextField.text = student.lastName
-        middleNameTextField.text = student.middleName
-        passportNumberTextField.text = student.passportNumber
-        phoneNumberTextField.text = student.phoneNumber
+        firstNameTextField.text = selectedStudent.firstName
+        lastNameTextField.text = selectedStudent.lastName
+        middleNameTextField.text = selectedStudent.middleName
+        passportNumberTextField.text = selectedStudent.passportNumber
+        phoneNumberTextField.text = selectedStudent.phoneNumber
         
         
         for index in groups.indices {
-            if student.groupId == groups[index].groupId {
+            if selectedStudent.groupId == groups[index].groupId {
                 selectedGroupIndex = index
                 break
             }
         }        
         for index in instructors.indices {
-            if student.instructorId == instructors[index].instructorId {
+            if selectedStudent.instructorId == instructors[index].instructorId {
                 selectedInstructorIndex = index
                 break
             }
@@ -139,8 +139,8 @@ private extension UpdateStudentViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось добавить ученика в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        let successAlertView = SPAlertView(title: "Ученик успешно обновлен в базе данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось обновить ученика в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
             failureAlertView.present()
@@ -170,8 +170,8 @@ private extension UpdateStudentViewController {
         let selectedGroup = groups[selectedGroupIndex]
         let selectedInstructor = instructors[selectedInstructorIndex]
         
-        let student = Student(studentId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: selectedInstructor.instructorId, groupId: selectedGroup.groupId)
-        NetworkManager.shared.postStudent(student)
+        let student = Student(studentId: selectedStudent.studentId, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: selectedInstructor.instructorId, groupId: selectedGroup.groupId)
+        NetworkManager.shared.updateStudent(student)
         
         successAlertView.present()
     }

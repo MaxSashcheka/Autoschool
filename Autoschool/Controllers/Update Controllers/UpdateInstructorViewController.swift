@@ -27,7 +27,6 @@ class UpdateInstruсtorViewController: UIViewController {
     
     @IBOutlet weak var driverLicensesTableView: UITableView!
     var selectedDriverLicenseIndex = 0
-    
    
     @IBOutlet weak var carsTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var carsSuperViewHeight: NSLayoutConstraint!
@@ -180,8 +179,8 @@ private extension UpdateInstruсtorViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        let successAlertView = SPAlertView(title: "Инструктор успешно обновлен в базе данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось обновить инструктора в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
             failureAlertView.present()
@@ -216,8 +215,8 @@ private extension UpdateInstruсtorViewController {
         let selectedCarId = cars[selectedCarIndex].carId
         let selectedDriverLicenseId = driverLicenses[selectedDriverLicenseIndex].driverLicenseId
         
-        let instructor = Instructor(instructorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, drivingExperience: Int(drivingExperience) ?? 0, passportNumber: passportNumber, phoneNumber: phoneNumber, carId: selectedCarId, driverLicenseId: selectedDriverLicenseId)
-        NetworkManager.shared.postInstructor(instructor)
+        let instructor = Instructor(instructorId: selectedInstructor.instructorId, firstName: firstName, lastName: lastName, middleName: middleName, drivingExperience: Int(drivingExperience) ?? 0, passportNumber: passportNumber, phoneNumber: phoneNumber, carId: selectedCarId, driverLicenseId: selectedDriverLicenseId)
+        NetworkManager.shared.updateInstructor(instructor)
         
         successAlertView.present()
     }

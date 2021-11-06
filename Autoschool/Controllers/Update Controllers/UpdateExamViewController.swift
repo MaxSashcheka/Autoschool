@@ -160,8 +160,8 @@ private extension UpdateExamViewController {
     }
 
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Экзамен успешно добавлен в базу данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось добавить экзамен в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        let successAlertView = SPAlertView(title: "Экзамен успешно обновлен в базе данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось обновить экзамен в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let examDateString = examDateTextField.text, examDateString != "" else {
             failureAlertView.present()
@@ -183,8 +183,8 @@ private extension UpdateExamViewController {
                 selectedExamTypeId = 4
             }
         }
-        let exam = Exam(examId: 0, date: examDateString, examTypeId: selectedExamTypeId, examType: ExamType(), groupId: selectedGroupId)
-        NetworkManager.shared.postExam(exam)
+        let exam = Exam(examId: selectedExam.examId, date: examDateString, examTypeId: selectedExamTypeId, examType: ExamType(), groupId: selectedGroupId)
+        NetworkManager.shared.updateExam(exam)
         successAlertView.present()
 
     }

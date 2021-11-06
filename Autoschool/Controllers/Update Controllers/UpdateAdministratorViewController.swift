@@ -16,7 +16,7 @@ class UpdateAdministratorViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    var administrator: Administrator!
+    var selectedAdministrator: Administrator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +36,11 @@ class UpdateAdministratorViewController: UIViewController {
 private extension UpdateAdministratorViewController {
     
     func fillAdministratorInfo() {
-        firstNameTextField.text = administrator.firstName
-        lastNameTextField.text = administrator.lastName
-        middleNameTextField.text = administrator.middleName
-        phoneNumberTextField.text = administrator.phoneNumber
-        emailTextField.text = administrator.email
+        firstNameTextField.text = selectedAdministrator.firstName
+        lastNameTextField.text = selectedAdministrator.lastName
+        middleNameTextField.text = selectedAdministrator.middleName
+        phoneNumberTextField.text = selectedAdministrator.phoneNumber
+        emailTextField.text = selectedAdministrator.email
     }
 
     func setupTextFields() {
@@ -93,9 +93,9 @@ private extension UpdateAdministratorViewController {
             failureAlertView.present()
             return
         }
-        
-        let administrator = Administrator(administratorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email)
-        NetworkManager.shared.postAdministrator(administrator)
+    
+        let administrator = Administrator(administratorId: selectedAdministrator.administratorId, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email)
+        NetworkManager.shared.updateAdministrator(administrator)
         
         successAlertView.present()
     }

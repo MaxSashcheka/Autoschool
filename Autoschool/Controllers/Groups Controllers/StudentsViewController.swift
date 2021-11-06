@@ -144,7 +144,7 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
             let updateStudentVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateStudentViewController") as! UpdateStudentViewController
             
             let selectedStudent = students[indexPath.row]
-            updateStudentVC.student = selectedStudent
+            updateStudentVC.selectedStudent = selectedStudent
             
             self.navigationController?.pushViewController(updateStudentVC, animated: true)
         }
