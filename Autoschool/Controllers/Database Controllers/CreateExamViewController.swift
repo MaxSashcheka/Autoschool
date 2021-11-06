@@ -185,12 +185,16 @@ extension CreateExamViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension CreateExamViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension CreateExamViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

@@ -194,12 +194,16 @@ extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension CreateGroupViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension CreateGroupViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

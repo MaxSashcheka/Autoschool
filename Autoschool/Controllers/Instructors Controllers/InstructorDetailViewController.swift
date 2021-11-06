@@ -33,7 +33,7 @@ class InstructorDetailViewController: UIViewController {
         title = "\(instructor.lastName) \(instructor.firstName)"
         view.backgroundColor = UIColor.viewBackground
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openChangeInstructorController))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateInstructorController))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,8 +68,9 @@ class InstructorDetailViewController: UIViewController {
         }
     }
     
-    @objc private func openChangeInstructorController() {
-        
+    @objc private func openUpdateInstructorController() {
+        let updateGroupVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateInstructorViewController")
+        self.navigationController?.pushViewController(updateGroupVC, animated: true)
     }
 
 }

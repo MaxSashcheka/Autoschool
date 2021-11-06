@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 struct ViewControllerRepresentation {
     let tableViewName: String
     let identifier: String
@@ -17,15 +16,15 @@ struct ViewControllerRepresentation {
 class DatabaseMainViewController: UIViewController {
     
     let controllersRepresentationModel = [
-        0: ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateWorkerViewController", image: UIImage(systemName: "person")),
-        1: ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(systemName: "studentdesk")),
-        2: ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(systemName: "doc.text")),
-        3: ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person")),
-        4: ViewControllerRepresentation(tableViewName: "Добавить вод. удостоверение", identifier: "CreateDriverLicenseViewController", image: UIImage(systemName: "person.crop.rectangle")),
-        5: ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
-        6: ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
-        7: ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
-        8: ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
+        ViewControllerRepresentation(tableViewName: "Добавить администратора", identifier: "CreateAdministratorViewController", image: UIImage(systemName: "person")),
+        ViewControllerRepresentation(tableViewName: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(systemName: "studentdesk")),
+        ViewControllerRepresentation(tableViewName: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(systemName: "doc.text")),
+        ViewControllerRepresentation(tableViewName: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person")),
+        ViewControllerRepresentation(tableViewName: "Добавить вод. удостоверение", identifier: "CreateDriverLicenseViewController", image: UIImage(systemName: "person.crop.rectangle")),
+        ViewControllerRepresentation(tableViewName: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
+        ViewControllerRepresentation(tableViewName: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
+        ViewControllerRepresentation(tableViewName: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
+        ViewControllerRepresentation(tableViewName: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
     ]
     
     lazy var tableView: UITableView = {
@@ -71,16 +70,16 @@ class DatabaseMainViewController: UIViewController {
 
 extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return controllersRepresentationModel.count
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let controllerIdentifier = controllersRepresentationModel[indexPath.row]?.identifier ?? ""
+        let controllerIdentifier = controllersRepresentationModel[indexPath.row].identifier
         let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: controllerIdentifier)
 
         self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controllersRepresentationModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,8 +87,8 @@ extension DatabaseMainViewController: UITableViewDelegate, UITableViewDataSource
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         let vcRepresentator = controllersRepresentationModel[indexPath.row]
-        cell.textLabel?.text = vcRepresentator?.tableViewName
-        cell.imageView?.image = vcRepresentator?.image
+        cell.textLabel?.text = vcRepresentator.tableViewName
+        cell.imageView?.image = vcRepresentator.image
         cell.imageView?.tintColor = .lightGreenSea
         cell.imageView?.contentMode = .scaleAspectFit
 

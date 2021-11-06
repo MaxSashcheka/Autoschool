@@ -28,33 +28,14 @@ class CreateStudentViewController: UIViewController {
     @IBOutlet weak var instructorsTableViewHeight: NSLayoutConstraint!
     var selectedInstructorIndex = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Добавить ученика"
-        view.backgroundColor = UIColor.viewBackground
-        
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
-        middleNameTextField.delegate = self
-        passportNumberTextField.delegate = self
-        phoneNumberTextField.delegate = self
-        
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
-        
-        configureCollectionViews()
-        configureInstructorsTableView()
-        setupBarButtonItems()
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+}
+
+// MARK: - ViewController overrides
+extension CreateStudentViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchGroups { fetchedGroups in
             self.groups = fetchedGroups
             self.groupsCollectionView.reloadData()
@@ -67,51 +48,86 @@ class CreateStudentViewController: UIViewController {
         }
     }
     
-    private func configureCollectionViews() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Добавить ученика"
+        view.backgroundColor = UIColor.viewBackground
+        
+        setupCollectionViews()
+        setupInstructorsTableView()
+        setupTapGesture()
+        setupTextFields()
+        setupBarButtonItems()
+    }
+}
+
+// MARK: - Private interface
+
+private extension CreateStudentViewController {
+    
+    func setupCollectionViews() {
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
         groupsCollectionView.register(GroupCollectionViewCell.nib(), forCellWithReuseIdentifier: GroupCollectionViewCell.reuseIdentifier)
     }
     
-    private func configureInstructorsTableView() {
+    func setupInstructorsTableView() {
         instructorsTableView.delegate = self
         instructorsTableView.dataSource = self
         instructorsTableView.register(InstructorTableViewCell.nib(), forCellReuseIdentifier: InstructorTableViewCell.reuseIdentifier)
         instructorsTableView.rowHeight = 90
         instructorsTableView.isScrollEnabled = false
-        
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func setupBarButtonItems() {
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    
+    func setupTextFields() {
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        middleNameTextField.delegate = self
+        passportNumberTextField.delegate = self
+        phoneNumberTextField.delegate = self
+    }
+    
+    func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
-    @objc private func saveButtonHandler() {
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить ученика в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-        guard var firstName = firstNameTextField.text, firstName != "" else {
+        guard let firstName = firstNameTextField.text, firstName != "" else {
             failureAlertView.present()
             return
         }
 
-        guard var lastName = lastNameTextField.text, lastName != "" else {
+        guard let lastName = lastNameTextField.text, lastName != "" else {
             failureAlertView.present()
             return
         }
 
-        guard var middleName = middleNameTextField.text, middleName != "" else {
+        guard let middleName = middleNameTextField.text, middleName != "" else {
             failureAlertView.present()
             return
         }
 
-        guard var phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
             failureAlertView.present()
             return
         }
 
-        guard var passportNumber = passportNumberTextField.text, passportNumber != "" else {
+        guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
             failureAlertView.present()
             return
         }
@@ -128,19 +144,14 @@ class CreateStudentViewController: UIViewController {
     func format(with mask: String, phone: String) -> String {
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
-        var index = numbers.startIndex // numbers iterator
+        var index = numbers.startIndex
 
-        // iterate over the mask characters until the iterator of numbers ends
         for ch in mask where index < numbers.endIndex {
             if ch == "X" {
-                // mask requires a number in this place, so take the next one
                 result.append(numbers[index])
-
-                // move numbers iterator to the next index
                 index = numbers.index(after: index)
-
             } else {
-                result.append(ch) // just append a mask character
+                result.append(ch)
             }
         }
         return result
@@ -203,6 +214,8 @@ extension CreateStudentViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -236,6 +249,8 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
     
 }
 
+// MARK: - UITextFieldDelegate
+
 extension CreateStudentViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -251,6 +266,8 @@ extension CreateStudentViewController: UITextFieldDelegate {
        return true
     }
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension CreateStudentViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

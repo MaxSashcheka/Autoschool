@@ -65,6 +65,8 @@ class CreateCarViewController: UIViewController {
 
 }
 
+// MARK: - UITextFieldDelegate
+
 extension CreateCarViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

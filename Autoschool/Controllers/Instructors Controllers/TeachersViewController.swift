@@ -74,5 +74,10 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.endUpdates()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let updateTeacherVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateTeacherViewController")
+        self.navigationController?.pushViewController(updateTeacherVC, animated: true)
+    }
 
 }

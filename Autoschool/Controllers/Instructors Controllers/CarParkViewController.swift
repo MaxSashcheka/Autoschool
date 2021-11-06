@@ -76,4 +76,9 @@ extension CarParkViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let updateCarVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateCarViewController")
+        self.navigationController?.pushViewController(updateCarVC, animated: true)
+    }
+    
 }

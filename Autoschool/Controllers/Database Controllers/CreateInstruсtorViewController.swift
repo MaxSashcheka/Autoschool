@@ -32,34 +32,15 @@ class CreateInstruсtorViewController: UIViewController {
     @IBOutlet weak var driverLicenseTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var driverLicenseSuperViewHeight: NSLayoutConstraint!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Добавить инструктора"
-        view.backgroundColor = UIColor.viewBackground
-        
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
-        middleNameTextField.delegate = self
-        drivingExperienceTextField.delegate = self
-        passportNumberTextField.delegate = self
-        phoneNumberTextField.delegate = self
+}
 
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
-        
-        setupBarButtonItems()
-        configureCarsTableView()
-        configureDriverLicenseTableView()
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+// MARK: - ViewController overrides
+
+extension CreateInstruсtorViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NetworkManager.shared.fetchInstructors { fetchedInstructors in
             self.instructors = fetchedInstructors
         }
@@ -103,35 +84,68 @@ class CreateInstruсtorViewController: UIViewController {
             self.driverLicenseTableViewHeight.constant = CGFloat(self.driverLicenses.count) * self.driverLicensesTableView.rowHeight + 10
             self.driverLicenseSuperViewHeight.constant = self.driverLicenseTableViewHeight.constant + 30
         }
-        
-        
     }
     
-    private func configureCarsTableView() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Добавить инструктора"
+        view.backgroundColor = UIColor.viewBackground
+        
+        setupCarsTableView()
+        setupDriverLicenseTableView()
+        setupTextFields()
+        setupTapGesture()
+        setupBarButtonItems()
+
+    }
+}
+
+// MARK: - Private interface
+private extension CreateInstruсtorViewController {
+    
+    func setupCarsTableView() {
         carsTableView.delegate = self
         carsTableView.dataSource = self
         carsTableView.register(CarTableViewCell.nib(), forCellReuseIdentifier: CarTableViewCell.reuseIdentifier)
         carsTableView.rowHeight = 80
         carsTableView.isScrollEnabled = false
-
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func configureDriverLicenseTableView() {
+    func setupDriverLicenseTableView() {
         driverLicensesTableView.delegate = self
         driverLicensesTableView.dataSource = self
         driverLicensesTableView.register(DriverLicenseTableViewCell.nib(), forCellReuseIdentifier: DriverLicenseTableViewCell.reuseIdentifier)
         driverLicensesTableView.rowHeight = 80
         driverLicensesTableView.isScrollEnabled = false
-
         driverLicensesTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
     }
     
-    private func setupBarButtonItems() {
+    func setupTextFields() {
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        middleNameTextField.delegate = self
+        drivingExperienceTextField.delegate = self
+        passportNumberTextField.delegate = self
+        phoneNumberTextField.delegate = self
+    }
+    
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    
+    func setupBarButtonItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
     }
     
-    @objc private func saveButtonHandler() {
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func saveButtonHandler() {
         let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
@@ -160,11 +174,11 @@ class CreateInstruсtorViewController: UIViewController {
             return
         }
         
-        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+        guard var phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
             failureAlertView.present()
             return
         }
-        
+
         let selectedCarId = cars[selectedCarIndex].carId
         let selectedDriverLicenseId = driverLicenses[selectedDriverLicenseIndex].driverLicenseId
         
@@ -177,25 +191,21 @@ class CreateInstruсtorViewController: UIViewController {
     func format(with mask: String, phone: String) -> String {
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
-        var index = numbers.startIndex // numbers iterator
+        var index = numbers.startIndex
 
-        // iterate over the mask characters until the iterator of numbers ends
         for ch in mask where index < numbers.endIndex {
             if ch == "X" {
-                // mask requires a number in this place, so take the next one
                 result.append(numbers[index])
-
-                // move numbers iterator to the next index
                 index = numbers.index(after: index)
-
             } else {
-                result.append(ch) // just append a mask character
+                result.append(ch)
             }
         }
         return result
     }
-
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -250,6 +260,8 @@ extension CreateInstruсtorViewController: UITableViewDelegate, UITableViewDataS
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension CreateInstruсtorViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -259,12 +271,14 @@ extension CreateInstruсtorViewController: UITextFieldDelegate {
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true
     }
 }
+
+// MARK: - UIGestureRecognizerDelegate
 
 extension CreateInstruсtorViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

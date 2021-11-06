@@ -92,6 +92,143 @@
             </objects>
             <point key="canvasLocation" x="221.73913043478262" y="126.5625"/>
         </scene>
+        <!--Update Exam View Controller-->
+        <scene sceneID="ORb-Mi-QfQ">
+            <objects>
+                <viewController storyboardIdentifier="UpdateExamViewController" id="UhC-O8-69a" customClass="UpdateExamViewController" customModule="Autoschool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YeH-Sy-6py">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8O-kr-2D9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NLY-cH-2Cq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="455"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQa-v8-EPP">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите дату экзамна" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r88-CC-OBn">
+                                                        <rect key="frame" x="20" y="15" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дата экзамена" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dy1-Z4-5za">
+                                                        <rect key="frame" x="20" y="40.5" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите тип экзамена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afq-I1-YV0">
+                                                        <rect key="frame" x="20" y="84.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7NW-1a-Exc">
+                                                        <rect key="frame" x="20" y="110" width="374" height="32"/>
+                                                        <segments>
+                                                            <segment title="Внутренний"/>
+                                                            <segment title="Гаи"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rRb-8o-eUy">
+                                                        <rect key="frame" x="20" y="148" width="374" height="32"/>
+                                                        <segments>
+                                                            <segment title="Теория"/>
+                                                            <segment title="Практика"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="r88-CC-OBn" firstAttribute="leading" secondItem="SQa-v8-EPP" secondAttribute="leading" constant="20" id="0bD-ke-0cp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7NW-1a-Exc" secondAttribute="trailing" constant="20" id="0vN-UV-VBk"/>
+                                                    <constraint firstAttribute="height" constant="200" id="5aJ-wA-81b"/>
+                                                    <constraint firstItem="afq-I1-YV0" firstAttribute="top" secondItem="Dy1-Z4-5za" secondAttribute="bottom" constant="10" id="7yT-hy-C11"/>
+                                                    <constraint firstItem="7NW-1a-Exc" firstAttribute="leading" secondItem="SQa-v8-EPP" secondAttribute="leading" constant="20" id="A7L-lO-noQ"/>
+                                                    <constraint firstItem="r88-CC-OBn" firstAttribute="top" secondItem="SQa-v8-EPP" secondAttribute="top" constant="15" id="AWF-vB-onm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="afq-I1-YV0" secondAttribute="trailing" constant="20" id="GJA-y7-KeN"/>
+                                                    <constraint firstItem="rRb-8o-eUy" firstAttribute="top" secondItem="7NW-1a-Exc" secondAttribute="bottom" constant="7" id="RLK-Pk-FHD"/>
+                                                    <constraint firstItem="rRb-8o-eUy" firstAttribute="leading" secondItem="SQa-v8-EPP" secondAttribute="leading" constant="20" id="TEx-dN-zMh"/>
+                                                    <constraint firstItem="Dy1-Z4-5za" firstAttribute="leading" secondItem="SQa-v8-EPP" secondAttribute="leading" constant="20" id="Tbo-7A-DSr"/>
+                                                    <constraint firstItem="7NW-1a-Exc" firstAttribute="top" secondItem="afq-I1-YV0" secondAttribute="bottom" constant="5" id="ftj-RR-shK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rRb-8o-eUy" secondAttribute="trailing" constant="20" id="pab-Os-tEz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="r88-CC-OBn" secondAttribute="trailing" constant="20" id="qVA-az-HNz"/>
+                                                    <constraint firstItem="afq-I1-YV0" firstAttribute="leading" secondItem="SQa-v8-EPP" secondAttribute="leading" constant="20" id="qY6-NJ-GLn"/>
+                                                    <constraint firstItem="Dy1-Z4-5za" firstAttribute="top" secondItem="r88-CC-OBn" secondAttribute="bottom" constant="5" id="qwC-fD-Cot"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Dy1-Z4-5za" secondAttribute="trailing" constant="20" id="sP3-Ae-DsR"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoR-fe-gyn">
+                                                <rect key="frame" x="0.0" y="200" width="414" height="255"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ndc-6V-per">
+                                                        <rect key="frame" x="0.0" y="25.5" width="414" height="210"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="210" id="iIf-oM-1ll"/>
+                                                        </constraints>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MQT-58-i7E">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells/>
+                                                    </collectionView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите группу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ct-pz-uj3">
+                                                        <rect key="frame" x="20" y="0.0" width="138.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="6Ct-pz-uj3" firstAttribute="leading" secondItem="zoR-fe-gyn" secondAttribute="leading" constant="20" id="7ae-vC-4P0"/>
+                                                    <constraint firstItem="Ndc-6V-per" firstAttribute="leading" secondItem="zoR-fe-gyn" secondAttribute="leading" id="IQh-0Q-vXR"/>
+                                                    <constraint firstItem="Ndc-6V-per" firstAttribute="top" secondItem="6Ct-pz-uj3" secondAttribute="bottom" constant="5" id="K8y-bO-Xw1"/>
+                                                    <constraint firstAttribute="height" constant="255" id="OFJ-1O-Yqo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ndc-6V-per" secondAttribute="trailing" id="PQR-KC-vB8"/>
+                                                    <constraint firstItem="6Ct-pz-uj3" firstAttribute="top" secondItem="zoR-fe-gyn" secondAttribute="top" id="UzW-o9-Sc1"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NLY-cH-2Cq" firstAttribute="top" secondItem="wi0-5Y-be8" secondAttribute="top" id="Gi9-8q-jbg"/>
+                                    <constraint firstItem="NLY-cH-2Cq" firstAttribute="bottom" secondItem="wi0-5Y-be8" secondAttribute="bottom" id="HtR-7X-gx3"/>
+                                    <constraint firstItem="NLY-cH-2Cq" firstAttribute="width" secondItem="olU-qw-2xP" secondAttribute="width" id="fjH-ku-pau"/>
+                                    <constraint firstItem="NLY-cH-2Cq" firstAttribute="trailing" secondItem="wi0-5Y-be8" secondAttribute="trailing" id="n1J-Zr-zUL"/>
+                                    <constraint firstItem="NLY-cH-2Cq" firstAttribute="leading" secondItem="wi0-5Y-be8" secondAttribute="leading" id="ohv-FS-4UZ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="wi0-5Y-be8"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="olU-qw-2xP"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m5k-xj-x8s"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="B8O-kr-2D9" secondAttribute="bottom" id="TWI-0n-LW4"/>
+                            <constraint firstItem="B8O-kr-2D9" firstAttribute="trailing" secondItem="m5k-xj-x8s" secondAttribute="trailing" id="gJO-g5-qmn"/>
+                            <constraint firstItem="B8O-kr-2D9" firstAttribute="leading" secondItem="m5k-xj-x8s" secondAttribute="leading" id="maW-VB-je0"/>
+                            <constraint firstItem="B8O-kr-2D9" firstAttribute="top" secondItem="YeH-Sy-6py" secondAttribute="top" id="nvg-iJ-guE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="examDateTextField" destination="Dy1-Z4-5za" id="FWZ-mS-tjk"/>
+                        <outlet property="examInternalExternalSegmentedControl" destination="7NW-1a-Exc" id="rQM-bH-bCs"/>
+                        <outlet property="examTheoryPracticeSegmentedControl" destination="rRb-8o-eUy" id="aqr-Pb-kIw"/>
+                        <outlet property="groupsCollectionView" destination="Ndc-6V-per" id="gW3-53-T4u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeL-Rs-qxE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025" y="127"/>
+        </scene>
     </scenes>
     <resources>
         <image name="graduationcap" catalog="system" width="128" height="106"/>

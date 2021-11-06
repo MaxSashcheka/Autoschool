@@ -30,7 +30,9 @@ class InstructorTableViewCell: UITableViewCell {
         fullNameLabel.text = "\(instructor.fullName)"
         drivingExperienceLabel.text = "Опыт вождения: \(instructor.drivingExperience) \(instructor.drivingExperience > 4 ? "лет" : "года")"
         passportNumberLabel.text = "Номер паспорта: \(instructor.passportNumber)"
-        phoneNumberLabel.text = "Моб.телефон: \(instructor.phoneNumber)"
+        var phoneNumber = instructor.phoneNumber
+        phoneNumber.replaceSubrange(...phoneNumber.startIndex, with: "+")
+        phoneNumberLabel.text = "Моб.телефон: \(phoneNumber)"
     }
     
 }

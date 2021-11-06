@@ -148,12 +148,9 @@ extension ExamsViewController: UICollectionViewDelegateFlowLayout {
         return examsCollectionViewInsets.bottom
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let viewController = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "StudentsViewController") as! StudentsViewController
-//        let selectedExam = exams[indexPath.item]
-//        viewController.group = selectedGroup
-//
-//        self.navigationController?.pushViewController(viewController, animated: true)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let updateExamVC = UIStoryboard(name: "Exams", bundle: nil).instantiateViewController(identifier: "UpdateExamViewController")
+        self.navigationController?.pushViewController(updateExamVC, animated: true)
+    }
 }
 

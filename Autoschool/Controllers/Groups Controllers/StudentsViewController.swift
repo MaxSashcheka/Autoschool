@@ -24,7 +24,7 @@ class StudentsViewController: UIViewController {
         studentsTableView.contentInsetAdjustmentBehavior = .never
         studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openChangeStudentController))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(openUpdateGroup))
         
         configureTableView()
     }
@@ -45,8 +45,9 @@ class StudentsViewController: UIViewController {
         }
     }
     
-    @objc private func openChangeStudentController() {
-        
+    @objc private func openUpdateGroup() {
+        let updateGroupVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateGroupViewController")
+        self.navigationController?.pushViewController(updateGroupVC, animated: true)
     }
 
     private func configureTableView() {
@@ -128,6 +129,14 @@ extension StudentsViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             tableView.endUpdates()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1 {
+            let updateStudentVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateStudentViewController")
+            self.navigationController?.pushViewController(updateStudentVC, animated: true)
         }
     }
     

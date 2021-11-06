@@ -93,6 +93,8 @@ class CreateDriverLicenseViewController: UIViewController {
 
 }
 
+// MARK: - UITextFieldDelegate
+
 extension CreateDriverLicenseViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
