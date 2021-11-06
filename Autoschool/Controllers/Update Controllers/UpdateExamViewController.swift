@@ -204,11 +204,10 @@ extension UpdateExamViewController: UICollectionViewDelegate, UICollectionViewDa
         let group = groups[indexPath.item]
         cell.setup(withGroup: group)
         
-        cell.layer.borderColor = UIColor.red.cgColor
         if indexPath.item == selectedGroupIndex {
-            cell.layer.borderWidth = 1
+            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.6).cgColor
         } else {
-            cell.layer.borderWidth = 0
+            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
         }
         
         return cell

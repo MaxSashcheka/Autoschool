@@ -16,7 +16,7 @@ class DatabaseCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.tintColor = .lightGreenSea
+        imageView.tintColor = .black
         backgroundColor = .white
         
         layer.masksToBounds = false

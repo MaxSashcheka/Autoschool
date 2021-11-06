@@ -194,8 +194,8 @@ private extension UpdateGroupViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Группа успешно добавлена в базу данных", preset: .done)
-        let failureAlertView = SPAlertView(title: "Не удалось добавить группу в базу данных", message: "Вы заполнили не все поля", preset: .error)
+        let successAlertView = SPAlertView(title: "Группа успешно обновлена в базе данных", preset: .done)
+        let failureAlertView = SPAlertView(title: "Не удалось обновить группу", message: "Вы заполнили не все поля", preset: .error)
         
         guard let groupName = groupNameTextField.text, groupName != "" else {
             failureAlertView.present()
@@ -216,8 +216,8 @@ private extension UpdateGroupViewController {
         let selectedlessonsTimeId = lessonsTimeSegmentedControl.selectedSegmentIndex + 1
         let selectedTeacherId = teachers[selectedTeacherIndex].teacherId
         
-        let groupToPost = Group(groupId: 0, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
-        NetworkManager.shared.postGroup(groupToPost)
+        let groupToPost = Group(groupId: selectedGroup.groupId, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
+        NetworkManager.shared.updateGroup(groupToPost)
         
         
         successAlertView.present()

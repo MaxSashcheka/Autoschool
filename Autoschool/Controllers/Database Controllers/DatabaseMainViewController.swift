@@ -16,20 +16,20 @@ struct ViewControllerRepresentation {
 class DatabaseMainViewController: UIViewController {
     
     let controllersRepresentationModel = [
-        ViewControllerRepresentation(name: "Добавить администратора", identifier: "CreateAdministratorViewController", image: UIImage(systemName: "person")),
-        ViewControllerRepresentation(name: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(systemName: "studentdesk")),
-        ViewControllerRepresentation(name: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(systemName: "doc.text")),
-        ViewControllerRepresentation(name: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(systemName: "person")),
-        ViewControllerRepresentation(name: "Добавить водительское удостоверение", identifier: "CreateDriverLicenseViewController", image: UIImage(systemName: "person.crop.rectangle")),
-        ViewControllerRepresentation(name: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(systemName: "car")),
-        ViewControllerRepresentation(name: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(systemName: "person.3")),
-        ViewControllerRepresentation(name: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(systemName: "person")),
-        ViewControllerRepresentation(name: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(systemName: "graduationcap")),
+        ViewControllerRepresentation(name: "Добавить администратора", identifier: "CreateAdministratorViewController", image: UIImage(named: "administrator")),
+        ViewControllerRepresentation(name: "Добавить ученика", identifier: "CreateStudentViewController", image: UIImage(named: "student")),
+        ViewControllerRepresentation(name: "Добавить договор", identifier: "CreateAgreementViewController", image: UIImage(named: "contract")),
+        ViewControllerRepresentation(name: "Добавить инструктора", identifier: "CreateInstruсtorViewController", image: UIImage(named: "instructor")),
+        ViewControllerRepresentation(name: "Добавить водительское удостоверение", identifier: "CreateDriverLicenseViewController", image: UIImage(named: "driverLicense")),
+        ViewControllerRepresentation(name: "Добавить машину", identifier: "CreateCarViewController", image: UIImage(named: "car")),
+        ViewControllerRepresentation(name: "Добавить группу", identifier: "CreateGroupViewController", image: UIImage(named: "group")),
+        ViewControllerRepresentation(name: "Добавить преподователя теории", identifier: "CreateTeacherViewController", image: UIImage(named: "teacher")),
+        ViewControllerRepresentation(name: "Добавить экзамен", identifier: "CreateExamViewController", image: UIImage(named: "exam")),
     ]
     
     
     @IBOutlet weak var databaseCollectionView: UICollectionView!
-    let databaseCollectionViewInsets = UIEdgeInsets(top: 23, left: 20, bottom: 17, right: 20)
+    let databaseCollectionViewInsets = UIEdgeInsets(top: 23, left: 15, bottom: 17, right: 15)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +90,7 @@ extension DatabaseMainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = collectionView.frame.width - databaseCollectionViewInsets.left * 2
-        let itemHeight = CGFloat(70)
+        let itemHeight = CGFloat(90)
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
@@ -103,7 +103,8 @@ extension DatabaseMainViewController: UICollectionViewDelegateFlowLayout {
         return databaseCollectionViewInsets.bottom
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
         let controllerIdentifier = controllersRepresentationModel[indexPath.row].identifier
         let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: controllerIdentifier)
 
