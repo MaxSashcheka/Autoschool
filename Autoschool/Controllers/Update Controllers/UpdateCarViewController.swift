@@ -9,9 +9,11 @@ import UIKit
 
 class UpdateCarViewController: UIViewController {
     
-    @IBOutlet weak var carNumberTextField: UITextField!
-    @IBOutlet weak var carNameTextField: UITextField!
-    @IBOutlet weak var carColorTextField: UITextField!
+    var selectedCar: Car!
+    
+    @IBOutlet weak var numberTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var colorTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,9 @@ class UpdateCarViewController: UIViewController {
 private extension UpdateCarViewController {
     
     func fillCarInfo() {
-        
+        numberTextField.text = selectedCar.number
+        nameTextField.text = selectedCar.name
+        colorTextField.text = selectedCar.color
     }
     
     func setupTapGesture() {
@@ -42,9 +46,9 @@ private extension UpdateCarViewController {
     }
     
     func setupTextFields() {
-        carNumberTextField.delegate = self
-        carNameTextField.delegate = self
-        carColorTextField.delegate = self
+        numberTextField.delegate = self
+        nameTextField.delegate = self
+        colorTextField.delegate = self
     }
     
     func setupBarButtonItems() {
@@ -59,17 +63,17 @@ private extension UpdateCarViewController {
         let successAlertView = SPAlertView(title: "Машина успешно добавлена в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить машину в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-        guard let number = carNumberTextField.text, number != "" else {
+        guard let number = numberTextField.text, number != "" else {
             failureAlertView.present()
             return
         }
         
-        guard let name = carNameTextField.text, name != "" else {
+        guard let name = nameTextField.text, name != "" else {
             failureAlertView.present()
             return
         }
         
-        guard let color = carColorTextField.text, color != "" else {
+        guard let color = colorTextField.text, color != "" else {
             failureAlertView.present()
             return
         }

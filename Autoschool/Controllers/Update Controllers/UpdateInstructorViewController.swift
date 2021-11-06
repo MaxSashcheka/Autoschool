@@ -12,6 +12,8 @@ class UpdateInstruсtorViewController: UIViewController {
     var cars = [Car]()
     var driverLicenses = [DriverLisence]()
     var instructors = [Instructor]()
+    
+    var selectedInstructor: Instructor!
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -50,7 +52,7 @@ extension UpdateInstruсtorViewController {
             for car in fetchedCars {
                 var isNonRepeated = true
                 for instructor in self.instructors {
-                    if instructor.carId == car.carId {
+                    if instructor.carId == car.carId, instructor.instructorId != self.selectedInstructor.instructorId {
                         isNonRepeated = false
                         break
                     }
@@ -61,16 +63,19 @@ extension UpdateInstruсtorViewController {
             }
             self.cars = carsWithoutOwner
             
-            self.carsTableView.reloadData()
             self.carsTableViewHeight.constant = CGFloat(self.cars.count) * self.carsTableView.rowHeight + 10
             self.carsSuperViewHeight.constant = self.carsTableViewHeight.constant + 30
+            
+            self.fillInstructorInfo()
+            self.carsTableView.reloadData()
+            
         }
         NetworkManager.shared.fetchDriverLicenses { fetchedDriverLicenses in
             var driverLicensesWithoutOwner = [DriverLisence]()
             for driverLicense in fetchedDriverLicenses {
                 var isNonRepeated = true
                 for instructor in self.instructors {
-                    if instructor.driverLicenseId == driverLicense.driverLicenseId {
+                    if instructor.driverLicenseId == driverLicense.driverLicenseId, instructor.instructorId != self.selectedInstructor.instructorId {
                         isNonRepeated = false
                         break
                     }
@@ -81,9 +86,12 @@ extension UpdateInstruсtorViewController {
             }
             self.driverLicenses = driverLicensesWithoutOwner
             
-            self.driverLicensesTableView.reloadData()
             self.driverLicenseTableViewHeight.constant = CGFloat(self.driverLicenses.count) * self.driverLicensesTableView.rowHeight + 10
             self.driverLicenseSuperViewHeight.constant = self.driverLicenseTableViewHeight.constant + 30
+            
+            self.fillInstructorInfo()
+            self.driverLicensesTableView.reloadData()
+            
         }
     }
     
@@ -108,7 +116,25 @@ extension UpdateInstruсtorViewController {
 private extension UpdateInstruсtorViewController {
     
     func fillInstructorInfo() {
+        firstNameTextField.text = selectedInstructor.firstName
+        lastNameTextField.text = selectedInstructor.lastName
+        middleNameTextField.text = selectedInstructor.middleName
+        drivingExperienceTextField.text = String(selectedInstructor.drivingExperience)
+        passportNumberTextField.text = selectedInstructor.passportNumber
+        phoneNumberTextField.text = selectedInstructor.phoneNumber
         
+        for index in cars.indices {
+            if selectedInstructor.carId == cars[index].carId {
+                selectedCarIndex = index
+                break
+            }
+        }
+        for index in driverLicenses.indices {
+            if selectedInstructor.driverLicenseId == driverLicenses[index].driverLicenseId {
+                selectedDriverLicenseIndex = index
+                break
+            }
+        }
     }
     
     func setupCarsTableView() {

@@ -8,6 +8,8 @@
 import UIKit
 
 class UpdateTeacherViewController: UIViewController {
+    
+    var selectedTeacher: Teacher!
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -35,7 +37,11 @@ class UpdateTeacherViewController: UIViewController {
 extension UpdateTeacherViewController {
     
     func fillTeacherInfo() {
-        
+        firstNameTextField.text = selectedTeacher.firstName
+        lastNameTextField.text = selectedTeacher.lastName
+        middleNameTextField.text = selectedTeacher.middleName
+        passportNumberTextField.text = selectedTeacher.passportNumber
+        phoneNumberTextField.text = selectedTeacher.phoneNumber
     }
     
     func setupTextFields() {

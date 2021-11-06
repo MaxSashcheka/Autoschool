@@ -10,13 +10,15 @@ import UIKit
 class UpdateGroupViewController: UIViewController {
     
     var teachers = [Teacher]()
+    
+    var selectedGroup: Group!
 
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
     
     @IBOutlet weak var drivingCategorySegmentedControl: UISegmentedControl!
-    @IBOutlet weak var classesTimeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var lessonsTimeSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var teachersTableView: UITableView!
     @IBOutlet weak var teachersTableViewHeight: NSLayoutConstraint!
@@ -50,10 +52,11 @@ extension UpdateGroupViewController {
         
         NetworkManager.shared.fetchTeacher { fetchedTeachers in
             self.teachers = fetchedTeachers
-            self.teachersTableView.reloadData()
             self.teachersTableViewHeight.constant = CGFloat(self.teachers.count) * self.teachersTableView.rowHeight + 10
             self.teachersSuperViewHeight.constant = self.teachersTableViewHeight.constant + 20
-
+            self.fillGroupInfo()
+            self.teachersTableView.reloadData()
+            
         }
     }
     
@@ -78,6 +81,41 @@ extension UpdateGroupViewController {
 private extension UpdateGroupViewController {
     
     func fillGroupInfo() {
+        groupNameTextField.text = selectedGroup.name
+        switch selectedGroup.categoryId {
+        case 1: drivingCategorySegmentedControl.selectedSegmentIndex = 0
+        case 2: drivingCategorySegmentedControl.selectedSegmentIndex = 1
+        case 3: drivingCategorySegmentedControl.selectedSegmentIndex = 2
+        default: print("Error")
+        }
+        
+        switch selectedGroup.lessonsTimeId {
+        case 1: lessonsTimeSegmentedControl.selectedSegmentIndex = 0
+        case 2: lessonsTimeSegmentedControl.selectedSegmentIndex = 1
+        case 3: lessonsTimeSegmentedControl.selectedSegmentIndex = 2
+        default: print("Error")
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let endOfDate = String.Index(encodedOffset: 9)
+        
+        let lessonsStartStringDate = String(selectedGroup.lessonsStartDate[...endOfDate])
+        let lessonsStartDate = dateFormatter.date(from: lessonsStartStringDate)!
+        startLessonsDatePicker.date = lessonsStartDate
+        startDateTextField.text = dateFormatter.string(from: lessonsStartDate)
+        
+        let lessonsEndStringDate = String(selectedGroup.lessonsEndDate[...endOfDate])
+        let lessonsEndDate = dateFormatter.date(from: lessonsEndStringDate)!
+        endLessonsDatePicker.date = lessonsEndDate
+        endDateTextField.text = dateFormatter.string(from: lessonsEndDate)
+        
+        for index in teachers.indices {
+            if selectedGroup.teacherId == teachers[index].teacherId {
+                selectedTeacherIndex = index
+                break
+            }
+        }
         
     }
     
@@ -95,9 +133,9 @@ private extension UpdateGroupViewController {
         drivingCategorySegmentedControl.layer.borderWidth = 1
         drivingCategorySegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
         
-        classesTimeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
-        classesTimeSegmentedControl.layer.borderWidth = 1
-        classesTimeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
+        lessonsTimeSegmentedControl.selectedSegmentTintColor = .lightGreenSea
+        lessonsTimeSegmentedControl.layer.borderWidth = 1
+        lessonsTimeSegmentedControl.layer.borderColor = UIColor.darkGray.cgColor
     }
     
     func setupTextFields() {
@@ -175,7 +213,7 @@ private extension UpdateGroupViewController {
         }
         
         let selectedCategoryId = drivingCategorySegmentedControl.selectedSegmentIndex + 1
-        let selectedlessonsTimeId = classesTimeSegmentedControl.selectedSegmentIndex + 1
+        let selectedlessonsTimeId = lessonsTimeSegmentedControl.selectedSegmentIndex + 1
         let selectedTeacherId = teachers[selectedTeacherIndex].teacherId
         
         let groupToPost = Group(groupId: 0, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)

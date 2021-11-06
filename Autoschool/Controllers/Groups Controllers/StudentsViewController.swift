@@ -60,7 +60,8 @@ class StudentsViewController: UIViewController {
     }
     
     @objc private func openUpdateGroup() {
-        let updateGroupVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateGroupViewController")
+        let updateGroupVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(identifier: "UpdateGroupViewController") as! UpdateGroupViewController
+        updateGroupVC.selectedGroup = group
         self.navigationController?.pushViewController(updateGroupVC, animated: true)
     }
 }

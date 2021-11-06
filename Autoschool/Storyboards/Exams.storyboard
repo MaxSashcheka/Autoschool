@@ -137,7 +137,7 @@
                                                         <rect key="frame" x="20" y="148" width="374" height="32"/>
                                                         <segments>
                                                             <segment title="Теория"/>
-                                                            <segment title="Практика"/>
+                                                            <segment title="Вождение"/>
                                                         </segments>
                                                     </segmentedControl>
                                                 </subviews>

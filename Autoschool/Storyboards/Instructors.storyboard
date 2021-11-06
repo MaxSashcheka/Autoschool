@@ -347,9 +347,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="carColorTextField" destination="ojk-wD-4ZS" id="PMB-Vb-9TX"/>
-                        <outlet property="carNameTextField" destination="bJQ-jW-UXY" id="xn0-mQ-tr0"/>
-                        <outlet property="carNumberTextField" destination="YTY-ST-8bd" id="BBm-Xt-zAR"/>
+                        <outlet property="colorTextField" destination="ojk-wD-4ZS" id="PMB-Vb-9TX"/>
+                        <outlet property="nameTextField" destination="bJQ-jW-UXY" id="xn0-mQ-tr0"/>
+                        <outlet property="numberTextField" destination="YTY-ST-8bd" id="BBm-Xt-zAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bG-22-QZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

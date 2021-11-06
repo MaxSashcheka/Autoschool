@@ -11,6 +11,8 @@ class UpdateExamViewController: UIViewController {
     
     var groups = [Group]()
     var teachers = [Teacher]()
+    
+    var selectedExam: Exam!
 
     @IBOutlet weak var examDateTextField: UITextField!
     
@@ -40,10 +42,8 @@ extension UpdateExamViewController {
         
         NetworkManager.shared.fetchGroups { fetchedGroups in
             self.groups = fetchedGroups
-            self.groupsCollectionView.reloadData()
-        }
-        NetworkManager.shared.fetchTeacher { fetchedTeachers in
-            self.teachers = fetchedTeachers
+            self.fillExamInfo()
+
             self.groupsCollectionView.reloadData()
         }
     }
@@ -54,12 +54,17 @@ extension UpdateExamViewController {
         title = "Изменить экзамен"
         view.backgroundColor = UIColor.viewBackground
 
-        fillExamInfo()
         setupGroupsCollectionView()
         setupSegmentedControls()
         setupTextFields()
         setupTapGesture()
         setupBarButtonItems()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        groupsCollectionView.scrollToItem(at: IndexPath(item: selectedGroupIndex, section: 0), at: [.centeredVertically, .centeredHorizontally], animated: false)
+//        groupsCollectionView.contentOffset = .init(x: CGFloat(selectedGroupIndex) * groupsCollectionView.frame.width * 0.8, y: 0)
     }
     
 }
@@ -69,7 +74,38 @@ extension UpdateExamViewController {
 private extension UpdateExamViewController {
     
     func fillExamInfo() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        let endOfDate = String.Index(encodedOffset: 9)
+        let stringDate = String(selectedExam.date[...endOfDate])
+        let date = dateFormatter.date(from: stringDate)!
+        examDatePicker.date = date
+        examDateTextField.text = dateFormatter.string(from: date)
         
+        for index in groups.indices {
+            if selectedExam.groupId == groups[index].groupId {
+                selectedGroupIndex = index
+                break
+            }
+        }
+        
+        switch selectedExam.examTypeId {
+        case 1:
+            examInternalExternalSegmentedControl.selectedSegmentIndex = 0
+            examTheoryPracticeSegmentedControl.selectedSegmentIndex = 0
+        case 2:
+            examInternalExternalSegmentedControl.selectedSegmentIndex = 0
+            examTheoryPracticeSegmentedControl.selectedSegmentIndex = 1
+        case 3:
+            examInternalExternalSegmentedControl.selectedSegmentIndex = 1
+            examTheoryPracticeSegmentedControl.selectedSegmentIndex = 0
+        case 4:
+            examInternalExternalSegmentedControl.selectedSegmentIndex = 1
+            examTheoryPracticeSegmentedControl.selectedSegmentIndex = 1
+        default:
+            print("Error")
+        }
     }
     
     func setupGroupsCollectionView() {
@@ -183,6 +219,7 @@ extension UpdateExamViewController: UICollectionViewDelegate, UICollectionViewDa
         groupsCollectionView.reloadData()
         groupsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
+    
     
 }
 

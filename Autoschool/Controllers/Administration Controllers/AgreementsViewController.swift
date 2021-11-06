@@ -98,7 +98,7 @@ extension AgreementsViewController: UITableViewDelegate, UITableViewDataSource {
         let updateAdministratorVC = UIStoryboard(name: "Administration", bundle: nil).instantiateViewController(identifier: "UpdateAgreementViewController") as! UpdateAgreementViewController
         
         let selectedAgreement = agreements[indexPath.row]
-        updateAdministratorVC.agreement = selectedAgreement
+        updateAdministratorVC.selectedAgreement = selectedAgreement
         
         self.navigationController?.pushViewController(updateAdministratorVC, animated: true)
     }

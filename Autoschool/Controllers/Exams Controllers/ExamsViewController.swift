@@ -155,7 +155,11 @@ extension ExamsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let updateExamVC = UIStoryboard(name: "Exams", bundle: nil).instantiateViewController(identifier: "UpdateExamViewController")
+        let updateExamVC = UIStoryboard(name: "Exams", bundle: nil).instantiateViewController(identifier: "UpdateExamViewController") as! UpdateExamViewController
+        
+        let selectedExam = exams[indexPath.row]
+        updateExamVC.selectedExam = selectedExam
+        
         self.navigationController?.pushViewController(updateExamVC, animated: true)
     }
     

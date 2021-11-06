@@ -80,7 +80,11 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let updateTeacherVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateTeacherViewController")
+        let updateTeacherVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateTeacherViewController") as! UpdateTeacherViewController
+        
+        let teacher = teachers[indexPath.row]
+        updateTeacherVC.selectedTeacher = teacher
+        
         self.navigationController?.pushViewController(updateTeacherVC, animated: true)
     }
 

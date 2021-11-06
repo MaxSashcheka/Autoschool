@@ -14,7 +14,7 @@ class UpdateAgreementViewController: UIViewController {
     var instructors = [Instructor]()
     var agreements = [Agreement]()
     
-    var agreement: Agreement!
+    var selectedAgreement: Agreement!
     
     @IBOutlet weak var signingDateTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -66,7 +66,7 @@ extension UpdateAgreementViewController {
             for student in fetchedStudents {
                 var isNonRepeated = true
                 for agreement in self.agreements {
-                    if agreement.studentId == student.studentId {
+                    if agreement.studentId == student.studentId, agreement.agreementId != self.selectedAgreement.agreementId {
                         isNonRepeated = false
                         break
                     }
@@ -108,21 +108,21 @@ private extension UpdateAgreementViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
         let endOfDate = String.Index(encodedOffset: 9)
-        let stringDate = String(agreement.signingDate[...endOfDate])
+        let stringDate = String(selectedAgreement.signingDate[...endOfDate])
         let date = dateFormatter.date(from: stringDate)!
         signingDatePicker.date = date
         
         signingDateTextField.text = dateFormatter.string(from: date)
-        amountTextField.text = String(agreement.amount)
+        amountTextField.text = String(selectedAgreement.amount)
         
         for index in administrators.indices {
-            if agreement.administratorId == administrators[index].administratorId {
+            if selectedAgreement.administratorId == administrators[index].administratorId {
                 selectedAdministratorIndex = index
                 break
             }
         }
         for index in students.indices {
-            if agreement.studentId == students[index].studentId {
+            if selectedAgreement.studentId == students[index].studentId {
                 selectedStudentIndex = index
                 break
             }

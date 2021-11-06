@@ -80,7 +80,11 @@ extension DriverLicensesViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let updateDriverLicenseVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateDriverLicenseViewController")
+        let updateDriverLicenseVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateDriverLicenseViewController") as! UpdateDriverLicenseViewController
+        
+        let driverLicense = driverLicenses[indexPath.row]
+        updateDriverLicenseVC.selectedDriverLicense = driverLicense
+        
         self.navigationController?.pushViewController(updateDriverLicenseVC, animated: true)
     }
 

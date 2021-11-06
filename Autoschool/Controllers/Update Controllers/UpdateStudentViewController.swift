@@ -69,7 +69,7 @@ extension UpdateStudentViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        groupsCollectionView.contentOffset = .init(x: CGFloat(selectedGroupIndex) * groupsCollectionView.frame.width * 0.8, y: 0)
+        groupsCollectionView.scrollToItem(at: IndexPath(item: selectedGroupIndex, section: 0), at: [.centeredVertically, .centeredHorizontally], animated: false)
     }
 }
 
@@ -90,8 +90,7 @@ private extension UpdateStudentViewController {
                 selectedGroupIndex = index
                 break
             }
-        }
-        
+        }        
         for index in instructors.indices {
             if student.instructorId == instructors[index].instructorId {
                 selectedInstructorIndex = index

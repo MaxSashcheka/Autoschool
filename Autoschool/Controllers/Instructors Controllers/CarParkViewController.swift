@@ -80,7 +80,11 @@ extension CarParkViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let updateCarVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateCarViewController")
+        let updateCarVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateCarViewController") as! UpdateCarViewController
+        
+        let car = cars[indexPath.row]
+        updateCarVC.selectedCar = car
+        
         self.navigationController?.pushViewController(updateCarVC, animated: true)
     }
     

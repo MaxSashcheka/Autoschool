@@ -42,10 +42,6 @@ extension CreateExamViewController {
             self.groups = fetchedGroups
             self.groupsCollectionView.reloadData()
         }
-        NetworkManager.shared.fetchTeacher { fetchedTeachers in
-            self.teachers = fetchedTeachers
-            self.groupsCollectionView.reloadData()
-        }
     }
 
     override func viewDidLoad() {

@@ -22,6 +22,7 @@ class InstructorDetailViewController: UIViewController {
         tableView.register(DriverLicenseTableViewCell.nib(), forCellReuseIdentifier: DriverLicenseTableViewCell.reuseIdentifier)
         tableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
         tableView.backgroundColor = .clear
+        tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
         
         return tableView
     }()
@@ -73,7 +74,10 @@ class InstructorDetailViewController: UIViewController {
     }
     
     @objc private func openUpdateInstructorController() {
-        let updateGroupVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateInstructorViewController")
+        let updateGroupVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateInstructorViewController") as! UpdateInstruсtorViewController
+        
+        updateGroupVC.selectedInstructor = instructor
+        
         self.navigationController?.pushViewController(updateGroupVC, animated: true)
     }
 
@@ -109,6 +113,14 @@ extension InstructorDetailViewController: UITableViewDelegate, UITableViewDataSo
         } else {
             return 83
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

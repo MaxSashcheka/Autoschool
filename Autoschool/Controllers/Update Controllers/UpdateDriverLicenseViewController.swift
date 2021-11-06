@@ -9,6 +9,8 @@ import UIKit
 
 class UpdateDriverLicenseViewController: UIViewController {
 
+    var selectedDriverLicense: DriverLisence!
+    
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var issueDateTextField: UITextField!
     @IBOutlet weak var validityTextField: UITextField!
@@ -40,7 +42,18 @@ class UpdateDriverLicenseViewController: UIViewController {
 private extension UpdateDriverLicenseViewController {
     
     func fillDriverLicenseInfo() {
+        numberTextField.text = selectedDriverLicense.number
+        validityTextField.text = String(selectedDriverLicense.validity)
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        let endOfDate = String.Index(encodedOffset: 9)
+        let stringDate = String(selectedDriverLicense.issueDate[...endOfDate])
+        let date = dateFormatter.date(from: stringDate)!
+        issueDatePicker.date = date
+        
+        issueDateTextField.text = dateFormatter.string(from: date)
     }
     
     func setupTextFields () {
@@ -69,7 +82,7 @@ private extension UpdateDriverLicenseViewController {
     
     @objc func saveIssueDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         issueDateTextField.text = formatter.string(from: issueDatePicker.date)
         
         view.endEditing(true)
