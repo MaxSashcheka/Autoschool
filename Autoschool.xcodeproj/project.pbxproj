@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D7270B983D000ACD8F /* Instructor.swift */; };
 		DD1852D027353A24001F670A /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1852CF27353A24001F670A /* TeachersViewController.swift */; };
+		DD1EE0F22738038700B9088B /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1EE0F02738038700B9088B /* CollectionTableViewCell.swift */; };
+		DD1EE0F32738038700B9088B /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1EE0F12738038700B9088B /* CollectionTableViewCell.xib */; };
+		DD1EE0F72738039A00B9088B /* InsturctorsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1EE0F52738039A00B9088B /* InsturctorsListTableViewCell.swift */; };
+		DD1EE0F82738039A00B9088B /* InsturctorsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1EE0F62738039A00B9088B /* InsturctorsListTableViewCell.xib */; };
+		DD1EE0FC273803BC00B9088B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1EE0FA273803BC00B9088B /* ItemCollectionViewCell.swift */; };
+		DD1EE0FD273803BC00B9088B /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1EE0FB273803BC00B9088B /* ItemCollectionViewCell.xib */; };
 		DD43124D2719B2390009B35E /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43124C2719B2390009B35E /* StudentsViewController.swift */; };
 		DD54882127334927002ED3BA /* CreateDriverLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54882027334927002ED3BA /* CreateDriverLicenseViewController.swift */; };
 		DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */; };
@@ -95,6 +101,12 @@
 /* Begin PBXFileReference section */
 		DD1490D7270B983D000ACD8F /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
 		DD1852CF27353A24001F670A /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		DD1EE0F02738038700B9088B /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		DD1EE0F12738038700B9088B /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		DD1EE0F52738039A00B9088B /* InsturctorsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsturctorsListTableViewCell.swift; sourceTree = "<group>"; };
+		DD1EE0F62738039A00B9088B /* InsturctorsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsturctorsListTableViewCell.xib; sourceTree = "<group>"; };
+		DD1EE0FA273803BC00B9088B /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD1EE0FB273803BC00B9088B /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD252D922732AC3000135257 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DD43124C2719B2390009B35E /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		DD54882027334927002ED3BA /* CreateDriverLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDriverLicenseViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +204,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD1EE0EF2738035B00B9088B /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				DD1EE0F02738038700B9088B /* CollectionTableViewCell.swift */,
+				DD1EE0F12738038700B9088B /* CollectionTableViewCell.xib */,
+				DD1EE0F52738039A00B9088B /* InsturctorsListTableViewCell.swift */,
+				DD1EE0F62738039A00B9088B /* InsturctorsListTableViewCell.xib */,
+				DD1EE0FA273803BC00B9088B /* ItemCollectionViewCell.swift */,
+				DD1EE0FB273803BC00B9088B /* ItemCollectionViewCell.xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		DD5B16C9270A23F0007E5C38 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +234,7 @@
 		DD5B16DD270A3FFF007E5C38 /* Instructors Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DD1EE0EF2738035B00B9088B /* CustomCells */,
 				DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */,
 				DDD0D329271C8F400017A160 /* CarParkViewController.swift */,
 				DDCC6B4C2733E57700394561 /* DriverLicensesViewController.swift */,
@@ -612,10 +638,13 @@
 				DDD412C92730833300E7107F /* ExamCollectionViewCell.xib in Resources */,
 				DD6DFEE2271C134C0073F63F /* InstructorTableViewCell.xib in Resources */,
 				DD9A0C5E27070A960040C839 /* LaunchScreen.storyboard in Resources */,
+				DD1EE0FD273803BC00B9088B /* ItemCollectionViewCell.xib in Resources */,
 				DDFAEB402737044E00B0EC74 /* DatabaseCollectionViewCell.xib in Resources */,
 				DD62C84A270A0E6D00910092 /* GroupCollectionViewCell.xib in Resources */,
 				DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */,
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
+				DD1EE0F32738038700B9088B /* CollectionTableViewCell.xib in Resources */,
+				DD1EE0F82738039A00B9088B /* InsturctorsListTableViewCell.xib in Resources */,
 				DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */,
 				DD9A0C5627070A950040C839 /* Main.storyboard in Resources */,
 				DDCC6B4A2733CF9000394561 /* DriverLicenseTableViewCell.xib in Resources */,
@@ -662,6 +691,7 @@
 				DD9A0C4F27070A950040C839 /* AppDelegate.swift in Sources */,
 				DD6DFF1C271C3D650073F63F /* SPAlertIconAnimatable.swift in Sources */,
 				DD801086270C68A30062955B /* CreateCarViewController.swift in Sources */,
+				DD1EE0F72738039A00B9088B /* InsturctorsListTableViewCell.swift in Sources */,
 				DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */,
 				DD6DFF2C271C70090073F63F /* Car.swift in Sources */,
 				DD6DFF17271C3D650073F63F /* SwiftUIExtension.swift in Sources */,
@@ -677,6 +707,7 @@
 				DD6DFF1B271C3D650073F63F /* SPAlertIconPreset.swift in Sources */,
 				DD6DFF28271C6B190073F63F /* AdministratorTableViewCell.swift in Sources */,
 				DD64DD3C2736702A001C7BB2 /* UpdateInstructorViewController.swift in Sources */,
+				DD1EE0FC273803BC00B9088B /* ItemCollectionViewCell.swift in Sources */,
 				DDB53C86272C4139009B69CF /* Exam.swift in Sources */,
 				DDB53C8F272C4859009B69CF /* Agreement.swift in Sources */,
 				DDD0D32A271C8F400017A160 /* CarParkViewController.swift in Sources */,
@@ -698,6 +729,7 @@
 				DD6DFEE8271C1B990073F63F /* CreateAgreementViewController.swift in Sources */,
 				DD6DFF15271C3D650073F63F /* UILabelExtension.swift in Sources */,
 				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,
+				DD1EE0F22738038700B9088B /* CollectionTableViewCell.swift in Sources */,
 				DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */,
 				DDFAEB3F2737044E00B0EC74 /* DatabaseCollectionViewCell.swift in Sources */,
 				DD54882127334927002ED3BA /* CreateDriverLicenseViewController.swift in Sources */,

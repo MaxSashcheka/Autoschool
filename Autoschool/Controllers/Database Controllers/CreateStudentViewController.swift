@@ -136,6 +136,7 @@ private extension CreateStudentViewController {
         
         let selectedGroup = groups[selectedGroupIndex]
         let selectedInstructor = instructors[selectedInstructorIndex]
+        print(phoneNumber)
         
         let student = Student(studentId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: selectedInstructor.instructorId, groupId: selectedGroup.groupId)
         NetworkManager.shared.postStudent(student)
@@ -176,7 +177,7 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
         
         
         if indexPath.item == selectedGroupIndex {
-            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.6).cgColor
+            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.7).cgColor
         } else {
             cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
         }
@@ -230,7 +231,7 @@ extension CreateStudentViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: InstructorTableViewCell.reuseIdentifier, for: indexPath) as! InstructorTableViewCell
-        
+    
         let instructor = instructors[indexPath.row]
         cell.setup(withInstructor: instructor)
         
