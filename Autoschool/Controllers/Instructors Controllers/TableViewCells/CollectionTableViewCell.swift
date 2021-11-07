@@ -7,6 +7,16 @@
 
 import UIKit
 
+enum AutoschoolInfo {
+    case carPark
+    case driverLicenses
+    case teachers
+}
+
+protocol PushAutoschoolInfoDetailControllerDelegate {
+    func pushController(forCase autoschoolInfoCase: AutoschoolInfo)
+}
+
 class CollectionTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "CollectionTableViewCell"
@@ -16,6 +26,7 @@ class CollectionTableViewCell: UITableViewCell {
     }
     
     var models = [Model]()
+    var delegate: PushAutoschoolInfoDetailControllerDelegate!
 
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     let itemsCollectionViewInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
@@ -34,17 +45,6 @@ class CollectionTableViewCell: UITableViewCell {
 
 }
 
-//if indexPath.row == 0 {
-//    let carParkViewController = CarParkViewController()
-//    navigationController?.pushViewController(carParkViewController, animated: true)
-//} else if indexPath.row == 1 {
-//    let driverLicensesViewController = DriverLicensesViewController()
-//    navigationController?.pushViewController(driverLicensesViewController, animated: true)
-//} else {
-//    let teachersViewController = TeachersViewController()
-//    navigationController?.pushViewController(teachersViewController, animated: true)
-//}
-
 extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
@@ -61,6 +61,12 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally], animated: true)
+        switch indexPath.item {
+        case 0: delegate.pushController(forCase: .carPark)
+        case 1: delegate.pushController(forCase: .driverLicenses)
+        case 2: delegate.pushController(forCase: .teachers)
+        default: print("Error")
+        }
     }
     
 }

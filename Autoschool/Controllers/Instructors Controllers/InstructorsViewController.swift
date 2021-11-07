@@ -30,7 +30,7 @@ class InstructorsViewController: UIViewController {
         tableView.register(InsturctorsListTableViewCell.nib(), forCellReuseIdentifier: InsturctorsListTableViewCell.reuseIdentifier)
         tableView.separatorStyle = .none
         
-//        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
         tableView.backgroundColor = .clear
         
         return tableView
@@ -84,11 +84,12 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.reuseIdentifier, for: indexPath) as! CollectionTableViewCell
             cell.setup(withModels: models)
+            cell.delegate = self
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: InsturctorsListTableViewCell.reuseIdentifier, for: indexPath) as! InsturctorsListTableViewCell
-            
             cell.setup(withInstructors: instructors)
+            cell.delegate = self
             return cell
         }
     }
@@ -100,5 +101,41 @@ extension InstructorsViewController: UITableViewDelegate, UITableViewDataSource 
             return CGFloat(instructors.count * 90) + 50
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
+
+// MARK: - PushInstructorDetailControllerDelegate
+
+extension InstructorsViewController: PushInstructorDetailControllerDelegate {
+    func pushController(instructor: Instructor) {
+        let instructorDetailViewController = InstructorDetailViewController()
+        instructorDetailViewController.instructor = instructor
+        navigationController?.pushViewController(instructorDetailViewController, animated: true)
+    }
+}
+
+// MARK: - PushAutoschoolInfoDetailControllerDelegate
+
+extension InstructorsViewController: PushAutoschoolInfoDetailControllerDelegate {
+    func pushController(forCase autoschoolInfoCase: AutoschoolInfo) {
+        switch autoschoolInfoCase {
+        case .carPark:
+            let carParkViewController = CarParkViewController()
+            navigationController?.pushViewController(carParkViewController, animated: true)
+        case .driverLicenses:
+            let driverLicensesViewController = DriverLicensesViewController()
+            navigationController?.pushViewController(driverLicensesViewController, animated: true)
+        case .teachers:
+            let teachersViewController = TeachersViewController()
+            navigationController?.pushViewController(teachersViewController, animated: true)
+        default: print("Error")
+            
+        }
+    }
+    
     
 }

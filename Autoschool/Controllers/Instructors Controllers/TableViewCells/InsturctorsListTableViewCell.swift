@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PushInstructorDetailControllerDelegate {
+    func pushController(instructor: Instructor)
+}
+
 class InsturctorsListTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "InsturctorsListTableViewCell"
@@ -18,6 +22,7 @@ class InsturctorsListTableViewCell: UITableViewCell {
     @IBOutlet weak var instructorsTableView: UITableView!
     
     var instructors = [Instructor]()
+    var delegate: PushInstructorDetailControllerDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,10 +67,9 @@ extension InsturctorsListTableViewCell: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let instructorDetailViewController = InstructorDetailViewController()
         let selectedInstructor = instructors[indexPath.row]
-        instructorDetailViewController.instructor = selectedInstructor
-//        navigationController?.pushViewController(instructorDetailViewController, animated: true)
+
+        delegate.pushController(instructor: selectedInstructor)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -84,6 +88,4 @@ extension InsturctorsListTableViewCell: UITableViewDelegate, UITableViewDataSour
             tableView.endUpdates()
         }
     }
-    
-    
 }

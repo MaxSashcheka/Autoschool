@@ -204,17 +204,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DD1EE0EF2738035B00B9088B /* CustomCells */ = {
+		DD1EE0FF2738124900B9088B /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				DD1EE0F02738038700B9088B /* CollectionTableViewCell.swift */,
 				DD1EE0F12738038700B9088B /* CollectionTableViewCell.xib */,
 				DD1EE0F52738039A00B9088B /* InsturctorsListTableViewCell.swift */,
 				DD1EE0F62738039A00B9088B /* InsturctorsListTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		DD1EE1002738125700B9088B /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				DD1EE0FA273803BC00B9088B /* ItemCollectionViewCell.swift */,
 				DD1EE0FB273803BC00B9088B /* ItemCollectionViewCell.xib */,
 			);
-			path = CustomCells;
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		DD5B16C9270A23F0007E5C38 /* TableViewCells */ = {
@@ -234,7 +241,8 @@
 		DD5B16DD270A3FFF007E5C38 /* Instructors Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD1EE0EF2738035B00B9088B /* CustomCells */,
+				DD1EE1002738125700B9088B /* CollectionViewCell */,
+				DD1EE0FF2738124900B9088B /* TableViewCells */,
 				DD5B16E0270A4053007E5C38 /* InstructorsViewController.swift */,
 				DDD0D329271C8F400017A160 /* CarParkViewController.swift */,
 				DDCC6B4C2733E57700394561 /* DriverLicensesViewController.swift */,
