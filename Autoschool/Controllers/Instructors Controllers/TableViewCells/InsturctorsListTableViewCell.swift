@@ -31,7 +31,7 @@ class InsturctorsListTableViewCell: UITableViewCell {
         instructorsTableView.dataSource = self
         instructorsTableView.register(InstructorTableViewCell.nib(), forCellReuseIdentifier: InstructorTableViewCell.reuseIdentifier)
         instructorsTableView.rowHeight = 90
-        instructorsTableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: 0, right: 0)
+        instructorsTableView.contentInset = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
         instructorsTableView.backgroundColor = .clear
         instructorsTableView.isScrollEnabled = false
         

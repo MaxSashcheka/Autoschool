@@ -688,6 +688,7 @@ class NetworkManager {
             request.httpMethod = "POST"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             let post = "date=\(exam.date)&exam_type_id=\(exam.examTypeId)&group_id=\(exam.groupId)"
+            
             let postData = post.data(using: .utf8, allowLossyConversion: true)!
             request.httpBody = postData
             

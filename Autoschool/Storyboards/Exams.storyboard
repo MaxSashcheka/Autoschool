@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,57 +15,10 @@
                     <view key="view" contentMode="scaleToFill" id="P8o-IZ-PJk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bzs-x5-vF1">
-                                <rect key="frame" x="0.0" y="129" width="414" height="684"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C82-DJ-0Uj">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IRV-TU-PvT">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="u7h-1n-5wl">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PdD-cy-AhW">
-                                <rect key="frame" x="20" y="93" width="374" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="Все"/>
-                                    <segment title="Автошкола"/>
-                                    <segment title="Гаи"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changeDisplayedExams:" destination="dAg-Cc-y86" eventType="valueChanged" id="Dax-B1-BuA"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="trK-Mb-3ao"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
-                        <constraints>
-                            <constraint firstItem="trK-Mb-3ao" firstAttribute="trailing" secondItem="PdD-cy-AhW" secondAttribute="trailing" constant="20" id="0Ka-WR-lYI"/>
-                            <constraint firstItem="Bzs-x5-vF1" firstAttribute="leading" secondItem="trK-Mb-3ao" secondAttribute="leading" id="Bdl-8p-2Jr"/>
-                            <constraint firstItem="Bzs-x5-vF1" firstAttribute="top" secondItem="PdD-cy-AhW" secondAttribute="bottom" constant="5" id="I9T-9v-vJ7"/>
-                            <constraint firstItem="trK-Mb-3ao" firstAttribute="trailing" secondItem="Bzs-x5-vF1" secondAttribute="trailing" id="IvW-kj-Fsk"/>
-                            <constraint firstItem="PdD-cy-AhW" firstAttribute="leading" secondItem="trK-Mb-3ao" secondAttribute="leading" constant="20" id="Nyj-hs-TM8"/>
-                            <constraint firstItem="PdD-cy-AhW" firstAttribute="top" secondItem="trK-Mb-3ao" secondAttribute="top" constant="5" id="kds-mk-s5b"/>
-                            <constraint firstItem="trK-Mb-3ao" firstAttribute="bottom" secondItem="Bzs-x5-vF1" secondAttribute="bottom" id="mcT-Kc-kRq"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UBM-GZ-Mfk"/>
-                    <connections>
-                        <outlet property="examTypeSegmentedControl" destination="PdD-cy-AhW" id="nVE-3Y-Mkp"/>
-                        <outlet property="examsCollectionView" destination="Bzs-x5-vF1" id="VWH-iS-CAQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yeu-GS-yDh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,9 +184,6 @@
     </scenes>
     <resources>
         <image name="graduationcap" catalog="system" width="128" height="106"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

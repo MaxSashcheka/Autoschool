@@ -22,7 +22,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         itemImageView.tintColor = .lightGreenSea
-        
+//        itemImageView.backgroundColor = .red
         layer.masksToBounds = false
         backgroundColor = .white
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.45).cgColor
