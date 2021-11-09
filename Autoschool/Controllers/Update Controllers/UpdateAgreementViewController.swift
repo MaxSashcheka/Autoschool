@@ -137,6 +137,8 @@ private extension UpdateAgreementViewController {
         administratorsTableView.rowHeight = 80
         administratorsTableView.isScrollEnabled = false
         administratorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        administratorsTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     }
     
     func setupStudentsTableView() {
@@ -146,6 +148,8 @@ private extension UpdateAgreementViewController {
         studentsTableView.rowHeight = 90
         studentsTableView.isScrollEnabled = false
         studentsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        studentsTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     }
     
     func setupTextFields() {

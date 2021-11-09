@@ -83,6 +83,8 @@ private extension CreateGroupViewController {
         teachersTableView.rowHeight = 75
         teachersTableView.isScrollEnabled = false
         teachersTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        teachersTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     }
     
     func setupSegmentedControls() {

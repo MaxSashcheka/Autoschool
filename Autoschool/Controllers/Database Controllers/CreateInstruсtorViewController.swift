@@ -112,6 +112,8 @@ private extension CreateInstruсtorViewController {
         carsTableView.rowHeight = 80
         carsTableView.isScrollEnabled = false
         carsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        carsTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     }
     
     func setupDriverLicenseTableView() {
@@ -121,6 +123,8 @@ private extension CreateInstruсtorViewController {
         driverLicensesTableView.rowHeight = 80
         driverLicensesTableView.isScrollEnabled = false
         driverLicensesTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        driverLicensesTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     }
     
     func setupTextFields() {

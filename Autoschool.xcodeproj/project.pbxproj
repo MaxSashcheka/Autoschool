@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD08F5E927395CFB001E8F70 /* NavigationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD08F5E727395CFB001E8F70 /* NavigationCollectionViewCell.swift */; };
+		DD08F5EA27395CFB001E8F70 /* NavigationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD08F5E827395CFB001E8F70 /* NavigationCollectionViewCell.xib */; };
 		DD1490D8270B983D000ACD8F /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1490D7270B983D000ACD8F /* Instructor.swift */; };
 		DD1852D027353A24001F670A /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1852CF27353A24001F670A /* TeachersViewController.swift */; };
 		DD1EE0F22738038700B9088B /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1EE0F02738038700B9088B /* CollectionTableViewCell.swift */; };
@@ -26,8 +28,8 @@
 		DD5B16E4270A405B007E5C38 /* ExamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16E3270A405B007E5C38 /* ExamsViewController.swift */; };
 		DD62ADB927387D790003D9D3 /* ExamsCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62ADB727387D790003D9D3 /* ExamsCollectionTableViewCell.swift */; };
 		DD62ADBA27387D790003D9D3 /* ExamsCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62ADB827387D790003D9D3 /* ExamsCollectionTableViewCell.xib */; };
-		DD62ADBF27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62ADBD27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.swift */; };
-		DD62ADC027387D8B0003D9D3 /* TypePickerCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62ADBE27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.xib */; };
+		DD62ADBF27387D8B0003D9D3 /* NavigationCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62ADBD27387D8B0003D9D3 /* NavigationCollectionTableViewCell.swift */; };
+		DD62ADC027387D8B0003D9D3 /* NavigationCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62ADBE27387D8B0003D9D3 /* NavigationCollectionTableViewCell.xib */; };
 		DD62C83B270A083500910092 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD62C83A270A083500910092 /* Groups.storyboard */; };
 		DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C83E270A08A500910092 /* GroupsViewController.swift */; };
 		DD62C844270A0D9800910092 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C843270A0D9800910092 /* Group.swift */; };
@@ -103,6 +105,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD08F5E727395CFB001E8F70 /* NavigationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD08F5E827395CFB001E8F70 /* NavigationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD1490D7270B983D000ACD8F /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
 		DD1852CF27353A24001F670A /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		DD1EE0F02738038700B9088B /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,8 +127,8 @@
 		DD5B16E3270A405B007E5C38 /* ExamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsViewController.swift; sourceTree = "<group>"; };
 		DD62ADB727387D790003D9D3 /* ExamsCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		DD62ADB827387D790003D9D3 /* ExamsCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamsCollectionTableViewCell.xib; sourceTree = "<group>"; };
-		DD62ADBD27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePickerCollectionTableViewCell.swift; sourceTree = "<group>"; };
-		DD62ADBE27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypePickerCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		DD62ADBD27387D8B0003D9D3 /* NavigationCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		DD62ADBE27387D8B0003D9D3 /* NavigationCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		DD62C83A270A083500910092 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		DD62C83E270A08A500910092 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		DD62C843270A0D9800910092 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -212,6 +216,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD08F5E627395CDC001E8F70 /* NavigationCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DD08F5E727395CFB001E8F70 /* NavigationCollectionViewCell.swift */,
+				DD08F5E827395CFB001E8F70 /* NavigationCollectionViewCell.xib */,
+			);
+			path = NavigationCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		DD1EE0FF2738124900B9088B /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,20 +276,21 @@
 		DD5B16DE270A4014007E5C38 /* Exams Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD62ADB127387CBA0003D9D3 /* TypePickerCollectionTableViewCell */,
+				DD08F5E627395CDC001E8F70 /* NavigationCollectionViewCell */,
+				DD62ADB127387CBA0003D9D3 /* NavigationCollectionTableViewCell */,
 				DD62ADC227387D900003D9D3 /* ExamsCollectionTableViewCell */,
 				DD5B16E3270A405B007E5C38 /* ExamsViewController.swift */,
 			);
 			path = "Exams Controllers";
 			sourceTree = "<group>";
 		};
-		DD62ADB127387CBA0003D9D3 /* TypePickerCollectionTableViewCell */ = {
+		DD62ADB127387CBA0003D9D3 /* NavigationCollectionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				DD62ADBD27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.swift */,
-				DD62ADBE27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.xib */,
+				DD62ADBD27387D8B0003D9D3 /* NavigationCollectionTableViewCell.swift */,
+				DD62ADBE27387D8B0003D9D3 /* NavigationCollectionTableViewCell.xib */,
 			);
-			path = TypePickerCollectionTableViewCell;
+			path = NavigationCollectionTableViewCell;
 			sourceTree = "<group>";
 		};
 		DD62ADC227387D900003D9D3 /* ExamsCollectionTableViewCell */ = {
@@ -679,6 +693,7 @@
 				DD62C84A270A0E6D00910092 /* GroupCollectionViewCell.xib in Resources */,
 				DD9A0C5B27070A960040C839 /* Assets.xcassets in Resources */,
 				DD62C83B270A083500910092 /* Groups.storyboard in Resources */,
+				DD08F5EA27395CFB001E8F70 /* NavigationCollectionViewCell.xib in Resources */,
 				DD1EE0F32738038700B9088B /* CollectionTableViewCell.xib in Resources */,
 				DD1EE0F82738039A00B9088B /* InsturctorsListTableViewCell.xib in Resources */,
 				DDEC16AE271DC27E007BF181 /* AgreementTableViewCell.xib in Resources */,
@@ -691,7 +706,7 @@
 				DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */,
 				DD9A0C7227070C330040C839 /* Database.storyboard in Resources */,
 				DD6DFF31271C713D0073F63F /* CarTableViewCell.xib in Resources */,
-				DD62ADC027387D8B0003D9D3 /* TypePickerCollectionTableViewCell.xib in Resources */,
+				DD62ADC027387D8B0003D9D3 /* NavigationCollectionTableViewCell.xib in Resources */,
 				DD6DFEF1271C33CE0073F63F /* Administration.storyboard in Resources */,
 				DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */,
 			);
@@ -737,6 +752,7 @@
 				DD6DFEF5271C35570073F63F /* AdministrationViewController.swift in Sources */,
 				DD6DFF1E271C3D650073F63F /* SPAlert.swift in Sources */,
 				DD6DFF13271C3D650073F63F /* SPAlertView.swift in Sources */,
+				DD08F5E927395CFB001E8F70 /* NavigationCollectionViewCell.swift in Sources */,
 				DD62C83F270A08A500910092 /* GroupsViewController.swift in Sources */,
 				DDF02DC027300D1100F372B2 /* NetworkManager.swift in Sources */,
 				DD62C849270A0E6D00910092 /* GroupCollectionViewCell.swift in Sources */,
@@ -767,7 +783,7 @@
 				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
 				DD6DFEE8271C1B990073F63F /* CreateAgreementViewController.swift in Sources */,
 				DD6DFF15271C3D650073F63F /* UILabelExtension.swift in Sources */,
-				DD62ADBF27387D8B0003D9D3 /* TypePickerCollectionTableViewCell.swift in Sources */,
+				DD62ADBF27387D8B0003D9D3 /* NavigationCollectionTableViewCell.swift in Sources */,
 				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,
 				DD1EE0F22738038700B9088B /* CollectionTableViewCell.swift in Sources */,
 				DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */,

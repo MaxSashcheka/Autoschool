@@ -113,6 +113,8 @@ private extension UpdateStudentViewController {
         instructorsTableView.rowHeight = 90
         instructorsTableView.isScrollEnabled = false
         instructorsTableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        instructorsTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     }
     
     func setupTapGesture() {

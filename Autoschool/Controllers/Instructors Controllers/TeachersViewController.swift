@@ -19,7 +19,8 @@ class TeachersViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.rowHeight = 75
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
         return tableView
     }()
 

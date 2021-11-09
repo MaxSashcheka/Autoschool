@@ -19,7 +19,7 @@ class ExamsCollectionTableViewCell: UITableViewCell {
     var groups = [Group]()
     
     @IBOutlet weak var examsCollectionView: UICollectionView!
-    let examsCollectionViewInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    let examsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 20, right: 20)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +39,7 @@ class ExamsCollectionTableViewCell: UITableViewCell {
     func setup(withExams exams: [Exam], groups: [Group]) {
         self.exams = exams
         self.groups = groups
+        
         examsCollectionView.reloadData()
     }
     
@@ -75,7 +76,7 @@ extension ExamsCollectionTableViewCell: UICollectionViewDelegateFlowLayout {
         
         let itemWidth = collectionView.frame.width - examsCollectionViewInsets.left * 2
         let itemHeight = itemWidth / 2.3
-        print(itemHeight)
+        
         return CGSize(width: itemWidth, height: itemHeight)
     }
     

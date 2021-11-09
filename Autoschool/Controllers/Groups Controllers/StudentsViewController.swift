@@ -48,6 +48,8 @@ class StudentsViewController: UIViewController {
         studentsTableView.dataSource = self
         studentsTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
         studentsTableView.register(TeacherTableViewCell.nib(), forCellReuseIdentifier: TeacherTableViewCell.reuseIdentifier)
+        studentsTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
         
         studentsTableView.contentInsetAdjustmentBehavior = .never
         studentsTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)

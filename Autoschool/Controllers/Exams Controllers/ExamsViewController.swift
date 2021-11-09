@@ -12,13 +12,26 @@ class ExamsViewController: UIViewController {
     var exams = [Exam]()
     var groups = [Group]()
     
+    var internalExternalRepresentation: InternalExternalOption = .all {
+        willSet {
+            switch newValue {
+            case .all:  navigationItem.title = "Все экзамены"
+            case .autoschool:  navigationItem.title = "Внутренние экзамены"
+            case .gai:  navigationItem.title = "Экзамены в гаи"
+            }
+        }
+    }
+    
+    var selectedGroupId = 0
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TypePickerCollectionTableViewCell.nib(), forCellReuseIdentifier: TypePickerCollectionTableViewCell.reuseIdentifier)
+        tableView.register(NavigationCollectionTableViewCell.nib(), forCellReuseIdentifier: NavigationCollectionTableViewCell.reuseIdentifier)
         tableView.register(ExamsCollectionTableViewCell.nib(), forCellReuseIdentifier: ExamsCollectionTableViewCell.reuseIdentifier)
+        tableView.separatorStyle = .none
         
         return tableView
     }()
@@ -46,7 +59,7 @@ class ExamsViewController: UIViewController {
     
     func setupNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Экзамены"
+        navigationItem.title = "Все экзамены"
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black
@@ -60,39 +73,43 @@ class ExamsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .lightGreenSea
     }
     
-//    @IBAction func changeDisplayedExams(_ sender: UISegmentedControl) {
-//        switch sender.selectedSegmentIndex {
-//        case 0:
-//            NetworkManager.shared.fetchExams { fetchedExams in
-//                self.exams = fetchedExams
-//                self.tableView.reloadData()
-//            }
-//        case 1:
-//            NetworkManager.shared.fetchExams { fetchedExams in
-//                var arrayOfMatchedExams = [Exam]()
-//                for exam in fetchedExams {
-//                    if exam.examTypeId == 1 || exam.examTypeId == 2 {
-//                        arrayOfMatchedExams.append(exam)
-//                    }
-//                }
-//                self.exams = arrayOfMatchedExams
-//                self.tableView.reloadData()
-//            }
-//        case 2:
-//            NetworkManager.shared.fetchExams { fetchedExams in
-//                var arrayOfMatchedExams = [Exam]()
-//                for exam in fetchedExams {
-//                    if exam.examTypeId == 3 || exam.examTypeId == 4 {
-//                        arrayOfMatchedExams.append(exam)
-//                    }
-//                }
-//                self.exams = arrayOfMatchedExams
-//                self.tableView.reloadData()
-//            }
-//        default:
-//            print("Error")
-//        }
-//    }
+    func examsForInternalExternal() -> [Exam] {
+        switch internalExternalRepresentation {
+        case .all:
+            return exams
+        case .autoschool:
+            var matchedExams = [Exam]()
+            for exam in exams {
+                if exam.examTypeId == 1 || exam.examTypeId == 2 {
+                    matchedExams.append(exam)
+                }
+            }
+            return matchedExams
+        case .gai:
+            var matchedExams = [Exam]()
+            for exam in exams {
+                if exam.examTypeId == 3 || exam.examTypeId == 4 {
+                    matchedExams.append(exam)
+                }
+            }
+            return matchedExams
+        }
+    }
+    
+    func examsForSelected(groupId: Int) -> [Exam] {
+        if groupId == 0 {
+            return exams
+        }
+        var matchedGroupExams = [Exam]()
+        let exams = examsForInternalExternal()
+        for exam in exams {
+            if exam.groupId == groupId {
+                matchedGroupExams.append(exam)
+            }
+        }
+        return matchedGroupExams
+    }
+
     
 }
 
@@ -106,22 +123,46 @@ extension ExamsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TypePickerCollectionTableViewCell.reuseIdentifier, for: indexPath) as! TypePickerCollectionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: NavigationCollectionTableViewCell.reuseIdentifier, for: indexPath) as! NavigationCollectionTableViewCell
+            
+            cell.setup(withGroups: groups, internalExternalOption: internalExternalRepresentation)
+            cell.internalExternalDelegate = self
+            cell.groupPickerDelegate = self
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ExamsCollectionTableViewCell.reuseIdentifier, for: indexPath) as! ExamsCollectionTableViewCell
-            cell.setup(withExams: exams, groups: groups)
+            
+            let matchedExams = examsForSelected(groupId: selectedGroupId)
+            cell.setup(withExams: matchedExams, groups: groups)
+            
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 150
+            return 145
         } else {
-            return CGFloat(exams.count) * 162.608 + CGFloat((exams.count + 1) * 20)
+            let matchedExams = examsForSelected(groupId: selectedGroupId)
+
+            return CGFloat(matchedExams.count) * 162.608 + CGFloat((matchedExams.count + 1) * 20)
         }
     }
     
 }
+
+extension ExamsViewController: InternalExternalRepresentationDelegate {
+    func changeRepresentation(forOption option: InternalExternalOption) {
+        internalExternalRepresentation = option
+        tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .fade)
+    }
+}
+
+extension ExamsViewController: GroupPickerDelegate {
+    func changeSelected(groupId: Int) {
+        selectedGroupId = groupId
+        tableView.reloadData()
+    }
+}
+

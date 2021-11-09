@@ -23,6 +23,7 @@ class InstructorDetailViewController: UIViewController {
         tableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.reuseIdentifier)
         tableView.backgroundColor = .clear
         tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         return tableView
     }()
