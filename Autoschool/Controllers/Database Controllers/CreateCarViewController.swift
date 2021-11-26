@@ -22,6 +22,9 @@ class CreateCarViewController: UIViewController {
         setupTapGesture()
         setupTextFields()
         setupBarButtonItems()
+        
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
     }
 
 }

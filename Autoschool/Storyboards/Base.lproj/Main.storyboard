@@ -11,6 +11,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jxR-qZ-7Uh" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="BQH-Md-cxO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ikH-7E-ZYt">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

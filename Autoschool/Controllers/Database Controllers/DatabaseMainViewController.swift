@@ -39,6 +39,13 @@ class DatabaseMainViewController: UIViewController {
         setupNavigation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.hidesBackButton = true
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+    }
+    
     private func setupDatabaseCollectionView() {
         databaseCollectionView.backgroundColor = .clear
         databaseCollectionView.delegate = self
@@ -47,6 +54,9 @@ class DatabaseMainViewController: UIViewController {
     }
 
     private func setupNavigation() {
+
+        tabBarController?.tabBar.isHidden = false
+
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "База данных"
         let largeTitleAttributes = [
@@ -55,11 +65,16 @@ class DatabaseMainViewController: UIViewController {
         ]
         
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
         navigationController?.navigationBar.tintColor = .lightGreenSea
+        
+        let exitBarButtonItem = UIBarButtonItem(title: "Выйти", style: .plain, target: self, action: #selector(exitHandler))
+        exitBarButtonItem.tintColor = .systemRed
+
+        navigationItem.rightBarButtonItem = exitBarButtonItem
+    }
+    
+    @objc func exitHandler() {
+        navigationController?.popViewController(animated: true)
     }
 
 }
