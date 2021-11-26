@@ -98,7 +98,7 @@ class ExamsViewController: UIViewController {
     
     func examsForSelected(groupId: Int) -> [Exam] {
         if groupId == 0 {
-            return exams
+            return examsForInternalExternal()
         }
         var matchedGroupExams = [Exam]()
         let exams = examsForInternalExternal()
@@ -135,6 +135,7 @@ extension ExamsViewController: UITableViewDelegate, UITableViewDataSource {
             
             let matchedExams = examsForSelected(groupId: selectedGroupId)
             cell.setup(withExams: matchedExams, groups: groups)
+            cell.delegate = self
             
             return cell
         }
@@ -164,5 +165,18 @@ extension ExamsViewController: GroupPickerDelegate {
         selectedGroupId = groupId
         tableView.reloadData()
     }
+}
+
+extension ExamsViewController: ExamDetailDelegate {
+    
+    func pushUpdateExamController(withExam exam: Exam) {
+        let updateExamViewController = UIStoryboard(name: "Exams", bundle: nil).instantiateViewController(identifier: "UpdateExamViewController") as! UpdateExamViewController
+        
+        updateExamViewController.selectedExam = exam
+        
+        self.navigationController?.pushViewController(updateExamViewController, animated: true)
+    }
+    
+    
 }
 

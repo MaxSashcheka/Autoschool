@@ -59,11 +59,18 @@ extension UpdateTeacherViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteTeacherItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteTeacherHandler))
+        deleteTeacherItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteTeacherItem]
     }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteTeacherHandler() {
+        
     }
     
     @objc func saveButtonHandler() {

@@ -32,7 +32,6 @@ class CreateAgreementViewController: UIViewController {
         let datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
         datePicker.datePickerMode = UIDatePicker.Mode.date
-
         return datePicker
     }()
 

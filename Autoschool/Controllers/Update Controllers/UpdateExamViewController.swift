@@ -144,7 +144,10 @@ private extension UpdateExamViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteExamItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteExamHandler))
+        deleteExamItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteExamItem]
     }
 
     @objc func saveExamDate() {
@@ -157,6 +160,11 @@ private extension UpdateExamViewController {
 
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteExamHandler() {
+        navigationController?.popToRootViewController(animated: true)
+        NetworkManager.shared.deleteExam(withId: selectedExam.examId)
     }
 
     @objc func saveButtonHandler() {
@@ -188,6 +196,7 @@ private extension UpdateExamViewController {
         successAlertView.present()
 
     }
+
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
@@ -205,9 +214,9 @@ extension UpdateExamViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.setup(withGroup: group)
         
         if indexPath.item == selectedGroupIndex {
-            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.6).cgColor
+            cell.setSelectedState()
         } else {
-            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
+            cell.setUnselectedState()
         }
         
         return cell

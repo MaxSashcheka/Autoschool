@@ -175,11 +175,18 @@ private extension UpdateInstruсtorViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteInstructorItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteInstructorHandler))
+        deleteInstructorItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteInstructorItem]
     }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteInstructorHandler() {
+        
     }
     
     @objc func saveButtonHandler() {

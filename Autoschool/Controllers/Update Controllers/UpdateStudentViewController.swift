@@ -133,11 +133,18 @@ private extension UpdateStudentViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteStudentItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteStudentHandler))
+        deleteStudentItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteStudentItem]
     }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteStudentHandler() {
+    
     }
     
     @objc func saveButtonHandler() {
@@ -210,9 +217,9 @@ extension UpdateStudentViewController: UICollectionViewDelegate, UICollectionVie
         cell.setup(withGroup: group)
         
         if indexPath.item == selectedGroupIndex {
-            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.6).cgColor
+            cell.setSelectedState()
         } else {
-            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
+            cell.setUnselectedState()
         }
         
         return cell

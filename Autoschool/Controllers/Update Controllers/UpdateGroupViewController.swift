@@ -171,7 +171,10 @@ private extension UpdateGroupViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteGroupItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteGroupHandler))
+        deleteGroupItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteGroupItem]
     }
     
     @objc func saveStartDate() {
@@ -192,6 +195,11 @@ private extension UpdateGroupViewController {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteGroupHandler() {
+        navigationController?.popToRootViewController(animated: true)
+        NetworkManager.shared.deleteGroup(withId: selectedGroup.groupId)
     }
     
     @objc func saveButtonHandler() {
@@ -223,6 +231,7 @@ private extension UpdateGroupViewController {
         
         successAlertView.present()
     }
+
 }
 
 extension UpdateGroupViewController: UITableViewDelegate, UITableViewDataSource {

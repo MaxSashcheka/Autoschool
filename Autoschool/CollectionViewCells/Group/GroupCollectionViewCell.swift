@@ -75,5 +75,14 @@ class GroupCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: reuseIdentifier, bundle: nil)
     }
 
+    func setSelectedState() {
+        layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.7).cgColor
+        layer.shadowRadius = 4.0
+    }
+    
+    func setUnselectedState() {
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.33).cgColor
+        layer.shadowRadius = 5.0
+    }
 }
 

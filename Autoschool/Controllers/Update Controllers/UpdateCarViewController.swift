@@ -52,11 +52,18 @@ private extension UpdateCarViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteCarItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteCarHandler))
+        deleteCarItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteCarItem]
     }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteCarHandler() {
+        
     }
     
     @objc func saveButtonHandler() {

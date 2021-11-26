@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ExamDetailDelegate {
+    func pushUpdateExamController(withExam exam: Exam)
+}
+
 class ExamsCollectionTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "ExamsCollectionTableViewCell"
@@ -20,6 +24,7 @@ class ExamsCollectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var examsCollectionView: UICollectionView!
     let examsCollectionViewInsets = UIEdgeInsets(top: 10, left: 20, bottom: 20, right: 20)
+    var delegate: ExamDetailDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -89,14 +94,11 @@ extension ExamsCollectionTableViewCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let updateExamVC = UIStoryboard(name: "Exams", bundle: nil).instantiateViewController(identifier: "UpdateExamViewController") as! UpdateExamViewController
-        
         let selectedExam = exams[indexPath.row]
-        updateExamVC.selectedExam = selectedExam
-        
-//        self.navigationController?.pushViewController(updateExamVC, animated: true)
+        delegate.pushUpdateExamController(withExam: selectedExam)
     }
     
 }
+
 
 

@@ -77,7 +77,10 @@ private extension UpdateDriverLicenseViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteDriverLicenseItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteDriverLicenseHandler))
+        deleteDriverLicenseItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteDriverLicenseItem]
     }
     
     @objc func saveIssueDate() {
@@ -90,6 +93,10 @@ private extension UpdateDriverLicenseViewController {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteDriverLicenseHandler() {
+        
     }
     
     @objc func saveButtonHandler() {

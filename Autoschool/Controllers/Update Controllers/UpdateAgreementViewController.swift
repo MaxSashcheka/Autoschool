@@ -173,7 +173,10 @@ private extension UpdateAgreementViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteAgreementItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteAgreementHandler))
+        deleteAgreementItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteAgreementItem]
     }
     
     @objc func saveSigningDate() {
@@ -186,6 +189,10 @@ private extension UpdateAgreementViewController {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteAgreementHandler() {
+        
     }
     
     @objc func saveButtonHandler() {

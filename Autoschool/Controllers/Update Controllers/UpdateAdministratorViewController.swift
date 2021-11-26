@@ -58,11 +58,18 @@ private extension UpdateAdministratorViewController {
     }
     
     func setupBarButtonItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonHandler))
+        let deleteAdministratorItem = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(deleteAdministratorHandler))
+        deleteAdministratorItem.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [saveItem, deleteAdministratorItem]
     }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func deleteAdministratorHandler() {
+        
     }
     
     @objc func saveButtonHandler() {

@@ -179,9 +179,9 @@ extension CreateStudentViewController: UICollectionViewDelegate, UICollectionVie
         
         
         if indexPath.item == selectedGroupIndex {
-            cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.7).cgColor
+            cell.setSelectedState()
         } else {
-            cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
+            cell.setUnselectedState()
         }
         
         return cell

@@ -37,5 +37,15 @@ class NavigationCollectionViewCell: UICollectionViewCell {
     func setup(withGroup group: Group) {
         navigationTitleLabel.text = group.name
     }
+    
+    func setSelectedState() {
+        layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.7).cgColor
+        layer.shadowRadius = 3.0
+    }
+    
+    func setUnselectedState() {
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
+        layer.shadowRadius = 2.0
+    }
 
 }

@@ -98,11 +98,9 @@ extension NavigationCollectionTableViewCell: UICollectionViewDelegate, UICollect
             cell.setup(withTitle: title)
             
             if indexPath.row == selectedInternalExternalIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.7).cgColor
-                cell.layer.shadowRadius = 3.0
+                cell.setSelectedState()
             } else {
-                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
-                cell.layer.shadowRadius = 2.0
+                cell.setUnselectedState()
             }
             
             return cell
@@ -113,12 +111,9 @@ extension NavigationCollectionTableViewCell: UICollectionViewDelegate, UICollect
             cell.setup(withGroup: group)
             
             if indexPath.row == selectedGroupIndex {
-                cell.layer.shadowColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.7).cgColor
-                cell.layer.shadowRadius = 3.0
-
+                cell.setSelectedState()
             } else {
-                cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
-                cell.layer.shadowRadius = 2.0
+                cell.setUnselectedState()
             }
             
             return cell
