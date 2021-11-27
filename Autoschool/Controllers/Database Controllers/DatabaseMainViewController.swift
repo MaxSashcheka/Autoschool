@@ -30,6 +30,7 @@ class DatabaseMainViewController: UIViewController {
     
     @IBOutlet weak var databaseCollectionView: UICollectionView!
     let databaseCollectionViewInsets = UIEdgeInsets(top: 23, left: 15, bottom: 17, right: 15)
+    var administrator: Administrator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,8 @@ class DatabaseMainViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
 
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "База данных"
+        title = "\(administrator.lastName) \(administrator.firstName)"
+
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 27, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black

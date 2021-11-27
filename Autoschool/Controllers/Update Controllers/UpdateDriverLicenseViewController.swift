@@ -96,7 +96,8 @@ private extension UpdateDriverLicenseViewController {
     }
     
     @objc func deleteDriverLicenseHandler() {
-        
+        NetworkManager.shared.deleteDriverLicense(withId: selectedDriverLicense.driverLicenseId)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func saveButtonHandler() {
@@ -128,8 +129,15 @@ private extension UpdateDriverLicenseViewController {
 // MARK: - UITextFieldDelegate
 
 extension UpdateDriverLicenseViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location > 32 { return false}
+        return true
+
     }
 }

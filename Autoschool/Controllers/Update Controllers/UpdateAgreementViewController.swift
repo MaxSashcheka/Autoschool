@@ -192,7 +192,8 @@ private extension UpdateAgreementViewController {
     }
     
     @objc func deleteAgreementHandler() {
-        
+        NetworkManager.shared.deleteAgreement(withId: selectedAgreement.agreementId)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func saveButtonHandler() {
@@ -284,6 +285,12 @@ extension UpdateAgreementViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location > 32 { return false }
+        return true
+
     }
 }
 

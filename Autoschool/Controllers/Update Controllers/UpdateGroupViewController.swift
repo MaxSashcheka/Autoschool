@@ -198,8 +198,8 @@ private extension UpdateGroupViewController {
     }
     
     @objc func deleteGroupHandler() {
-        navigationController?.popToRootViewController(animated: true)
         NetworkManager.shared.deleteGroup(withId: selectedGroup.groupId)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func saveButtonHandler() {
@@ -269,6 +269,12 @@ extension UpdateGroupViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location > 32 { return false}
+        return true
+
     }
 }
 

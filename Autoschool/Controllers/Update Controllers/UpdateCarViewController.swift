@@ -63,7 +63,8 @@ private extension UpdateCarViewController {
     }
     
     @objc func deleteCarHandler() {
-        
+        NetworkManager.shared.deleteCar(withId: selectedCar.carId)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func saveButtonHandler() {
@@ -99,5 +100,11 @@ extension UpdateCarViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location > 32 { return false}
+        return true
+
     }
 }

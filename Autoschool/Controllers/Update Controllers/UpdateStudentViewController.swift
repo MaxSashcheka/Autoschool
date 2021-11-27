@@ -144,7 +144,9 @@ private extension UpdateStudentViewController {
     }
     
     @objc func deleteStudentHandler() {
-    
+        NetworkManager.shared.deleteStudent(withId: selectedStudent.studentId)
+        navigationController?.popViewController(animated: true)
+
     }
     
     @objc func saveButtonHandler() {
@@ -301,9 +303,11 @@ extension UpdateStudentViewController: UITextFieldDelegate {
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == phoneNumberTextField {
+            if range.location > 32 { return false}
+
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true

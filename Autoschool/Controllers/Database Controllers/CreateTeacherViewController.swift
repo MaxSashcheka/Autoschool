@@ -122,10 +122,12 @@ extension CreateTeacherViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location > 32 { return false}
+
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = format(with: "+ XXX (XX) XXX-XX-XX", phone: newString)
+            textField.text = format(with: "+XXX (XX) XXX-XX-XX", phone: newString)
             return false
         }
        return true

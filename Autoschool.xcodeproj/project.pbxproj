@@ -18,6 +18,9 @@
 		DD1EE0FC273803BC00B9088B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1EE0FA273803BC00B9088B /* ItemCollectionViewCell.swift */; };
 		DD1EE0FD273803BC00B9088B /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1EE0FB273803BC00B9088B /* ItemCollectionViewCell.xib */; };
 		DD43124D2719B2390009B35E /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43124C2719B2390009B35E /* StudentsViewController.swift */; };
+		DD5134852752383A000E10B3 /* StudentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5134842752383A000E10B3 /* StudentProfileViewController.swift */; };
+		DD51348A27524427000E10B3 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD51348827524427000E10B3 /* GroupTableViewCell.swift */; };
+		DD51348B27524427000E10B3 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD51348927524427000E10B3 /* GroupTableViewCell.xib */; };
 		DD54882127334927002ED3BA /* CreateDriverLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54882027334927002ED3BA /* CreateDriverLicenseViewController.swift */; };
 		DD5B16CC270A2410007E5C38 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */; };
 		DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */; };
@@ -118,6 +121,9 @@
 		DD1EE0FB273803BC00B9088B /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD252D922732AC3000135257 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DD43124C2719B2390009B35E /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		DD5134842752383A000E10B3 /* StudentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewController.swift; sourceTree = "<group>"; };
+		DD51348827524427000E10B3 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		DD51348927524427000E10B3 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
 		DD54882027334927002ED3BA /* CreateDriverLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDriverLicenseViewController.swift; sourceTree = "<group>"; };
 		DD5B16CA270A2410007E5C38 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		DD5B16CB270A2410007E5C38 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
@@ -247,9 +253,19 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		DD51348727524402000E10B3 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				DD51348827524427000E10B3 /* GroupTableViewCell.swift */,
+				DD51348927524427000E10B3 /* GroupTableViewCell.xib */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
 		DD5B16C9270A23F0007E5C38 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				DD51348727524402000E10B3 /* Group */,
 				DDCC6B462733CF6F00394561 /* DriverLicense */,
 				DDEC16AA271DC262007BF181 /* Agreement */,
 				DD6DFF33271C71460073F63F /* Student */,
@@ -290,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				DD7511A627511F9600DBC23C /* MainLoginViewController.swift */,
+				DD5134842752383A000E10B3 /* StudentProfileViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -717,6 +734,7 @@
 				DD70501F271B7D29005894F3 /* TeacherTableViewCell.xib in Resources */,
 				DD9A0C7227070C330040C839 /* Database.storyboard in Resources */,
 				DD6DFF31271C713D0073F63F /* CarTableViewCell.xib in Resources */,
+				DD51348B27524427000E10B3 /* GroupTableViewCell.xib in Resources */,
 				DD62ADC027387D8B0003D9D3 /* NavigationCollectionTableViewCell.xib in Resources */,
 				DD6DFEF1271C33CE0073F63F /* Administration.storyboard in Resources */,
 				DD5B16CD270A2410007E5C38 /* StudentTableViewCell.xib in Resources */,
@@ -788,12 +806,14 @@
 				DD64DD3627367026001C7BB2 /* UpdateCarViewController.swift in Sources */,
 				DD9A0CAB2707444D0040C839 /* CreateInstruсtorViewController.swift in Sources */,
 				DD9A0C5127070A950040C839 /* SceneDelegate.swift in Sources */,
+				DD5134852752383A000E10B3 /* StudentProfileViewController.swift in Sources */,
 				DD6DFF1A271C3D650073F63F /* SPAlertIconDoneView.swift in Sources */,
 				DD64DD3327367025001C7BB2 /* UpdateAdministratorViewController.swift in Sources */,
 				DD5B16E1270A4053007E5C38 /* InstructorsViewController.swift in Sources */,
 				DDCC6B4D2733E57700394561 /* DriverLicensesViewController.swift in Sources */,
 				DD9A0C80270715BD0040C839 /* CreateStudentViewController.swift in Sources */,
 				DD6DFEE8271C1B990073F63F /* CreateAgreementViewController.swift in Sources */,
+				DD51348A27524427000E10B3 /* GroupTableViewCell.swift in Sources */,
 				DD6DFF15271C3D650073F63F /* UILabelExtension.swift in Sources */,
 				DD62ADBF27387D8B0003D9D3 /* NavigationCollectionTableViewCell.swift in Sources */,
 				DD5B16D1270A2465007E5C38 /* Student.swift in Sources */,

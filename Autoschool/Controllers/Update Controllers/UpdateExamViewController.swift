@@ -163,8 +163,8 @@ private extension UpdateExamViewController {
     }
     
     @objc func deleteExamHandler() {
-        navigationController?.popToRootViewController(animated: true)
         NetworkManager.shared.deleteExam(withId: selectedExam.examId)
+        navigationController?.popViewController(animated: true)
     }
 
     @objc func saveButtonHandler() {
@@ -258,8 +258,14 @@ extension UpdateExamViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UITextFieldDelegate
 
 extension UpdateExamViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location > 32 { return false }
         return true
     }
 }

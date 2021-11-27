@@ -111,4 +111,10 @@ extension CreateDriverLicenseViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location > 32 { return false }
+        return true
+
+    }
 }
