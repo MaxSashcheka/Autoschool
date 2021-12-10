@@ -156,7 +156,15 @@ private extension CreateGroupViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Группа успешно добавлена в базу данных", preset: .done)
+        
+        if teachers.isEmpty {
+            let myMessage = "Невозможно добавить группу без преподавателя"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            return
+        }
+        
         let failureAlertView = SPAlertView(title: "Не удалось добавить группу в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let groupName = groupNameTextField.text, groupName != "" else {
@@ -178,12 +186,10 @@ private extension CreateGroupViewController {
         let selectedlessonsTimeId = classesTimeSegmentedControl.selectedSegmentIndex + 1
         let selectedTeacherId = teachers[selectedTeacherIndex].teacherId
         
-        print(startDateString)
         let groupToPost = Group(groupId: 0, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
         NetworkManager.shared.postGroup(groupToPost)
-        
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
 }
 

@@ -150,7 +150,7 @@ private extension UpdateStudentViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Ученик успешно обновлен в базе данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось обновить ученика в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -183,8 +183,8 @@ private extension UpdateStudentViewController {
         
         let student = Student(studentId: selectedStudent.studentId, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: selectedInstructor.instructorId, groupId: selectedGroup.groupId)
         NetworkManager.shared.updateStudent(student)
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
     
     func format(with mask: String, phone: String) -> String {

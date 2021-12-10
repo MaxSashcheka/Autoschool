@@ -118,7 +118,7 @@ private extension CreateExamViewController {
     }
 
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Экзамен успешно добавлен в базу данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось добавить экзамен в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let examDateString = examDateTextField.text, examDateString != "" else {
@@ -143,7 +143,7 @@ private extension CreateExamViewController {
         }
         let exam = Exam(examId: 0, date: examDateString, examTypeId: selectedExamTypeId, examType: ExamType(), groupId: selectedGroupId)
         NetworkManager.shared.postExam(exam)
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
 
     }
 }

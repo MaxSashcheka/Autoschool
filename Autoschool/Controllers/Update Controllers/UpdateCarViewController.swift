@@ -68,7 +68,7 @@ private extension UpdateCarViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Машина успешно обновлена в базе данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось обновить машину в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let number = numberTextField.text, number != "" else {
@@ -88,8 +88,8 @@ private extension UpdateCarViewController {
         
         let car = Car(carId: selectedCar.carId, number: number, name: name, color: color)
         NetworkManager.shared.updateCar(car)
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
     
 }

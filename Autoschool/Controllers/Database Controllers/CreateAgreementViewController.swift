@@ -158,7 +158,15 @@ private extension CreateAgreementViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Договор успешно добавлен в базу данных", preset: .done)
+        
+        if students.isEmpty {
+            let myMessage = "Невозможно добавить договор без студента"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            return
+        }
+        
         let failureAlertView = SPAlertView(title: "Не удалось добавить договор в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let signingDate = signingDateTextField.text, signingDate != "" else {
@@ -176,7 +184,7 @@ private extension CreateAgreementViewController {
         let agreement = Agreement(agreementId: 0, amount: Int(amount) ?? 0, signingDate: signingDate, administratorId: selectedAdministratorId, studentId: selectedStudentId)
         NetworkManager.shared.postAgreement(agreement)
         
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
     }
 }
 

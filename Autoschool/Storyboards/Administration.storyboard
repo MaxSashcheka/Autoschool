@@ -56,10 +56,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cku-iR-3xw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dlb-WU-8zr">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ej-9r-hDg">
                                                         <rect key="frame" x="20" y="15" width="374" height="20.5"/>
@@ -109,6 +109,17 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите пароль для авторизации" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-2u-Ffq">
+                                                        <rect key="frame" x="20" y="322.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eO-K0-kGh">
+                                                        <rect key="frame" x="20" y="348" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -122,15 +133,21 @@
                                                     <constraint firstItem="6ej-9r-hDg" firstAttribute="top" secondItem="Dlb-WU-8zr" secondAttribute="top" constant="15" id="F6H-Rf-2cO"/>
                                                     <constraint firstItem="1OS-mp-9kT" firstAttribute="top" secondItem="Ux2-Fc-PJc" secondAttribute="bottom" constant="15" id="FsD-YS-mGz"/>
                                                     <constraint firstItem="1OS-mp-9kT" firstAttribute="leading" secondItem="Dlb-WU-8zr" secondAttribute="leading" constant="20" id="Oft-5h-JRN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1eO-K0-kGh" secondAttribute="trailing" constant="20" id="RAl-zr-y7C"/>
                                                     <constraint firstItem="Ux2-Fc-PJc" firstAttribute="top" secondItem="6ej-9r-hDg" secondAttribute="bottom" constant="5" id="bRf-nl-mNa"/>
+                                                    <constraint firstItem="1eO-K0-kGh" firstAttribute="top" secondItem="z2T-2u-Ffq" secondAttribute="bottom" constant="5" id="clx-hi-bxD"/>
                                                     <constraint firstAttribute="trailing" secondItem="6ej-9r-hDg" secondAttribute="trailing" constant="20" id="dcM-yc-Maa"/>
                                                     <constraint firstItem="Nct-KC-mC0" firstAttribute="top" secondItem="jia-hL-jDt" secondAttribute="bottom" constant="5" id="dkX-mn-Vyf"/>
+                                                    <constraint firstItem="z2T-2u-Ffq" firstAttribute="top" secondItem="Nct-KC-mC0" secondAttribute="bottom" constant="15" id="eYV-qJ-IOj"/>
                                                     <constraint firstAttribute="trailing" secondItem="qw9-P3-T0B" secondAttribute="trailing" constant="20" id="lZw-Rb-a8z"/>
+                                                    <constraint firstAttribute="trailing" secondItem="z2T-2u-Ffq" secondAttribute="trailing" constant="20" id="mV0-5R-16a"/>
                                                     <constraint firstItem="qw9-P3-T0B" firstAttribute="leading" secondItem="Dlb-WU-8zr" secondAttribute="leading" constant="20" id="ntO-KT-KOe"/>
-                                                    <constraint firstAttribute="height" constant="330" id="quV-3i-r1M"/>
+                                                    <constraint firstAttribute="height" constant="390" id="quV-3i-r1M"/>
                                                     <constraint firstItem="6ej-9r-hDg" firstAttribute="leading" secondItem="Dlb-WU-8zr" secondAttribute="leading" constant="20" id="sha-bx-Khf"/>
+                                                    <constraint firstItem="1eO-K0-kGh" firstAttribute="leading" secondItem="Dlb-WU-8zr" secondAttribute="leading" constant="20" id="wGg-O3-plP"/>
                                                     <constraint firstAttribute="trailing" secondItem="1OS-mp-9kT" secondAttribute="trailing" constant="20" id="wjR-zC-6pS"/>
                                                     <constraint firstItem="Ux2-Fc-PJc" firstAttribute="leading" secondItem="Dlb-WU-8zr" secondAttribute="leading" constant="20" id="yMM-w2-Pfc"/>
+                                                    <constraint firstItem="z2T-2u-Ffq" firstAttribute="leading" secondItem="Dlb-WU-8zr" secondAttribute="leading" constant="20" id="zTV-Xo-arK"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -161,6 +178,7 @@
                         <outlet property="firstNameTextField" destination="oEH-Qb-GYL" id="pb0-n2-k0r"/>
                         <outlet property="lastNameTextField" destination="MnM-xO-HLu" id="rxb-o9-gzk"/>
                         <outlet property="middleNameTextField" destination="AaM-Ef-W6o" id="5wd-ao-ohH"/>
+                        <outlet property="passwordTextField" destination="1eO-K0-kGh" id="1DA-4z-5Wv"/>
                         <outlet property="phoneNumberTextField" destination="qw9-P3-T0B" id="mGB-Pt-1PT"/>
                     </connections>
                 </viewController>

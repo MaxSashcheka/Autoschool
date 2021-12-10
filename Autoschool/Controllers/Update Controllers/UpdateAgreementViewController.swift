@@ -197,7 +197,7 @@ private extension UpdateAgreementViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Договор успешно обновлен в базе данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось обновить договор в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let signingDate = signingDateTextField.text, signingDate != "" else {
@@ -214,8 +214,8 @@ private extension UpdateAgreementViewController {
         let selectedStudentId = students[selectedStudentIndex].studentId
         let agreement = Agreement(agreementId: selectedAgreement.agreementId, amount: Int(amount) ?? 0, signingDate: signingDate, administratorId: selectedAdministratorId, studentId: selectedStudentId)
         NetworkManager.shared.updateAgreement(agreement)
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
 }
 

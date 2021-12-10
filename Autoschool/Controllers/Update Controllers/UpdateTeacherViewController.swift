@@ -70,12 +70,14 @@ extension UpdateTeacherViewController {
     }
     
     @objc func deleteTeacherHandler() {
-        NetworkManager.shared.deleteTeacher(withId: selectedTeacher.teacherId)
+        NetworkManager.shared.deleteTeacher(withId: selectedTeacher.teacherId, completionHandler: { (isError) in
+            
+        })
         navigationController?.popViewController(animated: true)
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Преподаватель успешно обновлен в базе данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось обновить преподавателя в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -105,8 +107,7 @@ extension UpdateTeacherViewController {
         
         let teacher = Teacher(teacherId: selectedTeacher.teacherId, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber)
         NetworkManager.shared.updateTeacher(teacher)
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
 
     }
     

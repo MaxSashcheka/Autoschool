@@ -15,6 +15,7 @@ class CreateAdministratorViewController: UIViewController {
     @IBOutlet weak var middleNameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ private extension CreateAdministratorViewController {
         middleNameTextField.delegate = self
         phoneNumberTextField.delegate = self
         emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     func setupTapGesture() {
@@ -58,7 +60,7 @@ private extension CreateAdministratorViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Администратор успешно добавлен в базу данных", preset: .done)
+
         let failureAlertView = SPAlertView(title: "Не удалось добавить администратора в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -86,10 +88,16 @@ private extension CreateAdministratorViewController {
             return
         }
         
-        let administrator = Administrator(administratorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email)
+        guard let password = passwordTextField.text, password != "" else {
+            failureAlertView.present()
+            return
+        }
+        
+        let administrator = Administrator(administratorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email, password: password)
         NetworkManager.shared.postAdministrator(administrator)
         
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
     
     func format(with mask: String, phone: String) -> String {

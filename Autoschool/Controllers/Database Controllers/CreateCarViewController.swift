@@ -54,7 +54,7 @@ private extension CreateCarViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Машина успешно добавлена в базу данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось добавить машину в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let number = carNumberTextField.text, number != "" else {
@@ -74,8 +74,8 @@ private extension CreateCarViewController {
         
         let car = Car(carId: 0, number: number, name: name, color: color)
         NetworkManager.shared.postCar(car)
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
     
 }

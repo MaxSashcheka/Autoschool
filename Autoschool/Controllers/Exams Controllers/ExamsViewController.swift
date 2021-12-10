@@ -40,7 +40,9 @@ class ExamsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         NetworkManager.shared.fetchExams { fetchedExams in
-            self.exams = fetchedExams
+            self.exams = fetchedExams.sorted { firstExam, secondExam -> Bool in
+                return firstExam.examId < secondExam.examId
+            }
             self.tableView.reloadData()
         }
         NetworkManager.shared.fetchGroups { fetchedGroups in

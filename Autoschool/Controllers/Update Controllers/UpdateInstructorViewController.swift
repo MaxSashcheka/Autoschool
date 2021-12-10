@@ -186,12 +186,21 @@ private extension UpdateInstruсtorViewController {
     }
     
     @objc func deleteInstructorHandler() {
+        
         NetworkManager.shared.deleteInstructor(withId: selectedInstructor.instructorId)
-        navigationController?.popViewController(animated: true)
+        popBack(3)
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Инструктор успешно обновлен в базе данных", preset: .done)
+        
+        if driverLicenses.isEmpty || cars.isEmpty {
+            let myMessage = "Невозможно обновить инструктора без машины и водительского удостоверения"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            return
+        }
+        
         let failureAlertView = SPAlertView(title: "Не удалось обновить инструктора в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -229,8 +238,8 @@ private extension UpdateInstruсtorViewController {
         
         let instructor = Instructor(instructorId: selectedInstructor.instructorId, firstName: firstName, lastName: lastName, middleName: middleName, drivingExperience: Int(drivingExperience) ?? 0, passportNumber: passportNumber, phoneNumber: phoneNumber, carId: selectedCarId, driverLicenseId: selectedDriverLicenseId)
         NetworkManager.shared.updateInstructor(instructor)
+        popBack(3)
         
-        successAlertView.present()
     }
     
     func format(with mask: String, phone: String) -> String {

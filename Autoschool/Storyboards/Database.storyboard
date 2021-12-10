@@ -125,23 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLh-TN-LCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002.8985507246377" y="-514.28571428571422"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Glu-TA-QPu">
-            <objects>
-                <viewController id="w7j-ZE-yEg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="usU-0x-Qpn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="bke-D1-Lth"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tQL-dK-lxz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nTn-HK-8o2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2941" y="-58"/>
+            <point key="canvasLocation" x="1684" y="120"/>
         </scene>
         <!--Database Main View Controller-->
         <scene sceneID="EJL-Y0-qBu">
@@ -179,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="184-fe-TNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2941" y="-796"/>
+            <point key="canvasLocation" x="2606" y="120"/>
         </scene>
         <!--Create Group View Controller-->
         <scene sceneID="iOp-EP-V3n">
@@ -587,10 +571,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n4Q-XX-uel">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BG4-3K-pAt">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ФИО инструктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPN-89-ass">
                                                         <rect key="frame" x="20" y="15" width="374" height="20.5"/>
@@ -640,13 +624,25 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите пароль для авторизации" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7Y-ja-pW9">
+                                                        <rect key="frame" x="20" y="322.5" width="374" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBZ-Al-ojT">
+                                                        <rect key="frame" x="20" y="348" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="rzu-yJ-waH" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="3NJ-Oe-T1v"/>
                                                     <constraint firstAttribute="trailing" secondItem="d3A-ez-Wsc" secondAttribute="trailing" constant="20" id="AdL-0X-IOg"/>
-                                                    <constraint firstAttribute="height" constant="330" id="Alu-69-2bC"/>
+                                                    <constraint firstAttribute="height" constant="390" id="Alu-69-2bC"/>
                                                     <constraint firstAttribute="trailing" secondItem="CfV-Cz-dNR" secondAttribute="trailing" constant="20" id="AoG-Ki-V98"/>
+                                                    <constraint firstItem="RBZ-Al-ojT" firstAttribute="top" secondItem="Q7Y-ja-pW9" secondAttribute="bottom" constant="5" id="BlP-Fh-d0u"/>
                                                     <constraint firstItem="xPN-89-ass" firstAttribute="top" secondItem="BG4-3K-pAt" secondAttribute="top" constant="15" id="Cff-ZA-VkS"/>
                                                     <constraint firstItem="CfV-Cz-dNR" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="E0B-EW-JaE"/>
                                                     <constraint firstItem="ZwR-Qr-Bee" firstAttribute="top" secondItem="CfV-Cz-dNR" secondAttribute="bottom" constant="15" id="HTm-yz-4hv"/>
@@ -655,9 +651,14 @@
                                                     <constraint firstItem="d3A-ez-Wsc" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="LVp-ca-kjp"/>
                                                     <constraint firstItem="xPN-89-ass" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="LfB-7N-8UD"/>
                                                     <constraint firstItem="CfV-Cz-dNR" firstAttribute="top" secondItem="xPN-89-ass" secondAttribute="bottom" constant="5" id="MTZ-Wj-6u3"/>
+                                                    <constraint firstItem="Q7Y-ja-pW9" firstAttribute="top" secondItem="d3A-ez-Wsc" secondAttribute="bottom" constant="15" id="QAl-M4-L60"/>
+                                                    <constraint firstItem="Q7Y-ja-pW9" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="QqQ-f5-4hD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RBZ-Al-ojT" secondAttribute="trailing" constant="20" id="WjS-nf-wag"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Q7Y-ja-pW9" secondAttribute="trailing" constant="20" id="XRl-il-MlA"/>
                                                     <constraint firstItem="d3A-ez-Wsc" firstAttribute="top" secondItem="i7Q-07-am5" secondAttribute="bottom" constant="5" id="ac0-XX-ahv"/>
                                                     <constraint firstAttribute="trailing" secondItem="ZwR-Qr-Bee" secondAttribute="trailing" constant="20" id="khG-5L-zRl"/>
                                                     <constraint firstItem="ZwR-Qr-Bee" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="lwi-gt-Eqa"/>
+                                                    <constraint firstItem="RBZ-Al-ojT" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="o8j-Jr-2J8"/>
                                                     <constraint firstAttribute="trailing" secondItem="xPN-89-ass" secondAttribute="trailing" constant="20" id="rYf-NS-gN7"/>
                                                     <constraint firstItem="i7Q-07-am5" firstAttribute="leading" secondItem="BG4-3K-pAt" secondAttribute="leading" constant="20" id="t2Z-Mz-91T"/>
                                                     <constraint firstAttribute="trailing" secondItem="rzu-yJ-waH" secondAttribute="trailing" constant="20" id="yRO-Jf-oRc"/>
@@ -692,6 +693,7 @@
                         <outlet property="firstNameTextField" destination="THB-3N-y5Q" id="Mny-vg-L2D"/>
                         <outlet property="lastNameTextField" destination="waj-4u-Jg8" id="dXL-3N-ByQ"/>
                         <outlet property="middleNameTextField" destination="P5U-R6-O7l" id="Hxn-YQ-Imx"/>
+                        <outlet property="passwordTextField" destination="RBZ-Al-ojT" id="RP8-C3-7QK"/>
                         <outlet property="phoneNumberTextField" destination="rzu-yJ-waH" id="H6p-0Q-bRt"/>
                     </connections>
                 </viewController>
@@ -1517,7 +1519,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Poe-bT-GVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092.753623188406" y="-514.28571428571422"/>
+            <point key="canvasLocation" x="774" y="120"/>
         </scene>
     </scenes>
     <resources>
@@ -1527,9 +1529,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

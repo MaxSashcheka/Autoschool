@@ -8,35 +8,26 @@
 import Foundation
 
 class NetworkManager {
-    
     private init() {}
-    
     static let shared = NetworkManager()
-    
     let apiRoute = "http://localhost:5000"
     
     public enum HTTPMethod: String {
         case get = "GET"
         case post = "POST"
         case put = "PUT"
-        case patch = "PATCH"
         case delete = "DELETE"
     }
     
     // MARK: - Groups
     func fetchGroups(completionHandler: @escaping ([Group]) -> Void) {
-        // fetch all groups
         guard let url = URL(string: "\(apiRoute)/groups") else { return }
-        
         URLSession.shared.dataTask(with: url) { data, responce, error in
-
             if error != nil {
                 print("error: \(error?.localizedDescription)")
                 return
             }
-            
             guard let data = data else { return }
-            
             do {
                 let groupsData = try JSONDecoder().decode([Group].self, from: data)
                 DispatchQueue.main.async {
@@ -45,13 +36,11 @@ class NetworkManager {
             } catch {
                 print("Error: \(error.localizedDescription)")
             }
-            
         }.resume()
     }
     
     func postGroup(_ group: Group) {
         guard let url = URL(string: "\(apiRoute)/groups/create") else { return }
-        
         do {
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -62,9 +51,7 @@ class NetworkManager {
             request.httpBody = postData
             
             URLSession.shared.dataTask(with: request) { (data, res, error) in
-                guard let data = data, error == nil else {
-                    return
-                }
+                guard let data = data, error == nil else { return }
                 do {
                     let responce  = try JSONDecoder().decode(Group.self, from: data)
                     print("Success \(responce)")
@@ -72,7 +59,6 @@ class NetworkManager {
                     print(error.localizedDescription)
                 }
             }.resume()
-            
         } catch let serializationError {
             print("serializationError: \(serializationError.localizedDescription)")
         }
@@ -80,20 +66,15 @@ class NetworkManager {
     
     func updateGroup(_ group: Group) {
         guard let url = URL(string: "\(apiRoute)/groups/update/\(group.groupId)") else { return }
-        
         do {
             var request = URLRequest(url: url)
             request.httpMethod = "PUT"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
             let post = "name=\(group.name)&lessons_start_date=\(group.lessonsStartDate)&lessons_end_date=\(group.lessonsEndDate)&category_id=\(group.categoryId)&teacher_id=\(group.teacherId)&lessons_time_id=\(group.lessonsTimeId)"
-            let postData = post.data(using: .utf8, allowLossyConversion: true)! //String.Encoding.ascii
+            let postData = post.data(using: .utf8, allowLossyConversion: true)!
             request.httpBody = postData
-            
             URLSession.shared.dataTask(with: request) { (data, res, error) in
-                guard let data = data, error == nil else {
-                    return
-                }
+                guard let data = data, error == nil else { return }
                 do {
                     let responce  = try JSONDecoder().decode(Group.self, from: data)
                     print("Success \(responce)")
@@ -109,21 +90,18 @@ class NetworkManager {
     
     func deleteGroup(withId groupId: Int) {
         guard let url = URL(string: "\(apiRoute)/groups/delete/\(groupId)") else { return }
-        
         do {
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
 
             URLSession.shared.dataTask(with: request) { (data, res, error) in
-                
             }.resume()
             
         } catch let serializationError {
             print("serializationError: \(serializationError.localizedDescription)")
         }
     }
-    
     
     // MARK: - Students
     // fetch students for certain group
@@ -351,7 +329,7 @@ class NetworkManager {
         }
     }
     
-    func deleteTeacher(withId teacherId: Int) {
+    func deleteTeacher(withId teacherId: Int, completionHandler: @escaping (Bool) -> Void) {
         guard let url = URL(string: "\(apiRoute)/teachers/delete/\(teacherId)") else { return }
         
         do {
@@ -360,6 +338,12 @@ class NetworkManager {
             request.setValue("appplication/json", forHTTPHeaderField: "Content-Type")
 
             URLSession.shared.dataTask(with: request) { (data, res, error) in
+                
+                if let httpResponse = res as? HTTPURLResponse{
+                    DispatchQueue.main.async {
+                        completionHandler(httpResponse.statusCode == 500)
+                    }
+                }
                 
             }.resume()
             
@@ -394,12 +378,22 @@ class NetworkManager {
     }
     
     func postInstructor(_ instructor: Instructor) {
+        
+        
+        
         guard let url = URL(string: "\(apiRoute)/instructors/create") else { return }
         do {
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            let post = "first_name=\(instructor.firstName)&last_name=\(instructor.lastName)&middle_name=\(instructor.middleName)&driving_experience=\(instructor.drivingExperience)&passport_number=\(instructor.passportNumber)&phone_number=\(instructor.phoneNumber)&car_id=\(instructor.carId)&driver_license_id=\(instructor.driverLicenseId)"
+            
+//            let carId = instructor.carId ?? 0
+//            let driverLicenseId = instructor.driverLicenseId ?? 0
+//
+//            let carIdString = (carId == 0) ? "" : "\(carId)"
+//            let driverLicenseIdString = (driverLicenseId == 0) ? "" : "\(driverLicenseId)"
+            
+            let post = "first_name=\(instructor.firstName)&last_name=\(instructor.lastName)&middle_name=\(instructor.middleName)&driving_experience=\(instructor.drivingExperience)&passport_number=\(instructor.passportNumber)&phone_number=\(instructor.phoneNumber)&car_id=\(instructor.carId!)&driver_license_id=\(instructor.driverLicenseId!)"
             let postData = post.data(using: .utf8, allowLossyConversion: true)!
             request.httpBody = postData
             
@@ -426,7 +420,7 @@ class NetworkManager {
             var request = URLRequest(url: url)
             request.httpMethod = "PUT"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            let post = "first_name=\(instructor.firstName)&last_name=\(instructor.lastName)&middle_name=\(instructor.middleName)&driving_experience=\(instructor.drivingExperience)&passport_number=\(instructor.passportNumber)&phone_number=\(instructor.phoneNumber)&car_id=\(instructor.carId)&driver_license_id=\(instructor.driverLicenseId)"
+            let post = "first_name=\(instructor.firstName)&last_name=\(instructor.lastName)&middle_name=\(instructor.middleName)&driving_experience=\(instructor.drivingExperience)&passport_number=\(instructor.passportNumber)&phone_number=\(instructor.phoneNumber)&car_id=\(instructor.carId!)&driver_license_id=\(instructor.driverLicenseId!)"
             let postData = post.data(using: .utf8, allowLossyConversion: true)!
             request.httpBody = postData
             
@@ -591,7 +585,7 @@ class NetworkManager {
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            let post = "first_name=\(administrator.firstName)&last_name=\(administrator.lastName)&middle_name=\(administrator.middleName)&phone_number=\(administrator.phoneNumber)&email=\(administrator.email)"
+            let post = "first_name=\(administrator.firstName)&last_name=\(administrator.lastName)&middle_name=\(administrator.middleName)&phone_number=\(administrator.phoneNumber)&email=\(administrator.email)&password=\(administrator.password)"
             let postData = post.data(using: .utf8, allowLossyConversion: true)!
             request.httpBody = postData
             
@@ -618,7 +612,7 @@ class NetworkManager {
             var request = URLRequest(url: url)
             request.httpMethod = "PUT"
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            let post = "first_name=\(administrator.firstName)&last_name=\(administrator.lastName)&middle_name=\(administrator.middleName)&phone_number=\(administrator.phoneNumber)&email=\(administrator.email)"
+            let post = "first_name=\(administrator.firstName)&last_name=\(administrator.lastName)&middle_name=\(administrator.middleName)&phone_number=\(administrator.phoneNumber)&email=\(administrator.email)&password=\(administrator.password)"
             let postData = post.data(using: .utf8, allowLossyConversion: true)!
             request.httpBody = postData
             
@@ -945,5 +939,4 @@ class NetworkManager {
         }
     }
 
-    
 }

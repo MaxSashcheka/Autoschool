@@ -15,6 +15,7 @@ struct Model {
 class InstructorsViewController: UIViewController {
     
     var instructors = [Instructor]()
+    
     var models = [
         Model(image: UIImage(systemName: "car.2.fill"), title: "Автопарк"),
         Model(image: UIImage(systemName: "person.crop.rectangle"), title: "Удостоверения"),

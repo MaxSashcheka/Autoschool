@@ -15,6 +15,7 @@ class UpdateAdministratorViewController: UIViewController {
     @IBOutlet weak var middleNameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     var selectedAdministrator: Administrator!
     
@@ -41,6 +42,7 @@ private extension UpdateAdministratorViewController {
         middleNameTextField.text = selectedAdministrator.middleName
         phoneNumberTextField.text = selectedAdministrator.phoneNumber
         emailTextField.text = selectedAdministrator.email
+        passwordTextField.text = selectedAdministrator.password
     }
 
     func setupTextFields() {
@@ -49,6 +51,7 @@ private extension UpdateAdministratorViewController {
         middleNameTextField.delegate = self
         phoneNumberTextField.delegate = self
         emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     func setupTapGesture() {
@@ -74,7 +77,7 @@ private extension UpdateAdministratorViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Администратор успешно обновлен в базе данных", preset: .done)
+    
         let failureAlertView = SPAlertView(title: "Не удалось обновить администратора в базе данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -101,11 +104,16 @@ private extension UpdateAdministratorViewController {
             failureAlertView.present()
             return
         }
-    
-        let administrator = Administrator(administratorId: selectedAdministrator.administratorId, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email)
-        NetworkManager.shared.updateAdministrator(administrator)
         
-        successAlertView.present()
+        guard let password = passwordTextField.text, password != "" else {
+            failureAlertView.present()
+            return
+        }
+    
+        let administrator = Administrator(administratorId: selectedAdministrator.administratorId, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email, password: password)
+        NetworkManager.shared.updateAdministrator(administrator)
+        navigationController?.popViewController(animated: true)
+
     }
     
     func format(with mask: String, phone: String) -> String {

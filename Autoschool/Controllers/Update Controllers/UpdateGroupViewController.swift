@@ -12,6 +12,7 @@ class UpdateGroupViewController: UIViewController {
     var teachers = [Teacher]()
     
     var selectedGroup: Group!
+    var students: [Student]!
 
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var startDateTextField: UITextField!
@@ -198,12 +199,20 @@ private extension UpdateGroupViewController {
     }
     
     @objc func deleteGroupHandler() {
+        if !students.isEmpty {
+            let myMessage = "Прежде чем удалить группу, необходимо удалить или перенести учеников в другие группы"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            return
+        }
         NetworkManager.shared.deleteGroup(withId: selectedGroup.groupId)
-        navigationController?.popViewController(animated: true)
+        popBack(3)
+
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Группа успешно обновлена в базе данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось обновить группу", message: "Вы заполнили не все поля", preset: .error)
         
         guard let groupName = groupNameTextField.text, groupName != "" else {
@@ -227,9 +236,8 @@ private extension UpdateGroupViewController {
         
         let groupToPost = Group(groupId: selectedGroup.groupId, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
         NetworkManager.shared.updateGroup(groupToPost)
-        
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
 
 }

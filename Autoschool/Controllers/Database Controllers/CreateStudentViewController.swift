@@ -111,7 +111,6 @@ private extension CreateStudentViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Ученик успешно добавлен в базу данных", preset: .done)
         let failureAlertView = SPAlertView(title: "Не удалось добавить ученика в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -141,12 +140,12 @@ private extension CreateStudentViewController {
         
         let selectedGroup = groups[selectedGroupIndex]
         let selectedInstructor = instructors[selectedInstructorIndex]
-        print(phoneNumber)
         
         let student = Student(studentId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber, instructorId: selectedInstructor.instructorId, groupId: selectedGroup.groupId)
         NetworkManager.shared.postStudent(student)
         
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+        
     }
     
     func format(with mask: String, phone: String) -> String {

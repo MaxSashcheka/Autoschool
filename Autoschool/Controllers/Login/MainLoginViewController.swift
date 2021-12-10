@@ -72,7 +72,7 @@ class MainLoginViewController: UIViewController {
     func format(with mask: String, phone: String) -> String {
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
-        var index = numbers.startIndex // numbers iterator
+        var index = numbers.startIndex
 
         for ch in mask where index < numbers.endIndex {
             if ch == "X" {
@@ -114,7 +114,7 @@ class MainLoginViewController: UIViewController {
         guard let password = passwordTextField.text, password != "" else { return }
         
         for administrator in administrators {
-            if administrator.phoneNumber == phoneNumber {
+            if administrator.phoneNumber == phoneNumber, administrator.password == password {
                 let viewController = UIStoryboard(name: "Database", bundle: nil).instantiateViewController(identifier: "DatabaseMainViewController") as! DatabaseMainViewController
                 viewController.administrator = administrator
                 self.navigationController?.pushViewController(viewController, animated: true)

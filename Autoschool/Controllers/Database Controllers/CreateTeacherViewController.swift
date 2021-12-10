@@ -59,7 +59,7 @@ extension CreateTeacherViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Преподаватель успешно добавлен в базу данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось добавить преподавателя в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -89,9 +89,7 @@ extension CreateTeacherViewController {
         
         let teacher = Teacher(teacherId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber)
         NetworkManager.shared.postTeacher(teacher)
-        
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
 
     }
     

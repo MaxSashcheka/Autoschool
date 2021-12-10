@@ -15,8 +15,8 @@ struct Instructor: Codable {
     var drivingExperience: Int
     var passportNumber: String
     var phoneNumber: String
-    var carId: Int
-    var driverLicenseId: Int
+    var carId: Int?
+    var driverLicenseId: Int?
     
     var fullName: String {
         return "\(lastName) \(firstName) \(middleName)"

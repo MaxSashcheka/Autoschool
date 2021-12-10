@@ -78,7 +78,7 @@ private extension CreateDriverLicenseViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Удостоверение успешно добавлено в базу данных", preset: .done)
+        
         let failureAlertView = SPAlertView(title: "Не удалось добавить удостоверение в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let number = numberTextField.text, number != "" else {
@@ -98,9 +98,8 @@ private extension CreateDriverLicenseViewController {
 
         let driverLicense = DriverLisence(driverLicenseId: 0, issueDate: issueDateString, number: number, validity: Int(validity) ?? 0)
         NetworkManager.shared.postDriverLicense(driverLicense)
-        
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
 }
 

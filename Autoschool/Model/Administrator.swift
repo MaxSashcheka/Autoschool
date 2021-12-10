@@ -14,6 +14,7 @@ struct Administrator: Codable {
     var middleName: String
     var phoneNumber: String
     var email: String
+    var password: String
     
     var fullName: String {
         return "\(lastName) \(firstName) \(middleName)"

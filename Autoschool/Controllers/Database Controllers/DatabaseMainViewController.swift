@@ -55,23 +55,17 @@ class DatabaseMainViewController: UIViewController {
     }
 
     private func setupNavigation() {
-
         tabBarController?.tabBar.isHidden = false
-
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "\(administrator.lastName) \(administrator.firstName)"
-
         let largeTitleAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 27, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black
         ]
-        
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleAttributes
         navigationController?.navigationBar.tintColor = .lightGreenSea
-        
         let exitBarButtonItem = UIBarButtonItem(title: "Выйти", style: .plain, target: self, action: #selector(exitHandler))
         exitBarButtonItem.tintColor = .systemRed
-
         navigationItem.rightBarButtonItem = exitBarButtonItem
     }
     

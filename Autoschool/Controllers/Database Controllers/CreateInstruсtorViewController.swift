@@ -154,7 +154,15 @@ private extension CreateInstruсtorViewController {
     }
     
     @objc func saveButtonHandler() {
-        let successAlertView = SPAlertView(title: "Инструктор успешно добавлен в базу данных", preset: .done)
+        
+        if cars.isEmpty || driverLicenses.isEmpty {
+            let myMessage = "Невозможно добавить инструктора без машины или водительского удостоверения"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            return
+        }
+
         let failureAlertView = SPAlertView(title: "Не удалось добавить инструктора в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
         guard let firstName = firstNameTextField.text, firstName != "" else {
@@ -182,18 +190,18 @@ private extension CreateInstruсtorViewController {
             return
         }
         
-        guard var phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+        guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
             failureAlertView.present()
             return
         }
-
+        
         let selectedCarId = cars[selectedCarIndex].carId
         let selectedDriverLicenseId = driverLicenses[selectedDriverLicenseIndex].driverLicenseId
-        
+
         let instructor = Instructor(instructorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, drivingExperience: Int(drivingExperience) ?? 0, passportNumber: passportNumber, phoneNumber: phoneNumber, carId: selectedCarId, driverLicenseId: selectedDriverLicenseId)
         NetworkManager.shared.postInstructor(instructor)
-        
-        successAlertView.present()
+        navigationController?.popViewController(animated: true)
+
     }
     
     func format(with mask: String, phone: String) -> String {

@@ -72,9 +72,17 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.beginUpdates()
             
             let teacherId = teachers[indexPath.row].teacherId
-            NetworkManager.shared.deleteTeacher(withId: teacherId)
-            teachers.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            NetworkManager.shared.deleteTeacher(withId: teacherId) { isError in
+                if isError {
+                    let myMessage = "Прежде чем удалить преподавателя, необходимо убрать его как преподавателя в его группах"
+                    let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(myAlert, animated: true, completion: nil)
+                } else {
+                    self.teachers.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
             
             tableView.endUpdates()
         }
