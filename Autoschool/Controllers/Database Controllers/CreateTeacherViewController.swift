@@ -8,6 +8,8 @@
 import UIKit
 
 class CreateTeacherViewController: UIViewController {
+    
+    var teachers = [Teacher]()
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -15,6 +17,16 @@ class CreateTeacherViewController: UIViewController {
     
     @IBOutlet weak var passportNumberTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.shared.fetchTeacher { [weak self] fetchedTeacher in
+            guard let self = self else { return }
+
+            self.teachers = fetchedTeacher
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +97,17 @@ extension CreateTeacherViewController {
         guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
             failureAlertView.present()
             return
+        }
+        
+        for teacher in teachers {
+            if teacher.phoneNumber == phoneNumber || teacher.passportNumber == passportNumber {
+                let myMessage = "Невозможно добавить ученика, так как указанная номер паспорта или мобильный телефон уже находятся в базе данных"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(myAlert, animated: true, completion: nil)
+                
+                return
+            }
         }
         
         let teacher = Teacher(teacherId: 0, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber)

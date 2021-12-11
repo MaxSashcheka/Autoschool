@@ -8,6 +8,8 @@
 import UIKit
 
 class CreateDriverLicenseViewController: UIViewController {
+    
+    var driverLicenses = [DriverLisence]()
 
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var issueDateTextField: UITextField!
@@ -20,6 +22,16 @@ class CreateDriverLicenseViewController: UIViewController {
 
         return datePicker
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.shared.fetchDriverLicenses { [weak self] fetchedDriverLicenses in
+            guard let self = self else { return }
+
+            self.driverLicenses = fetchedDriverLicenses
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +106,17 @@ private extension CreateDriverLicenseViewController {
         guard let validity = validityTextField.text, validity != "" else {
             failureAlertView.present()
             return
+        }
+        
+        for driverLicense in driverLicenses {
+            if driverLicense.number == number {
+                let myMessage = "Невозможно водительское удостоверение, так как указанный номер уже есть в базе данных"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(myAlert, animated: true, completion: nil)
+                
+                return 
+            }
         }
 
         let driverLicense = DriverLisence(driverLicenseId: 0, issueDate: issueDateString, number: number, validity: Int(validity) ?? 0)

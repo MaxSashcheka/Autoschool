@@ -10,6 +10,7 @@ import UIKit
 class CreateGroupViewController: UIViewController {
     
     var teachers = [Teacher]()
+    var groups = [Group]()
 
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var startDateTextField: UITextField!
@@ -48,12 +49,20 @@ extension CreateGroupViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchTeacher { fetchedTeachers in
+        NetworkManager.shared.fetchTeacher { [weak self] fetchedTeachers in
+            guard let self = self else { return }
+
             self.teachers = fetchedTeachers
             self.teachersTableView.reloadData()
             self.teachersTableViewHeight.constant = CGFloat(self.teachers.count) * self.teachersTableView.rowHeight + 10
             self.teachersSuperViewHeight.constant = self.teachersTableViewHeight.constant + 20
 
+        }
+        
+        NetworkManager.shared.fetchGroups { [weak self] fetchedGroups in
+            guard let self = self else { return }
+
+            self.groups = fetchedGroups
         }
     }
     
@@ -167,7 +176,7 @@ private extension CreateGroupViewController {
         
         let failureAlertView = SPAlertView(title: "Не удалось добавить группу в базу данных", message: "Вы заполнили не все поля", preset: .error)
         
-        guard let groupName = groupNameTextField.text, groupName != "" else {
+        guard let name = groupNameTextField.text, name != "" else {
             failureAlertView.present()
             return
         }
@@ -182,11 +191,22 @@ private extension CreateGroupViewController {
             return
         }
         
+        for group in groups {
+            if group.name == name {
+                let myMessage = "Невозможно добавить группу, так как указанное название уже есть в базе данных"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(myAlert, animated: true, completion: nil)
+                
+                return
+            }
+        }
+        
         let selectedCategoryId = drivingCategorySegmentedControl.selectedSegmentIndex + 1
         let selectedlessonsTimeId = classesTimeSegmentedControl.selectedSegmentIndex + 1
         let selectedTeacherId = teachers[selectedTeacherIndex].teacherId
         
-        let groupToPost = Group(groupId: 0, name: groupName, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
+        let groupToPost = Group(groupId: 0, name: name, lessonsStartDate: startDateString, lessonsEndDate: endDateString, categoryId: selectedCategoryId, teacherId: selectedTeacherId, lessonsTimeId: selectedlessonsTimeId)
         NetworkManager.shared.postGroup(groupToPost)
         navigationController?.popViewController(animated: true)
 

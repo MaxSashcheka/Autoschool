@@ -17,6 +17,17 @@ class CreateAdministratorViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var administrators = [Administrator]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.shared.fetchAdministrators { [weak self] fetchedAdministrators in
+            guard let self = self else { return }
+            self.administrators = fetchedAdministrators
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +41,9 @@ class CreateAdministratorViewController: UIViewController {
         navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")!
     }
+    
+    
+    
 }
 
 // MARK: - Private interface
@@ -91,6 +105,18 @@ private extension CreateAdministratorViewController {
         guard let password = passwordTextField.text, password != "" else {
             failureAlertView.present()
             return
+        }
+        
+        for administrator in administrators {
+            if administrator.email == email || administrator.phoneNumber == phoneNumber {
+                let myMessage = "Невозможно добавить администратора, так как указанная электронная почта или телефон уже находятся в базе данных"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(myAlert, animated: true, completion: nil)
+                
+                return
+            }
+    
         }
         
         let administrator = Administrator(administratorId: 0, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email, password: password)

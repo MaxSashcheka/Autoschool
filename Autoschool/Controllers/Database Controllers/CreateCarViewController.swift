@@ -9,9 +9,21 @@ import UIKit
 
 class CreateCarViewController: UIViewController {
     
+    var cars = [Car]()
+    
     @IBOutlet weak var carNumberTextField: UITextField!
     @IBOutlet weak var carNameTextField: UITextField!
     @IBOutlet weak var carColorTextField: UITextField!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.shared.fetchCars { [weak self] fetchedCars in
+            guard let self = self else { return }
+
+            self.cars = fetchedCars
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +82,17 @@ private extension CreateCarViewController {
         guard let color = carColorTextField.text, color != "" else {
             failureAlertView.present()
             return
+        }
+        
+        for car in cars {
+            if car.number == number {
+                let myMessage = "Невозможно добавить машину, так как указанный государственный номер уже есть в базе данных"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(myAlert, animated: true, completion: nil)
+                
+                return
+            }
         }
         
         let car = Car(carId: 0, number: number, name: name, color: color)

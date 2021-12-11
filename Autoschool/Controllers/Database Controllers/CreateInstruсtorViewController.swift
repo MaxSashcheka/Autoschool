@@ -41,10 +41,14 @@ extension CreateInstruсtorViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchInstructors { fetchedInstructors in
+        NetworkManager.shared.fetchInstructors { [weak self] fetchedInstructors in
+            guard let self = self else { return }
+
             self.instructors = fetchedInstructors
         }
-        NetworkManager.shared.fetchCars { fetchedCars in
+        NetworkManager.shared.fetchCars { [weak self] fetchedCars in
+            guard let self = self else { return }
+
             var carsWithoutOwner = [Car]()
             for car in fetchedCars {
                 var isNonRepeated = true
@@ -64,7 +68,9 @@ extension CreateInstruсtorViewController {
             self.carsTableViewHeight.constant = CGFloat(self.cars.count) * self.carsTableView.rowHeight + 10
             self.carsSuperViewHeight.constant = self.carsTableViewHeight.constant + 30
         }
-        NetworkManager.shared.fetchDriverLicenses { fetchedDriverLicenses in
+        NetworkManager.shared.fetchDriverLicenses { [weak self] fetchedDriverLicenses in
+            guard let self = self else { return }
+
             var driverLicensesWithoutOwner = [DriverLisence]()
             for driverLicense in fetchedDriverLicenses {
                 var isNonRepeated = true
@@ -193,6 +199,17 @@ private extension CreateInstruсtorViewController {
         guard let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
             failureAlertView.present()
             return
+        }
+        
+        for instructor in instructors {
+            if instructor.passportNumber == passportNumber || instructor.phoneNumber == phoneNumber {
+                let myMessage = "Невозможно добавить инструктора, так как указанные номер паспорта или номер телефон уже находятся в базе данных"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(myAlert, animated: true, completion: nil)
+                
+                return
+            }
         }
         
         let selectedCarId = cars[selectedCarIndex].carId

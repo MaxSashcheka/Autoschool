@@ -11,6 +11,7 @@ class CreateStudentViewController: UIViewController {
     
     var groups = [Group]()
     var instructors = [Instructor]()
+    var students = [Student]()
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -37,15 +38,22 @@ extension CreateStudentViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchGroups { fetchedGroups in
+        NetworkManager.shared.fetchGroups { [weak self] fetchedGroups in
+            guard let self = self else { return }
             self.groups = fetchedGroups
             self.groupsCollectionView.reloadData()
         }
-        NetworkManager.shared.fetchInstructors { fetchedInstructors in
+        NetworkManager.shared.fetchInstructors { [weak self] fetchedInstructors in
+            guard let self = self else { return }
+
             self.instructors = fetchedInstructors
             self.instructorsTableView.reloadData()
             self.instructorsTableViewHeight.constant = CGFloat(self.instructors.count) * self.instructorsTableView.rowHeight + 25
             self.instructorsTableViewSuperViewHeight.constant = self.instructorsTableViewHeight.constant + 25
+        }
+        NetworkManager.shared.fetchStudents { [weak self] fetchedStudent in
+            guard let self = self else { return }
+            self.students = fetchedStudent
         }
     }
     
@@ -136,6 +144,17 @@ private extension CreateStudentViewController {
         guard let passportNumber = passportNumberTextField.text, passportNumber != "" else {
             failureAlertView.present()
             return
+        }
+        
+        for student in students {
+            if student.phoneNumber == phoneNumber || student.passportNumber == passportNumber {
+                let myMessage = "Невозможно добавить ученика, так как указанная номер паспорта или мобильный телефон уже находятся в базе данных"
+                let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(myAlert, animated: true, completion: nil)
+                
+                return
+            }
         }
         
         let selectedGroup = groups[selectedGroupIndex]

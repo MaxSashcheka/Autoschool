@@ -44,19 +44,27 @@ extension CreateAgreementViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchAgreements { fetchedAgreements in
+        NetworkManager.shared.fetchAgreements { [weak self] fetchedAgreements in
+            guard let self = self else { return }
+
             self.agreements = fetchedAgreements
         }
-        NetworkManager.shared.fetchInstructors(completionHandler: { fetchedInstructors in
+        NetworkManager.shared.fetchInstructors(completionHandler: { [weak self] fetchedInstructors in
+            guard let self = self else { return }
+
             self.instructors = fetchedInstructors
         })
-        NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
+        NetworkManager.shared.fetchAdministrators { [weak self] fetchedAdministrators in
+            guard let self = self else { return }
+
             self.administrators = fetchedAdministrators
             self.administratorsTableView.reloadData()
             self.administratorsTableViewHeight.constant = CGFloat(self.administrators.count) * self.administratorsTableView.rowHeight + 10
             self.administratosSuperViewHeight.constant = self.administratorsTableViewHeight.constant + 30
         }
-        NetworkManager.shared.fetchStudents { fetchedStudents in
+        NetworkManager.shared.fetchStudents { [weak self] fetchedStudents in
+            guard let self = self else { return }
+
             var studentsWithoutAgreement = [Student]()
             for student in fetchedStudents {
                 var isNonRepeated = true

@@ -38,7 +38,9 @@ extension CreateExamViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchGroups { fetchedGroups in
+        NetworkManager.shared.fetchGroups { [weak self] fetchedGroups in
+            guard let self = self else { return }
+
             self.groups = fetchedGroups
             self.groupsCollectionView.reloadData()
         }
