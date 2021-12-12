@@ -109,6 +109,15 @@ private extension UpdateAdministratorViewController {
             failureAlertView.present()
             return
         }
+        
+        if phoneNumber.count < 19 {
+            let myMessage = "Номер телефона имеет неправильный формат (недостаточно символов)"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            
+            return
+        }
     
         let administrator = Administrator(administratorId: selectedAdministrator.administratorId, firstName: firstName, lastName: lastName, middleName: middleName, phoneNumber: phoneNumber, email: email, password: password)
         NetworkManager.shared.updateAdministrator(administrator)

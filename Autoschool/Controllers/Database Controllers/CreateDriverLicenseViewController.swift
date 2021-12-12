@@ -79,7 +79,7 @@ private extension CreateDriverLicenseViewController {
     
     @objc func saveIssueDate() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         issueDateTextField.text = formatter.string(from: issueDatePicker.date)
         
         view.endEditing(true)
@@ -105,6 +105,15 @@ private extension CreateDriverLicenseViewController {
         
         guard let validity = validityTextField.text, validity != "" else {
             failureAlertView.present()
+            return
+        }
+        
+        if number.count < 7 {
+            let myMessage = "Номер имеет неправильный формат (недостаточно символов)"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            
             return
         }
         
@@ -135,6 +144,9 @@ extension CreateDriverLicenseViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == numberTextField {
+            if range.location > 6 { return false }
+        }
         if range.location > 32 { return false }
         return true
 

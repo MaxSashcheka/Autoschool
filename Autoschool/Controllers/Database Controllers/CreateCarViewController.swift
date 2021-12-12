@@ -84,6 +84,15 @@ private extension CreateCarViewController {
             return
         }
         
+        if number.count < 9 {
+            let myMessage = "Государственный номер имеет неправильный формат (недостаточно символов)"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            
+            return
+        }
+        
         for car in cars {
             if car.number == number {
                 let myMessage = "Невозможно добавить машину, так как указанный государственный номер уже есть в базе данных"
@@ -112,7 +121,11 @@ extension CreateCarViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == carNumberTextField {
+            if range.location > 8 { return false }
+        }
         if range.location > 32 { return false }
+        
         return true
     }
 }

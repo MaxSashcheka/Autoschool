@@ -105,6 +105,26 @@ extension UpdateTeacherViewController {
             return
         }
         
+        if phoneNumber.count < 19 {
+            let myMessage = "Номер телефона имеет неправильный формат (недостаточно символов)"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        if passportNumber.count < 9 {
+            let myMessage = "Номер паспорта имеет неправильный формат (недостаточно символов)"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        
+        
         let teacher = Teacher(teacherId: selectedTeacher.teacherId, firstName: firstName, lastName: lastName, middleName: middleName, passportNumber: passportNumber, phoneNumber: phoneNumber)
         NetworkManager.shared.updateTeacher(teacher)
         navigationController?.popViewController(animated: true)
@@ -138,6 +158,9 @@ extension UpdateTeacherViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == passportNumberTextField {
+            if range.location > 8 { return false }
+        }
         if range.location > 32 { return false}
 
         if textField == phoneNumberTextField {

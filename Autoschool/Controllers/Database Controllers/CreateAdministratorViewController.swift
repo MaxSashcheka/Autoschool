@@ -107,6 +107,15 @@ private extension CreateAdministratorViewController {
             return
         }
         
+        if phoneNumber.count < 19 {
+            let myMessage = "Номер телефона имеет неправильный формат (недостаточно символов)"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            
+            return
+        }
+        
         for administrator in administrators {
             if administrator.email == email || administrator.phoneNumber == phoneNumber {
                 let myMessage = "Невозможно добавить администратора, так как указанная электронная почта или телефон уже находятся в базе данных"
@@ -154,7 +163,7 @@ extension CreateAdministratorViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if range.location > 32 { return false}
+        if range.location > 32 { return false }
         
         if textField == phoneNumberTextField {
             guard let text = textField.text else { return false }

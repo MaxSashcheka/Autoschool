@@ -39,13 +39,17 @@ class ExamsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchExams { fetchedExams in
+        NetworkManager.shared.fetchExams { [weak self] fetchedExams in
+            guard let self = self else { return }
+
             self.exams = fetchedExams.sorted { firstExam, secondExam -> Bool in
                 return firstExam.examId < secondExam.examId
             }
             self.tableView.reloadData()
         }
-        NetworkManager.shared.fetchGroups { fetchedGroups in
+        NetworkManager.shared.fetchGroups { [weak self] fetchedGroups in
+            guard let self = self else { return }
+
             self.groups = fetchedGroups
             self.tableView.reloadData()
         }

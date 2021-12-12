@@ -19,15 +19,21 @@ class StudentsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchStudents(withGroupId: group.groupId) { fetchedStudents in
+        NetworkManager.shared.fetchStudents(withGroupId: group.groupId) { [weak self] fetchedStudents in
+            guard let self = self else { return }
+
             self.students = fetchedStudents
             self.studentsTableView.reloadData()
         }
-        NetworkManager.shared.fetchTeachers(forGroup: group) { fetchedTeacher in
+        NetworkManager.shared.fetchTeachers(forGroup: group) { [weak self] fetchedTeacher in
+            guard let self = self else { return }
+
             self.teachers = fetchedTeacher
             self.studentsTableView.reloadData()
         }
-        NetworkManager.shared.fetchInstructors { fetchedInstructors in
+        NetworkManager.shared.fetchInstructors { [weak self] fetchedInstructors in
+            guard let self = self else { return }
+
             self.instructors = fetchedInstructors
             self.studentsTableView.reloadData()
         }

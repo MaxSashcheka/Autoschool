@@ -27,15 +27,21 @@ class AgreementsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchAgreements { fetchedAgreements in
+        NetworkManager.shared.fetchAgreements { [weak self] fetchedAgreements in
+            guard let self = self else { return }
+
             self.agreements = fetchedAgreements
             self.agreementsTableView.reloadData()
         }
-        NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
+        NetworkManager.shared.fetchAdministrators { [weak self] fetchedAdministrators in
+            guard let self = self else { return }
+
             self.administrators = fetchedAdministrators
             self.agreementsTableView.reloadData()
         }
-        NetworkManager.shared.fetchStudents { fetchedStudents in
+        NetworkManager.shared.fetchStudents { [weak self] fetchedStudents in
+            guard let self = self else { return }
+
             self.students = fetchedStudents
             self.agreementsTableView.reloadData()
         }

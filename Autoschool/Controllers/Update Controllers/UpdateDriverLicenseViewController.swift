@@ -118,6 +118,15 @@ private extension UpdateDriverLicenseViewController {
             failureAlertView.present()
             return
         }
+        
+        if number.count < 7 {
+            let myMessage = "Номер имеет неправильный формат (недостаточно символов)"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            
+            return
+        }
 
         let driverLicense = DriverLisence(driverLicenseId: selectedDriverLicense.driverLicenseId, issueDate: issueDateString, number: number, validity: Int(validity) ?? 0)
         NetworkManager.shared.updateDriverLicense(driverLicense)
@@ -136,6 +145,9 @@ extension UpdateDriverLicenseViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == numberTextField {
+            if range.location > 6 { return false }
+        }
         if range.location > 32 { return false}
         return true
 

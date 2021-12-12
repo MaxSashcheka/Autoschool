@@ -26,7 +26,9 @@ class AdministrationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.shared.fetchAdministrators { fetchedAdministrators in
+        NetworkManager.shared.fetchAdministrators { [weak self] fetchedAdministrators in
+            guard let self = self else { return }
+
             self.administrators = fetchedAdministrators
             self.administratorsTableView.reloadData()
         }

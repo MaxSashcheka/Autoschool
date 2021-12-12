@@ -39,7 +39,9 @@ class InstructorsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NetworkManager.shared.fetchInstructors { fetchedInstructors in
+        NetworkManager.shared.fetchInstructors { [weak self] fetchedInstructors in
+            guard let self = self else { return }
+
             self.instructors = fetchedInstructors
             self.tableView.reloadData()
         }
