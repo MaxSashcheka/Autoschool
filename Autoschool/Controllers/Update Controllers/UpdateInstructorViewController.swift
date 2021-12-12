@@ -12,6 +12,7 @@ class UpdateInstruсtorViewController: UIViewController {
     var cars = [Car]()
     var driverLicenses = [DriverLisence]()
     var instructors = [Instructor]()
+    var students: [Student]!
     
     var selectedInstructor: Instructor!
 
@@ -186,7 +187,13 @@ private extension UpdateInstruсtorViewController {
     }
     
     @objc func deleteInstructorHandler() {
-        
+        if !students.isEmpty {
+            let myMessage = "Прежде чем удалить инструктора, необходимо удалить или перенести учеников к другим инструкторам"
+            let myAlert = UIAlertController(title: myMessage, message: nil, preferredStyle: UIAlertController.Style.alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
+            return
+        }
         NetworkManager.shared.deleteInstructor(withId: selectedInstructor.instructorId)
         popBack(3)
     }

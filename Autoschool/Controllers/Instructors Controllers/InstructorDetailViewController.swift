@@ -75,11 +75,12 @@ class InstructorDetailViewController: UIViewController {
     }
     
     @objc private func openUpdateInstructorController() {
-        let updateGroupVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateInstructorViewController") as! UpdateInstruсtorViewController
+        let updateInstructorVC = UIStoryboard(name: "Instructors", bundle: nil).instantiateViewController(identifier: "UpdateInstructorViewController") as! UpdateInstruсtorViewController
         
-        updateGroupVC.selectedInstructor = instructor
+        updateInstructorVC.selectedInstructor = instructor
+        updateInstructorVC.students = students
         
-        self.navigationController?.pushViewController(updateGroupVC, animated: true)
+        self.navigationController?.pushViewController(updateInstructorVC, animated: true)
     }
 
 }

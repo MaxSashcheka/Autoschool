@@ -50,7 +50,9 @@ class ExamsViewController: UIViewController {
         NetworkManager.shared.fetchGroups { [weak self] fetchedGroups in
             guard let self = self else { return }
 
-            self.groups = fetchedGroups
+            self.groups = fetchedGroups.sorted { firstGroup, secondGroup -> Bool in
+                return firstGroup.groupId < secondGroup.groupId
+            }
             self.tableView.reloadData()
         }
     }
